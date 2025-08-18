@@ -8,3 +8,4 @@
 **/.test
 /.appanalyzer
 /.bitfun
+/build-profile.json5
