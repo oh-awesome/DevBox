@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "DevBox"
+    },
+    {
+      "name": "open_terminal_to_use",
+      "value": "本功能需依赖终端环境实现命令交互，建议通过系统默认终端工具进行操作"
+    },
+    {
+      "name": "hello_to_visit_Community",
+      "value": "如需查阅完整命令文档或获取更多技术支持，请访问官方开发者社区主页。"
+    },
+    {
+      "name": "ohpcd_name",
+      "value": "OpenHarmony PC Developer社区"
+    },
+    {
+      "name": "ohpcd_introduction",
+      "value": "构建高效开发工具链，赋能全球开发者生态"
+    },
+    {
+      "name": "tips_dialog",
+      "value": "温馨提示"
+    },
+    {
+      "name": "restart_notice",
+      "value": "安装完成后，请重启终端应用以激活工具包全部命令功能"
+    },
+    {
+      "name": "confirm_button",
+      "value": "我知道了"
+    }
+  ]
+}

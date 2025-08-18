@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "DevBox"
+    },
+    {
+      "name": "open_terminal_to_use",
+      "value": "Launch the terminal to execute commands."
+    },
+    {
+      "name": "hello_to_visit_Community",
+      "value": "‌For complete command documentation or technical support resources, please visit the official developer community portal."
+    },
+    {
+      "name": "ohpcd_name",
+      "value": "‌OpenHarmony PC Developer Community"
+    },
+    {
+      "name": "ohpcd_introduction",
+      "value": "Creating High-Efficiency Development Toolchains to Empower the Global Developer Ecosystem"
+    },
+    {
+      "name": "tips_dialog",
+      "value": "Use Requirements"
+    },
+    {
+      "name": "restart_notice",
+      "value": "After installation completes, ‌relaunch the terminal application to activate full command functionality of the toolkit.‌"
+    },
+    {
+      "name": "confirm_button",
+      "value": "OK"
+    }
+  ]
+}
