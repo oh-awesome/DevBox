@@ -39,6 +39,34 @@
     {
       "name": "confirm_button",
       "value": "我知道了"
+    },
+    {
+      "name": "tab_about",
+      "value": "关于"
+    },
+    {
+      "name": "tab_unicode",
+      "value": "Uincode转换"
+    },
+    {
+      "name": "tab_qr",
+      "value": "二维码生成器"
+    },
+    {
+      "name": "tab_timestamp",
+      "value": "时间戳转换"
+    },
+    {
+      "name": "tab_radomstrting",
+      "value": "生成随机字符串"
+    },
+    {
+      "name": "tab_hex",
+      "value": "十六进制转换"
+    },
+    {
+      "name": "reset",
+      "value": "重置"
     }
   ]
 }

@@ -20,10 +20,10 @@
         "startWindowIcon": "$media:layered_image",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-        "minWindowHeight": 400,
-        "maxWindowHeight": 400,
-        "minWindowWidth": 600,
-        "maxWindowWidth": 600,
+        "minWindowHeight": 600,
+        "maxWindowHeight": 600,
+        "minWindowWidth": 900,
+        "maxWindowWidth": 900,
         "supportWindowMode": [
           "floating"
          ],

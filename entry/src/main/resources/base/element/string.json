@@ -39,6 +39,34 @@
     {
       "name": "confirm_button",
       "value": "OK"
+    },
+    {
+      "name": "tab_about",
+      "value": "About"
+    },
+    {
+      "name": "tab_unicode",
+      "value": "Unicode Conversion‌"
+    },
+    {
+      "name": "tab_qr",
+      "value": "QR Code Generator‌"
+    },
+    {
+      "name": "tab_timestamp",
+      "value": "Timestamp Conversion‌"
+    },
+    {
+      "name": "tab_radomstrting",
+      "value": "Random String Generator"
+    },
+    {
+      "name": "tab_hex",
+      "value": "Hexadecimal Conversion‌"
+    },
+    {
+      "name": "reset",
+      "value": "Reset"
     }
   ]
 }
