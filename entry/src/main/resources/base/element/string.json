@@ -47,6 +47,10 @@
     {
       "name": "tab_unicode",
       "value": "Unicode Conversion‌"
+    },    
+    {
+      "name": "tab_minitxt",
+      "value": "Mini Txt Editor"
     },
     {
       "name": "tab_qr",
@@ -67,6 +71,38 @@
     {
       "name": "reset",
       "value": "Reset"
+    },
+    {
+      "name": "notepad_file",
+      "value": "File"
+    },
+    {
+      "name": "notepad_file_open",
+      "value": "Open"
+    },
+    {
+      "name": "notepad_file_save",
+      "value": "Save"
+    },
+    {
+      "name": "notepad_edit",
+      "value": "Edit"
+    },
+    {
+      "name": "notepad_edit_undo",
+      "value": "Undo"
+    },
+    {
+      "name": "notepad_edit_redo",
+      "value": "Redo"
+    },
+    {
+      "name": "notepad_edit_copy",
+      "value": "Copy"
+    },
+    {
+      "name": "notepad_edit_paste",
+      "value": "Paste"
     }
   ]
 }

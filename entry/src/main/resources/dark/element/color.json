@@ -6,23 +6,23 @@
     },
     {
       "name": "editor_line_number_bar",
-      "value": "#F5F5F5"
+      "value": "#252525"
     },
     {
       "name": "editor_line_number_text",
-      "value": "#888888"
+      "value": "#757575"
     },
     {
       "name": "editor_area_background",
-      "value": "#FFFFFF"
+      "value": "#1E1E1E"
     },
     {
       "name": "editor_text",
-      "value": "#333333"
+      "value": "#E0E0E0"
     },
     {
       "name": "editor_divider",
-      "value": "#E0E0E0"
+      "value": "#424242"
     }
   ]
 }

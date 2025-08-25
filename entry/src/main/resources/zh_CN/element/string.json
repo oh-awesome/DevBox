@@ -47,6 +47,10 @@
     {
       "name": "tab_unicode",
       "value": "Uincode转换"
+    },  
+    {
+      "name": "tab_minitxt",
+      "value": "迷你记事本"
     },
     {
       "name": "tab_qr",
@@ -67,6 +71,38 @@
     {
       "name": "reset",
       "value": "重置"
+    },
+    {
+      "name": "notepad_file",
+      "value": "文件"
+    },
+    {
+      "name": "notepad_file_open",
+      "value": "打开"
+    },
+    {
+      "name": "notepad_file_save",
+      "value": "保存"
+    },
+    {
+      "name": "notepad_edit",
+      "value": "编辑"
+    },
+    {
+      "name": "notepad_edit_undo",
+      "value": "撤销"
+    },
+    {
+      "name": "notepad_edit_redo",
+      "value": "重做"
+    },
+    {
+      "name": "notepad_edit_copy",
+      "value": "复制"
+    },
+    {
+      "name": "notepad_edit_paste",
+      "value": "粘贴"
     }
   ]
 }

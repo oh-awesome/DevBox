@@ -4,6 +4,7 @@ import {BusinessError} from '@ohos.base';
 import { promptAction, router } from '@kit.ArkUI';
 import {UnicodeConverter} from './unicode_converter';
 import {AboutPage} from './about';
+import {TextEditor} from  './texteditor'
 @Entry
 @Component
 struct Index {
@@ -109,7 +110,11 @@ build() {
           TabContent() {
             UnicodeConverter()
           }.tabBar($r('app.string.tab_unicode'))
-          
+
+          TabContent() {
+            TextEditor()
+          }.tabBar($r('app.string.tab_minitxt'))
+
           TabContent() {
           }.tabBar($r('app.string.tab_qr'))
           
@@ -121,7 +126,7 @@ build() {
           
           TabContent() {
           }.tabBar($r('app.string.tab_hex'))
-        }
+    }
         .barWidth('25%')
         .barHeight('100%')
         .vertical(true)
