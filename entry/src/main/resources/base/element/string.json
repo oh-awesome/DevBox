@@ -103,6 +103,26 @@
     {
       "name": "notepad_edit_paste",
       "value": "Paste"
+    },
+    {
+      "name": "builder_qrcode",
+      "value": "Generate QR code"
+    },
+    {
+      "name": "save_qrcode",
+      "value": "Save QR code"
+    },
+    {
+      "name": "ecard_qr",
+      "value": "Digital card"
+    },
+    {
+      "name": "phone_qr",
+      "value": "Number"
+    },
+    {
+      "name": "vx_account_qr",
+      "value": "Official Account"
     }
-  ]
+    ]
 }

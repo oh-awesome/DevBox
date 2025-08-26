@@ -103,6 +103,26 @@
     {
       "name": "notepad_edit_paste",
       "value": "粘贴"
+    },
+    {
+      "name": "builder_qrcode",
+      "value": "生成二维码"
+    },
+    {
+      "name": "save_qrcode",
+      "value": "保存二维码"
+    },
+    {
+      "name": "ecard_qr",
+      "value": "电子名片"
+    },
+    {
+      "name": "phone_qr",
+      "value": "手机号"
+    },
+    {
+      "name": "vx_account_qr",
+      "value": "微信公众号"
     }
   ]
 }
