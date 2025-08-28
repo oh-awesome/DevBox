@@ -1,6 +1,42 @@
 {
   "color": [
     {
+      "name": "common_text",
+      "value": "#222222"
+    },
+    {
+      "name": "bar_background",
+      "value": "#E0F2E0"
+    },
+    {
+      "name": "bar_text",
+      "value": "#2A5D2A"
+    },
+    {
+      "name": "button_start_text",
+      "value": "#65BB5C"
+    },
+    {
+      "name": "button_start_background",
+      "value": "#FFF8E1"
+    },
+    {
+      "name": "button_pause_text",
+      "value": "#E84026"
+    },
+    {
+      "name": "button_pause_background",
+      "value": "#FFF8E1"
+    },
+    {
+      "name": "button_copy_text",
+      "value": "#E84026"
+    },
+    {
+      "name": "button_copy_background",
+      "value": "#FFF8E1"
+    },
+    {
       "name": "start_window_background",
       "value": "#FFFFFF"
     },
@@ -23,6 +59,18 @@
     {
       "name": "editor_divider",
       "value": "#E0E0E0"
+    },
+    {
+      "name": "timestamp_title",
+      "value": "#E5E8FF"
+    },
+    {
+      "name": "timestamp_title_text",
+      "value": "#000080"
+    },
+    {
+      "name": "timestamp_info",
+      "value": "#FFFFFF"
     }
   ]
 }

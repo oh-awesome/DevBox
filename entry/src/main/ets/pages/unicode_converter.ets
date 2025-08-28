@@ -108,5 +108,6 @@ export struct UnicodeConverter {
       .alignItems(HorizontalAlign.Start)
       .justifyContent(FlexAlign.Start)
     }
+    .padding(8)
   }
 }

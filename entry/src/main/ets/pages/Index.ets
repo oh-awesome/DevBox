@@ -1,11 +1,12 @@
 import dataPreferences from '@ohos.data.preferences'
 import common from '@ohos.app.ability.common';
 import {BusinessError} from '@ohos.base';
-import { promptAction, router } from '@kit.ArkUI';
 import {UnicodeConverter} from './unicode_converter';
 import {QrcodeBuilder} from './qrcode_builder';
 import {AboutPage} from './about';
 import {TextEditor} from  './texteditor'
+import {TimeConverterPage} from './timestamp'
+
 @Entry
 @Component
 struct Index {
@@ -121,6 +122,7 @@ build() {
           }.tabBar($r('app.string.tab_qr'))
           
           TabContent() {
+            TimeConverterPage()
           }.tabBar($r('app.string.tab_timestamp'))
           
           TabContent() {
