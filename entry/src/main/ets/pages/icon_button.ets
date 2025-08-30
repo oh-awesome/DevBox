@@ -2,6 +2,7 @@
 export struct IconButton {
   public icon?: Resource // 图标资源
   public text?: string   // 文本内容
+  public textResource?: Resource   // 文本内容
   public color?: ResourceColor = Color.White;
   public fontSize?: number = 12;
   public fontColor?: ResourceColor = '#999';
@@ -10,20 +11,22 @@ export struct IconButton {
   public isPressed: boolean = false
 
   build() {
-    Row({ space: 4,}) {
-      // 图标
-      if (this.icon) {
-        Image(this.icon)
-        .width(this.fontSize)
-        .height(this.fontSize)
+    Button() {
+      Row({ space: 4,}) {
+        // 图标
+        if (this.icon) {
+          Image(this.icon)
+          .width(this.fontSize)
+          .height(this.fontSize)
+        }
+  
+        // 文字
+        Text(this.text || this.textResource || '')
+        .fontSize(this.fontSize || 12)
+        .fontColor(this.disabled ? this.fontColor : '#333')
       }
-
-      // 文字
-      Text(this.text || '')
-      .fontSize(this.fontSize || 12)
-      .fontColor(this.disabled ? this.fontColor : '#333')
+      .justifyContent(FlexAlign.Center)
     }
-    .justifyContent(FlexAlign.Center)
     .width('100%')
     .height('100%')
     .padding({ left: 8, right: 8, top: 8, bottom: 8})
