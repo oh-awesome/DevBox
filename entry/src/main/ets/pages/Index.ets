@@ -6,6 +6,7 @@ import {QrcodeBuilder} from './qrcode_builder';
 import {AboutPage} from './about';
 import {TextEditor} from  './texteditor'
 import {TimeConverterPage} from './timestamp'
+import {HexConvertsPage} from './hex_convert'
 
 @Entry
 @Component
@@ -129,6 +130,7 @@ build() {
           }.tabBar($r('app.string.tab_radomstrting'))
           
           TabContent() {
+            HexConvertsPage()
           }.tabBar($r('app.string.tab_hex'))
     }
         .barWidth('25%')
