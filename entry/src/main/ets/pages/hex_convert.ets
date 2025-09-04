@@ -1,5 +1,4 @@
 import { promptAction } from '@kit.ArkUI'
-
 class DecimalToBinaryUtil {
   public decimalToBinaryUtil(decimal: number): string {
     if (decimal <= 0) {
@@ -14,9 +13,6 @@ class DecimalToBinaryUtil {
   }
 }
  
-/*
-二进制转十进制
- */
 export class BinaryToDecimalUtil {
   public binaryToDecimalUtil(binary: string): number {
     let decimal: number = 0;
@@ -158,7 +154,7 @@ export struct HexConvertsPage {
     this.text = N1.toString()
     return this.text
   }
- 
+  
   build() {
     Column() {
       Text('进制转换')
@@ -181,7 +177,7 @@ export struct HexConvertsPage {
             this.text = value
             this.text4 = this.text
           })
-        Text(`    结果为：${this.text3}`)
+        Text(`    ${this.text3}`)
           .width('95%')
           .height(50)
           .fontSize(15)
@@ -199,7 +195,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.ToBinary()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转二进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【十进制转二进制】：${this.text3}` })
             })
           Button('十转八')
             .width(160)
@@ -210,7 +206,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.ToOctal()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转八进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【十进制转八进制】：${this.text3}` })
             })
         }
         .justifyContent(FlexAlign.Center)
@@ -227,7 +223,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.octalToDecimalUtil()
               this.text = this.text4
-              promptAction.showToast({ message: `【八进制转十进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【八进制转十进制】：${this.text3}` })
             })
           Button('二转十')
             .width(160)
@@ -238,7 +234,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.binaryToDecimalUtil()
               this.text = this.text4
-              promptAction.showToast({ message: `【二进制转十进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【二进制转十进制】：${this.text3}` })
             })
         }
         .justifyContent(FlexAlign.Center)
@@ -254,7 +250,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.ToHexadecimal()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转十六进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【十进制转十六进制】：${this.text3}` })
             })
  
           Button('十六转十')
@@ -266,7 +262,7 @@ export struct HexConvertsPage {
             .onClick(() => {
               this.text3 = this.hexadecimalToDecimalUtil()
               this.text = this.text4
-              promptAction.showToast({ message: `【十六进制转十进制】结果为：${this.text3}` })
+              promptAction.showToast({ message: `【十六进制转十进制】：${this.text3}` })
             })
         }
         .justifyContent(FlexAlign.Center)
