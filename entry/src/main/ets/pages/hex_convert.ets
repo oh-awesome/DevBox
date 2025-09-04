@@ -1,10 +1,5 @@
 import { promptAction } from '@kit.ArkUI'
- 
-/**
- *十进制转二进制
- * @param decimal十进制数
- * @returns二进制数
- */
+
 class DecimalToBinaryUtil {
   public decimalToBinaryUtil(decimal: number): string {
     if (decimal <= 0) {
@@ -162,19 +157,6 @@ export struct HexConvertsPage {
     const N1 = this.hexadecimalToDecimal.hexadecimalToDecimalUtil(this.text)
     this.text = N1.toString()
     return this.text
-  }
- 
-  //**
-  @State daysToCollegeEntranceExamination: number = 0 //距离时间
-  private selectedDate: Date = new Date() // 选定的日期
-  private selectedShedingDate: Date = new Date() // 选定的当前日期
- 
-  private X1(): number {
-    let data1 = new Date(this.selectedShedingDate); // 将选中的第一个日期字符串转换为Date对象
-    let data2 = new Date(this.selectedDate); // 将选中的第二个日期字符串转换为Date对象
-    let timeDiff = Math.abs(data2.getTime() - data1.getTime()); // 计算时间差
-    this.daysToCollegeEntranceExamination = Math.ceil(timeDiff / (1000 * 3600 * 24)); // 转换为天数
-    return this.daysToCollegeEntranceExamination
   }
  
   build() {
