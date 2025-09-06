@@ -114,7 +114,7 @@ export struct TextEditor {
           .borderRadius(4)
           .fontSize(this.buttonFontSize)
           .padding(0)
-          .fontColor(Color.Black)
+          .fontColor($r('sys.color.ohos_id_color_foreground'))
           .bindMenu(this.fileMenu())
 
         Divider()
@@ -226,6 +226,7 @@ export struct TextEditor {
         radius: 4
       })
       .alignItems(VerticalAlign.Top)
+      .backgroundColor($r('app.color.editor_line_number_bar'))
     }
   }
 }

@@ -1,5 +1,5 @@
 import promptAction from '@ohos.promptAction';
-import { IconButton } from './icon_button';
+import { CommIconButton, IconButton } from './icon_button';
 import { i18n } from '@kit.LocalizationKit';
 import { pasteboard } from '@kit.BasicServicesKit';
 
@@ -233,36 +233,28 @@ export struct TimeConverterPage {
           .fontSize(20)
           .padding({ right: 16 })
 
-        IconButton({
+        CommIconButton({
           icon: $r('app.media.run'),
-          fontSize: 16,
-          text: '启动',
-          fontColor: $r('app.color.button_start_text'),
-          color: $r('app.color.button_start_background'),
+          textResource: $r("app.string.time_start"),
           onClickFunc: () => {
             this.textClockController.start();
           }
         })
           .width('12%')
 
-        IconButton({
+
+        CommIconButton({
           icon: $r('app.media.pause'),
-          fontSize: 16,
-          text: '暂停',
-          fontColor: $r('app.color.button_pause_text'),
-          color: $r('app.color.button_pause_background'),
+          textResource: $r("app.string.time_pause"),
           onClickFunc: () => {
             this.textClockController.stop();
           }
         })
           .width('12%')
 
-        IconButton({
+        CommIconButton({
           icon: $r('app.media.copy'),
-          fontSize: 16,
-          text: '复制',
-          fontColor: $r('app.color.button_copy_text'),
-          color: $r('app.color.button_copy_background'),
+          textResource: $r("app.string.copy"),
           onClickFunc: () => {
             let pasteData: pasteboard.PasteData =
               pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.accumulateTime.toString());
@@ -270,7 +262,7 @@ export struct TimeConverterPage {
             try {
               systemPasteboard.setDataSync(pasteData);
               promptAction.showToast({
-                message: '已复制到剪贴板',
+                message: $r('app.string.copy_success'),
                 duration: 2000,
                 bottom: '50vp'
               });
@@ -282,6 +274,7 @@ export struct TimeConverterPage {
           }
         })
           .width('12%')
+
       }
       .backgroundColor($r('app.color.bar_background'))
       .borderRadius($r('sys.float.corner_radius_level4'))
@@ -292,17 +285,16 @@ export struct TimeConverterPage {
       Column() {
         Row() {
           Column() {
-            IconButton({
-              icon: $r('app.media.clock'),
-              fontSize: 16,
-              text: '时间戳转换为日期',
+            CommIconButton({
+              icon: $r('app.media.calendar'),
+              textResource: $r("app.string.convert_timestamp_to_date"),
               onClickFunc: () => {
                 this.convertTimestampToDate()
               }
             })
               .width('100%')
-              .height(60)
               .padding({ bottom: 16 })
+
 
             TextInput({
               text: this.timestamp,
@@ -316,7 +308,7 @@ export struct TimeConverterPage {
               .width('100%')
               .height(40)
           }
-          .width('30%')
+          .width('35%')
           .padding({
             top: 8,
             bottom: 8,
@@ -366,21 +358,19 @@ export struct TimeConverterPage {
       Column() {
         Row({}) {
           Column({ space: 8 }) {
-            IconButton({
+            CommIconButton({
               icon: $r('app.media.calendar'),
-              fontSize: 16,
-              text: '日期转换为时间戳',
+              textResource: $r("app.string.convert_date_to_timestamp"),
               onClickFunc: () => {
                 this.convertDateToTimestamp()
               }
             })
               .width('100%')
-              .height(40)
 
-            IconButton({
-              icon: $r('app.media.clock'),
-              fontSize: 16,
-              text: '选择时间',
+
+            CommIconButton({
+              // icon: $r('app.media.copy'),
+              textResource: $r("app.string.select_datetime"),
               onClickFunc: () => {
                 this.getUIContext().showDatePickerDialog({
                   selected: this.date,
@@ -395,7 +385,6 @@ export struct TimeConverterPage {
               }
             })
               .width('100%')
-              .height(40)
 
             Row() {
               // 不可编辑的固定前缀
@@ -429,7 +418,7 @@ export struct TimeConverterPage {
             .padding({ bottom: 16 })
             .justifyContent(FlexAlign.Center)
           }
-          .width('30%')
+          .width('35%')
           .padding({
             top: 8,
             bottom: 8,

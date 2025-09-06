@@ -71,6 +71,22 @@
     {
       "name": "timestamp_info",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "comm_btn_bg",
+      "value": "#66DDDDDD"
+    },
+    {
+      "name": "comm_btn_content",
+      "value": "#FF333333"
+    },
+    {
+      "name": "comm_btn_broader",
+      "value": "#E2AC58"
+    },
+    {
+      "name": "comm_btn_hover_bg",
+      "value": "#AADDDDDD"
     }
   ]
 }

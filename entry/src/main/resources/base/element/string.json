@@ -47,7 +47,7 @@
     {
       "name": "tab_unicode",
       "value": "Unicode Conversion"
-    },    
+    },
     {
       "name": "tab_minitxt",
       "value": "Mini Txt Editor"
@@ -139,6 +139,34 @@
     {
       "name": "vx_account_qr",
       "value": "Official Account"
+    },
+    {
+      "name": "copy",
+      "value": "Copy"
+    },
+    {
+      "name": "copy_success",
+      "value": "Copied to clipboard"
+    },
+    {
+      "name": "select_datetime",
+      "value": "Select date"
+    },
+    {
+      "name": "convert_date_to_timestamp",
+      "value": "Convert to timestamp"
+    },
+    {
+      "name": "convert_timestamp_to_date",
+      "value": "Convert to date"
+    },
+    {
+      "name": "time_pause",
+      "value": "Pause"
+    },
+    {
+      "name": "time_start",
+      "value": "Start"
     }
-    ]
+  ]
 }

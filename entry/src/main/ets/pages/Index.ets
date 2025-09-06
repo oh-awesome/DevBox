@@ -154,7 +154,7 @@ struct Index {
         .barHeight('100%')
         .vertical(true)
         .barPosition(BarPosition.Start)
-        .backgroundBlurStyle(BlurStyle.COMPONENT_THIN)
+        .backgroundBlurStyle(BlurStyle.COMPONENT_REGULAR)
         .fadingEdge(true)
         .barMode(BarMode.Scrollable)
         .backgroundColor($r('sys.color.comp_background_secondary'))
@@ -163,11 +163,16 @@ struct Index {
           this.currentIndex = index;
         })
       }
-      .padding($r('sys.float.padding_level8'))
+      .padding({
+        top: 48,
+        left: 16,
+        right: 16,
+        bottom: 16,
+      })
       .justifyContent(FlexAlign.Center)
-      // .backgroundImage($r('app.media.image_background')) // 替换自己项目图片资源文件
+      .backgroundImage($r("app.media.nextBackground"))
       .backgroundImageSize({ width: '100%', height: '100%' })
-      .borderRadius($r('sys.float.corner_radius_level8'))
+
       .height('100%')
       .width('100%')
     }

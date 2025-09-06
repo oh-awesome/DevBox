@@ -1,4 +1,4 @@
-import { IconButton } from "./icon_button";
+import { CommIconButton, IconButton } from "./icon_button";
 import { pasteboard } from "@kit.BasicServicesKit";
 import { promptAction } from "@kit.ArkUI";
 
@@ -165,9 +165,10 @@ export struct SysMedia {
                 .maxFontSize(24)  // 最大字号范围
                 .textAlign(TextAlign.Center)
                 .copyOption(CopyOptions.LocalDevice)
+                .fontColor(Color.Black)
             }
             .padding(10)
-            .backgroundColor('#FFFFFF')
+            .backgroundColor(Color.White)
             .borderRadius(12)
             .onClick(() => {
               this.showDetails(item);
@@ -183,7 +184,6 @@ export struct SysMedia {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F5F5F5')
   }
 }
 
@@ -210,30 +210,27 @@ struct SysResourceDetails {
         .textAlign(TextAlign.Center)
         .width('80%')
 
-      IconButton({
-        icon: $r('app.media.copy'),
-        fontSize: 16,
-        text: '复制',
-        fontColor: $r('app.color.button_copy_text'),
-        color: $r('app.color.button_copy_background'),
-        onClickFunc: () => {
-          let pasteData: pasteboard.PasteData =
-            pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.res);
-          let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
-          try {
-            systemPasteboard.setDataSync(pasteData);
-            promptAction.showToast({
-              message: '已复制到剪贴板',
-              duration: 2000,
-              bottom: '50vp'
-            });
-            console.info('Succeeded in setting PasteData.');
-          } catch (err) {
-            console.error('Failed to set PasteData. Cause:' + err.message);
+       CommIconButton({
+          icon: $r('app.media.copy'),
+          textResource: $r("app.string.copy"),
+          onClickFunc: () => {
+            let pasteData: pasteboard.PasteData =
+              pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.res);
+            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard();
+            try {
+              systemPasteboard.setDataSync(pasteData);
+              promptAction.showToast({
+                message: $r('app.string.copy_success'),
+                duration: 2000,
+                bottom: '50vp'
+              });
+              console.info('Succeeded in setting PasteData.');
+            } catch (err) {
+              console.error('Failed to set PasteData. Cause:' + err.message);
+            }
+            ;
           }
-          ;
-        }
-      })
+        })
         .height(40)
         .width('50%')
     }

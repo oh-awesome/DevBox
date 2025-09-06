@@ -22,6 +22,10 @@ export default class EntryAbility extends UIAbility {
       }
         hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
     });
+    windowStage.getMainWindow().then((myWindow: window.Window) => {
+      myWindow.setWindowDecorVisible(false);
+      myWindow.setWindowDecorHeight(48);
+    })
   }
 
   onWindowStageDestroy(): void {

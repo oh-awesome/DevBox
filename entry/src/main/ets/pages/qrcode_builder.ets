@@ -115,68 +115,60 @@ export struct QrcodeBuilder {
   }
 
   build() {
-    NavDestination() {
-      Column({ space: 15 }) {
-        Blank()
-        Text($r('app.string.tab_qr'))
-          .textAlign(TextAlign.Start)
-          .fontSize(30)
-          .fontWeight(FontWeight.Bold)
-          .margin({ left: 10 })
+    Column({ space: 15 }) {
+      Row() {
+        this.tipsList();
+        Column() {
+          TextArea({ text: this.userText })
+            .onChange((value: string) => {
+              this.userText = value;
+            })
+            .key(TAG)
+            .onAppear(() => {
+              focusControl.requestFocus(TAG)
+            })
+            .height(150)
+            .width('80%')
+            .margin({ bottom: 16 })
 
-        Row() {
-          this.tipsList();
-          Column() {
-            TextArea({ text: this.userText })
-              .onChange((value: string) => {
-                this.userText = value;
-              })
-              .key(TAG)
-              .onAppear(() => {
-                focusControl.requestFocus(TAG)
-              })
-              .height(150)
-              .width('90%')
-              .margin({ bottom: 16 })
-
+          Row() {
             Row() {
               Row() {
-                Row() {
-                  if (this.pixelMap) {
-                    Image(this.pixelMap)
-                      .objectFit(ImageFit.Contain)
-                  } else {
-                    Blank()
-                  }
+                if (this.pixelMap) {
+                  Image(this.pixelMap)
+                    .objectFit(ImageFit.Contain)
+                } else {
+                  Blank()
                 }
-                .width(250)
-                .height(250)
-                .margin({ right: 30 })
-
-
-                Column() {
-                  Button($r('app.string.builder_qrcode'))
-                    .margin({ bottom: 30 })
-                    .onClick(() => {
-                      this.generateQrCode();
-                    })
-                    .width(150)
-                  Button($r('app.string.save_qrcode'))
-                    .width(150)
-                    .onClick(() => {
-                      this.saveQRCode();
-                    })
-                }
-                .margin({ right: 20 })
               }
-              .width('80%')
-              .justifyContent(FlexAlign.Start)
-              .alignItems(VerticalAlign.Center)
+              .width(250)
+              .height(250)
+              .margin({ right: 30 })
+
+
+              Column() {
+                Button($r('app.string.builder_qrcode'))
+                  .margin({ bottom: 30 })
+                  .onClick(() => {
+                    this.generateQrCode();
+                  })
+                  .width(150)
+                Button($r('app.string.save_qrcode'))
+                  .width(150)
+                  .onClick(() => {
+                    this.saveQRCode();
+                  })
+              }
+              .margin({ right: 20 })
             }
+            .width('80%')
+            .justifyContent(FlexAlign.Start)
+            .alignItems(VerticalAlign.Center)
           }
         }
       }
     }
+    .padding(16)
   }
 }
 

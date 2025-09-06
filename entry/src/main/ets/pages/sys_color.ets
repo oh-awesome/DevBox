@@ -1,4 +1,4 @@
-import { IconButton } from "./icon_button";
+import { CommIconButton, IconButton } from "./icon_button";
 import { pasteboard } from "@kit.BasicServicesKit";
 import { promptAction } from "@kit.ArkUI";
 
@@ -1030,9 +1030,10 @@ export struct SysColor {
                 .maxFontSize(24)  // 最大字号范围
                 .textAlign(TextAlign.Center)
                 .copyOption(CopyOptions.LocalDevice)
+                .fontColor(Color.Black)
             }
             .padding(10)
-            .backgroundColor('#FFFFFF')
+            .backgroundColor(Color.White)
             .borderRadius(12)
             .onClick(() => {
               this.showDetails(item);
@@ -1048,7 +1049,6 @@ export struct SysColor {
     }
     .width('100%')
     .height('100%')
-    .backgroundColor('#F5F5F5')
   }
 }
 
@@ -1075,12 +1075,9 @@ struct SysResourceDetails {
         .textAlign(TextAlign.Center)
         .width('80%')
 
-      IconButton({
+      CommIconButton({
         icon: $r('app.media.copy'),
-        fontSize: 16,
-        text: '复制',
-        fontColor: $r('app.color.button_copy_text'),
-        color: $r('app.color.button_copy_background'),
+        textResource: $r("app.string.copy"),
         onClickFunc: () => {
           let pasteData: pasteboard.PasteData =
             pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, this.res);
@@ -1088,7 +1085,7 @@ struct SysResourceDetails {
           try {
             systemPasteboard.setDataSync(pasteData);
             promptAction.showToast({
-              message: '已复制到剪贴板',
+              message: $r('app.string.copy_success'),
               duration: 2000,
               bottom: '50vp'
             });

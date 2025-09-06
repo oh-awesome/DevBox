@@ -139,6 +139,34 @@
     {
       "name": "vx_account_qr",
       "value": "微信公众号"
+    },
+    {
+      "name": "copy",
+      "value": "复制"
+    },
+    {
+      "name": "copy_success",
+      "value": "已复制到剪贴板"
+    },
+    {
+      "name": "select_datetime",
+      "value": "选择时间"
+    },
+    {
+      "name": "convert_date_to_timestamp",
+      "value": "日期转换为时间戳"
+    },
+    {
+      "name": "convert_timestamp_to_date",
+      "value": "时间戳转换为日期"
+    },
+    {
+      "name": "time_pause",
+      "value": "暂停"
+    },
+    {
+      "name": "time_start",
+      "value": "启动"
     }
   ]
 }
