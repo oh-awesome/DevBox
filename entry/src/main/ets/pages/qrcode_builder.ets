@@ -12,152 +12,148 @@ export struct QrcodeBuilder {
   @State userText: string = '你好';
   @State pixelMap: image.PixelMap | undefined = undefined;
   @State numb: number = 1;
-  @State valuedToSend : string = '';
-
+  @State valuedToSend: string = '';
   dialogCOntrollerInput: CustomDialogController = new CustomDialogController({
     builder: CustomDialogControllerInput({
       receivedValue: this.valuedToSend,
       onClickOK: (value: string): void => this.saveTask(value)
     })
   })
-  
   dialogCOntrollerCard: CustomDialogController = new CustomDialogController({
     builder: CustomDialogControllerCard({
       onClickOK: (value: string): void => this.saveTask(value)
     })
   })
-  
+
   aboutToAppear(): void {
-      this.generateQrCode();
+    this.generateQrCode();
   }
-  
+
   saveTask(value: string) {
     this.userText = value;
   }
 
   // 通过FilePicker保存文件
   async saveQRCode() {
-      const imagePackerApi = image.createImagePacker();
-      let documentSaveOptions = new picker.DocumentSaveOptions();
-      documentSaveOptions.fileSuffixChoices = ['.jpeg', 'png', 'jpg', '*'];
-      let documentPicker = new picker.DocumentViewPicker();
-      documentPicker. save(documentSaveOptions).then(async (uris: Array<string>) => {
-          const path: string = new fileUri.FileUri(uris[0]).path;
-          let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
-          let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
-          packOpts.desiredDynamicRange = image.PackingDynamicRange.AUTO;
-          imagePackerApi.packToFile(this.pixelMap, file.fd, packOpts).then(() => {
-            console.log(TAG, 'save image success');
-          }).catch((err: BusinessError) => {
-            console.log(TAG, 'save image success');
-          }).finally (() => {
-            if (file) {
-              fs.closeSync(file.fd)
-            }
-          })
+    const imagePackerApi = image.createImagePacker();
+    let documentSaveOptions = new picker.DocumentSaveOptions();
+    documentSaveOptions.fileSuffixChoices = ['.jpeg', 'png', 'jpg', '*'];
+    let documentPicker = new picker.DocumentViewPicker();
+    documentPicker.save(documentSaveOptions).then(async (uris: Array<string>) => {
+      const path: string = new fileUri.FileUri(uris[0]).path;
+      let file = fs.openSync(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+      let packOpts: image.PackingOption = { format: 'image/jpeg', quality: 98 };
+      packOpts.desiredDynamicRange = image.PackingDynamicRange.AUTO;
+      imagePackerApi.packToFile(this.pixelMap, file.fd, packOpts).then(() => {
+        console.log(TAG, 'save image success');
+      }).catch((err: BusinessError) => {
+        console.log(TAG, 'save image success');
+      }).finally(() => {
+        if (file) {
+          fs.closeSync(file.fd)
+        }
       })
-  }
-  
-  generateQrCode() {
-    let options: generateBarcode.CreateOptions = {
-    scanType: scanCore.ScanType.QR_CODE,
-    height: 200,
-    width: 200
-  }
-  generateBarcode.createBarcode(this.userText, options, (error, pixelMap: image.PixelMap) => {
-    if (error) {
-      console.log('generete bar code failed' + JSON.stringify(error));
-        return;
-    }
-    this.pixelMap = pixelMap;
-  })
+    })
   }
 
-  
+  generateQrCode() {
+    let options: generateBarcode.CreateOptions = {
+      scanType: scanCore.ScanType.QR_CODE,
+      height: 200,
+      width: 200
+    }
+    generateBarcode.createBarcode(this.userText, options, (error, pixelMap: image.PixelMap) => {
+      if (error) {
+        console.log('generete bar code failed' + JSON.stringify(error));
+        return;
+      }
+      this.pixelMap = pixelMap;
+    })
+  }
+
   @Builder
-  tipsList(){
+  tipsList() {
     Scroll() {
       Column({ space: 15 }) {
         Button($r('app.string.ecard_qr'))
-        .onClick(() => {
-          this.dialogCOntrollerCard.open();          
-        })
-        .buttonExtend()
-        
+          .onClick(() => {
+            this.dialogCOntrollerCard.open();
+          })
+          .buttonExtend()
+
         Button($r('app.string.phone_qr'))
-        .onClick(() => {
-          this.dialogCOntrollerInput.open();  
-          this.valuedToSend = '手机号'       
-        })
-        .buttonExtend()
-        
+          .onClick(() => {
+            this.dialogCOntrollerInput.open();
+            this.valuedToSend = '手机号'
+          })
+          .buttonExtend()
+
         Button('email')
-        .onClick(() => {
-          this.dialogCOntrollerInput.open();    
-          this.valuedToSend = 'email'          
-        })
-        .buttonExtend()
-        
+          .onClick(() => {
+            this.dialogCOntrollerInput.open();
+            this.valuedToSend = 'email'
+          })
+          .buttonExtend()
+
         Button($r('app.string.vx_account_qr'))
-        .onClick(() => {
-          this.dialogCOntrollerInput.open();    
-          this.valuedToSend = '微信公众号';     
-        })
-        .buttonExtend()
-        
+          .onClick(() => {
+            this.dialogCOntrollerInput.open();
+            this.valuedToSend = '微信公众号';
+          })
+          .buttonExtend()
+
         Button('WIFI')
-        .onClick(() => {
-          this.dialogCOntrollerInput.open();    
-          this.valuedToSend = 'WIFI'          
-        })
-        .buttonExtend()
+          .onClick(() => {
+            this.dialogCOntrollerInput.open();
+            this.valuedToSend = 'WIFI'
+          })
+          .buttonExtend()
       }
     }
     .height(400)
     .margin(16)
-}  
-  
+  }
 
   build() {
-      NavDestination() {
-        Column({ space: 15 }) {
-          Blank()
-          Text($r('app.string.tab_qr'))
+    NavDestination() {
+      Column({ space: 15 }) {
+        Blank()
+        Text($r('app.string.tab_qr'))
           .textAlign(TextAlign.Start)
           .fontSize(30)
           .fontWeight(FontWeight.Bold)
           .margin({ left: 10 })
-          
-          Row() {
-            this.tipsList();
-            Column(){
-              TextArea({ text: this.userText })
-                .onChange((value: string) => {
-                  this.userText = value;
-                })
-                .key(TAG)
-                .onAppear(() => {
-                  focusControl.requestFocus(TAG)
-                })
-                .height(150)
-                .width('90%')
-                .margin({ bottom: 16 })
-                
+
+        Row() {
+          this.tipsList();
+          Column() {
+            TextArea({ text: this.userText })
+              .onChange((value: string) => {
+                this.userText = value;
+              })
+              .key(TAG)
+              .onAppear(() => {
+                focusControl.requestFocus(TAG)
+              })
+              .height(150)
+              .width('90%')
+              .margin({ bottom: 16 })
+
+            Row() {
+              Row() {
                 Row() {
-                  Row() {
-                    Row() {
-                      if (this.pixelMap) {
-                        Image(this.pixelMap)
-                          .objectFit(ImageFit.Contain)
-                      } else {
-                        Blank()
-                      }
-                    }
-                    .width(250)
-                    .height(250)
-                    .margin({ right: 30})
-                    
-                
+                  if (this.pixelMap) {
+                    Image(this.pixelMap)
+                      .objectFit(ImageFit.Contain)
+                  } else {
+                    Blank()
+                  }
+                }
+                .width(250)
+                .height(250)
+                .margin({ right: 30 })
+
+
                 Column() {
                   Button($r('app.string.builder_qrcode'))
                     .margin({ bottom: 30 })
@@ -166,49 +162,49 @@ export struct QrcodeBuilder {
                     })
                     .width(150)
                   Button($r('app.string.save_qrcode'))
-                  .width(150)
+                    .width(150)
                     .onClick(() => {
                       this.saveQRCode();
                     })
                 }
                 .margin({ right: 20 })
-                }
-                .width('80%')
-                .justifyContent(FlexAlign.Start)
-                .alignItems(VerticalAlign.Center)
-                } 
-              }        
+              }
+              .width('80%')
+              .justifyContent(FlexAlign.Start)
+              .alignItems(VerticalAlign.Center)
             }
           }
         }
       }
-    }    
-  
+    }
+  }
+}
+
 
 @CustomDialog
 struct CustomDialogControllerInput {
-  controller:CustomDialogController;
+  controller: CustomDialogController;
   receivedValue?: string;
   @State output: string = '';
   onClickOK?: (value: string) => void;
-  
+
   build() {
     Column() {
       Row() {
-        TextInput({ placeholder: '请输入' + this.receivedValue})
-        .onChange((value: string) => {
-          this.output = value;
-        })
-        .width(300)
-        
+        TextInput({ placeholder: '请输入' + this.receivedValue })
+          .onChange((value: string) => {
+            this.output = value;
+          })
+          .width(300)
+
         Button('确认')
-        .onClick(() => {
-          if(this.onClickOK != undefined) {
-            this.onClickOK(this.output);
-          }
-          this.controller.close();
-        })
-        .width('20%')
+          .onClick(() => {
+            if (this.onClickOK != undefined) {
+              this.onClickOK(this.output);
+            }
+            this.controller.close();
+          })
+          .width('20%')
       }
       .justifyContent(FlexAlign.Center)
       .margin(16)
@@ -220,13 +216,13 @@ struct CustomDialogControllerInput {
 
 @CustomDialog
 struct CustomDialogControllerCard {
-  controller:CustomDialogController;
+  controller: CustomDialogController;
   @State cardOption: string[] = ['姓名', '手机', '电话', '公司', '职位', '公司地址', '备注'];
   @State cardOutput: string[] = ['', '', '', '', '', '', ''];
   @State output: string = '';
   @State index: number = 0;
   onClickOK?: (value: string) => void;
-  
+
   build() {
     Column() {
       Grid() {
@@ -234,7 +230,7 @@ struct CustomDialogControllerCard {
           GridItem() {
             Column() {
               Text(item)
-              TextInput( {placeholder: item})
+              TextInput({ placeholder: item })
                 .onChange((value: string) => {
                   this.index = index;
                   this.cardOutput[this.index] = value;
@@ -248,9 +244,9 @@ struct CustomDialogControllerCard {
       .columnsTemplate('4fr 4fr')
       .height(300)
       .margin(8)
-      
+
       Button('确认')
-      .margin( { bottom: 8 })
+        .margin({ bottom: 8 })
         .onClick(() => {
           this.index = 0;
           for (; this.index < this.cardOption.length; ++this.index) {
@@ -259,7 +255,7 @@ struct CustomDialogControllerCard {
             }
             this.output += this.cardOption[this.index] + ':' + this.cardOutput[this.index] + '   ';
           }
-          if(this.onClickOK != undefined) {
+          if (this.onClickOK != undefined) {
             this.onClickOK(this.output);
           }
           this.controller.close();

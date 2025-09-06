@@ -18,11 +18,11 @@
     },
     {
       "name": "hello_to_visit_Community",
-      "value": "‌For complete command documentation or technical support resources, please visit the official developer community portal."
+      "value": "For complete command documentation or technical support resources, please visit the official developer community portal."
     },
     {
       "name": "ohpcd_name",
-      "value": "‌OpenHarmony PC Developer Community"
+      "value": "OpenHarmony PC Developer Community"
     },
     {
       "name": "ohpcd_introduction",
@@ -34,7 +34,7 @@
     },
     {
       "name": "restart_notice",
-      "value": "After installation completes, ‌relaunch the terminal application to activate full command functionality of the toolkit.‌"
+      "value": "After installation completes, relaunch the terminal application to activate full command functionality of the toolkit."
     },
     {
       "name": "confirm_button",
@@ -46,7 +46,7 @@
     },
     {
       "name": "tab_unicode",
-      "value": "Unicode Conversion‌"
+      "value": "Unicode Conversion"
     },    
     {
       "name": "tab_minitxt",
@@ -54,11 +54,11 @@
     },
     {
       "name": "tab_qr",
-      "value": "QR Code Generator‌"
+      "value": "QR Code Generator"
     },
     {
       "name": "tab_timestamp",
-      "value": "Timestamp Conversion‌"
+      "value": "Timestamp Conversion"
     },
     {
       "name": "tab_radomstrting",
@@ -66,7 +66,23 @@
     },
     {
       "name": "tab_hex",
-      "value": "Hexadecimal Conversion‌"
+      "value": "Hexadecimal Conversion"
+    },
+    {
+      "name": "tab_media",
+      "value": "System Media Resource"
+    },
+    {
+      "name": "tab_symbol",
+      "value": "System Symbol Resource"
+    },
+    {
+      "name": "tab_color",
+      "value": "System Color Resource"
+    },
+    {
+      "name": "tab_string",
+      "value": "System String Resource"
     },
     {
       "name": "reset",

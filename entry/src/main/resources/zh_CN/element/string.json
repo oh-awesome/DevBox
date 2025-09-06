@@ -69,6 +69,22 @@
       "value": "进制转换"
     },
     {
+      "name": "tab_media",
+      "value": "系统Media资源"
+    },
+    {
+      "name": "tab_symbol",
+      "value": "系统Symbol资源"
+    },
+    {
+      "name": "tab_color",
+      "value": "系统Color资源"
+    },
+    {
+      "name": "tab_string",
+      "value": "系统String资源"
+    },
+    {
       "name": "reset",
       "value": "重置"
     },

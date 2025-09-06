@@ -1,4 +1,5 @@
 import { promptAction } from '@kit.ArkUI'
+
 class DecimalToBinaryUtil {
   public decimalToBinaryUtil(decimal: number): string {
     if (decimal <= 0) {
@@ -12,7 +13,7 @@ class DecimalToBinaryUtil {
     return binary;
   }
 }
- 
+
 export class BinaryToDecimalUtil {
   public binaryToDecimalUtil(binary: string): number {
     let decimal: number = 0;
@@ -26,7 +27,7 @@ export class BinaryToDecimalUtil {
     return decimal;
   }
 }
- 
+
 /*
 十进制转十六进制
  */
@@ -42,7 +43,7 @@ export class DecimalToHexadecimallUtil {
     return hex;
   }
 }
- 
+
 /**
  *十六进制转十进制
  * @param hex hex string
@@ -53,7 +54,7 @@ export class HexadecimalToDecimalUtil {
     return parseInt(hex, 16);
   }
 }
- 
+
 /*
 十进制转八进制
  */
@@ -70,7 +71,7 @@ export class DecimalToOctalUtil {
     return octal;
   }
 }
- 
+
 /*
 八进制转十进制
  */
@@ -97,7 +98,7 @@ export struct HexConvertsPage {
   text4: string = ''
   //十进制转二进制
   decimalToBinary = new DecimalToBinaryUtil()
- 
+
   ToBinary() {
     let num: number = 0
     num = Number(this.text)
@@ -105,10 +106,10 @@ export struct HexConvertsPage {
     this.text = N1
     return this.text
   }
- 
+
   //十进制转八进制
   DecimalToOctal = new DecimalToOctalUtil()
- 
+
   ToOctal() {
     let num: number = 0
     num = Number(this.text)
@@ -116,10 +117,10 @@ export struct HexConvertsPage {
     this.text = N1
     return this.text
   }
- 
+
   //十进制转十六进制
   decimalToHexadecimall = new DecimalToHexadecimallUtil()
- 
+
   ToHexadecimal() {
     let num: number = 0
     num = Number(this.text)
@@ -127,45 +128,45 @@ export struct HexConvertsPage {
     this.text = N1
     return this.text
   }
- 
+
   //二进制转十进制
   binaryToDecimal = new BinaryToDecimalUtil()
- 
+
   binaryToDecimalUtil() {
     const N1 = this.binaryToDecimal.binaryToDecimalUtil(this.text)
     this.text = N1.toString()
     return this.text
   }
- 
+
   //八进制转十进制
   octalToDecimal = new OctalToDecimalUtil()
- 
+
   octalToDecimalUtil() {
     const N1 = this.octalToDecimal.octalToDecimalUtil(this.text)
     this.text = N1.toString()
     return this.text
   }
- 
+
   //十六进制转十进制
   hexadecimalToDecimal = new HexadecimalToDecimalUtil()
- 
+
   hexadecimalToDecimalUtil() {
     const N1 = this.hexadecimalToDecimal.hexadecimalToDecimalUtil(this.text)
     this.text = N1.toString()
     return this.text
   }
-  
+
   build() {
     Column() {
       Text('进制转换')
         .margin({ top: 12, bottom: 6 })
         .fontWeight(FontWeight.Bold)
         .fontSize(30)
- 
+
       Divider()
         .width(300)
         .margin({ top: 10 })
- 
+
       Column({ space: 8 }) {
         TextInput({ text: this.text, placeholder: '输入转换的数字......', })
           .type(InputType.Normal)
@@ -212,7 +213,7 @@ export struct HexConvertsPage {
         .justifyContent(FlexAlign.Center)
         .width('100%')
         .margin({ top: 10 })
- 
+
         Row({ space: 10 }) {
           Button('八转十')
             .width(160)
@@ -239,7 +240,7 @@ export struct HexConvertsPage {
         }
         .justifyContent(FlexAlign.Center)
         .width('100%')
- 
+
         Row({ space: 10 }) {
           Button('十转十六')
             .width(160)
@@ -252,7 +253,7 @@ export struct HexConvertsPage {
               this.text = this.text4
               promptAction.showToast({ message: `【十进制转十六进制】：${this.text3}` })
             })
- 
+
           Button('十六转十')
             .width(160)
             .height(50)
@@ -267,12 +268,12 @@ export struct HexConvertsPage {
         }
         .justifyContent(FlexAlign.Center)
         .width('100%')
- 
+
       }
       .borderRadius(20)
       .width('100%')
       .height('100%')
- 
+
     }
     .width('100%')
     .height('100%')

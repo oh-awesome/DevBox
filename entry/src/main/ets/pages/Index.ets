@@ -1,47 +1,51 @@
 import dataPreferences from '@ohos.data.preferences'
 import common from '@ohos.app.ability.common';
-import {BusinessError} from '@ohos.base';
-import {UnicodeConverter} from './unicode_converter';
-import {QrcodeBuilder} from './qrcode_builder';
-import {AboutPage} from './about';
-import {TextEditor} from  './texteditor'
-import {TimeConverterPage} from './timestamp'
-import {HexConvertsPage} from './hex_convert'
+import { BusinessError } from '@ohos.base';
+import { UnicodeConverter } from './unicode_converter';
+import { QrcodeBuilder } from './qrcode_builder';
+import { AboutPage } from './about';
+import { TextEditor } from './texteditor'
+import { TimeConverterPage } from './timestamp'
+import { HexConvertsPage } from './hex_convert'
+import { SysMedia } from './sys_media'
+import { SysSymbol } from './sys_symbol';
+import { SysColor } from './sys_color';
+import { SysString } from './sys_string';
 
 @Entry
 @Component
 struct Index {
-  @State keyword:string = '';
-  @State showDialog:boolean = false;
-  private  pref:dataPreferences.Preferences | null = null;
+  @State keyword: string = '';
+  @State showDialog: boolean = false;
+  private pref: dataPreferences.Preferences | null = null;
   @State currentIndex: number = 0;
   private controller: TabsController = new TabsController();
   @State pageinfos: NavPathStack = new NavPathStack();
-  
+
   async aboutToAppear() {
     try {
-        const context = getContext(this) as common.UIAbilityContext;
-        this.pref = await dataPreferences.getPreferences(context, 'first_use_pref');
-        const isFirstUse = await this.pref.get('isFirstUse', true);
-        if (isFirstUse) {
-          this.showDialog = true;
-        }
+      const context = getContext(this) as common.UIAbilityContext;
+      this.pref = await dataPreferences.getPreferences(context, 'first_use_pref');
+      const isFirstUse = await this.pref.get('isFirstUse', true);
+      if (isFirstUse) {
+        this.showDialog = true;
+      }
     } catch (err) {
       const error = err as BusinessError;
       console.error(`get Preferences failed, err code is ${err?.code}, message is ${err?.message}`);
-    } 
+    }
   }
 
   async markAsUsed() {
     if (this.pref) {
-      try{
-        await this.pref.put('isFirstUse',false);
+      try {
+        await this.pref.put('isFirstUse', false);
         await this.pref.flush();
         this.showDialog = false;
       } catch (err) {
         const e = err as BusinessError;
         console.error(`update Preferences failed, err code is ${e?.code}, message is ${e?.message}`);
-      } 
+      }
     }
   }
 
@@ -57,35 +61,35 @@ struct Index {
     .height(30)
     .justifyContent(FlexAlign.Center)
   }
+
   @Builder
   contentBuilder(text: string) {
   }
-  
-  
-build() {
-  if (this.showDialog) {
-    Column() {
+
+  build() {
+    if (this.showDialog) {
       Column() {
-        Text($r('app.string.tips_dialog'))
-          .fontSize(20)
-          .textAlign(TextAlign.Center)
-          .margin({ bottom:10, top:25 })
-        
-        Text($r('app.string.restart_notice'))
-          .fontSize(16)
-          .textAlign(TextAlign.Center)
-          .margin({bottom:25, left:15, right:15})
-        
-        Button($r('app.string.confirm_button'))
-          .width(180)
-          .height(40)
-          .fontSize(18)
-          .type(ButtonType.Capsule)
-          .backgroundColor('#007DFF')
-          .margin({ bottom: 25 })
-          .onClick(() => {
-            this.markAsUsed();
-          })
+        Column() {
+          Text($r('app.string.tips_dialog'))
+            .fontSize(20)
+            .textAlign(TextAlign.Center)
+            .margin({ bottom: 10, top: 25 })
+
+          Text($r('app.string.restart_notice'))
+            .fontSize(16)
+            .textAlign(TextAlign.Center)
+            .margin({ bottom: 25, left: 15, right: 15 })
+
+          Button($r('app.string.confirm_button'))
+            .width(180)
+            .height(40)
+            .fontSize(18)
+            .type(ButtonType.Capsule)
+            .backgroundColor('#007DFF')
+            .margin({ bottom: 25 })
+            .onClick(() => {
+              this.markAsUsed();
+            })
         }
         .padding(20)
         .backgroundColor(Color.White)
@@ -98,18 +102,18 @@ build() {
           offsetY: 5
         });
       }
-      .position({x:0,y:0})
+      .position({ x: 0, y: 0 })
       .width('100%')
       .height('100%')
       .justifyContent(FlexAlign.Center)
       .alignItems(HorizontalAlign.Center)
-    } else {  
+    } else {
       Column() {
         Tabs({ controller: this.controller }) {
           TabContent() {
             AboutPage()
           }.tabBar($r('app.string.tab_about'))
-  
+
           TabContent() {
             UnicodeConverter()
           }.tabBar($r('app.string.tab_unicode'))
@@ -121,18 +125,31 @@ build() {
           TabContent() {
             QrcodeBuilder()
           }.tabBar($r('app.string.tab_qr'))
-          
+
           TabContent() {
             TimeConverterPage()
           }.tabBar($r('app.string.tab_timestamp'))
-          
+
           TabContent() {
-          }.tabBar($r('app.string.tab_radomstrting'))
-          
+            SysMedia()
+          }.tabBar($r('app.string.tab_media'))
+
+          TabContent() {
+            SysSymbol()
+          }.tabBar($r('app.string.tab_symbol'))
+
+          TabContent() {
+            SysColor()
+          }.tabBar($r('app.string.tab_color'))
+
+          TabContent() {
+            SysString()
+          }.tabBar($r('app.string.tab_string'))
+
           TabContent() {
             HexConvertsPage()
           }.tabBar($r('app.string.tab_hex'))
-    }
+        }
         .barWidth('25%')
         .barHeight('100%')
         .vertical(true)
@@ -155,4 +172,8 @@ build() {
       .width('100%')
     }
   }
+}
+
+function ImageGrid() {
+  throw new Error('Function not implemented.');
 }
