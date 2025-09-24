@@ -15,7 +15,7 @@
 
 ![image.png](https://raw.gitcode.com/user-images/assets/7354352/68a94d80-1e21-4a04-82a2-a414d3dca610/image.png 'image.png')
 
-## 2.Mini终端
+## Mini终端
 本应用主要提供了文件和目录操作命令、网络命令、构建命令等，可以在附录中里查看我们支持的命令范围，依此判断是否满足您的使用需求。
 
 (一)	功能描述
