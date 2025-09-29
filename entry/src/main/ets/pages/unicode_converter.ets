@@ -1,3 +1,5 @@
+import { CommIconButton } from "./icon_button";
+
 @Component
 export struct UnicodeConverter {
   @State strString: string = '';
@@ -31,12 +33,15 @@ export struct UnicodeConverter {
 
   build() {
     Row({ space: 5 }) {
-      Column() {
+      Column({ space: 8 }) {
         Text('Native:')
           .fontStyle(FontStyle.Italic)
-          .fontColor('#808080')
+          .fontColor($r('sys.color.ohos_id_color_foreground'))
           .fontSize(20)
+          .fontWeight(FontWeight.Bolder)
           .textAlign(TextAlign.Start)
+          .width('95%')
+
         TextArea({ placeholder: '', text: this.strString })
           .layoutWeight(1)
           .onChange((value: string) => {
@@ -46,57 +51,48 @@ export struct UnicodeConverter {
       .width('42%')
       .alignItems(HorizontalAlign.Start)
       .justifyContent(FlexAlign.Start)
-      .padding({ left: 10 })
+      .padding(8)
 
-      Column({ space: 20 }) {
-        Button('> Unicode', { type: ButtonType.Normal })
-          .buttonStyle(ButtonStyleMode.NORMAL)
-          .controlSize(ControlSize.SMALL)
-          .backgroundColor($r('sys.color.comp_background_tertiary'))
-          .width('80%')
-          .borderRadius(6)
-          .fontSize(16)
-          .padding(0)
-          .onClick(() => {
+      Column({ space: 16 }) {
+        CommIconButton({
+          icon: $r('sys.media.ohos_ic_public_arrow_right'),
+          textResource: $r("app.string.convert_to_unicode"),
+          onClickFunc: () => {
             this.asciiString = this.encode(this.strString);
-          })
+          }
+        })
 
-        Button('Native <', { type: ButtonType.Normal })
-          .buttonStyle(ButtonStyleMode.NORMAL)
-          .controlSize(ControlSize.SMALL)
-          .backgroundColor($r('sys.color.comp_background_tertiary'))
-          .width('80%')
-          .borderRadius(6)
-          .fontSize(16)
-          .padding(0)
-          .onClick(() => {
+        CommIconButton({
+          icon: $r('sys.media.ohos_ic_public_arrow_left'),
+          textResource: $r("app.string.convert_to_native"),
+          onClickFunc: () => {
             this.strString = this.decode(this.asciiString);
-          })
+          }
+        })
 
-        Button($r('app.string.reset'), { type: ButtonType.Normal })
-          .buttonStyle(ButtonStyleMode.NORMAL)
-          .controlSize(ControlSize.SMALL)
-          .backgroundColor($r('sys.color.comp_background_tertiary'))
-          .fontSize(16)
-          .padding(0)
-          .width('80%')
-          .borderRadius(6)
-          .onClick(() => {
+        CommIconButton({
+          icon: $r('sys.media.ohos_ic_public_cancel'),
+          textResource: $r("app.string.convert_clean"),
+          onClickFunc: () => {
             this.strString = '';
             this.asciiString = '';
-          })
+          }
+        })
       }
       .width('16%')
       .height('100%')
       .padding({ top: 20 })
-      .justifyContent(FlexAlign.Start)
+      .justifyContent(FlexAlign.Center)
 
-      Column() {
-        Text('Unicode')
+      Column({ space: 8 }) {
+        Text('Unicode:')
           .fontStyle(FontStyle.Italic)
-          .fontColor('#808080')
+          .fontColor($r('sys.color.ohos_id_color_foreground'))
           .fontSize(20)
+          .fontWeight(FontWeight.Bolder)
           .textAlign(TextAlign.Start)
+          .width('95%')
+
         TextArea({ placeholder: '', text: this.asciiString })
           .layoutWeight(1)
           .onChange((value: string) => {
@@ -106,6 +102,7 @@ export struct UnicodeConverter {
       .width('42%')
       .alignItems(HorizontalAlign.Start)
       .justifyContent(FlexAlign.Start)
+      .padding(4)
     }
     .padding(8)
   }

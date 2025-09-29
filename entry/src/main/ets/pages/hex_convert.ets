@@ -1,4 +1,5 @@
 import { promptAction } from '@kit.ArkUI'
+import { CommIconButton } from './icon_button';
 
 class DecimalToBinaryUtil {
   public decimalToBinaryUtil(decimal: number): string {
@@ -157,125 +158,120 @@ export struct HexConvertsPage {
   }
 
   build() {
-    Column() {
-      Text('进制转换')
-        .margin({ top: 12, bottom: 6 })
+    Column({ space: 8 }) {
+      Text('Input:')
+        .fontStyle(FontStyle.Italic)
+        .fontColor($r('sys.color.ohos_id_color_foreground'))
+        .fontSize(20)
+        .fontWeight(FontWeight.Bolder)
+        .textAlign(TextAlign.Start)
+        .width('95%')
+
+      TextInput({ text: this.text })
+        .type(InputType.Normal)
+        .width('95%')
+        .height(50)
+        .fontSize(15)
+        .fontColor($r('sys.color.ohos_id_color_foreground'))
+        .backgroundColor($r('sys.color.ohos_id_color_foreground_contrary_disable'))
+        .onChange((value: string) => {
+          this.text = value
+          this.text4 = this.text
+        })
+        .margin({ bottom: 16 })
+
+      Text('Result:')
+        .fontStyle(FontStyle.Italic)
+        .fontColor($r('sys.color.ohos_id_color_foreground'))
+        .fontSize(20)
+        .fontWeight(FontWeight.Bolder)
+        .textAlign(TextAlign.Start)
+        .width('95%')
+
+      Text(this.text3)
+        .width('95%')
+        .height(50)
+        .fontSize(15)
+        .borderRadius(6)
         .fontWeight(FontWeight.Bold)
-        .fontSize(30)
+        .fontColor($r('sys.color.ohos_id_color_foreground'))
+        .backgroundColor($r('sys.color.ohos_id_color_foreground_contrary_disable'))
+        .margin({ top: 10, bottom: 24})
+        .padding({ left: 48 })
 
-      Divider()
-        .width(300)
-        .margin({ top: 10 })
-
-      Column({ space: 8 }) {
-        TextInput({ text: this.text, placeholder: '输入转换的数字......', })
-          .type(InputType.Normal)
-          .width('95%')
-          .height(50)
-          .fontSize(15)
-          .backgroundColor('#ededed')
-          .onChange((value: string) => {
-            this.text = value
-            this.text4 = this.text
-          })
-        Text(`    ${this.text3}`)
-          .width('95%')
-          .height(50)
-          .fontSize(15)
-          .fontWeight(FontWeight.Bold)
-          .backgroundColor('#ededed')
-          .borderRadius(20)
-          .margin({ top: 10 })
-        Row({ space: 10 }) {
-          Button('十转二')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
+      Grid() {
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Dec2Bin"),
+            onClickFunc: () => {
               this.text3 = this.ToBinary()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转二进制】：${this.text3}` })
-            })
-          Button('十转八')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
+            }
+          })
+        }
+
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Dec2Oct"),
+            onClickFunc: () => {
               this.text3 = this.ToOctal()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转八进制】：${this.text3}` })
-            })
+            }
+          })
         }
-        .justifyContent(FlexAlign.Center)
-        .width('100%')
-        .margin({ top: 10 })
 
-        Row({ space: 10 }) {
-          Button('八转十')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
-              this.text3 = this.octalToDecimalUtil()
-              this.text = this.text4
-              promptAction.showToast({ message: `【八进制转十进制】：${this.text3}` })
-            })
-          Button('二转十')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
-              this.text3 = this.binaryToDecimalUtil()
-              this.text = this.text4
-              promptAction.showToast({ message: `【二进制转十进制】：${this.text3}` })
-            })
-        }
-        .justifyContent(FlexAlign.Center)
-        .width('100%')
-
-        Row({ space: 10 }) {
-          Button('十转十六')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Dec2Hex"),
+            onClickFunc: () => {
               this.text3 = this.ToHexadecimal()
               this.text = this.text4
-              promptAction.showToast({ message: `【十进制转十六进制】：${this.text3}` })
-            })
+            }
+          })
+        }
 
-          Button('十六转十')
-            .width(160)
-            .height(50)
-            .backgroundColor('#ee8848')
-            .fontColor('#393939')
-            .backgroundColor(Color.Orange)
-            .onClick(() => {
+
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Bin2Dec"),
+            onClickFunc: () => {
+              this.text3 = this.binaryToDecimalUtil()
+              this.text = this.text4
+            }
+          })
+        }
+
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Oct2Dec"),
+            onClickFunc: () => {
+              this.text3 = this.octalToDecimalUtil()
+              this.text = this.text4
+            }
+          })
+        }
+
+        GridItem() {
+          CommIconButton({
+            textResource: $r("app.string.convert_Hex2Dec"),
+            onClickFunc: () => {
               this.text3 = this.hexadecimalToDecimalUtil()
               this.text = this.text4
-              promptAction.showToast({ message: `【十六进制转十进制】：${this.text3}` })
-            })
+            }
+          })
         }
-        .justifyContent(FlexAlign.Center)
-        .width('100%')
-
       }
-      .borderRadius(20)
-      .width('100%')
-      .height('100%')
+      .columnsTemplate('1fr 1fr 1fr')
+      .rowsGap(16)
+      .columnsGap(16)
+      .padding(20)
 
     }
-    .width('100%')
-    .height('100%')
+    .borderRadius(20)
+    .width('90%')
+    .height('90%')
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.Center)
+
   }
 }

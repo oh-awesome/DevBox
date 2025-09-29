@@ -57,6 +57,7 @@ export struct TimeConverterPage {
   @State toTimeZone: string = '';
   @State accumulateTime: number = 0;
   @State fromSecond: string = '';
+  @State timestampTitle: string = '';
   @State fromMs: string = '';
   @State fromTimeZone: string = '';
   @State fromGMT: string = '';
@@ -167,12 +168,12 @@ export struct TimeConverterPage {
   // 时间戳转日期
   convertTimestampToDate() {
     if (!this.timestamp) {
-      promptAction.showToast({ message: '请输入时间戳' })
+      promptAction.showToast({ message: $r('app.string.need_enter_timestamp') })
       return
     }
     const ts = Number(this.timestamp)
     if (isNaN(ts)) {
-      promptAction.showToast({ message: '请输入有效的时间戳' })
+      promptAction.showToast({ message: $r('app.string.need_enter_valid_timestamp') })
       return
     }
 
@@ -208,7 +209,7 @@ export struct TimeConverterPage {
     const datetimeStr = `${this.dateString}${this.secondString} `
     const ts = Date.parse(datetimeStr)
     if (isNaN(ts)) {
-      promptAction.showToast({ message: '请输入有效的日期和时间' })
+      promptAction.showToast({ message: $r('app.string.need_enter_valid_date') })
       return
     }
     const seconds = Math.floor(ts / 1000)
@@ -219,13 +220,14 @@ export struct TimeConverterPage {
     this.fromMs = `${ts}`;
     this.fromTimeZone = result.timeZone;
     this.fromGMT = result.gmt;
+    this.timestampTitle = "Unix timestamp: " + this.fromSecond
   }
 
   build() {
     Column({ space: 6 }) {
       Row({ space: 6 }) {
         TextClock({ timeZoneOffset: -8, controller: this.textClockController })
-          .format('aa HH:mm:ss' + '  当前Unix时间戳:' + this.accumulateTime)
+          .format('aa HH:mm:ss  ' + this.accumulateTime)
           .onDateChange((value: number) => {
             this.accumulateTime = value;
           })
@@ -298,7 +300,7 @@ export struct TimeConverterPage {
 
             TextInput({
               text: this.timestamp,
-              placeholder: '请输入时间戳'
+              placeholder: $r('app.string.need_enter_date')
             })
               .type(InputType.Number)
               .onChange((value) => {
@@ -433,7 +435,7 @@ export struct TimeConverterPage {
                 .objectFit(ImageFit.Contain)
                 .padding({ left: 24 })
 
-              Text('Unix 时间戳: ' + this.fromSecond)
+              Text(this.timestampTitle)
                 .fontSize(16)
                 .fontColor($r('app.color.timestamp_title_text'))
                 .copyOption(CopyOptions.LocalDevice)

@@ -13,13 +13,71 @@
       "value": "DevBox"
     },
     {
-      "name": "open_terminal_to_use",
-      "value": "Launch the terminal to execute commands."
+      "name": "app_describe",
+      "value": "Welcome to DevBox! A productivity toolkit designed for developers, offering essential commands and utilities to streamline your workflow."
     },
     {
-      "name": "hello_to_visit_Community",
-      "value": "For complete command documentation or technical support resources, please visit the official developer community portal."
+      "name": "key_feature",
+      "value": "Key Features"
     },
+    {
+      "name": "key_feature_cmd",
+      "value": "Command Tools"
+    },
+    {
+      "name": "key_feature_cmds",
+      "value": "File/directory operations, network debugging, build management, and more."
+    },
+    {
+      "name": "key_feature_handy_utility",
+      "value": "Handy Utilities"
+    },
+    {
+      "name": "key_feature_handy_utilities",
+      "value": "Mini terminal, Unicode conversion, mini notepad, QR code generator, timestamp converter."
+    },
+    {
+      "name": "key_feature_system_resource",
+      "value": "System Resources"
+    },
+    {
+      "name": "key_feature_system_resources",
+      "value": "Quick access to system Media, Symbol, Color, and String resources."
+    },
+    {
+      "name": "key_feature_number_other",
+      "value": "Others"
+    },
+    {
+      "name": "key_feature_number_others",
+      "value": "Hexadecimal Conversion"
+    },
+    {
+      "name": "usage_tips_title",
+      "value": "Usage Tips"
+    },
+    {
+      "name": "usage_tips_content",
+      "value": "Execute commands directly in the MiniTerm, but we recommend using the system's default terminal, \"HiShell\", for optimal performance."
+    },
+    {
+      "name": "usage_help",
+      "value": "For full documentation, visit our Community Homepage."
+    },
+    {
+      "name": "privacy_tips_title",
+      "value": "Privacy Commitment"
+    },
+    {
+      "name": "privacy_tips_content",
+      "value": "We take your privacy seriously. Learn more in DevBox Privacy Policy about how we collect, use, and protect your data."
+    },
+    {
+      "name": "privacy_link",
+      "value": "DevBox Privacy Policy"
+    },
+
+
     {
       "name": "ohpcd_name",
       "value": "OpenHarmony PC Developer Community"
@@ -39,6 +97,10 @@
     {
       "name": "confirm_button",
       "value": "OK"
+    },
+    {
+      "name": "tab_miniterm",
+      "value": "MiniTerm"
     },
     {
       "name": "tab_about",
@@ -141,6 +203,14 @@
       "value": "Official Account"
     },
     {
+      "name": "email_qr",
+      "value": "Email"
+    },
+    {
+      "name": "wifi_qr",
+      "value": "WIFI"
+    },
+    {
       "name": "copy",
       "value": "Copy"
     },
@@ -167,6 +237,84 @@
     {
       "name": "time_start",
       "value": "Start"
+    },
+    {
+      "name": "convert_to_unicode",
+      "value": "Unicode"
+    },
+    {
+      "name": "convert_to_native",
+      "value": "Native"
+    },
+    {
+      "name": "convert_clean",
+      "value": "Clean"
+    },
+    {
+      "name": "convert_Dec2Bin",
+      "value": "Dec to Bin"
+    },
+    {
+      "name": "convert_Bin2Dec",
+      "value": "Bin to Dec"
+    },
+    {
+      "name": "convert_Dec2Oct",
+      "value": "Dec to Oct"
+    },
+    {
+      "name": "convert_Oct2Dec",
+      "value": "Oct to Dec"
+    },
+    {
+      "name": "convert_Dec2Hex",
+      "value": "Dec to Hex"
+    },
+    {
+      "name": "convert_Hex2Dec",
+      "value": "Hex to Dec"
+    },
+    {
+      "name": "need_enter_timestamp",
+      "value": "Please enter a timestamp"
+    },
+    {
+      "name": "need_enter_valid_timestamp",
+      "value": "Please enter a valid timestamp"
+    },
+    {
+      "name": "timestamp_now",
+      "value": "  Current Unix timestamp:"
+    },
+    {
+      "name": "need_enter_valid_date",
+      "value": "Please enter a valid date and time"
+    },
+    {
+      "name": "need_enter_date",
+      "value": "Enter a date and time"
+    },
+    {
+      "name": "unix_timestamp",
+      "value": "Unix timestamp: "
+    },
+    {
+      "name": "get_user_permission",
+      "value": "Click the appropriate button to grant directory permissions"
+    },
+    {
+      "name": "get_user_permission_download",
+      "value": "Download"
+    },
+    {
+      "name": "get_user_permission_document",
+      "value": "Documents"
+    },{
+      "name": "get_user_permission_desktop",
+      "value": "Desktop"
+    },{
+      "name": "get_user_permission_home",
+      "value": "Home"
     }
   ]
 }

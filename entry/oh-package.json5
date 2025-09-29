@@ -5,5 +5,7 @@
   "main": "",
   "author": "",
   "license": "",
-  "dependencies": {}
+  "dependencies": {
+    "libmini_terminal.so": "file:./src/main/cpp/types/entry"
+  }
 }

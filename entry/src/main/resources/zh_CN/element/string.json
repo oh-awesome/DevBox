@@ -13,12 +13,68 @@
       "value": "DevBox"
     },
     {
-      "name": "open_terminal_to_use",
-      "value": "本功能需依赖终端环境实现命令交互，建议通过系统默认终端工具进行操作"
+      "name": "app_describe",
+      "value": "欢迎使用DevBox‌！这是一款专为开发者设计的效率工具，集成了常用命令与实用工具，助您高效完成开发任务。"
     },
     {
-      "name": "hello_to_visit_Community",
-      "value": "如需查阅完整命令文档或获取更多技术支持，请访问官方开发者社区主页。"
+      "name": "key_feature",
+      "value": "‌核心功能"
+    },
+    {
+      "name": "key_feature_cmd",
+      "value": "命令行工具"
+    },
+    {
+      "name": "key_feature_cmds",
+      "value": "支持文件/目录操作、网络调试、构建管理等常用命令。"
+    },
+    {
+      "name": "key_feature_handy_utility",
+      "value": "‌便捷工具"
+    },
+    {
+      "name": "key_feature_handy_utilities",
+      "value": "Mini终端、Unicode转换、迷你记事本、二维码生成器、时间戳转换等"
+    },
+    {
+      "name": "key_feature_system_resource",
+      "value": "系统资源查询"
+    },
+    {
+      "name": "key_feature_system_resources",
+      "value": "快速访问系统Media资源、Symbol资源、Color资源、String资源等。"
+    },
+    {
+      "name": "key_feature_number_other",
+      "value": "其他"
+    },
+    {
+      "name": "key_feature_number_others",
+      "value": "进制转换等"
+    },
+    {
+      "name": "usage_tips_title",
+      "value": "‌使用建议"
+    },
+    {
+      "name": "usage_tips_content",
+      "value": "在Mini终端‌中可直接执行命令，但推荐使用系统自带的终端工具 \"HiShell\" 以获得更流畅的体验。"
+    },
+    {
+      "name": "usage_help",
+      "value": "如需查阅完整命令文档或使用说明，请访问我们的社区主页‌"
+    },
+    {
+      "name": "privacy_tips_title",
+      "value": "‌隐私保护"
+    },
+    {
+      "name": "privacy_tips_content",
+      "value": "我们高度重视您的隐私安全，详细说明请参阅 ‌《DevBox隐私声明》‌，了解我们如何收集、使用、保护及处理您的个人数据。"
+    },
+    {
+      "name": "privacy_link",
+      "value": "《关于DevBox与隐私的声明》"
     },
     {
       "name": "ohpcd_name",
@@ -39,6 +95,10 @@
     {
       "name": "confirm_button",
       "value": "我知道了"
+    },
+    {
+      "name": "tab_miniterm",
+      "value": "Mini终端"
     },
     {
       "name": "tab_about",
@@ -141,6 +201,10 @@
       "value": "微信公众号"
     },
     {
+      "name": "wifi_qr",
+      "value": "WIFI"
+    },
+    {
       "name": "copy",
       "value": "复制"
     },
@@ -167,6 +231,22 @@
     {
       "name": "time_start",
       "value": "启动"
+    },
+    {
+      "name": "get_user_permission",
+      "value": "点击按钮进行目录授权"
+    },
+    {
+      "name": "get_user_permission_download",
+      "value": "Download"
+    },
+    {
+      "name": "get_user_permission_document",
+      "value": "Documents"
+    },
+    {
+      "name": "get_user_permission_desktop",
+      "value": "Desktop"
     }
   ]
 }

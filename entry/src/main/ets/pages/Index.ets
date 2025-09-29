@@ -11,7 +11,7 @@ import { SysMedia } from './sys_media'
 import { SysSymbol } from './sys_symbol';
 import { SysColor } from './sys_color';
 import { SysString } from './sys_string';
-
+import { MiniTerminal } from './terminal'
 @Entry
 @Component
 struct Index {
@@ -113,6 +113,10 @@ struct Index {
           TabContent() {
             AboutPage()
           }.tabBar($r('app.string.tab_about'))
+
+          TabContent() {
+            MiniTerminal()
+          }.tabBar($r('app.string.tab_miniterm'))
 
           TabContent() {
             UnicodeConverter()

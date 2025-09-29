@@ -6,7 +6,7 @@
     },
     {
       "name": "bar_background",
-      "value": "#E0F2E0"
+      "value": "#FFF6D295"
     },
     {
       "name": "bar_text",
@@ -74,7 +74,7 @@
     },
     {
       "name": "comm_btn_bg",
-      "value": "#66DDDDDD"
+      "value": "#A9DDDDDD"
     },
     {
       "name": "comm_btn_content",

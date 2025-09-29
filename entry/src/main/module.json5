@@ -38,6 +38,85 @@
           }
         ],
       }
+    ],
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
+    "hnpPackages": [
+      {
+        "package": "bind.hnp",
+        "type": "public"
+      },
+      {
+        "package": "busybox.hnp",
+        "type": "public"
+      },
+      {
+        "package": "bzip2.hnp",
+        "type": "public"
+      },
+      {
+        "package": "colrm.hnp",
+        "type": "public"
+      },
+      {
+        "package": "column.hnp",
+        "type": "public"
+      },
+      {
+        "package": "diff.hnp",
+        "type": "public"
+      },
+      {
+        "package": "find.hnp",
+        "type": "public"
+      },
+      {
+        "package": "flex.hnp",
+        "type": "public"
+      },
+      {
+        "package": "gperf.hnp",
+        "type": "public"
+      },
+      {
+        "package": "gprof.hnp",
+        "type": "public"
+      },
+      {
+        "package": "groff.hnp",
+        "type": "public"
+      },
+      {
+        "package": "gzip.hnp",
+        "type": "public"
+      },
+      {
+        "package": "less.hnp",
+        "type": "public"
+      },
+      {
+        "package": "libxml2.hnp",
+        "type": "public"
+      },
+      {
+        "package": "libxslt.hnp",
+        "type": "public"
+      },
+      {
+        "package": "m4.hnp",
+        "type": "public"
+      },
+      {
+        "package": "make.hnp",
+        "type": "public"
+      },
+      {
+        "package": "whereis.hnp",
+        "type": "public"
+      }
     ]
   }
 }

@@ -4,6 +4,7 @@ import fs from '@ohos.file.fs'
 import { generateBarcode, scanCore } from '@kit.ScanKit';
 import { fileUri } from '@kit.CoreFileKit';
 import { BusinessError } from '@kit.BasicServicesKit'
+import { CommIconButton } from './icon_button';
 
 const TAG = 'QrcodeBuilder';
 
@@ -74,40 +75,50 @@ export struct QrcodeBuilder {
   @Builder
   tipsList() {
     Scroll() {
-      Column({ space: 15 }) {
-        Button($r('app.string.ecard_qr'))
-          .onClick(() => {
+      Column({ space: 24 }) {
+        CommIconButton({
+          textResource: $r('app.string.ecard_qr'),
+          onClickFunc: () => {
             this.dialogCOntrollerCard.open();
-          })
-          .buttonExtend()
+          }
+        })
+          .width('15%')
 
-        Button($r('app.string.phone_qr'))
-          .onClick(() => {
+        CommIconButton({
+          textResource: $r('app.string.phone_qr'),
+          onClickFunc: () => {
             this.dialogCOntrollerInput.open();
             this.valuedToSend = '手机号'
-          })
-          .buttonExtend()
+          }
+        })
+          .width('15%')
 
-        Button('email')
-          .onClick(() => {
+        CommIconButton({
+          textResource: $r('app.string.email_qr'),
+          onClickFunc: () => {
             this.dialogCOntrollerInput.open();
             this.valuedToSend = 'email'
-          })
-          .buttonExtend()
+          }
+        })
+          .width('15%')
 
-        Button($r('app.string.vx_account_qr'))
-          .onClick(() => {
+        CommIconButton({
+          textResource: $r('app.string.vx_account_qr'),
+          onClickFunc: () => {
             this.dialogCOntrollerInput.open();
             this.valuedToSend = '微信公众号';
-          })
-          .buttonExtend()
+          }
+        })
+          .width('15%')
 
-        Button('WIFI')
-          .onClick(() => {
+        CommIconButton({
+          textResource: $r('app.string.wifi_qr'),
+          onClickFunc: () => {
             this.dialogCOntrollerInput.open();
             this.valuedToSend = 'WIFI'
-          })
-          .buttonExtend()
+          }
+        })
+          .width('15%')
       }
     }
     .height(400)
@@ -146,18 +157,22 @@ export struct QrcodeBuilder {
               .margin({ right: 30 })
 
 
-              Column() {
-                Button($r('app.string.builder_qrcode'))
-                  .margin({ bottom: 30 })
-                  .onClick(() => {
+              Column({ space: 16 }) {
+                CommIconButton({
+                  textResource: $r('app.string.builder_qrcode'),
+                  onClickFunc: () => {
                     this.generateQrCode();
-                  })
+                  }
+                })
                   .width(150)
-                Button($r('app.string.save_qrcode'))
-                  .width(150)
-                  .onClick(() => {
+
+                CommIconButton({
+                  textResource: $r('app.string.save_qrcode'),
+                  onClickFunc: () => {
                     this.saveQRCode();
-                  })
+                  }
+                })
+                  .width(150)
               }
               .margin({ right: 20 })
             }
