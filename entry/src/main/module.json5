@@ -116,6 +116,10 @@
       {
         "package": "whereis.hnp",
         "type": "public"
+      },
+	  {
+        "package": "expat.hnp",
+        "type": "public"
       }
     ]
   }
