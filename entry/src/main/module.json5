@@ -120,6 +120,26 @@
 	  {
         "package": "expat.hnp",
         "type": "public"
+      },
+      {
+        "package": "build-tool.hnp",
+        "type": "public"
+      },
+      {
+        "package": "llvm.hnp",
+        "type": "public"
+      },
+      {
+        "package": "sign-tool.hnp",
+        "type": "public"
+      },
+      {
+        "package": "perl.hnp",
+        "type": "public"
+      },
+      {
+        "package": "ruby.hnp",
+        "type": "public"
       }
     ]
   }
