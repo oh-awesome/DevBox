@@ -116,6 +116,46 @@
       {
         "package": "whereis.hnp",
         "type": "public"
+      },
+	  {
+        "package": "expat.hnp",
+        "type": "public"
+      },
+      {
+        "package": "cmake.hnp",
+        "type": "public"
+      },
+      {
+        "package": "autoconf.hnp",
+        "type": "public"
+      },
+      {
+        "package": "grep.hnp",
+        "type": "public"
+      },
+      {
+        "package": "neovim.hnp",
+        "type": "public"
+      },
+      {
+        "package": "ninja.hnp",
+        "type": "public"
+      },
+      {
+        "package": "llvm.hnp",
+        "type": "public"
+      },
+      {
+        "package": "sign-tool.hnp",
+        "type": "public"
+      },
+      {
+        "package": "perl.hnp",
+        "type": "public"
+      },
+      {
+        "package": "ruby.hnp",
+        "type": "public"
       }
     ]
   }
