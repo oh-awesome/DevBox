@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "about_version",
+      "value": "1.0.1"
+    },
+    {
+      "name": "about_buildNumber",
+      "value": "20251119"
+    },
+    {
+      "name": "about_copyright_year",
+      "value": "2025"
+    },
+    {
+      "name": "about_developer",
+      "value": "OpenHarmony PC Developer Community"
+    },
+    {
+      "name": "about_website",
+      "value": "https://gitcode.com/OpenHarmonyPCDeveloper/DevBox"
+    },
+    {
+      "name": "about_privacy_web",
+      "value": "https://agreement-drcn.hispace.dbankcloud.cn/index.html?lang=zh&agreementId=1756595219123443648"
+    },
+    {
+      "name": "about_websiteAlias",
+      "value": "OpenHarmonyPCDeveloper/DevBox"
+    },
+    {
+      "name": "about_description",
+      "value": "DevBox is a command-line toolkit designed for HarmonyOS, providing a collection of commonly used developer commands and utilities."
+    },
+    {
+      "name": "about_description_details",
+      "value": "This application primarily provides file and directory operation commands, network commands, build commands, and more. You can review the full list of supported commands in the appendix to determine if they meet your requirements. We recommend using these commands in the HarmonyOS PC \"Terminal\" application for the best experience. Since installing a command-line binary for the first time adds a new directory to the HarmonyOS PC's command line, you may need to restart the \"HiShell\" application after installation to load this directory. Therefore, we will prompt you to restart the \"HiShell\" when you first open this application."
+    },
+    {
+      "name": "about_opensource_update_date_info",
+      "value": "20251110"
+    },
+    {
+      "name": "about_opensource_code_repository",
+      "value": "https://gitcode.com/OpenHarmonyPCDeveloper/DevBox"
+    }
+  ]
+}

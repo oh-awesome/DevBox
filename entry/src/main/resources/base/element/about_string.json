@@ -1,0 +1,100 @@
+{
+  "string": [
+    {
+      "name": "about_about",
+      "value": "About"
+    },
+    {
+      "name": "about_version_head",
+      "value": "Version "
+    },
+    {
+      "name": "about_build_version_head",
+      "value": "BuildVersion "
+    },
+    {
+      "name": "about_appInfo",
+      "value": "Application Introduction"
+    },
+    {
+      "name": "about_developerInfo",
+      "value": "Develop Information"
+    },
+    {
+      "name": "about_developer_who",
+      "value": "Developer"
+    },
+    {
+      "name": "about_developer_web",
+      "value": "Website"
+    },
+    {
+      "name": "about_privacy",
+      "value": "Privacy Commitment"
+    },
+    {
+      "name": "about_copyright_info",
+      "value": "Copyright"
+    },
+    {
+      "name": "about_rightsReserved",
+      "value": "All rights reserved"
+    },
+    {
+      "name": "about_opensource",
+      "value": "Open source declaration"
+    },
+    {
+      "name": "about_opensource_head",
+      "value": "Open Source Software Notice"
+    },
+    {
+      "name": "about_opensource_update_date",
+      "value": "License Last Update: "
+    },
+    {
+      "name": "about_opensource_license_declaration",
+      "value": "Open Source License Declaration"
+    },
+    {
+      "name": "about_opensource_license_declaration_info",
+      "value": "This software product includes third-party open-source software components that comply with various open-source licenses. \n\nThe license terms of each open-source software component apply specifically to that particular component, and we respect and comply with all applicable open-source license requirements."
+    },
+    {
+      "name": "about_opensource_import_notice",
+      "value": "IMPORTANT NOTICE"
+    },
+    {
+      "name": "about_opensource_import_notice_info",
+      "value": "Pursuant to the requirements of the relevant open-source licenses, you have the right to access, modify, and distribute the source code of these open-source software components."
+    },
+    {
+      "name": "about_opensource_list_head",
+      "value": "List of Used Open-Source Components and Their Licenses"
+    },
+    {
+      "name": "about_opensource_code_repository_URL",
+      "value": "Code URL"
+    },
+    {
+      "name": "about_opensource_view_license",
+      "value": "View License"
+    },
+    {
+      "name": "about_opensource_source_code_acquisition",
+      "value": "Source Code Acquisition"
+    },
+    {
+      "name": "about_opensource_source_code_acquisition_method",
+      "value": "Acquisition Method"
+    },
+    {
+      "name": "about_opensource_get_from_code_url",
+      "value": "● Access our open-source page: "
+    },
+    {
+      "name": "about_opensource_click_access",
+      "value": "Access"
+    }
+  ]
+}

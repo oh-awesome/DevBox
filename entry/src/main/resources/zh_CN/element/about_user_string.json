@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "about_developer",
+      "value": "OpenHarmony PC Developer 社区"
+    },
+    {
+      "name": "about_websiteAlias",
+      "value": "OpenHarmonyPCDeveloper/DevBox"
+    },
+    {
+      "name": "about_description",
+      "value": "适用于HarmonyOS的命令工具集合，主要提供了一些开发者常用命令和工具。"
+    },
+    {
+      "name": "about_description_details",
+      "value": "本应用主要提供了文件和目录操作命令、网络命令、构建命令等，可以在附录中里查看我们支持的命令范围，依此判断是否满足您的使用需求。我们建议在鸿蒙PC“终端命令行”应用中使用这些命令，以便获得更好的体验。因第一次安装这种命令类二进制会给鸿蒙PC的命令行新增一个目录，所以在安装应用后可能需要重启“终端命令行”应用来加载这个目录。所以我们在用户首次打开本应用时提示用户重启终端应用。"
+    }
+  ]
+}

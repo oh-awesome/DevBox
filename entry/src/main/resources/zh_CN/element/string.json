@@ -145,6 +145,10 @@
       "value": "系统String资源"
     },
     {
+      "name": "tab_cmd_manual",
+      "value": "命令手册"
+    },
+    {
       "name": "reset",
       "value": "重置"
     },
@@ -247,6 +251,14 @@
     {
       "name": "get_user_permission_desktop",
       "value": "Desktop"
+    },
+    {
+      "name": "command_user_guide",
+      "value": "DevBox 是 OpenHarmony PC 开发者工具，提供了一系列命令行工具来帮助开发者进行项目构建、调试和部署。"
+    },
+    {
+      "name": "command_list",
+      "value": "命令清单"
     }
   ]
 }

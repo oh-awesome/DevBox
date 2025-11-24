@@ -87,6 +87,18 @@
     {
       "name": "comm_btn_hover_bg",
       "value": "#AADDDDDD"
+    },
+    {
+      "name": "button_full_transparent",
+      "value": "#00FFFFFF"
+    },
+    {
+      "name": "button_full_hover",
+      "value": "#4A565555"
+    },
+    {
+      "name": "manual_code_bg_color",
+      "value": "#FFF1F0F0"
     }
   ]
 }

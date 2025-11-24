@@ -1,0 +1,1335 @@
+[
+  {
+    "name": "arp",
+    "description": "用于查看和修改主机的ARP缓存表，该表包含IP地址与MAC地址的映射关系。",
+    "syntax": "arp",
+    "options": [
+      { "name": "-a", "description": "Display (all) hosts" },
+      { "name": "-d", "description": "Delete ARP entry" },
+      { "name": "-s", "description": "Set new entry" },
+      { "name": "-v", "description": "Verbose" },
+      { "name": "-n", "description": "Don't resolve names" },
+      { "name": "-i", "description": "IF Network interface" },
+      { "name": "-D", "description": "Read HWADDR from IFACE" },
+      { "name": "-A,-p", "description": "AF Protocol family" },
+      { "name": "-H", "description": "HWTYPE Hardware address type" }
+    ],
+    "examples": [
+      "arp -a",
+      "arp -d hostname",
+      "arp -s hostname hwaddr"
+    ]
+  },
+{
+"name": "bc",
+"description": "任意精度的计算器语言，支持基本的算术运算和复杂的数学函数。",
+"syntax": "bc [-sqlw] [FILE]...",
+"options": [
+{ "name": "-q", "description": "Quiet" },
+{ "name": "-l", "description": "Load standard library" },
+{ "name": "-s", "description": "Be POSIX compatible" },
+{ "name": "-w", "description": "Warn if extensions are used" }
+],
+"examples": [
+"bc -l",
+"bc script.bc",
+"echo '1+1' | bc"
+]
+},
+{
+"name": "bzip2",
+"description": "高效的文件压缩工具，使用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。",
+"syntax": "bzip2 [flags and input files in any order]",
+"options": [
+{ "name": "-h --help", "description": "print this message" },
+{ "name": "-d --decompress", "description": "force decompression" },
+{ "name": "-z --compress", "description": "force compression" },
+{ "name": "-k --keep", "description": "keep (don't delete) input files" },
+{ "name": "-f --force", "description": "overwrite existing output files" },
+{ "name": "-t --test", "description": "test compressed file integrity" },
+{ "name": "-c --stdout", "description": "output to standard out" },
+{ "name": "-q --quiet", "description": "suppress noncritical error messages" },
+{ "name": "-v --verbose", "description": "be verbose (a 2nd -v gives more)" },
+{ "name": "-L --license", "description": "display software version & license" },
+{ "name": "-V --version", "description": "display software version & license" },
+{ "name": "-1 to -9", "description": "set block size to 100k .. 900k" },
+{ "name": "--", "description": "treat all following arguments as files" }
+],
+"examples": [
+"bzip2 file.txt",
+"bzip2 -d file.bz2",
+"bzip2 -v file.txt"
+]
+},
+{
+"name": "bzless",
+"description": "用于查看bzip2压缩文件的过滤器，类似于less命令。",
+"syntax": "bzless files...",
+"options": [],
+"examples": [
+"bzless --help",
+"bzless -h"
+]
+},
+{
+"name": "colrm",
+"description": "用于从标准输入中删除指定的列，常用于文本处理。",
+"syntax": "colrm [startcol [endcol]]",
+"options": [
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"colrm --help",
+"colrm -h",
+"colrm 5"
+]
+},
+{
+"name": "column",
+"description": "将输入文本格式化为多列输出，支持自动调整列宽和对齐。",
+"syntax": "column [options]",
+"options": [
+{ "name": "-J, --json", "description": "output JSON" },
+{ "name": "-c, --columns <width>", "description": "output width" },
+{ "name": "-t, --table", "description": "create table" },
+{ "name": "-s, --separator <string>", "description": "field separator" },
+{ "name": "-o, --output-separator <string>", "description": "output separator" },
+{ "name": "-n, --table-name <name>", "description": "table name for JSON output" },
+{ "name": "-N, --table-columns <names>", "description": "table columns" },
+{ "name": "-R, --table-right <columns>", "description": "right align text in columns" },
+{ "name": "-T, --table-truncate <columns>", "description": "truncate text in columns" },
+{ "name": "-W, --table-wrap <columns>", "description": "wrap text in columns" },
+{ "name": "-E, --table-noextreme", "description": "do not print header and footer" },
+{ "name": "-H, --table-header-repeat", "description": "repeat header rows" },
+{ "name": "-O, --table-order <columns>", "description": "define column order" },
+{ "name": "-L, --table-left <columns>", "description": "left align text in columns" },
+{ "name": "-C, --table-center <columns>", "description": "center align text in columns" },
+{ "name": "-S, --table-sort <columns>", "description": "sort columns" },
+{ "name": "-K, --table-hide <columns>", "description": "hide columns" },
+{ "name": "-U, --table-unique <columns>", "description": "unique columns" },
+{ "name": "-D, --table-noheadings", "description": "do not print headings" },
+{ "name": "-F, --footer-repeat", "description": "repeat footer rows" },
+{ "name": "-x, --fillrows", "description": "fill rows before columns" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-l, --lines <number>", "description": "number of lines to read" },
+{ "name": "-r, --tree", "description": "display tree" }
+],
+"examples": [
+"column --help",
+"column -h",
+"column -t -s: /etc/passwd"
+]
+},
+{
+"name": "diff",
+"description": "用于比较两个或多个文件的差异，输出文件内容的不同之处。",
+"syntax": "diff [options]",
+"options": [
+{ "name": "-i, --ignore-case", "description": "ignore case differences" },
+{ "name": "-E, --ignore-tab-expansion", "description": "ignore tab expansion" },
+{ "name": "-b, --ignore-space-change", "description": "ignore space changes" },
+{ "name": "-w, --ignore-all-space", "description": "ignore all space changes" },
+{ "name": "-B, --ignore-blank-lines", "description": "ignore blank lines" },
+{ "name": "-I, --ignore-matching-lines <regexp>", "description": "ignore lines matching regexp" },
+{ "name": "-a, --text", "description": "treat all files as text" },
+{ "name": "-c, -C, --context <n>", "description": "show n lines of context" },
+{ "name": "-u, -U, --unified <n>", "description": "show n lines of unified context" },
+{ "name": "-e, --ed", "description": "output an ed script" },
+{ "name": "-n, --rcs", "description": "output an RCS script" },
+{ "name": "-y, --side-by-side", "description": "output in two columns" },
+{ "name": "-W, --width <n>", "description": "set output width for side-by-side" },
+{ "name": "-p, --show-c-function", "description": "show which C function each change is in" },
+{ "name": "-F, --show-function-line <regexp>", "description": "show function line matching regexp" },
+{ "name": "-q, --brief", "description": "report only when files differ" },
+{ "name": "-r, --recursive", "description": "recursively compare any subdirectories found" },
+{ "name": "-N, --new-file", "description": "treat absent files as empty" },
+{ "name": "-x, --exclude <pattern>", "description": "exclude files that match pattern" },
+{ "name": "-X, --exclude-from <file>", "description": "exclude files that match any pattern in file" },
+{ "name": "-S, --starting-file <file>", "description": "start with file when comparing directories" },
+{ "name": "-P, --no-dereference", "description": "do not follow symbolic links" },
+{ "name": "-H, --speed-large-files", "description": "assume large files and many scattered small changes" },
+{ "name": "-l, --paginate", "description": "pass output through pr to paginate it" },
+{ "name": "-t, --expand-tabs", "description": "expand tabs to spaces in output" },
+{ "name": "-T, --initial-tab", "description": "make tabs line up by prepending a tab" },
+{ "name": "--tabsize <n>", "description": "set tab size to n spaces" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"diff file1.txt file2.txt",
+"diff -u file1.txt file2.txt",
+"diff -r dir1 dir2"
+]
+},
+{
+"name": "diff3",
+"description": "用于比较三个文件的差异，常用于合并不同版本的文件。",
+"syntax": "diff3 [options]",
+"options": [
+{ "name": "-e", "description": "output an ed script" },
+{ "name": "-E", "description": "output an extended ed script" },
+{ "name": "-x", "description": "output a context ed script" },
+{ "name": "-X", "description": "output an extended context ed script" },
+{ "name": "-m", "description": "output merged file" },
+{ "name": "-A, --show-all", "description": "show all changes" },
+{ "name": "-3", "description": "show only changes from file3" },
+{ "name": "-i, --ignore-case", "description": "ignore case differences" },
+{ "name": "-a, --text", "description": "treat all files as text" },
+{ "name": "-T, --initial-tab", "description": "make tabs line up by prepending a tab" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"diff3 --help",
+"diff3 -h",
+"diff3 file1 file2 file3"
+]
+},
+{
+"name": "dig",
+"description": "域名系统(DNS)查询工具，用于查询DNS服务器获取域名解析信息。",
+"syntax": "dig [options]",
+"options": [
+{ "name": "-h", "description": "display this help" },
+{ "name": "-v", "description": "print version number" },
+{ "name": "-q <name>", "description": "specify query name" },
+{ "name": "-t <type>", "description": "specify query type" },
+{ "name": "-x <addr>", "description": "reverse lookup" },
+{ "name": "-i", "description": "use IP6.INT for IPv6 reverse lookups" },
+{ "name": "-f <file>", "description": "batch mode" },
+{ "name": "-b <addr>", "description": "set source IP address" },
+{ "name": "-p <port#>", "description": "set port number" },
+{ "name": "-q <name>", "description": "specify query name" },
+{ "name": "-t <type>", "description": "specify query type" },
+{ "name": "-x <addr>", "description": "reverse lookup" },
+{ "name": "-i", "description": "use IP6.INT for IPv6 reverse lookups" },
+{ "name": "-f <file>", "description": "batch mode" },
+{ "name": "-b <addr>", "description": "set source IP address" },
+{ "name": "-p <port#>", "description": "set port number" },
+{ "name": "-s <addr>", "description": "set EDNS0 source address" },
+{ "name": "-4", "description": "use IPv4 only" },
+{ "name": "-6", "description": "use IPv6 only" },
+{ "name": "-D", "description": "print DNSSEC data" },
+{ "name": "-k <keyfile>", "description": "specify tsig key file" },
+{ "name": "-y <name:key>", "description": "specify tsig key" },
+{ "name": "-n <ndots>", "description": "set search ndots" },
+{ "name": "-d", "description": "debug mode" },
+{ "name": "-L", "description": "print response in zone file format" },
+{ "name": "-r", "description": "disable recursion" },
+{ "name": "-R <retries>", "description": "set number of retries" },
+{ "name": "-A", "description": "abort on network errors" },
+{ "name": "-T", "description": "disable TCP/IP fallback" },
+{ "name": "-C", "description": "disable compression" },
+{ "name": "-o <filename>", "description": "output to file" },
+{ "name": "-O", "description": "do not buffer output" },
+{ "name": "-a", "description": "set AA flag in query" },
+{ "name": "-c <class>", "description": "specify query class" },
+{ "name": "-m", "description": "set memory usage" },
+{ "name": "-S <bufsize>", "description": "set EDNS0 buffer size" },
+{ "name": "-g", "description": "enable EDNS0" },
+{ "name": "-j", "description": "print response as JSON" },
+{ "name": "-q <name>", "description": "specify query name" },
+{ "name": "-t <type>", "description": "specify query type" },
+{ "name": "-x <addr>", "description": "reverse lookup" },
+{ "name": "-i", "description": "use IP6.INT for IPv6 reverse lookups" },
+{ "name": "-f <file>", "description": "batch mode" },
+{ "name": "-b <addr>", "description": "set source IP address" },
+{ "name": "-p <port#>", "description": "set port number" },
+{ "name": "-s <addr>", "description": "set EDNS0 source address" },
+{ "name": "-4", "description": "use IPv4 only" },
+{ "name": "-6", "description": "use IPv6 only" },
+{ "name": "-D", "description": "print DNSSEC data" },
+{ "name": "-k <keyfile>", "description": "specify tsig key file" },
+{ "name": "-y <name:key>", "description": "specify tsig key" },
+{ "name": "-n <ndots>", "description": "set search ndots" },
+{ "name": "-d", "description": "debug mode" },
+{ "name": "-L", "description": "print response in zone file format" },
+{ "name": "-r", "description": "disable recursion" },
+{ "name": "-R <retries>", "description": "set number of retries" },
+{ "name": "-A", "description": "abort on network errors" },
+{ "name": "-T", "description": "disable TCP/IP fallback" },
+{ "name": "-C", "description": "disable compression" },
+{ "name": "-o <filename>", "description": "output to file" },
+{ "name": "-O", "description": "do not buffer output" },
+{ "name": "-a", "description": "set AA flag in query" },
+{ "name": "-c <class>", "description": "specify query class" },
+{ "name": "-m", "description": "set memory usage" },
+{ "name": "-S <bufsize>", "description": "set EDNS0 buffer size" },
+{ "name": "-g", "description": "enable EDNS0" },
+{ "name": "-j", "description": "print response as JSON" }
+],
+"examples": [
+"dig example.com",
+"dig @8.8.8.8 example.com",
+"dig -x 8.8.8.8"
+]
+},
+{
+"name": "flex",
+"description": "词法分析器生成器，用于生成处理文本的程序，常与bison配合使用。",
+"syntax": "flex [options]",
+"options": [
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-o <file>", "description": "specify output file" },
+{ "name": "-7", "description": "generate 7-bit scanner" },
+{ "name": "-8", "description": "generate 8-bit scanner (default)" },
+{ "name": "-F", "description": "generate fast scanner" },
+{ "name": "-f", "description": "generate fast scanner" },
+{ "name": "-X", "description": "generate scanner for 8-bit characters" },
+{ "name": "-I", "description": "generate interactive scanner" },
+{ "name": "-i", "description": "case-insensitive scanner" },
+{ "name": "-l", "description": "generate lex-compatible scanner" },
+{ "name": "-n", "description": "suppress #line directives" },
+{ "name": "-N", "description": "suppress #line directives" },
+{ "name": "-p", "description": "generate performance report" },
+{ "name": "-q", "description": "use table compression" },
+{ "name": "-s", "description": "suppress default rule" },
+{ "name": "-S <file>", "description": "use alternate skeleton file" },
+{ "name": "-t", "description": "write to stdout" },
+{ "name": "-v", "description": "print version number" },
+{ "name": "-w", "description": "suppress warnings" },
+{ "name": "-W <warning>", "description": "enable specific warning" },
+{ "name": "-B", "description": "generate backup files" },
+{ "name": "-P <prefix>", "description": "set scanner prefix" },
+{ "name": "-C <[aefm]>", "description": "set table compression options" },
+{ "name": "-T", "description": "run time performance report" },
+{ "name": "-R", "description": "generate reentrant scanner" },
+{ "name": "-D <name>", "description": "define name" },
+{ "name": "-L", "description": "print license" },
+{ "name": "-M", "description": "generate makefile dependencies" },
+{ "name": "-d", "description": "debug mode" },
+{ "name": "-E", "description": "generate scanner with echo" },
+{ "name": "-F", "description": "generate fast scanner" },
+{ "name": "-f", "description": "generate fast scanner" },
+{ "name": "-G", "description": "generate scanner with debug" },
+{ "name": "-H", "description": "print scanner hash table" },
+{ "name": "-I", "description": "generate interactive scanner" },
+{ "name": "-i", "description": "case-insensitive scanner" },
+{ "name": "-J", "description": "generate scanner with yylineno" },
+{ "name": "-K", "description": "generate scanner with yywrap" },
+{ "name": "-L", "description": "print license" },
+{ "name": "-l", "description": "generate lex-compatible scanner" },
+{ "name": "-M", "description": "generate makefile dependencies" },
+{ "name": "-N", "description": "suppress #line directives" },
+{ "name": "-n", "description": "suppress #line directives" },
+{ "name": "-O", "description": "optimize scanner" },
+{ "name": "-o <file>", "description": "specify output file" },
+{ "name": "-P <prefix>", "description": "set scanner prefix" },
+{ "name": "-p", "description": "generate performance report" },
+{ "name": "-Q", "description": "generate scanner with yytext pointer" },
+{ "name": "-q", "description": "use table compression" },
+{ "name": "-R", "description": "generate reentrant scanner" },
+{ "name": "-S <file>", "description": "use alternate skeleton file" },
+{ "name": "-s", "description": "suppress default rule" },
+{ "name": "-T", "description": "run time performance report" },
+{ "name": "-t", "description": "write to stdout" },
+{ "name": "-U", "description": "generate scanner with unput" },
+{ "name": "-v", "description": "print version number" },
+{ "name": "-V", "description": "print version number" },
+{ "name": "-W <warning>", "description": "enable specific warning" },
+{ "name": "-w", "description": "suppress warnings" },
+{ "name": "-X", "description": "generate scanner for 8-bit characters" },
+{ "name": "-Y <directory>", "description": "set skeleton directory" },
+{ "name": "-Z", "description": "generate scanner with yyerror" },
+{ "name": "-7", "description": "generate 7-bit scanner" },
+{ "name": "-8", "description": "generate 8-bit scanner (default)" },
+{ "name": "-B", "description": "generate backup files" },
+{ "name": "-C <[aefm]>", "description": "set table compression options" },
+{ "name": "-D <name>", "description": "define name" },
+{ "name": "-d", "description": "debug mode" },
+{ "name": "-E", "description": "generate scanner with echo" }
+],
+"examples": [
+"flex --help",
+"flex -h",
+"flex scanner.l"
+]
+},
+{
+"name": "fold",
+"description": "用于将长行文本折叠为指定宽度的短行，便于终端显示。",
+"syntax": "fold [options]",
+"options": [
+{ "name": "-b, --bytes", "description": "count bytes rather than columns" },
+{ "name": "-s, --spaces", "description": "break at spaces" },
+{ "name": "-w, --width <width>", "description": "use width columns instead of 80" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"fold --help",
+"fold -h",
+"fold -w 80 file.txt"
+]
+},
+{
+"name": "getopt",
+"description": "用于解析命令行选项的工具，支持短选项和长选项。",
+"syntax": "getopt [options]",
+"options": [
+{ "name": "-a, --alternative", "description": "allow long options starting with -" },
+{ "name": "-l, --longoptions <longopts>", "description": "define long options" },
+{ "name": "-n, --name <progname>", "description": "set program name for error messages" },
+{ "name": "-o, --options <opts>", "description": "define short options" },
+{ "name": "-q, --quiet", "description": "suppress error messages" },
+{ "name": "-Q, --quiet-output", "description": "suppress normal output" },
+{ "name": "-s, --shell <shell>", "description": "set shell type" },
+{ "name": "-T, --test", "description": "test for getopt compatibility" },
+{ "name": "-u, --unquoted", "description": "do not quote output" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"getopt --help",
+"getopt -h"
+]
+},
+{
+"name": "gperf",
+"description": "生成完美哈希函数的工具，用于快速查找关键字。",
+"syntax": "gperf [options]",
+"options": [
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-v, --version", "description": "display version" },
+{ "name": "-o, --output-file <file>", "description": "specify output file" },
+{ "name": "-a, --alternative", "description": "generate alternative implementation" },
+{ "name": "-c, --class-name <name>", "description": "set class name" },
+{ "name": "-C, --omit-struct-type", "description": "omit struct type" },
+{ "name": "-D, --omit-duplicates", "description": "omit duplicate entries" },
+{ "name": "-E, --enum", "description": "generate enum" },
+{ "name": "-F, --initializer-suffix <suffix>", "description": "set initializer suffix" },
+{ "name": "-G, --global-table", "description": "generate global table" },
+{ "name": "-H, --hash-function-name <name>", "description": "set hash function name" },
+{ "name": "-I, --includes", "description": "include standard headers" },
+{ "name": "-k, --slot-name <name>", "description": "set slot name" },
+{ "name": "-K, --keyword-name <name>", "description": "set keyword name" },
+{ "name": "-l, --language <lang>", "description": "set output language" },
+{ "name": "-L, --length-table", "description": "generate length table" },
+{ "name": "-m, --multi-case", "description": "case-insensitive comparison" },
+{ "name": "-M, --mask-table", "description": "generate mask table" },
+{ "name": "-n, --null-pointer", "description": "use NULL pointer" },
+{ "name": "-N, --lookup-function-name <name>", "description": "set lookup function name" },
+{ "name": "-O, --optimize", "description": "optimize for space" },
+{ "name": "-p, --pointer", "description": "use pointers" },
+{ "name": "-P, --pure-prototypes", "description": "generate pure prototypes" },
+{ "name": "-q, --quick", "description": "quick mode" },
+{ "name": "-Q, --question-mark", "description": "use ?:" },
+{ "name": "-r, --readonly-tables", "description": "make tables readonly" },
+{ "name": "-S, --switch", "description": "use switch statement" },
+{ "name": "-t, --struct-type", "description": "generate struct type" },
+{ "name": "-T, --template", "description": "generate template" },
+{ "name": "-U, --uppercase", "description": "uppercase identifiers" },
+{ "name": "-V, --verbose", "description": "verbose mode" },
+{ "name": "-W, --width <width>", "description": "set hash table width" },
+{ "name": "-x, --omit-extern", "description": "omit extern" },
+{ "name": "-X, --include-file <file>", "description": "include file" },
+{ "name": "-y, --compare-strncmp", "description": "use strncmp" },
+{ "name": "-Y, --compare-strcmp", "description": "use strcmp" }
+],
+"examples": [
+"gperf --help",
+"gperf -h",
+"gperf -o output.h input.gperf"
+]
+},
+{
+"name": "gprof",
+"description": "程序性能分析工具，用于分析程序的执行时间，找出性能瓶颈。",
+"syntax": "gprof [options]",
+"options": [
+{ "name": "-a, --no-annotated-source", "description": "suppress annotated source listing" },
+{ "name": "-b, --brief", "description": "brief output" },
+{ "name": "-c, --exec-counts", "description": "output execution counts" },
+{ "name": "-C, --call-graph", "description": "output call graph" },
+{ "name": "-d, --debug", "description": "debug mode" },
+{ "name": "-e, --exclude-function <name>", "description": "exclude function" },
+{ "name": "-E, --exclude-file <name>", "description": "exclude file" },
+{ "name": "-f, --function-ordering", "description": "output function ordering" },
+{ "name": "-F, --file-ordering", "description": "output file ordering" },
+{ "name": "-g, --graph", "description": "output call graph" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-i, --file-info", "description": "output file information" },
+{ "name": "-I, --inhibit-annotated-source", "description": "suppress annotated source" },
+{ "name": "-j, --no-merge-functions", "description": "do not merge functions" },
+{ "name": "-J, --no-merge-files", "description": "do not merge files" },
+{ "name": "-k, --sum-time <key>:<value>", "description": "sum time" },
+{ "name": "-l, --line", "description": "output line information" },
+{ "name": "-L, --line-info", "description": "output line information" },
+{ "name": "-m, --min-count <count>", "description": "minimum count" },
+{ "name": "-M, --max-count <count>", "description": "maximum count" },
+{ "name": "-n, --no-static", "description": "exclude static functions" },
+{ "name": "-N, --include-function <name>", "description": "include function" },
+{ "name": "-O, --order-file <file>", "description": "order file" },
+{ "name": "-p, --flat-profile", "description": "output flat profile" },
+{ "name": "-P, --no-flat-profile", "description": "suppress flat profile" },
+{ "name": "-q, --quiet", "description": "quiet mode" },
+{ "name": "-Q, --no-call-graph", "description": "suppress call graph" },
+{ "name": "-r, --reverse-order", "description": "reverse order" },
+{ "name": "-R, --reverse-call-graph", "description": "reverse call graph" },
+{ "name": "-s, --sum-file <file>", "description": "sum file" },
+{ "name": "-S, --symbols", "description": "output symbols" },
+{ "name": "-t, --total-time", "description": "output total time" },
+{ "name": "-T, --traditional", "description": "traditional output" },
+{ "name": "-u, --unused-functions", "description": "output unused functions" },
+{ "name": "-U, --no-unused-functions", "description": "suppress unused functions" },
+{ "name": "-v, --version", "description": "display version" },
+{ "name": "-V, --verbose", "description": "verbose mode" },
+{ "name": "-w, --width <width>", "description": "set output width" },
+{ "name": "-W, --wide", "description": "wide output" },
+{ "name": "-x, --demangle", "description": "demangle symbols" },
+{ "name": "-X, --no-demangle", "description": "do not demangle symbols" },
+{ "name": "-y, --symbols-sort", "description": "sort symbols" },
+{ "name": "-Y, --symbols-no-sort", "description": "do not sort symbols" },
+{ "name": "-z, --show-zero-counts", "description": "show zero counts" },
+{ "name": "-Z, --no-show-zero-counts", "description": "suppress zero counts" }
+],
+"examples": [
+"gprof --help",
+"gprof -h",
+"gprof ./a.out gmon.out"
+]
+},
+{
+"name": "groff",
+"description": "文档格式化系统，用于将格式化的文本转换为各种输出格式。",
+"syntax": "groff [options]",
+"options": [
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-v, --version", "description": "display version" },
+{ "name": "-a, --ascii", "description": "use ASCII output" },
+{ "name": "-c, --no-color", "description": "disable color output" },
+{ "name": "-C, --color", "description": "enable color output" },
+{ "name": "-d, --define <name>=<value>", "description": "define macro" },
+{ "name": "-D, --device <device>", "description": "set output device" },
+{ "name": "-e, --equations", "description": "process equations" },
+{ "name": "-E, --preprocess-only", "description": "preprocess only" },
+{ "name": "-f, --family <font>", "description": "set font family" },
+{ "name": "-F, --font-directory <dir>", "description": "set font directory" },
+{ "name": "-g, --grap", "description": "process grap code" },
+{ "name": "-G, --no-grap", "description": "disable grap processing" },
+{ "name": "-i, --include <dir>", "description": "add include directory" },
+{ "name": "-I, --include-dir <dir>", "description": "add include directory" },
+{ "name": "-k, --keep", "description": "keep intermediate files" },
+{ "name": "-K, --no-keep", "description": "remove intermediate files" },
+{ "name": "-l, --latin1", "description": "use Latin-1 input" },
+{ "name": "-L, --locale <locale>", "description": "set locale" },
+{ "name": "-m, --macro <name>", "description": "load macro package" },
+{ "name": "-M, --macro-directory <dir>", "description": "set macro directory" },
+{ "name": "-n, --page-number <num>", "description": "set starting page number" },
+{ "name": "-N, --no-number", "description": "disable page numbering" },
+{ "name": "-o, --output <file>", "description": "specify output file" },
+{ "name": "-O, --option <option>", "description": "pass option to postprocessor" },
+{ "name": "-p, --pic", "description": "process pic code" },
+{ "name": "-P, --no-pic", "description": "disable pic processing" },
+{ "name": "-q, --quiet", "description": "quiet mode" },
+{ "name": "-Q, --verbose", "description": "verbose mode" },
+{ "name": "-r, --resolution <dpi>", "description": "set resolution" },
+{ "name": "-R, --no-resolution", "description": "use default resolution" },
+{ "name": "-s, --safe", "description": "safe mode" },
+{ "name": "-S, --no-safe", "description": "disable safe mode" },
+{ "name": "-t, --tbl", "description": "process tbl code" },
+{ "name": "-T, --output-format <format>", "description": "set output format" },
+{ "name": "-u, --underline", "description": "enable underlining" },
+{ "name": "-U, --no-underline", "description": "disable underlining" },
+{ "name": "-v, --version", "description": "display version" },
+{ "name": "-V, --verbose", "description": "verbose mode" },
+{ "name": "-w, --warning", "description": "enable warnings" },
+{ "name": "-W, --no-warning", "description": "disable warnings" },
+{ "name": "-x, --xroff", "description": "compatibility mode" },
+{ "name": "-X, --no-xroff", "description": "disable compatibility mode" },
+{ "name": "-y, --synctex", "description": "generate SyncTeX file" },
+{ "name": "-Y, --no-synctex", "description": "disable SyncTeX" },
+{ "name": "-z, --draft", "description": "draft mode" },
+{ "name": "-Z, --debug", "description": "debug mode" }
+],
+"examples": [
+"groff --help",
+"groff -h",
+"groff -man manpage.1 | less"
+]
+},
+{
+"name": "hexdump",
+"description": "以十六进制和ASCII格式显示文件内容，用于查看二进制文件。",
+"syntax": "hexdump [options]",
+"options": [
+{ "name": "-b, --one-byte-octal", "description": "one-byte octal display" },
+{ "name": "-c, --one-byte-char", "description": "one-byte character display" },
+{ "name": "-C, --canonical", "description": "canonical hex+ASCII display" },
+{ "name": "-d, --two-byte-decimal", "description": "two-byte decimal display" },
+{ "name": "-e, --format <format>", "description": "format string" },
+{ "name": "-f, --format-file <file>", "description": "format file" },
+{ "name": "-H, --help", "description": "display this help" },
+{ "name": "-n, --length <length>", "description": "interpret only length bytes" },
+{ "name": "-o, --two-byte-octal", "description": "two-byte octal display" },
+{ "name": "-s, --skip <offset>", "description": "skip offset bytes" },
+{ "name": "-v, --no-squeeze", "description": "do not squeeze identical lines" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-x, --two-byte-hex", "description": "two-byte hexadecimal display" }
+],
+"examples": [
+"hexdump --help",
+"hexdump -h",
+"hexdump -C binaryfile.bin"
+]
+},
+{
+"name": "host",
+"description": "简单的DNS查询工具，用于查询域名的IP地址或反向查询。",
+"syntax": "host [options]",
+"options": [
+{ "name": "-a, --all", "description": "display all records" },
+{ "name": "-c, --class <class>", "description": "query class" },
+{ "name": "-C, --check-names", "description": "check pointer and host names" },
+{ "name": "-d, --debug", "description": "print debug information" },
+{ "name": "-l, --list", "description": "list zone" },
+{ "name": "-m, --mx", "description": "display MX records" },
+{ "name": "-N, --ns", "description": "display NS records" },
+{ "name": "-r, --raw", "description": "display raw packets" },
+{ "name": "-R, --random", "description": "randomize name server order" },
+{ "name": "-s, --server <server>", "description": "use server" },
+{ "name": "-t, --type <type>", "description": "query type" },
+{ "name": "-v, --verbose", "description": "verbose output" },
+{ "name": "-w, --wait", "description": "wait forever" },
+{ "name": "-W, --wait-time <seconds>", "description": "wait time" },
+{ "name": "-4, --ipv4", "description": "use IPv4 only" },
+{ "name": "-6, --ipv6", "description": "use IPv6 only" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"host example.com",
+"host -t mx example.com",
+"host 8.8.8.8"
+]
+},
+{
+"name": "iostat",
+"description": "系统I/O统计工具，用于监控系统的磁盘I/O和CPU使用情况。",
+"syntax": "iostat [options]",
+"options": [
+{ "name": "-c, --cpu", "description": "display CPU statistics" },
+{ "name": "-d, --disk", "description": "display disk statistics" },
+{ "name": "-g, --group <grpname>", "description": "display statistics for disk group" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-k, --kilobytes", "description": "display in kilobytes per second" },
+{ "name": "-m, --megabytes", "description": "display in megabytes per second" },
+{ "name": "-N, --no-summary", "description": "exclude summary statistics" },
+{ "name": "-n, --nfs", "description": "display NFS statistics" },
+{ "name": "-p, --partition <dev>", "description": "display statistics for partition" },
+{ "name": "-r, --io-rate", "description": "display I/O rate statistics" },
+{ "name": "-s, --summary", "description": "display summary statistics" },
+{ "name": "-t, --time", "description": "display timestamp" },
+{ "name": "-T, --time-format <format>", "description": "set time format" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-x, --extended", "description": "display extended statistics" },
+{ "name": "-y, --first", "description": "exclude first report" },
+{ "name": "-z, --no-zeros", "description": "exclude lines with zero statistics" },
+{ "name": "[interval [count]]", "description": "report interval and count" }
+],
+"examples": [
+"iostat --help",
+"iostat -h",
+"iostat 2 10"
+]
+},
+{
+"name": "locate",
+"description": "快速查找文件的工具，基于预构建的文件数据库进行搜索。",
+"syntax": "locate [options]",
+"options": [
+{ "name": "-A, --all", "description": "only print entries that match all patterns" },
+{ "name": "-b, --basename", "description": "match only the base name" },
+{ "name": "-c, --count", "description": "print number of matches" },
+{ "name": "-d, --database <path>", "description": "use database at path" },
+{ "name": "-e, --existing", "description": "only print existing files" },
+{ "name": "-i, --ignore-case", "description": "ignore case differences" },
+{ "name": "-L, --follow", "description": "follow symbolic links" },
+{ "name": "-m, --mmap", "description": "use mmap instead of read" },
+{ "name": "-n, --limit <number>", "description": "limit number of matches" },
+{ "name": "-P, --nofollow", "description": "do not follow symbolic links" },
+{ "name": "-0, --null", "description": "separate output with null characters" },
+{ "name": "-S, --statistics", "description": "print statistics about database" },
+{ "name": "-t, --basename", "description": "match only the base name" },
+{ "name": "-U, --update", "description": "update database" },
+{ "name": "-u, --unknown", "description": "print unknown file types" },
+{ "name": "-v, --verbose", "description": "verbose mode" },
+{ "name": "-w, --wholename", "description": "match whole path name (default)" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-V, --version", "description": "display version" }
+],
+"examples": [
+"locate --help",
+"locate -h",
+"locate filename.txt"
+]
+},
+{
+"name": "m4",
+"description": "通用宏处理器，用于文本替换和宏扩展，常被其他工具使用。",
+"syntax": "m4 [options]",
+"options": [
+{ "name": "-D, --define <name>=<value>", "description": "define macro" },
+{ "name": "-E, --fatal-warnings", "description": "treat warnings as errors" },
+{ "name": "-e, --interactive", "description": "interactive mode" },
+{ "name": "-F, --freeze-state <file>", "description": "freeze state to file" },
+{ "name": "-f, --force-frozen", "description": "force frozen state" },
+{ "name": "-G, --traditional", "description": "traditional mode" },
+{ "name": "-g, --gnu", "description": "GNU mode (default)" },
+{ "name": "-H, --help", "description": "display this help" },
+{ "name": "-I, --include <dir>", "description": "add include directory" },
+{ "name": "-L, --nesting-limit <limit>", "description": "set nesting limit" },
+{ "name": "-l, --load <file>", "description": "load frozen state from file" },
+{ "name": "-M, --error-output <file>", "description": "send errors to file" },
+{ "name": "-N, --no-predefined", "description": "no predefined macros" },
+{ "name": "-n, --line-directives", "description": "generate line directives" },
+{ "name": "-o, --output <file>", "description": "specify output file" },
+{ "name": "-P, --prefix-builtins", "description": "prefix built-in macros" },
+{ "name": "-p, --no-line-directives", "description": "no line directives" },
+{ "name": "-Q, --quiet", "description": "quiet mode" },
+{ "name": "-R, --random-seed <seed>", "description": "set random seed" },
+{ "name": "-r, --reload-state <file>", "description": "reload state from file" },
+{ "name": "-S, --synclines", "description": "generate synclines" },
+{ "name": "-s, --silent", "description": "silent mode" },
+{ "name": "-T, --trace <name>", "description": "trace macro" },
+{ "name": "-t, --debug", "description": "debug mode" },
+{ "name": "-U, --undefine <name>", "description": "undefine macro" },
+{ "name": "-u, --unload-state", "description": "unload state" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-v, --verbose", "description": "verbose mode" },
+{ "name": "-W, --warning <warning>", "description": "enable warning" },
+{ "name": "-w, --no-warnings", "description": "disable warnings" },
+{ "name": "-X, --dump-definitions <file>", "description": "dump definitions to file" },
+{ "name": "-x, --dump-macros <file>", "description": "dump macros to file" }
+],
+"examples": [
+"m4 --help",
+"m4 -h",
+"m4 input.m4 > output.txt"
+]
+},
+{
+"name": "make",
+"description": "自动化构建工具，用于根据Makefile中的规则编译和链接程序。",
+"syntax": "make [options]",
+"options": [
+{ "name": "-b, -m", "description": "POSIX compatibility" },
+{ "name": "-B, --always-make", "description": "unconditionally make all targets" },
+{ "name": "-C, --directory <dir>", "description": "change to directory dir" },
+{ "name": "-d", "description": "print debugging information" },
+{ "name": "-e, --environment-overrides", "description": "environment variables override makefiles" },
+{ "name": "-f, --file <file>", "description": "read makefile from file" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "-i, --ignore-errors", "description": "ignore errors from commands" },
+{ "name": "-I, --include-dir <dir>", "description": "search dir for included makefiles" },
+{ "name": "-j, --jobs <n>", "description": "allow n jobs at once" },
+{ "name": "-k, --keep-going", "description": "keep going when some targets can't be made" },
+{ "name": "-l, --load-average <n>", "description": "don't start new jobs if load average is at least n" },
+{ "name": "-L, --check-symlink-times", "description": "use symlink times for target files" },
+{ "name": "-n, --just-print", "description": "print commands but don't execute them" },
+{ "name": "-o, --old-file <file>", "description": "don't remake file" },
+{ "name": "-O, --output-sync <type>", "description": "synchronize output of parallel jobs" },
+{ "name": "-p, --print-data-base", "description": "print make's internal database" },
+{ "name": "-q, --question", "description": "don't run any commands; exit status says if up to date" },
+{ "name": "-r, --no-builtin-rules", "description": "disable built-in rules" },
+{ "name": "-R, --no-builtin-variables", "description": "disable built-in variables" },
+{ "name": "-s, --silent", "description": "don't print commands" },
+{ "name": "-S, --no-keep-going", "description": "turn off -k" },
+{ "name": "-t, --touch", "description": "touch targets instead of remaking them" },
+{ "name": "-v, --version", "description": "display version" },
+{ "name": "-w, --print-directory", "description": "print directory names as make enters and leaves them" },
+{ "name": "-W, --what-if <file>", "description": "pretend file was modified" },
+{ "name": "-X, --exclude <dir>", "description": "exclude directory from search" }
+],
+"examples": [
+"make",
+"make install",
+"make clean",
+"make -j4"
+]
+},
+{
+"name": "mpstat",
+"description": "多处理器统计工具，用于监控每个CPU核心的使用情况。",
+"syntax": "mpstat [options]",
+"options": [
+{ "name": "-A, --all", "description": "display all statistics" },
+{ "name": "-I, --interrupts", "description": "display interrupts statistics" },
+{ "name": "-P, --cpu <cpu>", "description": "display statistics for specified CPU" },
+{ "name": "-S, --softirqs", "description": "display softirqs statistics" },
+{ "name": "-U, --cpu-utilization", "description": "display CPU utilization statistics" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-h, --help", "description": "display this help" },
+{ "name": "[interval [count]]", "description": "report interval and count" }
+],
+"examples": [
+"mpstat --help",
+"mpstat -h",
+"mpstat -P ALL 2 5"
+]
+},
+{
+"name": "nslookup",
+"description": "DNS查询工具，用于查询域名解析信息，支持交互式操作。",
+"syntax": "nslookup [options]",
+"options": [
+{ "name": "-debug", "description": "debug mode" },
+{ "name": "-d2", "description": "more debug information" },
+{ "name": "-silent", "description": "silent mode" },
+{ "name": "-timeout <sec>", "description": "set timeout" },
+{ "name": "-retry <num>", "description": "set number of retries" },
+{ "name": "-port <port>", "description": "set port number" },
+{ "name": "-querytype <type>", "description": "set query type" },
+{ "name": "-queryclass <class>", "description": "set query class" },
+{ "name": "-vc", "description": "use virtual circuit" },
+{ "name": "-fail", "description": "fail on error" },
+{ "name": "-nodebug", "description": "disable debug mode" },
+{ "name": "-nod2", "description": "disable debug level 2" },
+{ "name": "-nosilent", "description": "disable silent mode" },
+{ "name": "-timeout <sec>", "description": "set timeout" },
+{ "name": "-retry <num>", "description": "set number of retries" },
+{ "name": "-port <port>", "description": "set port number" },
+{ "name": "-querytype <type>", "description": "set query type" },
+{ "name": "-queryclass <class>", "description": "set query class" },
+{ "name": "-novc", "description": "disable virtual circuit" },
+{ "name": "-nofail", "description": "don't fail on error" },
+{ "name": "-version", "description": "display version" },
+{ "name": "-help", "description": "display help" }
+],
+"examples": [
+"nslookup example.com",
+"nslookup example.com 8.8.8.8",
+"nslookup -type=mx example.com"
+]
+},
+{
+"name": "script",
+"description": "用于记录终端会话的工具，将所有输入和输出保存到指定文件。",
+"syntax": "script [options]",
+"options": [
+{ "name": "-a, --append", "description": "append to file" },
+{ "name": "-c, --command <command>", "description": "run command rather than interactive shell" },
+{ "name": "-e, --exit", "description": "exit on command exit" },
+{ "name": "-f, --flush", "description": "flush output after each write" },
+{ "name": "-q, --quiet", "description": "quiet mode" },
+{ "name": "-t, --timing <file>", "description": "output timing data to file" },
+{ "name": "-V, --version", "description": "display version" },
+{ "name": "-h, --help", "description": "display this help" }
+],
+"examples": [
+"script --help",
+"script -h",
+"script session.log"
+]
+},
+{
+"name": "unexpand",
+"description": "将文件中的空格转换为制表符，可指定转换规则",
+"syntax": "unexpand [-fa][-t N] [FILE]...",
+"options": [
+{
+"name": "-a",
+"description": "Convert all blanks"
+},
+{
+"name": "-f",
+"description": "Convert only leading blanks"
+},
+{
+"name": "-t N",
+"description": "Tabstops every N chars"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"unexpand file.txt",
+"unexpand -a document.txt",
+"unexpand -t 4 sourcecode.c",
+"unexpand -f -t 8 input.txt > output.txt"
+]
+},
+{
+"name": "updatedb",
+"description": "更新系统文件位置数据库（供locate命令快速查询文件）",
+"syntax": "updatedb [--findoptions='options'] [--localpaths='dirs'] [--netpaths='dirs'] [--prunepaths='dirs'] [--prunefs='fs'] [--output=dbfile] [--netuser=user] [--localuser=user] [--dbformat] [--version] [--help]",
+"options": [
+{
+"name": "--findoptions='-option1 -option2...'",
+"description": "Specify options for find command"
+},
+{
+"name": "--localpaths='dir1 dir2...'",
+"description": "Specify local directories to search"
+},
+{
+"name": "--netpaths='dir1 dir2...'",
+"description": "Specify network directories to search"
+},
+{
+"name": "--prunepaths='dir1 dir2...'",
+"description": "Specify directories to exclude from search"
+},
+{
+"name": "--prunefs='fs1 fs2...'",
+"description": "Specify filesystem types to exclude"
+},
+{
+"name": "--output=dbfile",
+"description": "Specify output database file path"
+},
+{
+"name": "--netuser=user",
+"description": "Specify user for network directory search"
+},
+{
+"name": "--localuser=user",
+"description": "Specify user for local directory search"
+},
+{
+"name": "--dbformat",
+"description": "Specify database format"
+},
+{
+"name": "--version",
+"description": "Display version information"
+},
+{
+"name": "--help",
+"description": "Display help information"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"updatedb",
+"updatedb --output=/var/lib/mlocate/mlocate.db",
+"updatedb --prunepaths='/tmp /var/tmp'",
+"updatedb --localpaths='/home /usr' --prunefs='nfs tmpfs'"
+]
+},
+{
+"name": "whereis",
+"description": "查找指定命令的二进制文件、源代码文件及对应手册页位置",
+"syntax": "whereis [options] [-BMS <dir>... -f] <name>",
+"options": [
+{
+"name": "-b",
+"description": "Search only for binaries"
+},
+{
+"name": "-B <dirs>",
+"description": "Define binaries lookup path"
+},
+{
+"name": "-f",
+"description": "Terminate <dirs> argument list"
+},
+{
+"name": "-g",
+"description": "Interpret name as glob (pathnames pattern)"
+},
+{
+"name": "-l",
+"description": "Output effective lookup paths"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+},
+{
+"name": "-M <dirs>",
+"description": "Define manual pages lookup path"
+},
+{
+"name": "-S <dirs>",
+"description": "Define source files lookup path"
+}
+],
+"examples": [
+"whereis ls",
+"whereis -b python",
+"whereis -B /usr/local/bin -f gcc",
+"whereis -l"
+]
+},
+{
+"name": "xmllint",
+"description": "对 XML 文件进行解析、验证、格式化及语法检查的工具",
+"syntax": "xmllint [options] XMLfiles ...",
+"options": [
+{
+"name": "--version",
+"description": "Display the version of the XML library used"
+},
+{
+"name": "--debug",
+"description": "Dump a debug tree of the in-memory document"
+},
+{
+"name": "--shell",
+"description": "Run a navigating shell"
+},
+{
+"name": "--debugent",
+"description": "Debug the entities defined in the document"
+},
+{
+"name": "--copy",
+"description": "Test the internal copy implementation"
+},
+{
+"name": "--recover",
+"description": "Output what was parsable on broken XML documents"
+},
+{
+"name": "--huge",
+"description": "Remove any internal arbitrary parser limits"
+},
+{
+"name": "--noent",
+"description": "Substitute entity references by their value"
+},
+{
+"name": "--noenc",
+"description": "Ignore any encoding specified inside the document"
+},
+{
+"name": "--noout",
+"description": "Don't output the result tree"
+},
+{
+"name": "--path 'paths'",
+"description": "Provide a set of paths for resources"
+},
+{
+"name": "--load-trace",
+"description": "Print trace of all external entities loaded"
+},
+{
+"name": "--nonet",
+"description": "Refuse to fetch DTDs or entities over network"
+},
+{
+"name": "--nocompact",
+"description": "Do not generate compact text nodes"
+},
+{
+"name": "--htmlout",
+"description": "Output results as HTML"
+},
+{
+"name": "--nowrap",
+"description": "Do not put HTML doc wrapper"
+},
+{
+"name": "--valid",
+"description": "Validate the document in addition to standard well-formed check"
+},
+{
+"name": "--postvalid",
+"description": "Do a posteriori validation, i.e after parsing"
+},
+{
+"name": "--dtdvalid URL",
+"description": "Do a posteriori validation against a given DTD"
+},
+{
+"name": "--dtdvalidfpi FPI",
+"description": "Same as --dtdvalid but name the DTD with a Public Identifier"
+},
+{
+"name": "--quiet",
+"description": "Be quiet when succeeded"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"xmllint document.xml",
+"xmllint --valid --noout config.xml",
+"xmllint --format input.xml > output.xml",
+"xmllint --nonet --dtdvalid http://example.com/dtd.dtd data.xml",
+"xmllint --shell document.xml"
+]
+},
+{
+"name": "xsltproc",
+"description": "使用 XSLT 样式表将 XML 文件转换为其他格式（如 HTML、TXT）",
+"syntax": "xsltproc [options] stylesheet file...",
+"options": [
+{
+"name": "--version",
+"description": "Display version information"
+},
+{
+"name": "--debug",
+"description": "Enable debugging output"
+},
+{
+"name": "--novalid",
+"description": "Skip DTD validation of input documents"
+},
+{
+"name": "--xmlout",
+"description": "Force XML output even if HTML is detected"
+},
+{
+"name": "--htmlout",
+"description": "Force HTML output"
+},
+{
+"name": "--encoding encoding",
+"description": "Specify output encoding"
+},
+{
+"name": "--param name expression",
+"description": "Pass a parameter to the stylesheet (string values must be quoted)"
+},
+{
+"name": "--stringparam name value",
+"description": "Pass a (parameter, UTF8 string value) pair"
+},
+{
+"name": "--path 'paths'",
+"description": "Provide a set of paths for resources"
+},
+{
+"name": "--nonet",
+"description": "Refuse to fetch DTDs or entities over network"
+},
+{
+"name": "--nowrite",
+"description": "Refuse to write to any file or resource"
+},
+{
+"name": "--nomkdir",
+"description": "Refuse to create directories"
+},
+{
+"name": "--writesubtree path",
+"description": "Allow file write only within the specified path subtree"
+},
+{
+"name": "--catalogs",
+"description": "Use SGML catalogs from $SGML_CATALOG_FILES (default: XML Catalogs from file:///etc/xml/catalog)"
+},
+{
+"name": "--xinclude",
+"description": "Do XInclude processing on document input"
+},
+{
+"name": "--xincludestyle",
+"description": "Do XInclude processing on stylesheets"
+},
+{
+"name": "--load-trace",
+"description": "Print trace of all external entities loaded"
+},
+{
+"name": "--profile, --norman",
+"description": "Dump profiling information"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"xsltproc style.xsl data.xml",
+"xsltproc --output result.html transform.xsl input.xml",
+"xsltproc --stringparam title 'My Document' style.xsl content.xml",
+"xsltproc --nonet --catalogs stylesheet.xsl document.xml",
+"xsltproc --xinclude transform.xsl data.xml"
+]
+},
+{
+"name": "zcmp",
+"description": "直接对比两个压缩文件的字节内容，无需手动解压",
+"syntax": "zcmp [OPTION]... FILE1 [FILE2]",
+"options": [
+{
+"name": "-b, --print-bytes",
+"description": "Print differing bytes"
+},
+{
+"name": "-i, --ignore-initial=N",
+"description": "Ignore first N bytes"
+},
+{
+"name": "-i, --ignore-initial=N1:N2",
+"description": "Ignore first N1 bytes of FILE1 and N2 bytes of FILE2"
+},
+{
+"name": "-l, --list",
+"description": "List all differing bytes"
+},
+{
+"name": "-n, --bytes=N",
+"description": "Compare only first N bytes"
+},
+{
+"name": "-s, --quiet, --silent",
+"description": "Suppress all output"
+},
+{
+"name": "-v, --version",
+"description": "Display version information"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"zcmp file1.gz file2.gz",
+"zcmp data.gz",
+"zcmp -l archive1.gz archive2.gz",
+"zcmp -n 1000 log1.gz log2.gz",
+"zcmp --silent report1.gz report2.gz && echo 'Files are identical'"
+]
+},
+{
+"name": "zdiff",
+"description": "对比两个压缩文件的文本内容差异，输出逐行对比结果",
+"syntax": "zdiff [OPTION]... FILE1 [FILE2]",
+"options": [
+{
+"name": "-q, --brief",
+"description": "Report only whether files differ"
+},
+{
+"name": "-s, --report-identical-files",
+"description": "Report when files are identical"
+},
+{
+"name": "-c, -C NUM, --context[=NUM]",
+"description": "Output NUM (default 3) lines of context"
+},
+{
+"name": "-u, -U NUM, --unified[=NUM]",
+"description": "Output NUM (default 3) lines of unified context"
+},
+{
+"name": "-i, --ignore-case",
+"description": "Ignore case differences in file contents"
+},
+{
+"name": "-w, --ignore-all-space",
+"description": "Ignore all whitespace"
+},
+{
+"name": "-b, --ignore-space-change",
+"description": "Ignore changes in the amount of whitespace"
+},
+{
+"name": "-B, --ignore-blank-lines",
+"description": "Ignore blank lines"
+},
+{
+"name": "-r, --recursive",
+"description": "Recursively compare any subdirectories found"
+},
+{
+"name": "-N, --new-file",
+"description": "Treat absent files as empty"
+},
+{
+"name": "-a, --text",
+"description": "Treat all files as text"
+},
+{
+"name": "-v, --version",
+"description": "Display version information"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"zdiff report1.gz report2.gz",
+"zdiff -u log1.gz log2.gz",
+"zdiff -q data1.gz data2.gz",
+"zdiff -r dir1/ dir2/",
+"zdiff --report-identical-files file.gz"
+]
+},
+{
+"name": "stty",
+"description": "配置和查看终端设备的设置",
+"syntax": "stty [-a|g] [-F DEVICE] [SETTING]...",
+"options": [
+{
+"name": "-F DEVICE",
+"description": "Open device instead of stdin"
+},
+{
+"name": "-a",
+"description": "Print all current settings in human-readable form"
+},
+{
+"name": "-g",
+"description": "Print in stty-readable form"
+},
+{
+"name": "speed",
+"description": "Set terminal baud rate (e.g., 9600, 115200)"
+},
+{
+"name": "csN",
+"description": "Set character size to N bits (5, 6, 7, 8)"
+},
+{
+"name": "parity",
+"description": "Set parity checking (even, odd, none)"
+},
+{
+"name": "stopb",
+"description": "Set number of stop bits (1, 2)"
+},
+{
+"name": "echo",
+"description": "Enable echoing of input characters"
+},
+{
+"name": "-echo",
+"description": "Disable echoing of input characters"
+},
+{
+"name": "icanon",
+"description": "Enable canonical mode (line-by-line input)"
+},
+{
+"name": "-icanon",
+"description": "Disable canonical mode (character-by-character input)"
+},
+{
+"name": "sane",
+"description": "Set terminal to sane settings"
+},
+{
+"name": "-h, --help",
+"description": "display this help"
+}
+],
+"examples": [
+"stty",
+"stty -a",
+"stty -g",
+"stty -F /dev/ttyUSB0 115200 cs8 -parity",
+"stty echo",
+"stty -echo",
+"stty sane"
+]
+}
+  ]

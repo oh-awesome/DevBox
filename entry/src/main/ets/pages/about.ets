@@ -1,3 +1,4 @@
+import { image } from "@kit.ImageKit";
 
 @Component
 struct HeadContent {
@@ -80,45 +81,74 @@ struct CommContent {
   }
 }
 
+@CustomDialog
+struct GuidDialog {
+  controller: CustomDialogController
+  @State originalImageWidth: number = 0;
+  @State originalImageHeight: number = 0;
+
+  build() {
+    Column() {
+      Image($r('app.media.python_guide'))
+        .objectFit(ImageFit.Contain)
+    }
+    .height('80%')
+    .width('80%')
+  }
+}
+
+
 @Component
 export struct AboutPage {
-  static OHPCD_MAIN_PAGE: string = 'https://gitcode.com/OpenHarmonyPCDeveloper/DevBox';
-  static DEVBOX_PRIVACY_STATEMENT: string =
-    'https://agreement-drcn.hispace.dbankcloud.cn/index.html?lang=zh&agreementId=1756595219123443648';
+  guideDialogController: CustomDialogController = new CustomDialogController({
+    builder: GuidDialog(),
+    // 设置弹窗参数
+    alignment: DialogAlignment.Center,
+    autoCancel: true, // 点击蒙层可关闭
+    customStyle: true,
+    maskColor: "#00000040",  // 设置蒙层颜色
+    width: 192 * 3,
+    height: 108 * 3,
+  })
 
   build() {
     Row() {
       Column() {
-        HeadContent({textResource: $r('app.string.app_describe')})
+        HeadContent({ textResource: $r('app.string.app_describe') })
 
-        TitleContent({textResource: $r('app.string.key_feature')})
-        DetailContent({headResource: $r('app.string.key_feature_cmd'), textResource: $r('app.string.key_feature_cmds')})
-        DetailContent({headResource: $r('app.string.key_feature_handy_utility'), textResource: $r('app.string.key_feature_handy_utilities')})
-        DetailContent({headResource: $r('app.string.key_feature_system_resource'), textResource: $r('app.string.key_feature_system_resources')})
-        DetailContent({headResource: $r('app.string.key_feature_number_other'), textResource: $r('app.string.key_feature_number_others')})
+        TitleContent({ textResource: $r('app.string.key_feature') })
+        DetailContent({
+          headResource: $r('app.string.key_feature_cmd'),
+          textResource: $r('app.string.key_feature_cmds')
+        })
+        DetailContent({
+          headResource: $r('app.string.key_feature_handy_utility'),
+          textResource: $r('app.string.key_feature_handy_utilities')
+        })
+        DetailContent({
+          headResource: $r('app.string.key_feature_system_resource'),
+          textResource: $r('app.string.key_feature_system_resources')
+        })
+        DetailContent({
+          headResource: $r('app.string.key_feature_number_other'),
+          textResource: $r('app.string.key_feature_number_others')
+        })
 
-        TitleContent({textResource: $r('app.string.usage_tips_title')})
-        CommContent({textResource: $r('app.string.usage_tips_content')})
-        CommContent({textResource: $r('app.string.usage_help')})
-        Hyperlink(AboutPage.OHPCD_MAIN_PAGE, $r("app.string.ohpcd_name"))
-          .size({height: 16})
-          .hitTestBehavior(12)
-          .margin({
-            top: 6,
-            left: 15,
-            right: 15
-          });
+        TitleContent({ textResource: $r('app.string.usage_tips_title') })
+        CommContent({ textResource: $r('app.string.usage_tips_content') })
 
-        TitleContent({textResource: $r('app.string.privacy_tips_title')})
-        CommContent({textResource: $r('app.string.privacy_tips_content')})
-        Hyperlink(AboutPage.DEVBOX_PRIVACY_STATEMENT, $r('app.string.privacy_link'))
-          .size({height: 16})
-          .hitTestBehavior(12)
-          .margin({
-            top: 6,
-            left: 15,
-            right: 15
-          });
+        Column() {
+          Image($r('app.media.python_guide'))
+            .objectFit(ImageFit.Contain)
+        }
+        .height('180')
+        .width('100%')
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+        .padding(16)
+        .onClick(async () => {
+          this.guideDialogController.open()
+        })
 
         Column()
           .flexGrow(1);
@@ -151,15 +181,4 @@ export struct AboutPage {
       .alignItems(HorizontalAlign.Start)
     }
   }
-}
-
-
-@Styles
-function HeadStyle() {
-
-}
-
-@Styles
-function contentStyle() {
-
 }

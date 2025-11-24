@@ -71,6 +71,10 @@
     {
       "name": "timestamp_info",
       "value": "#1E1E1E"
+    },
+    {
+      "name": "button_full_hover",
+      "value": "#4AB0AFAF"
     }
   ]
 }

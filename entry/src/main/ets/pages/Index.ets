@@ -11,7 +11,9 @@ import { SysMedia } from './sys_media'
 import { SysSymbol } from './sys_symbol';
 import { SysColor } from './sys_color';
 import { SysString } from './sys_string';
-import { MiniTerminal } from './terminal'
+import { AboutDialog } from '../about_diaglog/about';
+import { CommandManual } from './command_manual';
+
 @Entry
 @Component
 struct Index {
@@ -21,6 +23,16 @@ struct Index {
   @State currentIndex: number = 0;
   private controller: TabsController = new TabsController();
   @State pageinfos: NavPathStack = new NavPathStack();
+  @State titleColor: Resource = $r('sys.color.ohos_id_color_titlebar_icon')
+  @State helpButtonColor: Resource = $r('app.color.button_full_transparent')
+  dialogController: CustomDialogController = new CustomDialogController({
+    builder: AboutDialog(),
+    // 设置弹窗参数
+    alignment: DialogAlignment.Center,
+    autoCancel: true, // 点击蒙层可关闭
+    customStyle: false,
+    maskColor: "#00000040"  // 设置蒙层颜色
+  })
 
   async aboutToAppear() {
     try {
@@ -109,14 +121,61 @@ struct Index {
       .alignItems(HorizontalAlign.Center)
     } else {
       Column() {
+        Row({ space: 20 }) {
+          Row({ space: 20 }) {
+            Image($r('app.media.AppIcon'))
+              .height(20)
+              .width(20)
+            Text('DevBox')
+              .fontColor(this.titleColor)
+              .fontSize(16)
+              .fontWeight(FontWeight.Medium)
+          }
+          .width('50%')
+          .alignItems(VerticalAlign.Center)
+          .justifyContent(FlexAlign.Start)
+
+          Row({ space: 20 }) {
+            Row() {
+              SymbolGlyph($r('sys.symbol.questionmark_circle'))
+                .fontSize(20)
+                .fontWeight(FontWeight.Normal)
+                .fontColor([this.titleColor])
+            }
+            .height(30)
+            .width(30)
+            .borderRadius(6)
+            .backgroundColor(this.helpButtonColor)
+            .alignItems(VerticalAlign.Center)
+            .justifyContent(FlexAlign.Center)
+            .onClick(async () => {
+              this.dialogController.open()
+            })
+            .onHover((isHover: boolean, event: HoverEvent) => {
+              if (event.sourceTool === SourceTool.MOUSE) {
+                this.helpButtonColor =
+                  isHover ? $r('app.color.button_full_hover') : $r('app.color.button_full_transparent');
+              }
+            })
+          }
+          .width('50%')
+          .alignItems(VerticalAlign.Center)
+          .justifyContent(FlexAlign.End)
+        }
+        .height(48)
+        .width('100%')
+        .alignItems(VerticalAlign.Center)
+        .justifyContent(FlexAlign.SpaceBetween)
+        .padding({ left: 16, right: 100 })
+
         Tabs({ controller: this.controller }) {
           TabContent() {
             AboutPage()
           }.tabBar($r('app.string.tab_about'))
 
           TabContent() {
-            MiniTerminal()
-          }.tabBar($r('app.string.tab_miniterm'))
+            CommandManual()
+          }.tabBar($r('app.string.tab_cmd_manual'))
 
           TabContent() {
             UnicodeConverter()
@@ -158,31 +217,29 @@ struct Index {
         .barHeight('100%')
         .vertical(true)
         .barPosition(BarPosition.Start)
-        .backgroundBlurStyle(BlurStyle.COMPONENT_REGULAR)
         .fadingEdge(true)
         .barMode(BarMode.Scrollable)
-        .backgroundColor($r('sys.color.comp_background_secondary'))
+        .backgroundColor(Color.Transparent)
         .divider({ strokeWidth: '1px', color: $r('sys.color.comp_divider') })
         .onChange((index: number) => {
           this.currentIndex = index;
         })
+        .height('92%')
       }
-      .padding({
-        top: 48,
-        left: 16,
-        right: 16,
-        bottom: 16,
-      })
       .justifyContent(FlexAlign.Center)
-      .backgroundImage($r("app.media.nextBackground"))
-      .backgroundImageSize({ width: '100%', height: '100%' })
-
       .height('100%')
       .width('100%')
+      .backgroundImage($r("app.media.nextBackground"))
+      .backgroundBlurStyle(BlurStyle.COMPONENT_THIN)
+      .backgroundImageSize({ width: '100%', height: '100%' })
+      .onBlur(() => {
+        // 组件失去焦点时触发，将背景色变为灰色
+        this.titleColor = $r('sys.color.ohos_id_color_foreground_contrary_disable_dark')
+      })
+      .onFocus(() => {
+        // 组件获得焦点时触发，将背景色恢复为白色
+        this.titleColor = $r('sys.color.ohos_id_color_titlebar_icon')
+      })
     }
   }
-}
-
-function ImageGrid() {
-  throw new Error('Function not implemented.');
 }

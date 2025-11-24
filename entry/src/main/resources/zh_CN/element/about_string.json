@@ -1,0 +1,100 @@
+{
+  "string": [
+    {
+      "name": "about_about",
+      "value": "关于"
+    },
+    {
+      "name": "about_version_head",
+      "value": "版本 "
+    },
+    {
+      "name": "about_build_version_head",
+      "value": "构建版本 "
+    },
+    {
+      "name": "about_appInfo",
+      "value": "应用介绍"
+    },
+    {
+      "name": "about_developerInfo",
+      "value": "开发信息"
+    },
+    {
+      "name": "about_developer_who",
+      "value": "开发者"
+    },
+    {
+      "name": "about_developer_web",
+      "value": "网站"
+    },
+    {
+      "name": "about_privacy",
+      "value": "隐私保护"
+    },
+    {
+      "name": "about_copyright_info",
+      "value": "版权所有"
+    },
+    {
+      "name": "about_rightsReserved",
+      "value": "保留所有权力"
+    },
+    {
+      "name": "about_opensource",
+      "value": "开源声明"
+    },
+    {
+      "name": "about_opensource_head",
+      "value": "开源软件使用声明"
+    },
+    {
+      "name": "about_opensource_update_date",
+      "value": "最后更新: "
+    },
+    {
+      "name": "about_opensource_license_declaration",
+      "value": "开源软件协议声明"
+    },
+    {
+      "name": "about_opensource_license_declaration_info",
+      "value": "本软件产品包含遵循各种开源许可证的第三方开源软件组件。\\n\\n每个开源软件组件的许可证条款均适用于该特定组件，我们尊重并遵守所有适用的开源许可证要求。"
+    },
+    {
+      "name": "about_opensource_import_notice",
+      "value": "重要提示"
+    },
+    {
+      "name": "about_opensource_import_notice_info",
+      "value": "根据相关开源许可证要求，您有权获取、修改和分发这些开源软件组件的源代码。"
+    },
+    {
+      "name": "about_opensource_list_head",
+      "value": "使用的开源组件及许可证清单"
+    },
+    {
+      "name": "about_opensource_code_repository_URL",
+      "value": "代码仓地址"
+    },
+    {
+      "name": "about_opensource_view_license",
+      "value": "查看许可证"
+    },
+    {
+      "name": "about_opensource_source_code_acquisition",
+      "value": "源代码获取"
+    },
+    {
+      "name": "about_opensource_source_code_acquisition_method",
+      "value": "获取方式"
+    },
+    {
+      "name": "about_opensource_get_from_code_url",
+      "value": "● 访问我们的开源页面: "
+    },
+    {
+      "name": "about_opensource_click_access",
+      "value": "点击访问"
+    }
+  ]
+}

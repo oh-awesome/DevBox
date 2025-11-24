@@ -76,8 +76,6 @@
       "name": "privacy_link",
       "value": "DevBox Privacy Policy"
     },
-
-
     {
       "name": "ohpcd_name",
       "value": "OpenHarmony PC Developer Community"
@@ -145,6 +143,10 @@
     {
       "name": "tab_string",
       "value": "System String Resource"
+    },
+    {
+      "name": "tab_cmd_manual",
+      "value": "Command manual"
     },
     {
       "name": "reset",
@@ -309,12 +311,22 @@
     {
       "name": "get_user_permission_document",
       "value": "Documents"
-    },{
+    },
+    {
       "name": "get_user_permission_desktop",
       "value": "Desktop"
-    },{
+    },
+    {
       "name": "get_user_permission_home",
       "value": "Home"
+    },
+    {
+      "name": "command_user_guide",
+      "value": "DevBox is the OpenHarmony PC development tool, providing a suite of command-line tools to assist developers in project building, debugging, and deployment."
+    },
+    {
+      "name": "command_list",
+      "value": "Command list"
     }
   ]
 }
