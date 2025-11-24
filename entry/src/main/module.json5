@@ -122,7 +122,23 @@
         "type": "public"
       },
       {
-        "package": "build-tool.hnp",
+        "package": "cmake.hnp",
+        "type": "public"
+      },
+      {
+        "package": "autoconf.hnp",
+        "type": "public"
+      },
+      {
+        "package": "grep.hnp",
+        "type": "public"
+      },
+      {
+        "package": "neovim.hnp",
+        "type": "public"
+      },
+      {
+        "package": "ninja.hnp",
         "type": "public"
       },
       {
