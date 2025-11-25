@@ -11,23 +11,19 @@
 
 （二）界面布局
 
-软件主页包含关于、Mini终端、Uincode转换、迷你记事本、二维码生成器、时间戳转换、系统Media资源、系统Stmbol资源、系统Color资源、系统String资源和进制转换。
+软件主页包含关于、命令手冊、Uincode转换、迷你记事本、二维码生成器、时间戳转换、系统Media资源、系统Stmbol资源、系统Color资源、系统String资源和进制转换。
 
 ![image.png](https://raw.gitcode.com/user-images/assets/7354352/68a94d80-1e21-4a04-82a2-a414d3dca610/image.png 'image.png')
 
-## Mini终端
-本应用主要提供了文件和目录操作命令、网络命令、构建命令等，可以在附录中里查看我们支持的命令范围，依此判断是否满足您的使用需求。
+## 命令手冊
+本应用主要提供了文件和目录操作命令、网络命令、构建命令等，您可以查看我们支持的命令范围，依此判断是否满足您的使用需求。
 
 (一)	功能描述
+命令手册展示我们提供并安装到系统的命令，您可以点击查看这些命令，也可以通过搜索命令名称或功能关键字进行过滤。
 
-本应用同时提供一个微型的交互界面保障用户进行命令交互。用户可以选择该工具，点击黑色区域后进行命令输入交互。在用户目录下的操作需要手动授权，点击对应按钮，选择目录进行授权，授权后，可在该目录下进行读写操作。
-    
- ![image.png](https://raw.gitcode.com/user-images/assets/7354352/7752fd62-2c68-4ece-9082-a55907288ce3/image.png 'image.png')
-  
- (二)	页面布局
+(二)	页面布局
  
- ![image.png](https://raw.gitcode.com/user-images/assets/7354352/cd98ce31-da68-41c0-9e0a-1405484181a0/image.png 'image.png')
- 
+
 ##  Uincode转换
 (一)	功能介绍
 

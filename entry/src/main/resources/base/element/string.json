@@ -34,7 +34,7 @@
     },
     {
       "name": "key_feature_handy_utilities",
-      "value": "Mini terminal, Unicode conversion, mini notepad, QR code generator, timestamp converter."
+      "value": "Command Manual, Unicode conversion, mini notepad, QR code generator, timestamp converter."
     },
     {
       "name": "key_feature_system_resource",
@@ -58,7 +58,7 @@
     },
     {
       "name": "usage_tips_content",
-      "value": "Execute commands directly in the MiniTerm, but we recommend using the system's default terminal, \"HiShell\", for optimal performance."
+      "value": "Execute commands via the default inal tool \"HiShell\", click the image below for usage examples, and refer to the manual for command details."
     },
     {
       "name": "usage_help",
@@ -86,19 +86,15 @@
     },
     {
       "name": "tips_dialog",
-      "value": "Use Requirements"
+      "value": "Application Usage Tip"
     },
     {
       "name": "restart_notice",
-      "value": "After installation completes, relaunch the terminal application to activate full command functionality of the toolkit."
+      "value": "After installation is complete, please restart your terminal application to activate all command functions of the toolkit."
     },
     {
       "name": "confirm_button",
       "value": "OK"
-    },
-    {
-      "name": "tab_miniterm",
-      "value": "MiniTerm"
     },
     {
       "name": "tab_about",

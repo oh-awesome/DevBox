@@ -83,8 +83,9 @@ struct Index {
       Column() {
         Column() {
           Text($r('app.string.tips_dialog'))
-            .fontSize(20)
+            .fontSize(24)
             .textAlign(TextAlign.Center)
+            .fontWeight(FontWeight.Bold)
             .margin({ bottom: 10, top: 25 })
 
           Text($r('app.string.restart_notice'))
@@ -96,6 +97,7 @@ struct Index {
             .width(180)
             .height(40)
             .fontSize(18)
+            .borderRadius(8)
             .type(ButtonType.Capsule)
             .backgroundColor('#007DFF')
             .margin({ bottom: 25 })
@@ -106,7 +108,7 @@ struct Index {
         .padding(20)
         .backgroundColor(Color.White)
         .borderRadius(16)
-        .width('80%')
+        .width('60%')
         .shadow({
           radius: 10,
           color: Color.Gray,
@@ -114,6 +116,9 @@ struct Index {
           offsetY: 5
         });
       }
+      .backgroundImage($r("app.media.nextBackground"))
+      .backgroundBlurStyle(BlurStyle.COMPONENT_THIN)
+      .backgroundImageSize({ width: '100%', height: '100%' })
       .position({ x: 0, y: 0 })
       .width('100%')
       .height('100%')
