@@ -1,5 +1,7 @@
 import webview from '@ohos.web.webview';
 import { LevelMode } from '@kit.ArkUI';
+import { OpenSourceNoticeMetaData } from './opensource_info';
+import ossComponentsList from './opensource_list';
 
 @CustomDialog
 export struct AboutDialog {
@@ -279,41 +281,11 @@ export struct AboutDialog {
   }
 }
 
-class OpenSourceNoticeMetaData {
-  name: string = '';
-  license: string = '';
-  source: string = '';
-  licenseFile: string = '';
-  showLicense: boolean = false;
-}
-
 @CustomDialog
 struct OpenSourceDialog {
   controller: CustomDialogController
   // 开源组件数据
-  @State ossComponents: OpenSourceNoticeMetaData[] = [
-    {
-      name: 'React',
-      license: 'MIT',
-      source: 'https://github.com/facebook/react',
-      licenseFile: 'react_license.html',
-      showLicense: false,
-    },
-    {
-      name: 'Lodash',
-      license: 'MIT',
-      source: 'https://github.com/lodash/lodash',
-      licenseFile: 'lodash_license.html',
-      showLicense: false,
-    },
-    {
-      name: 'Moment.js',
-      license: 'MIT',
-      source: 'https://github.com/moment/moment',
-      licenseFile: 'moment_license.html',
-      showLicense: false,
-    }
-  ]
+  @State ossComponents: OpenSourceNoticeMetaData[] = ossComponentsList;
   private webController: webview.WebviewController = new webview.WebviewController();
   @State timeStamp: number = new Date().getTime();
 
@@ -506,8 +478,6 @@ struct OpenSourceDialog {
                     .onClick(() => {
                       item.showLicense = !item.showLicense
                       this.timeStamp = Date.now();
-                      console.log(`renshang ` + item.showLicense)
-                      console.log(`renshang 1` + this.ossComponents[index].showLicense)
                     })
                 }
                 .layoutWeight(1)

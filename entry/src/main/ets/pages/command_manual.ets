@@ -1,22 +1,8 @@
+import { CommandManualData, CommandManualOption } from "./manual_data";
 import commandManualDataList from "./manual_data";
-
-export class CommandManualOption {
-  paramName: string = '';
-  description: string = '';
-}
-
-export class CommandManualData {
-  name: string = '';
-  description: string = '';
-  syntax: string = '';
-  options: CommandManualOption[] = [];
-  examples: string[] = [];
-  showDetails: boolean = false;
-}
 
 @Component
 export struct CommandManual {
-  // 开源组件数据
   @State commandLists: CommandManualData[] = commandManualDataList;
   @State searchText: string = '';
   @State timeStamp: number = new Date().getTime();
@@ -75,7 +61,7 @@ export struct CommandManual {
 
       // 清除按钮
 
-      SymbolGlyph($r('sys.symbol.clean')) // 你需要自己准备一个清除图标
+      SymbolGlyph($r('sys.symbol.clean'))
         .fontSize(24)
         .fontColor([this.searchText === "" ? $r('sys.color.ohos_id_color_foreground_contrary_disable_dark') :
         $r('sys.color.ohos_id_color_emphasize_contrary')])
