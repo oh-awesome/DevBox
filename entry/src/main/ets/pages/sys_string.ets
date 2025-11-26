@@ -527,7 +527,6 @@ struct SysResourceDetails {
           } catch (err) {
             console.error('Failed to set PasteData. Cause:' + err.message);
           }
-          ;
         }
       })
         .height(40)
