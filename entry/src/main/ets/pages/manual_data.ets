@@ -706,9 +706,9 @@ const commandManualDataList: CommandManualData[] = [
     description: '显示每个处理器的统计信息,用于监控多处理器系统中各个 CPU 的利用率、中断等状态',
     syntax: 'mpstat [-A] [-I SUM|CPU|ALL|SCPU] [-u] [-P num|ALL] [INTERVAL [COUNT]]',
     options: [
-        { paramName: '-A, description: 'Equivalent to -I ALL -u -P ALL (enable all statistics for all processors)' },
+        { paramName: '-A', description: 'Equivalent to -I ALL -u -P ALL (enable all statistics for all processors)' },
         { paramName: '-I SUM|CPU|ALL|SCPU', description: 'Report interrupt statistics; valid arguments: SUM (summary), CPU (per-CPU), ALL (both SUM and CPU), SCPU (per-software CPU)' },
-        { paramName: '-u, description: 'Report CPU utilization statistics (default if no other statistics option is specified)' },
+        { paramName: '-u', description: 'Report CPU utilization statistics (default if no other statistics option is specified)' },
         { paramName: '-P num|ALL', description: 'Specify the processor to monitor; num is the CPU number (0-based), ALL means monitor all processors' }
     ],
     examples: [
@@ -1395,7 +1395,7 @@ const commandManualDataList: CommandManualData[] = [
         { paramName: '--quotes=quotes', description: 'Sets the quote marks used to surround C<> text to quotes. If quotes is a single character, it is used as both the left and right quote. Otherwise, it is split in half.' },
         { paramName: '--lquote=quote', description: 'Sets the left quote mark used to surround C<> text.' },
         { paramName: '--rquote=quote', description: 'Sets the right quote mark used to surround C<> text.' },
-        { paramName: '--stderr', description: 'Equivalent to '--errors=stderr". Supported for backward compatibility.' },
+        { paramName: '--stderr', description: 'Equivalent to "--errors=stderr". Supported for backward compatibility.' },
         { paramName: '--utf8', description: 'This option is now ignored as UTF-8 is the default output encoding.' },
         { paramName: '--verbose', description: 'Print out the name of each output file as it is being generated.' },
         { paramName: '--help', description: 'Print out usage information.' }
