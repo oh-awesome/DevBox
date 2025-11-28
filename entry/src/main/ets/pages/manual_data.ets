@@ -1460,11 +1460,10 @@ const commandManualDataList: CommandManualData[] = [
   {
     name: 'soelim',
     description: 'groff文档格式化系统的预处理器，递归解析并替换roff格式文件中的.so指令，嵌入外部文件内容以实现文档模块化整合，支持错误溯源与格式兼容。',
-    syntax: [
-      'soelim [-Crt] [-I dir] [file ...]',
-      'soelim {-v | --version}',
-      'soelim --help'
-    ],
+    syntax: 
+      'soelim [-Crt] [-I dir] [file ...],'+
+      'soelim {-v | --version},'+
+      'soelim --help',
     options: [
       { paramName: '--help', description: 'Display help information' },
       { paramName: '-v, --version', description: 'Display version information' },
