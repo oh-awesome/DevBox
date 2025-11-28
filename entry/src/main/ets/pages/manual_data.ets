@@ -2764,19 +2764,6 @@ const commandManualDataList: CommandManualData[] = [
     showDetails: false
   },
   {
-    name: 'ptardiff',
-    description: '比较两个 tar 归档文件差异的工具（依赖 Text::Diff 模块，Perl 编写）',
-    syntax: 'ptardiff [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]',
-    options: [
-        { paramName: '-h', description: 'Display help information (requires argument; see perldoc for details)' }
-    ],
-    examples: [
-        'ptardiff archive1.tar archive2.tar',
-        'ptardiff -h',
-    ],
-    showDetails: false
-  },
-  {
     name: 'ptargrep',
     description: '对 tar 归档文件中的文件内容执行模式匹配的工具',
     syntax: 'ptargrep [options] <pattern> <tar file> ...',
