@@ -1844,7 +1844,7 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-t[FILE]', description: 'Send timing to stderr or FILE' }
     ],
     examples: [
-      'script -q -c ',
+      'script -q -c "echo \'test content\'"',
       'script session.log'
     ],
     showDetails: false
@@ -4883,41 +4883,6 @@ const commandManualDataList: CommandManualData[] = [
     examples: [
       'clang-extdef-mapping --help',
       'clang-extdef-mapping --version'
-    ],
-    showDetails: false
-  },
-  {
-    name: 'clang-format',
-    description: '用于格式化C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C#代码的工具',
-    syntax: 'clang-format [options] [@<file>] [<file> ...]',
-    options: [
-      { paramName: '--Werror', description: 'If set, changes formatting warnings to errors' },
-      { paramName: '--Wno-error=<value>', description: 'If set, don\'t error out on the specified warning type. =unknown - If set, unknown format options are only warned about. This can be used to enable formatting, even if the configuration contains unknown (newer) options. Use with caution, as this might lead to dramatically differing format depending on an option being supported or not.' },
-      { paramName: '--assume-filename=<string>', description: 'Set filename used to determine the language and to find .clang-format file. Only used when reading from stdin. If this is not passed, the .clang-format file is searched relative to the current working directory when reading stdin. Unrecognized filenames are treated as C++. supported: CSharp: .cs; Java: .java; JavaScript: .js .mjs .cjs .ts; Json: .json .ipynb; Objective-C: .m .mm; Proto: .proto .protodevel; TableGen: .td; TextProto: .txtpb .textpb .pb.txt .textproto .asciipb; Verilog: .sv .svh .v .vh' },
-      { paramName: '--cursor=<uint>', description: 'The position of the cursor when invoking clang-format from an editor integration' },
-      { paramName: '--dry-run', description: 'If set, do not actually make the formatting changes' },
-      { paramName: '--dump-config', description: 'Dump configuration options to stdout and exit. Can be used with -style option.' },
-      { paramName: '--fail-on-incomplete-format', description: 'If set, fail with exit code 1 on incomplete format.' },
-      { paramName: '--fallback-style=<string>', description: 'The name of the predefined style used as a fallback in case clang-format is invoked with -style=file, but can not find the .clang-format file to use. Defaults to \'LLVM\'. Use -fallback-style=none to skip formatting.' },
-      { paramName: '--ferror-limit=<uint>', description: 'Set the maximum number of clang-format errors to emit before stopping (0 = no limit). Used only with --dry-run or -n' },
-      { paramName: '--files=<filename>', description: 'A file containing a list of files to process, one per line.' },
-      { paramName: '-i', description: 'Inplace edit <file>s, if specified.' },
-      { paramName: '--length=<uint>', description: 'Format a range of this length (in bytes). Multiple ranges can be formatted by specifying several -offset and -length pairs. When only a single -offset is specified without -length, clang-format will format up to the end of the file. Can only be used with one input file.' },
-      { paramName: '--lines=<string>', description: '<start line>:<end line> - format a range of lines (both 1-based). Multiple ranges can be formatted by specifying several -lines arguments. Can\'t be used with -offset and -length. Can only be used with one input file.' },
-      { paramName: '-n', description: 'Alias for --dry-run' },
-      { paramName: '--offset=<uint>', description: 'Format a range starting at this byte offset. Multiple ranges can be formatted by specifying several -offset and -length pairs. Can only be used with one input file.' },
-      { paramName: '--output-replacements-xml', description: 'Output replacements as XML.' },
-      { paramName: '--qualifier-alignment=<string>', description: 'If set, overrides the qualifier alignment style determined by the QualifierAlignment style flag' },
-      { paramName: '--sort-includes', description: 'If set, overrides the include sorting behavior determined by the SortIncludes style flag' },
-      { paramName: '--style=<string>', description: 'Set coding style. <string> can be: 1. A preset: LLVM, GNU, Google, Chromium, Microsoft, Mozilla, WebKit. 2. \'file\' to load style configuration from a .clang-format file in one of the parent directories of the source file (for stdin, see --assume-filename). If no .clang-format file is found, falls back to --fallback-style. --style=file is the default. 3. \'file:<format_file_path>\' to explicitly specify the configuration file. 4. "{key: value, ...}" to set specific parameters, e.g.: --style="{BasedOnStyle: llvm, IndentWidth: 8}"' },
-      { paramName: '--verbose', description: 'If set, shows the list of processed files' },
-      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
-      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
-      { paramName: '--version', description: 'Display the version of this program' }
-    ],
-    examples: [
-      'clang-format -i main.cpp',
-      'clang-format --help'
     ],
     showDetails: false
   },
