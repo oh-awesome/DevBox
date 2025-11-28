@@ -69,8 +69,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-v --verbose', description: 'be verbose (a 2nd -v gives more)' },
       { paramName: '-L --license', description: 'display software version & license' },
       { paramName: '-V --version', description: 'display software version & license' },
+      { paramName: '-s --small', description: 'use less memory (at most 2500k)' },
       { paramName: '-1 to -9', description: 'set block size to 100k .. 900k' },
-      { paramName: '--', description: 'treat all following arguments as files' }
+      { paramName: '--fast', description: 'alias for -1' },
+      { paramName: '--best', description: 'alias for -9' }
     ],
     examples: [
       'bzip2 file.txt',
@@ -85,8 +87,7 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'bzless files...',
     options: [],
     examples: [
-      'bzless --help',
-      'bzless -h'
+      'bzless a.bz2'
     ],
     showDetails: false
   },
@@ -1837,18 +1838,13 @@ const commandManualDataList: CommandManualData[] = [
     description: '用于记录终端会话的工具，将所有输入和输出保存到指定文件。',
     syntax: 'script [options]',
     options: [
-      { paramName: '-a, --append', description: 'append to file' },
-      { paramName: '-c, --command <command>', description: 'run command rather than interactive shell' },
-      { paramName: '-e, --exit', description: 'exit on command exit' },
-      { paramName: '-f, --flush', description: 'flush output after each write' },
-      { paramName: '-q, --quiet', description: 'quiet mode' },
-      { paramName: '-t, --timing <file>', description: 'output timing data to file' },
-      { paramName: '-V, --version', description: 'display version' },
-      { paramName: '-h, --help', description: 'display this help' }
+      { paramName: '-a', description: 'Append output' },
+      { paramName: '-c PROG', description: 'Run PROG, not shell' },
+      { paramName: '-q', description: 'Quiet' },
+      { paramName: '-t[FILE]', description: 'Send timing to stderr or FILE' }
     ],
     examples: [
-      'script --help',
-      'script -h',
+      'script -q -c ',
       'script session.log'
     ],
     showDetails: false
@@ -4422,6 +4418,738 @@ const commandManualDataList: CommandManualData[] = [
     ],
     showDetails: false
   },
+  {
+    name: 'amdgpu-arch',
+    description: '用于检测系统中卸载设备存在的工具。',
+    syntax: 'amdgpu-arch [options]',
+    options: [
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: '--only=<value>', description: 'Restrict to vendor: =all - Print all GPUs (default); =amdgpu - Only print AMD GPUs; =nvptx - Only print NVIDIA GPUs' },
+      { paramName: '--verbose', description: 'Enable verbose output' }
+    ],
+    examples: [
+      'amdgpu-arch --help',
+      'amdgpu-arch --version'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autoconf',
+    description: '从模板文件生成配置脚本的工具',
+    syntax: 'autoconf [OPTION]... [TEMPLATE-FILE]',
+    options: [
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: "don't remove temporary files" },
+      { paramName: '-f, --force', description: 'consider all files obsolete' },
+      { paramName: '-o, --output=FILE', description: 'save output in FILE (stdout is the default)' },
+      { paramName: '-W, --warnings=CATEGORY', description: 'report the warnings falling in CATEGORY (comma-separated list accepted)' },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' },
+      { paramName: '-t, --trace=MACRO[:FORMAT]', description: 'report the list of calls to MACRO' },
+      { paramName: '-i, --initialization', description: 'also trace Autoconf\'s initialization process' }
+    ],
+    examples: [
+      'autoconf -h',
+      'autoconf -V'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autoheader',
+    description: '为configure创建C语言#define语句模板文件的工具',
+    syntax: 'autoheader [OPTION]... [TEMPLATE-FILE]',
+    options: [
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: "don't remove temporary files" },
+      { paramName: '-f, --force', description: 'consider all files obsolete' },
+      { paramName: '-W, --warnings=CATEGORY', description: 'report the warnings falling in CATEGORY (comma-separated list accepted)' },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' }
+    ],
+    examples: [
+      'autoheader -V',
+      'autoheader --help'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autom4te',
+    description: '在文件上运行GNU M4，避免无用运行的工具',
+    syntax: 'autom4te [OPTION]... [FILES]',
+    options:[
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: "don't remove temporary files" },
+      { paramName: '-o, --output=FILE', description: 'save output in FILE (defaults to \'-\', stdout)' },
+      { paramName: '-f, --force', description: "don't rely on cached values" },
+      { paramName: '-W, --warnings=CATEGORY', description: 'report the warnings falling in CATEGORY (comma-separated list accepted)' },
+      { paramName: '-l, --language=LANG', description: 'specify the set of M4 macros to use' },
+      { paramName: '-C, --cache=DIRECTORY', description: 'preserve results for future runs in DIRECTORY' },
+      { paramName: '--no-cache', description: 'disable the cache' },
+      { paramName: '-m, --mode=OCTAL', description: 'change the non trace output file mode (0666)' },
+      { paramName: '-M, --melt', description: "don't use M4 frozen files" },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' },
+      { paramName: '-t, --trace=MACRO[:FORMAT]', description: 'report the MACRO invocations' },
+      { paramName: '-p, --preselect=MACRO', description: 'prepare to trace MACRO in a future run' },
+      { paramName: '-F, --freeze', description: 'produce an M4 frozen state file for FILES' }
+    ],
+    examples: [
+      'autom4te --version',
+      'autom4te -h'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autoreconf',
+    description: '自动重新生成GNU构建系统文件的工具',
+    syntax: 'autoreconf [OPTION]... [DIRECTORY]...',
+    options: [
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: 'don\'t remove temporary files' },
+      { paramName: '-f, --force', description: 'consider all generated and standard files obsolete' },
+      { paramName: '-i, --install', description: 'copy missing standard auxiliary files' },
+      { paramName: '--no-recursive', description: 'don\'t rebuild sub-packages' },
+      { paramName: '-s, --symlink', description: 'with -i, install symbolic links instead of copies' },
+      { paramName: '-m, --make', description: 'when applicable, re-run ./configure && make' },
+      { paramName: '-W, --warnings=CATEGORY', description: 'report the warnings falling in CATEGORY (comma-separated list accepted)' },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' }
+    ],
+    examples: [
+      'autoreconf -V',
+      'autoreconf  -h',
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autoscan',
+    description: '检查源代码文件中的可移植性问题并为软件包创建初步configure.ac文件的工具',
+    syntax: 'autoscan [OPTION]... [SRCDIR]',
+    options:[
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: "don't remove temporary files" },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' }
+    ],
+    examples: [
+      'autoscan -h',
+      'autoscan -V'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'autoupdate',
+    description: '将模板文件更新为当前Autoconf版本语法的工具',
+    syntax: 'autoupdate [OPTION]... [TEMPLATE-FILE]...',
+    options: [
+      { paramName: '-h, --help', description: 'print this help, then exit' },
+      { paramName: '-V, --version', description: 'print version number, then exit' },
+      { paramName: '-v, --verbose', description: 'verbosely report processing' },
+      { paramName: '-d, --debug', description: "don't remove temporary files" },
+      { paramName: '-f, --force', description: 'consider all files obsolete' },
+      { paramName: '-B, --prepend-include=DIR', description: 'prepend directory DIR to search path' },
+      { paramName: '-I, --include=DIR', description: 'append directory DIR to search path' }
+    ],
+    examples: [
+      'autoupdate -h',
+      'autoupdate -V'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'binary-sign-tool',
+    description: '用于ELF文件签名和显示签名信息的工具',
+    syntax: 'binary-sign-tool <sign|display-sign>[options]',
+    options: [
+      { paramName: '-keyAlias', description: 'key alias, required fields' },
+      { paramName: '-keyPwd', description: 'key password, optional fields on localSign mode' },
+      { paramName: '-appCertFile', description: 'application signature certificate file, required fields on localSign mode, optional fields on remoteSign mode' },
+      { paramName: '-profileFile', description: 'signed Provision Profile file, p7b format, required fields' },
+      { paramName: '-profileSigned', description: 'indicates whether the profile file has a signature.The options are as follows: 1 : yes; 0:no; default value:1. optional fields' },
+      { paramName: '-inFile', description: 'input original elf file (for sign) / display-sign elf file sign information (for display-sign), required fields' },
+      { paramName: '-signAlg', description: 'signature algorithm, required fields, including SHA256withECDSA/SHA384withECDSA' },
+      { paramName: '-keystoreFile', description: 'keystore file, if signature mode is localSign, required fields on localSign mode, JKS or P12 format' },
+      { paramName: '-keystorePwd', description: 'keystore password, optional fields on localSign mode' },
+      { paramName: '-outFile', description: 'output the signed Provision Profile file, required fields' },
+      { paramName: '-moduleFile', description: 'module.json file' },
+      { paramName: '-selfSign', description: 'Whether the elf file is self sign, The value 1 means enable self sign, and value 0 means disable. The default value is 0. It is optional' }
+    ],
+    examples: [
+      'binary-sign-tool sign -keyAlias "oh-app1-key-v1" -appCertFile "/home/app-release-cert.cer" -signCode "1" -keystoreFile "/home/app-keypair.jks" -keystorePwd ‌******‌ -outFile "signed.elf" -profileFile "/home/signed-profile.p7b" -inFile "unsigned.elf" -signAlg SHA256withECDSA',
+      'binary-sign-tool display-sign -inFile "signed.elf"'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'bundle',
+    description: 'Ruby依赖管理工具，为Ruby项目提供一致的运行环境',
+    syntax: 'bundle COMMAND [--no-color] [--verbose] [ARGS]',
+    options:[
+      { paramName: '--no-color', description: 'Print all output without color' },
+      { paramName: '--retry, -r', description: 'Specify the number of times you wish to attempt network commands' },
+      { paramName: '--verbose, -V', description: 'Print out additional logging information' },
+      { paramName: 'install', description: 'Install the gems specified by the `Gemfile` or `Gemfile.lock`' },
+      { paramName: 'update', description: 'Update dependencies to their latest versions' },
+      { paramName: 'cache', description: 'Package the .gem files required by your application into the `vendor/cache` directory (aliases: `bundle package`, `bundle pack`)' },
+      { paramName: 'exec', description: 'Execute a script in the current bundle' },
+      { paramName: 'config', description: 'Specify and read configuration options for Bundler' },
+      { paramName: 'help', description: 'Display detailed help for each subcommand' },
+      { paramName: 'add', description: 'Add the named gem to the Gemfile and run `bundle install`' },
+      { paramName: 'binstubs', description: 'Generate binstubs for executables in a gem' },
+      { paramName: 'check', description: 'Determine whether the requirements for your application are installed and available to Bundler' },
+      { paramName: 'show', description: 'Show the source location of a particular gem in the bundle' },
+      { paramName: 'outdated', description: 'Show all of the outdated gems in the current bundle' },
+      { paramName: 'console', description: 'Start an IRB session in the current bundle (deprecated)' },
+      { paramName: 'open', description: 'Open an installed gem in the editor' },
+      { paramName: 'lock', description: 'Generate a lockfile for your dependencies' },
+      { paramName: 'viz', description: 'Generate a visual representation of your dependencies (deprecated)' },
+      { paramName: 'init', description: 'Generate a simple `Gemfile`, placed in the current directory' },
+      { paramName: 'gem', description: 'Create a simple gem, suitable for development with Bundler' },
+      { paramName: 'platform', description: 'Display platform compatibility information' },
+      { paramName: 'clean', description: 'Clean up unused gems in your Bundler directory' },
+      { paramName: 'doctor', description: 'Display warnings about common problems' },
+      { paramName: 'remove', description: 'Removes gems from the Gemfile' },
+      { paramName: 'plugin', description: 'Manage Bundler plugins' },
+      { paramName: 'version', description: 'Prints Bundler version information' },
+      { paramName: 'inject', description: 'Obsolete command, should no longer be used' }
+    ],
+    examples: [
+      'bundle install',
+      'bundle update'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'bundler',
+    description: 'Ruby依赖管理工具，为Ruby项目提供一致的运行环境',
+    syntax: 'bundle COMMAND [--no-color] [--verbose] [ARGS]',
+    options: [
+      { paramName: '--no-color', description: 'Print all output without color' },
+      { paramName: '--retry, -r', description: 'Specify the number of times you wish to attempt network commands' },
+      { paramName: '--verbose, -V', description: 'Print out additional logging information' },
+      { paramName: 'install', description: 'Install the gems specified by the `Gemfile` or `Gemfile.lock`' },
+      { paramName: 'update', description: 'Update dependencies to their latest versions' },
+      { paramName: 'cache', description: 'Package the .gem files required by your application into the `vendor/cache` directory (aliases: `bundle package`, `bundle pack`)' },
+      { paramName: 'exec', description: 'Execute a script in the current bundle' },
+      { paramName: 'config', description: 'Specify and read configuration options for Bundler' },
+      { paramName: 'help', description: 'Display detailed help for each subcommand' },
+      { paramName: 'add', description: 'Add the named gem to the Gemfile and run `bundle install`' },
+      { paramName: 'binstubs', description: 'Generate binstubs for executables in a gem' },
+      { paramName: 'check', description: 'Determine whether the requirements for your application are installed and available to Bundler' },
+      { paramName: 'show', description: 'Show the source location of a particular gem in the bundle' },
+      { paramName: 'outdated', description: 'Show all of the outdated gems in the current bundle' },
+      { paramName: 'console', description: 'Start an IRB session in the current bundle (deprecated)' },
+      { paramName: 'open', description: 'Open an installed gem in the editor' },
+      { paramName: 'lock', description: 'Generate a lockfile for your dependencies' },
+      { paramName: 'viz', description: 'Generate a visual representation of your dependencies (deprecated)' },
+      { paramName: 'init', description: 'Generate a simple `Gemfile`, placed in the current directory' },
+      { paramName: 'gem', description: 'Create a simple gem, suitable for development with Bundler' },
+      { paramName: 'platform', description: 'Display platform compatibility information' },
+      { paramName: 'clean', description: 'Clean up unused gems in your Bundler directory' },
+      { paramName: 'doctor', description: 'Display warnings about common problems' },
+      { paramName: 'remove', description: 'Removes gems from the Gemfile' },
+      { paramName: 'plugin', description: 'Manage Bundler plugins' },
+      { paramName: 'version', description: 'Prints Bundler version information' },
+      { paramName: 'inject', description: 'Obsolete command, should no longer be used' }
+    ],
+    examples: [
+      'bundler --help'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'busybox',
+    description: '一个多调用二进制文件，将许多常用Unix工具合并为单个可执行文件',
+    syntax: 'busybox [function [arguments]...]',
+    options: [
+      { paramName: '--list', description: 'List the currently defined functions in BusyBox' },
+      { paramName: '--list-full', description: 'List the currently defined functions in BusyBox with full details' },
+      { paramName: '--show SCRIPT', description: 'Show information about the specified SCRIPT' },
+      { paramName: '--install', description: 'Install BusyBox symlinks for defined functions' },
+      { paramName: '--install -s [DIR]', description: 'Install BusyBox symlinks as symbolic links to the specified directory (DIR), default directory if not specified' },
+      { paramName: '[function [arguments]...]', description: 'Invoke the specified BusyBox function with the given arguments (functions include [, [[, acpid, add-shell, addgroup, adduser, adjtimex, arch, arp, arping, ascii, ash, awk, base32, base64, basename, bc, beep, blkdiscard, blkid, blockdev, bootchartd, brctl, bunzip2, bzcat, bzip2, cal, cat, chat, chattr, chgrp, chmod, chown, chpasswd, chpst, chroot, chrt, chvt, cksum, clear, cmp, comm, conspy, cp, cpio, crc32, crond, crontab, cryptpw, cttyhack, cut, date, dc, dd, deallocvt, delgroup, deluser, depmod, devmem, df, dhcprelay, diff, dirname, dmesg, dnsd, dnsdomainname, dos2unix, dpkg, dpkg-deb, du, dumpkmap, dumpleases, echo, ed, egrep, eject, env, envdir, envuidgid, ether-wake, expand, expr, factor, fakeidentd, fallocate, false, fatattr, fbset, fbsplash, fdflush, fdformat, fdisk, fgconsole, fgrep, find, findfs, flock, fold, free, freeramdisk, fsck, fsck.minix, fsfreeze, fstrim, fsync, ftpd, ftpget, ftpput, fuser, getfattr, getopt, getty, grep, groups, gunzip, gzip, halt, hd, hdparm, head, hexdump, hexedit, hostname, httpd, hwclock, i2cdetect, i2cdump, i2cget, i2cset, i2ctransfer, id, ifconfig, ifdown, ifenslave, ifplugd, ifup, inetd, init, insmod, install, ionice, iostat, ip, ipaddr, ipcalc, ipcrm, ipcs, iplink, ipneigh, iproute, iprule, iptunnel, kbd_mode, kill, killall, killall5, klogd, less, link, linux32, linux64, linuxrc, ln, loadfont, loadkmap, logger, login, logname, logread, losetup, lpd, lpq, lpr, ls, lsattr, lsmod, lsof, lspci, lsscsi, lsusb, lzcat, lzma, lzop, makedevs, makemime, man, md5sum, mdev, mesg, microcom, mim, mkdir, mkdosfs, mke2fs, mkfifo, mkfs.ext2, mkfs.minix, mkfs.vfat, mknod, mkpasswd, mkswap, mktemp, modinfo, modprobe, more, mount, mountpoint, mpstat, mt, mv, nameif, nanddump, nandwrite, nbd-client, nc, netstat, nice, nl, nmeter, nohup, nologin, nproc, nsenter, nslookup, ntpd, od, openvt, partprobe, passwd, paste, patch, pgrep, pidof, ping, ping6, pipe_progress, pivot_root, pkill, pmap, popmaildir, poweroff, powertop, printenv, printf, ps, pscan, pstree, pwd, pwdx, raidautorun, rdate, rdev, readahead, readlink, readprofile, realpath, reboot, reformime, remove-shell, renice, reset, resize, resume, rev, rm, rmdir, rmmod, route, rpm, rpm2cpio, rtcwake, run-init, run-parts, runsv, runsvdir, rx, script, scriptreplay, sed, seedrng, sendmail, seq, setarch, setconsole, setfattr, setfont, setkeycodes, setlogcons, setpriv, setserial, setsid, setuidgid, sh, sha1sum, sha256sum, sha3sum, sha512sum, showkey, shred, shuf, slattach, sleep, smemcap, softlimit, sort, split, ssl_client, start-stop-daemon, stat, strings, stty, su, sulogin, sum, sv, svc, svlogd, svok, swapoff, swapon, switch_root, sync, sysctl, syslogd, tac, tail, tar, taskset, tc, tcpsvd, tee, telnet, telnetd, test, tftp, tftpd, time, timeout, top, touch, tr, traceroute, traceroute6, tree, true, truncate, ts, tsort, tty, ttysize, tunctl, ubiattach, ubidetach, ubimkvol, ubirename, ubirmvol, ubirsvol, ubiupdatevol, udhcpc, udhcpc6, udhcpd, udpsvd, uevent, umount, uname, unexpand, uniq, unix2dos, unlink, unlzma, unshare, unxz, unzip, uptime, usleep, uudecode, uuencode, vconfig, vi, vlock, volname, watch, watchdog, wc, wget, which, whoami, whois, xargs, xxd, xz, xzcat, yes, zcat, zcip])' }
+    ],
+    examples: [
+      'busybox ls -l',
+      'busybox --list'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-check',
+    description: 'Clang工具链中的静态分析工具，用于检查C/C++代码的语法和语义问题',
+    syntax: 'clang-check [options] <source0> [... <sourceN>]',
+    options: [
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: '--analyze', description: 'Run static analysis engine' },
+      { paramName: '--analyzer-output-path=<string>', description: 'Write output to <file>' },
+      { paramName: '--ast-dump', description: 'Build ASTs and then debug dump them' },
+      { paramName: '--ast-dump-filter=<string>', description: 'Use with -ast-dump or -ast-print to dump/print only AST declaration nodes having a certain substring in a qualified name. Use -ast-list to list all filterable declaration node names.' },
+      { paramName: '--ast-list', description: 'Build ASTs and print the list of declaration node qualified names' },
+      { paramName: '--ast-print', description: 'Build ASTs and then pretty-print them' },
+      { paramName: '--extra-arg=<string>', description: 'Additional argument to append to the compiler command line' },
+      { paramName: '--extra-arg-before=<string>', description: 'Additional argument to prepend to the compiler command line' },
+      { paramName: '--fix-what-you-can', description: 'Apply fix-it advice even in the presence of unfixable errors' },
+      { paramName: '--fixit', description: 'Apply fix-it advice to the input source' },
+      { paramName: '-p <string>', description: 'Build path (used to read a compile command database)' },
+      { paramName: '--syntax-tree-dump', description: 'dump the syntax tree' },
+      { paramName: '--tokens-dump', description: 'dump the preprocessed tokens' }
+    ],
+    examples: [
+      'clang-check --help',
+      'clang-check --version'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang',
+    description: 'LLVM编译器，支持C、C++、Objective-C、OpenCL、CUDA等多种语言，提供编译优化、调试信息生成、静态分析等功能，适配多目标架构（如x86、AArch64、AMDGPU等）',
+    syntax: 'clang [options] file...',
+    options: [
+      { paramName: '-c', description: 'Only run preprocess, compile, and assemble steps' },
+      { paramName: '-E', description: 'Only run the preprocessor' },
+      { paramName: '-o <file>', description: 'Write output to <file>' },
+      { paramName: '-D <macro>=<value>', description: 'Define <macro> to <value> (or 1 if <value> omitted)' },
+      { paramName: '-I <dir>', description: 'Add directory to the end of the list of include search paths' },
+      { paramName: '-std=<value>', description: 'Language standard to compile for' },
+      { paramName: '-g', description: 'Generate source-level debug information' },
+      { paramName: '-Wall', description: 'Enable all warnings' },
+      { paramName: '-Werror', description: 'Treat warnings as errors' },
+      { paramName: '-L <dir>', description: 'Add directory to library search path' },
+      { paramName: '-ffast-math', description: 'Allow aggressive, lossy floating-point optimizations' },
+      { paramName: '--analyze', description: 'Run the static analyzer' },
+      { paramName: '-emit-llvm', description: 'Use the LLVM representation for assembler and object files' },
+      { paramName: '-fPIC', description: 'Generate position-independent code (for shared libraries)' },
+      { paramName: '-print-target-triple', description: 'Print the normalized target triple' },
+      { paramName: ' ', description: 'See \'clang --help\' for more information' }
+    ],
+    examples: [
+      'clang --help'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang++',
+    description: '基于LLVM的高性能C++编译器，支持完整编译流程（预处理、编译、汇编、链接），提供丰富的语言标准适配、代码优化、调试信息生成、跨平台编译及特殊领域（如CUDA/HIP、OpenMP）支持能力。',
+    syntax: 'clang++ [options] file...',
+    options: [
+      { paramName: '-c', description: 'Only run preprocess, compile, and assemble steps' },
+      { paramName: '-E', description: 'Only run the preprocessor' },
+      { paramName: '-o <file>', description: 'Write output to <file>' },
+      { paramName: '-D <macro>=<value>', description: 'Define <macro> to <value> (or 1 if <value> omitted)' },
+      { paramName: '-I <dir>', description: 'Add directory to the end of the list of include search paths' },
+      { paramName: '-std=<value>', description: 'Language standard to compile for' },
+      { paramName: '-g', description: 'Generate source-level debug information' },
+      { paramName: '-Wall', description: 'Enable all warnings' },
+      { paramName: '-Werror', description: 'Treat warnings as errors' },
+      { paramName: '-L <dir>', description: 'Add directory to library search path' },
+      { paramName: '-ffast-math', description: 'Allow aggressive, lossy floating-point optimizations' },
+      { paramName: '--analyze', description: 'Run the static analyzer' },
+      { paramName: '-emit-llvm', description: 'Use the LLVM representation for assembler and object files' },
+      { paramName: '-fPIC', description: 'Generate position-independent code (for shared libraries)' },
+      { paramName: '-print-target-triple', description: 'Print the normalized target triple' },
+      { paramName: ' ', description: 'See \'clang++ --help\' for more information' }
+    ],
+    examples: [
+      'clang++ -std=c++17 -O2 -Wall main.cpp utils.cpp -o app -lm -lpthread',
+      'clang++ -c -g -I./include -DDEBUG=1 -fPIC src/module.cpp -o obj/module.o',
+      'clang++ -E -P -DVERSION=1.0 src/config.h -o include/config.gen.h',
+      'clang++ --target=aarch64-linux-gnu -march=armv8-a -static main.cpp -o app_arm',
+      'clang++ -fsanitize=address -g test.cpp -o test_asan && ./test_asan'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-21',
+    description: 'LLVM编译器，用于编译C、C++、Objective-C等语言代码，支持多种架构、优化选项及调试功能',
+    syntax: 'clang-21 [options] file...',
+    options: [
+      { paramName: '-c', description: 'Only run preprocess, compile, and assemble steps' },
+      { paramName: '-E', description: 'Only run the preprocessor' },
+      { paramName: '-o <file>', description: 'Write output to <file>' },
+      { paramName: '-D <macro>=<value>', description: 'Define <macro> to <value> (or 1 if <value> omitted)' },
+      { paramName: '-I <dir>', description: 'Add directory to the end of the list of include search paths' },
+      { paramName: '-std=<value>', description: 'Language standard to compile for' },
+      { paramName: '-g', description: 'Generate source-level debug information' },
+      { paramName: '-Wall', description: 'Enable all warnings' },
+      { paramName: '-Werror', description: 'Treat warnings as errors' },
+      { paramName: '-L <dir>', description: 'Add directory to library search path' },
+      { paramName: '-ffast-math', description: 'Allow aggressive, lossy floating-point optimizations' },
+      { paramName: '--analyze', description: 'Run the static analyzer' },
+      { paramName: '-emit-llvm', description: 'Use the LLVM representation for assembler and object files' },
+      { paramName: '-fPIC', description: 'Generate position-independent code (for shared libraries)' },
+      { paramName: '-print-target-triple', description: 'Print the normalized target triple' },
+      { paramName: ' ', description: 'See \'clang-21 --help\' for more information' }
+    ],
+    examples: [
+      'clang-21 -O2 -Wall -o app main.c',
+      'clang-21 -g -O0 -c main.cpp -std=c++17 -stdlib=libc++'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-cl',
+    description: '基于LLVM的C/C++编译器，兼容CL.EXE命令行选项，适用于Windows平台编译开发',
+    syntax: 'clang-cl [options] file...',
+    options:[
+      { paramName: '/c', description: 'Compile only' },
+      { paramName: '/E', description: 'Preprocess to stdout' },
+      { paramName: '/EP', description: 'Disable linemarker output and preprocess to stdout' },
+      { paramName: '/D <macro[=value]>', description: 'Define macro' },
+      { paramName: '/I <dir>', description: 'Add directory to include search path' },
+      { paramName: '/std:<value>', description: 'Set language version (c++14,c++17,c++20,c++23preview,c++latest,c11,c17)' },
+      { paramName: '/O1', description: 'Optimize for size (like /Og /Os /Oy /Ob2 /GF /Gy)' },
+      { paramName: '/O2', description: 'Optimize for speed (like /Og /Oi /Ot /Oy /Ob2 /GF /Gy)' },
+      { paramName: '/Od', description: 'Disable optimization' },
+      { paramName: '/Z7', description: 'Enable CodeView debug information in object files' },
+      { paramName: '/Zi', description: 'Like /Z7' },
+      { paramName: '/W4', description: 'Enable -Wall and -Wextra' },
+      { paramName: '/WX', description: 'Treat warnings as errors' },
+      { paramName: '/LD', description: 'Create DLL' },
+      { paramName: '/LDd', description: 'Create debug DLL' },
+      { paramName: '/MT', description: 'Use static run-time' },
+      { paramName: '/MTd', description: 'Use static debug run-time' },
+      { paramName: '/MD', description: 'Use DLL run-time' },
+      { paramName: '/MDd', description: 'Use DLL debug run-time' },
+      { paramName: '/Fo<file or dir/>', description: 'Set output object file (with /c)' },
+      { paramName: '/Fe<file or dir/>', description: 'Set output executable file name' },
+      { paramName: '/EH<value>', description: 'Set exception handling model' },
+      { paramName: '/GR', description: 'Emit RTTI data (default)' },
+      { paramName: '/GR-', description: 'Do not emit RTTI data' },
+      { paramName: '/GS', description: 'Enable buffer security check (default)' },
+      { paramName: '/openmp', description: 'Enable OpenMP support' },
+      { paramName: ' ', description: 'See \'clang-cl -help\' for more information' }
+    ],
+    examples: [
+      'clang-cl /c /O2 /Foobj/ /Feapp.exe src/main.cpp',
+      'clang-cl /std:c++17 /EHsc /MD /link user32.lib src/gui.cpp'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-cpp',
+    description: 'LLVM编译器，支持C、C++、Objective-C等语言编译，提供丰富的编译选项用于优化、调试、代码分析等功能',
+    syntax: 'clang-cpp [options] file...',
+    options:[
+      { paramName: '-c', description: 'Only run preprocess, compile, and assemble steps' },
+      { paramName: '-E', description: 'Only run the preprocessor' },
+      { paramName: '-o <file>', description: 'Write output to <file>' },
+      { paramName: '-D <macro>=<value>', description: 'Define <macro> to <value> (or 1 if <value> omitted)' },
+      { paramName: '-I <dir>', description: 'Add directory to the end of the list of include search paths' },
+      { paramName: '-std=<value>', description: 'Language standard to compile for' },
+      { paramName: '-g', description: 'Generate source-level debug information' },
+      { paramName: '-Wall', description: 'Enable all warnings' },
+      { paramName: '-Werror', description: 'Treat warnings as errors' },
+      { paramName: '-L <dir>', description: 'Add directory to library search path' },
+      { paramName: '-ffast-math', description: 'Allow aggressive, lossy floating-point optimizations' },
+      { paramName: '--analyze', description: 'Run the static analyzer' },
+      { paramName: '-emit-llvm', description: 'Use the LLVM representation for assembler and object files' },
+      { paramName: '-fPIC', description: 'Generate position-independent code (for shared libraries)' },
+      { paramName: '-print-target-triple', description: 'Print the normalized target triple' },
+      { paramName: ' ', description: 'See \'clang-cpp --help\' for more information' }
+    ],
+    examples: [
+      'clang-cpp -std=c++17 -O2 -g -o program program.cpp',
+      'clang-cpp -fsanitize=address -fPIC -shared -o libtest.so test.cpp'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-extdef-mapping',
+    description: '收集源代码文件中外部定义的USR名称和位置的工具',
+    syntax: 'clang-extdef-mapping [options] <source0> [... <sourceN>]',
+    options: [
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: '--extra-arg=<string>', description: 'Additional argument to append to the compiler command line' },
+      { paramName: '--extra-arg-before=<string>', description: 'Additional argument to prepend to the compiler command line' },
+      { paramName: '-p <string>', description: 'Build path (used to read a compile command database)' }
+    ],
+    examples: [
+      'clang-extdef-mapping --help',
+      'clang-extdef-mapping --version'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-format',
+    description: '用于格式化C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C#代码的工具',
+    syntax: 'clang-format [options] [@<file>] [<file> ...]',
+    options: [
+      { paramName: '--Werror', description: 'If set, changes formatting warnings to errors' },
+      { paramName: '--Wno-error=<value>', description: 'If set, don\'t error out on the specified warning type. =unknown - If set, unknown format options are only warned about. This can be used to enable formatting, even if the configuration contains unknown (newer) options. Use with caution, as this might lead to dramatically differing format depending on an option being supported or not.' },
+      { paramName: '--assume-filename=<string>', description: 'Set filename used to determine the language and to find .clang-format file. Only used when reading from stdin. If this is not passed, the .clang-format file is searched relative to the current working directory when reading stdin. Unrecognized filenames are treated as C++. supported: CSharp: .cs; Java: .java; JavaScript: .js .mjs .cjs .ts; Json: .json .ipynb; Objective-C: .m .mm; Proto: .proto .protodevel; TableGen: .td; TextProto: .txtpb .textpb .pb.txt .textproto .asciipb; Verilog: .sv .svh .v .vh' },
+      { paramName: '--cursor=<uint>', description: 'The position of the cursor when invoking clang-format from an editor integration' },
+      { paramName: '--dry-run', description: 'If set, do not actually make the formatting changes' },
+      { paramName: '--dump-config', description: 'Dump configuration options to stdout and exit. Can be used with -style option.' },
+      { paramName: '--fail-on-incomplete-format', description: 'If set, fail with exit code 1 on incomplete format.' },
+      { paramName: '--fallback-style=<string>', description: 'The name of the predefined style used as a fallback in case clang-format is invoked with -style=file, but can not find the .clang-format file to use. Defaults to \'LLVM\'. Use -fallback-style=none to skip formatting.' },
+      { paramName: '--ferror-limit=<uint>', description: 'Set the maximum number of clang-format errors to emit before stopping (0 = no limit). Used only with --dry-run or -n' },
+      { paramName: '--files=<filename>', description: 'A file containing a list of files to process, one per line.' },
+      { paramName: '-i', description: 'Inplace edit <file>s, if specified.' },
+      { paramName: '--length=<uint>', description: 'Format a range of this length (in bytes). Multiple ranges can be formatted by specifying several -offset and -length pairs. When only a single -offset is specified without -length, clang-format will format up to the end of the file. Can only be used with one input file.' },
+      { paramName: '--lines=<string>', description: '<start line>:<end line> - format a range of lines (both 1-based). Multiple ranges can be formatted by specifying several -lines arguments. Can\'t be used with -offset and -length. Can only be used with one input file.' },
+      { paramName: '-n', description: 'Alias for --dry-run' },
+      { paramName: '--offset=<uint>', description: 'Format a range starting at this byte offset. Multiple ranges can be formatted by specifying several -offset and -length pairs. Can only be used with one input file.' },
+      { paramName: '--output-replacements-xml', description: 'Output replacements as XML.' },
+      { paramName: '--qualifier-alignment=<string>', description: 'If set, overrides the qualifier alignment style determined by the QualifierAlignment style flag' },
+      { paramName: '--sort-includes', description: 'If set, overrides the include sorting behavior determined by the SortIncludes style flag' },
+      { paramName: '--style=<string>', description: 'Set coding style. <string> can be: 1. A preset: LLVM, GNU, Google, Chromium, Microsoft, Mozilla, WebKit. 2. \'file\' to load style configuration from a .clang-format file in one of the parent directories of the source file (for stdin, see --assume-filename). If no .clang-format file is found, falls back to --fallback-style. --style=file is the default. 3. \'file:<format_file_path>\' to explicitly specify the configuration file. 4. "{key: value, ...}" to set specific parameters, e.g.: --style="{BasedOnStyle: llvm, IndentWidth: 8}"' },
+      { paramName: '--verbose', description: 'If set, shows the list of processed files' },
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' }
+    ],
+    examples: [
+      'clang-format -i main.cpp',
+      'clang-format --help'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-linker-wrapper',
+    description: '主机链接器的包装工具，用于在链接前扫描输入文件中需要额外处理的部分',
+    syntax: 'clang-linker-wrapper [options] -- <options to passed to the linker>',
+    options: [
+      { paramName: '--compression-level=<value>', description: 'Specify the compression level (integer)' },
+      { paramName: '--compress', description: 'Compress bundled files' },
+      { paramName: '--cuda-path=<dir>', description: 'Set the system CUDA path' },
+      { paramName: '--device-compiler=<value> or <triple>=<value>', description: 'Arguments to pass to the device compiler invocation' },
+      { paramName: '--device-linker=<value> or <triple>=<value>', description: 'Arguments to pass to the device linker invocation' },
+      { paramName: '--dry-run', description: 'Print program arguments without running' },
+      { paramName: '--embed-bitcode', description: 'Embed linked bitcode in the module' },
+      { paramName: '--help-hidden', description: 'Display all available options' },
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--host-triple=<triple>', description: 'Triple to use for the host compilation' },
+      { paramName: '--linker-path=<path>', description: 'The linker executable to invoke' },
+      { paramName: '-L <dir>', description: 'Add <dir> to the library search path' },
+      { paramName: '-l <libname>', description: 'Search for library <libname>' },
+      { paramName: '-mllvm <arg>', description: 'Arguments passed to LLVM, including Clang invocations, for which the \'-mllvm\' prefix is preserved. Use \'-mllvm --help\' for a list of options.' },
+      { paramName: '--override-image=<kind=file>', description: 'Uses the provided file as if it were the output of the device link step' },
+      { paramName: '-o <path>', description: 'Path to file to write output' },
+      { paramName: '--print-wrapped-module', description: 'Print the wrapped module\'s IR for testing' },
+      { paramName: '--relocatable', description: 'Link device code to create a relocatable offloading application' },
+      { paramName: '--save-temps', description: 'Save intermediate results' },
+      { paramName: '--should-extract=<kind=file>', description: 'Set of device architectures we should always extract if found.' },
+      { paramName: '--sysroot=<value>', description: 'Set the system root' },
+      { paramName: '--v', description: 'Display the version number and exit' },
+      { paramName: '--wrapper-jobs=<number>', description: 'Sets the number of parallel jobs to use for device linking' },
+      { paramName: '--wrapper-time-trace-granularity=<number>', description: 'Set the granularity of time-trace updates' },
+      { paramName: '--wrapper-time-trace=<file>', description: 'Enable time-trace and write the output to <file>' },
+      { paramName: '--wrapper-verbose', description: 'Verbose output from tools' }
+    ],
+    examples: [
+      'clang-linker-wrapper --linker-path=/usr/bin/ld -o output.bin -- input1.o input2.o',
+      'clang-linker-wrapper --compress --compression-level=9 --wrapper-jobs=4',
+      'clang-linker-wrapper --dry-run --wrapper-verbose'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-nvlink-wrapper',
+    description: '包装NVIDIA nvlink链接器的工具，为NVPTX目标启用静态链接和LTO处理',
+    syntax: 'clang-nvlink-wrapper [options] <options to passed to nvlink>',
+    options: [
+      { paramName: '--arch <value>', description: 'Specify the \'sm_\' name of the target architecture' },
+      { paramName: '--cuda-path=<dir>', description: 'Set the system CUDA path' },
+      { paramName: '--dry-run', description: 'Print generated commands without running.' },
+      { paramName: '-g', description: 'Specify that this was a debug compile' },
+      { paramName: '-help-hidden', description: 'Display all available options' },
+      { paramName: '-help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--lto-debug-pass-manager', description: 'Debug new pass manager' },
+      { paramName: '--lto-emit-asm', description: 'Emit assembly code' },
+      { paramName: '--lto-emit-llvm', description: 'Emit LLVM-IR bitcode' },
+      { paramName: '--lto-newpm-passes=<value>', description: 'Passes to run during LTO' },
+      { paramName: '-L <dir>', description: 'Add <dir> to the library search path' },
+      { paramName: '-l <libname>', description: 'Search for library <libname>' },
+      { paramName: '-mllvm <arg>', description: 'Arguments passed to LLVM, including Clang invocations, for which the \'-mllvm\' prefix is preserved. Use \'-mllvm --help\' for a list of options.' },
+      { paramName: '-o <path>', description: 'Path to file to write output' },
+      { paramName: '--plugin-opt=jobs=<value>', description: 'Number of LTO codegen partitions' },
+      { paramName: '--plugin-opt=lto-partitions=<value>', description: 'Number of LTO codegen partitions' },
+      { paramName: '--plugin-opt=opt-remarks-filename=<value>', description: 'YAML output file for optimization remarks' },
+      { paramName: '--plugin-opt=opt-remarks-filter=<value>', description: 'Regex for the passes that need to be serialized to the output file' },
+      { paramName: '--plugin-opt=opt-remarks-format=<value>', description: 'The format used for serializing remarks (default: YAML)' },
+      { paramName: '--plugin-opt=opt-remarks-with-hotness', description: 'Include hotness information in the optimization remarks file' },
+      { paramName: '--plugin-opt=O<O0, O1, O2, or O3>', description: 'Optimization level for LTO' },
+      { paramName: '--plugin-opt=thinlto<value>', description: 'Enable the thin-lto backend' },
+      { paramName: '--plugin-opt=<value>', description: 'Options passed to LLVM, not including the Clang invocation. Use \'--plugin-opt=--help\' for a list of options.' },
+      { paramName: '--ptxas-path=<dir>', description: 'Set the \'ptxas\' path' },
+      { paramName: '--relocatable', description: 'Perform a relocatable link (LTO only)' },
+      { paramName: '--save-temps', description: 'Save intermediate results' },
+      { paramName: '-u <value>', description: 'Force undefined symbol during linking' },
+      { paramName: '--version', description: 'Display the version number and exit' },
+      { paramName: '-v', description: 'Print verbose information' }
+    ],
+    examples: [
+      'clang-nvlink-wrapper --arch sm_80 -o output.ptx',
+      'clang-nvlink-wrapper --cuda-path=/usr/local/cuda --dry-run',
+      'clang-nvlink-wrapper -L /usr/local/lib -l cudart'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-offload-bundler',
+    description: '用于捆绑和拆分多个目标文件的工具，支持异构编程',
+    syntax: 'clang-offload-bundler [options]',
+    options: [
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: '--###', description: 'Print any external commands that are to be executed instead of actually executing them - for testing purposes.' },
+      { paramName: '--allow-missing-bundles', description: 'Create empty files if bundles are missing when unbundling.' },
+      { paramName: '--bundle-align=<uint>', description: 'Alignment of bundle for binary files' },
+      { paramName: '--check-input-archive', description: 'Check if input heterogeneous archive is valid in terms of TargetID rules.' },
+      { paramName: '--compress', description: 'Compress output file when bundling.' },
+      { paramName: '--compression-level=<n>', description: 'Specify the compression level (integer)' },
+      { paramName: '--hip-openmp-compatible', description: 'Treat hip and hipv4 offload kinds as compatible with openmp kind, and vice versa.' },
+      { paramName: '--input=<string>', description: 'Input file. Can be specified multiple times for multiple input files.' },
+      { paramName: '--inputs=<string>', description: '[<input file>,...] (deprecated)' },
+      { paramName: '--list', description: 'List bundle IDs in the bundled file.' },
+      { paramName: '--output=<string>', description: 'Output file. Can be specified multiple times for multiple output files.' },
+      { paramName: '--outputs=<string>', description: '[<output file>,...] (deprecated)' },
+      { paramName: '--targets=<string>', description: '[<offload kind>-<target triple>,...]' },
+      { paramName: '--type=<string>', description: 'Type of the files to be bundled/unbundled. Current supported types are: i - cpp-output; ii - c++-cpp-output; cui - cuda-cpp-output; hipi - hip-cpp-output; d - dependency; ll - llvm; bc - llvm-bc; s - assembler; o - object; a - archive of objects; gch - precompiled-header; ast - clang AST file' },
+      { paramName: '--unbundle', description: 'Unbundle bundled file into several output files.' },
+      { paramName: '--verbose', description: 'Print debug information.' }
+    ],
+    examples: [
+      'clang-offload-bundler --type=o --input=host.o --input=device1.o --input=device2.o --output=bundle.o --targets=host-x86_64,openmp-nvptx64,cuda-nvptx64',
+      'clang-offload-bundler --unbundle --type=o --input=bundle.o --output=host-unbundled.o --output=device1-unbundled.o --output=device2-unbundled.o',
+      'clang-offload-bundler --list --input=bundle.o',
+      'clang-offload-bundler --compress --compression-level=9'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-offload-packager',
+    description: '用于将多个目标文件捆绑成单个二进制文件的工具，可创建包含卸载代码的fatbinary',
+    syntax: 'clang-offload-packager [options] Extract from <file>',
+    options: [
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: '--archive', description: 'Write extracted files to a static archive' },
+      { paramName: '--image=<<key>=<value>,...>', description: 'List of key and value arguments. Required keywords are \'file\' and \'triple\'.' },
+      { paramName: '-o <file>', description: 'Write output to <file>.' }
+    ],
+    examples: [
+      'clang-offload-packager --archive -o output.a',
+      'clang-offload-packager --image=file=input.o,triple=nvptx64 -o packaged.bin'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-refactor',
+    description: '基于Clang的C、C++和Objective-C代码重构工具',
+    syntax: 'clang-refactor [subcommand] [options] <source0> [... <sourceN>]',
+    options: [
+      { paramName: '--cfg-hide-cold-paths=<number>', description: 'Hide blocks with relative frequency below the given value' },
+      { paramName: '--cfg-hide-deoptimize-paths', description: '' },
+      { paramName: '--cfg-hide-unreachable-paths', description: '' },
+      { paramName: '--disable-auto-upgrade-debug-info', description: 'Disable autoupgrade of debug info' },
+      { paramName: '--disable-i2p-p2i-opt', description: 'Disables inttoptr/ptrtoint roundtrip optimization' },
+      { paramName: '--dot-cfg-mssa=<file name for generated dot file>', description: 'file name for generated dot file' },
+      { paramName: '--enable-name-compression', description: 'Enable name/filename string compression' },
+      { paramName: '--enable-vtable-profile-use', description: 'If ThinLTO and WPD is enabled and this option is true, vtable profiles will be used by ICP pass for more efficient indirect call sequence. If false, type profiles won\'t be used.' },
+      { paramName: '--enable-vtable-value-profiling', description: 'If true, the virtual table address will be instrumented to know the types of a C++ pointer. The information is used in indirect call promotion to do selective vtable-based comparison.' },
+      { paramName: '--extra-arg=<string>', description: 'Additional argument to append to the compiler command line' },
+      { paramName: '--extra-arg-before=<string>', description: 'Additional argument to prepend to the compiler command line' },
+      { paramName: '--generate-merged-base-profiles', description: 'When generating nested context-sensitive profiles, always generate extra base profile for function with all its context profiles merged into it.' },
+      { paramName: '-i', description: 'Inplace edit <file>s' },
+      { paramName: '--object-size-offset-visitor-max-visit-instructions=<uint>', description: 'Maximum number of instructions for ObjectSizeOffsetVisitor to look at' },
+      { paramName: '-p <string>', description: 'Build path' },
+      { paramName: '-v', description: 'Use verbose output' },
+      { paramName: '--help', description: 'Display available options (--help-hidden for more)' },
+      { paramName: '--help-list', description: 'Display list of available options (--help-list-hidden for more)' },
+      { paramName: '--version', description: 'Display the version of this program' },
+      { paramName: 'extract', description: '(WIP action; use with caution!) Extracts code into a new function' },
+      { paramName: 'local-rename', description: 'Finds and renames symbols in code with no indexer support' }
+    ],
+    examples: [
+      'clang-refactor local-rename -p build/ -new-name=newFunc source.cpp',
+      'clang-refactor extract -p build/ --selection=10:20 source.cpp'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'clang-installapi',
+    description: '用于提取和安装Clang相关API头文件、模块等的工具',
+    syntax: 'clang-installapi [options] <input-files>',
+    options: [],
+    examples: [
+      'clang-installapi --prefix=/usr/local --module-name=clangAPI clang_source.cpp',
+      'clang-installapi --module-name=myAPIModule -o ./api_output src/*.cpp'
+    ],
+    showDetails: false
+  },
+  {
+    name: 'ruby',
+    description: 'Ruby编程语言的解释器，用于执行Ruby代码',
+    syntax: 'ruby [options] [--] [filepath] [arguments]',
+    options: [
+      { paramName: '-0[octal]', description: 'Set input record separator ($/): -0 for \0; -00 for paragraph mode; -0777 for slurp mode.' },
+      { paramName: '-a', description: 'Split each input line ($_) into fields ($F).' },
+      { paramName: '-c', description: 'Check syntax (no execution).' },
+      { paramName: '-Cdirpath', description: 'Execute program in specified directory.' },
+      { paramName: '-d, --debug', description: 'Set debugging flag ($DEBUG) to true.' },
+      { paramName: '-e \'code\'', description: 'Execute given Ruby code; multiple -e allowed.' },
+      { paramName: '-Eex[:in], --encoding=ex[:in]', description: 'Set default external and internal encodings.' },
+      { paramName: '-Fpattern', description: 'Set input field separator ($;); used with -a.' },
+      { paramName: '-i[extension]', description: 'Set ARGF in-place mode; create backup files with given extension.' },
+      { paramName: '-Idirpath', description: 'Add specified directory to load paths ($LOAD_PATH); multiple -I allowed.' },
+      { paramName: '-l', description: 'Set output record separator ($\) to $/; used for line-oriented output.' },
+      { paramName: '-n', description: 'Run program in gets loop.' },
+      { paramName: '-p', description: 'Like -n, with printing added.' },
+      { paramName: '-rlibrary', description: 'Require the given library.' },
+      { paramName: '-s', description: 'Define global variables using switches following program path.' },
+      { paramName: '-S', description: 'Search directories found in the PATH environment variable.' },
+      { paramName: '-v', description: 'Print version; set $VERBOSE to true.' },
+      { paramName: '-w', description: 'Synonym for -W1.' },
+      { paramName: '-W[level=2|:category]', description: 'Set warning flag ($-W): 0 for silent; 1 for moderate; 2 for verbose.' },
+      { paramName: '-x[dirpath]', description: 'Execute Ruby code starting from a #!ruby line.' },
+      { paramName: '--jit', description: 'Enable JIT for the platform; same as --rjit (experimental).' },
+      { paramName: '--rjit', description: 'Enable pure-Ruby JIT compiler (experimental).' },
+      { paramName: '--backtrace-limit=num', description: 'Set backtrace limit.' },
+      { paramName: '--copyright', description: 'Print Ruby copyright.' },
+      { paramName: '--crash-report=template', description: 'Set template for crash report file.' },
+      { paramName: '--disable=features', description: 'Disable features; see list below.' },
+      { paramName: '--dump=items', description: 'Dump items; see list below.' },
+      { paramName: '--enable=features', description: 'Enable features; see list below.' },
+      { paramName: '--external-encoding=encoding', description: 'Set default external encoding.' },
+      { paramName: '--help', description: 'Print long help message; use -h for short message.' },
+      { paramName: '--internal-encoding=encoding', description: 'Set default internal encoding.' },
+      { paramName: '--parser=parser', description: 'Set Ruby parser: parse.y or prism.' },
+      { paramName: '--verbose', description: 'Set $VERBOSE to true; ignore input from $stdin.' },
+      { paramName: '--version', description: 'Print Ruby version.' },
+      { paramName: '-y, --yydebug', description: 'Print parser log; backward compatibility not guaranteed.' },
+      { paramName: '--rjit-exec-mem-size=num', description: 'Size of executable memory block in MiB (default: 64).' },
+      { paramName: '--rjit-call-threshold=num', description: 'Number of calls to trigger JIT (default: 10).' },
+      { paramName: '--rjit-stats', description: 'Enable collecting RJIT statistics.' },
+      { paramName: '--rjit-disable', description: 'Disable RJIT for lazily enabling it with RubyVM::RJIT.enable.' },
+      { paramName: '--rjit-trace', description: 'Allow TracePoint during JIT compilation.' },
+      { paramName: '--rjit-trace-exits', description: 'Trace side exit locations.' }
+    ],
+    examples: [
+      'ruby -e \'puts "Hello, Ruby!"\'',
+      'ruby -c my_script.rb'
+    ],
+    showDetails: false
+  }
 ];
 
 export default commandManualDataList;
