@@ -2401,7 +2401,7 @@ const commandManualDataList: CommandManualData[] = [
     examples: [
       'gperf --help',
       'gperf -h',
-      'gperf -o output.h input.gperf'
+      'gperf input.gperf > output.h'
     ],
     showDetails: false
   },
