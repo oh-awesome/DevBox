@@ -2250,14 +2250,14 @@ const commandManualDataList: CommandManualData[] = [
     description: 'Git 子命令，结合 clang-format 工具格式化代码，仅对工作区与指定提交（或暂存区）的差异代码进行格式化，支持按配置自定义格式化规则',
     syntax: 'git clang-format [OPTIONS] [<commit>] [<commit>|--staged] [--] [<file>...]',
     options: [
-      { paramName: '--staged', description: '格式化已暂存（git add 过）的变更内容' },
-      { paramName: '--diff', description: '当指定两个提交时，格式化第二个提交中与第一个提交的差异代码' },
-      { paramName: '--', description: '分隔符，后续内容均视为文件路径，避免文件名与选项冲突' },
-      { paramName: '<commit>', description: '提交版本标识（如 HEAD、HEAD~1、分支名等），用于指定对比基准；默认基准为 HEAD' },
-      { paramName: '<file>...', description: '可选，指定要格式化的文件/目录列表；不指定则格式化所有差异文件' },
-      { paramName: '--binary', description: '指定 clang-format 可执行文件路径（默认读取 git-config 中 clangFormat.binary 配置）' },
-      { paramName: '--style', description: '指定代码格式化风格（默认读取 git-config 中 clangFormat.style 配置，支持 llvm、google、webkit 等）' },
-      { paramName: '--extensions', description: '指定要处理的文件扩展名（默认读取 git-config 中 clangFormat.extensions 配置）' }
+      { paramName: '--staged', description: 'Format staged changes (files added via git add)' },
+      { paramName: '--diff', description: 'When two commits are specified, format lines in the second commit that differ from the first commit' },
+      { paramName: '--', description: 'Separator, all subsequent content is treated as file paths to avoid conflicts between filenames and options' },
+      { paramName: '<commit>', description: 'Commit identifier (e.g., HEAD, HEAD~1, branch name), used to specify the comparison base; default base is HEAD' },
+      { paramName: '<file>...', description: 'Optional, specify list of files/directories to format; format all changed files if not specified' },
+      { paramName: '--binary', description: 'Specify path to clang-format executable (defaults to clangFormat.binary in git-config)' },
+      { paramName: '--style', description: 'Specify code formatting style (defaults to clangFormat.style in git-config, supports llvm, google, webkit, etc.)' },
+      { paramName: '--extensions', description: 'Specify file extensions to process (defaults to clangFormat.extensions in git-config)' }
     ],
     examples: [
       'git clang-format',
