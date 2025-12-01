@@ -1891,7 +1891,7 @@ const commandManualDataList: CommandManualData[] = [
     options: [
       { paramName: '-h', description: 'show this message and exit' },
       {
-        paramName: '-s <encodings>',
+        paramName: '-s',
         description: 'specify a list of "suspect encoding types" to test, separated by either ":" or ","'
       },
       {
@@ -2173,10 +2173,9 @@ const commandManualDataList: CommandManualData[] = [
     description: '用于将长行文本折叠为指定宽度的短行，便于终端显示。',
     syntax: 'fold [-bs] [-w WIDTH] [FILE]...',
     options: [
-      { paramName: '-b', description: 'Count bytes rather than columns when wrapping lines' },
-      { paramName: '-s', description: 'Break lines at spaces (avoid splitting words) if possible' },
-      { paramName: '-w WIDTH', description: 'Use specified WIDTH columns as wrap width (default: 80 columns)' },
-      { paramName: 'FILE...', description: 'Input file(s) to process; read from stdin if no file is specified' }
+      { paramName: '-b', description: 'Count bytes rather than columns' },
+      { paramName: '-s', description: 'Break lines at spaces' },
+      { paramName: '-w', description: 'Use WIDTH columns instead of 80' }
 
     ],
     examples: [
@@ -2248,15 +2247,21 @@ const commandManualDataList: CommandManualData[] = [
     description: 'Git 子命令，结合 clang-format 工具格式化代码，仅对工作区与指定提交（或暂存区）的差异代码进行格式化，支持按配置自定义格式化规则',
     syntax: 'git clang-format [OPTIONS] [<commit>] [<commit>|--staged] [--] [<file>...]',
     options: [
-      { paramName: '--staged', description: 'Format staged changes (files added via git add)' },
-      { paramName: '--diff', description: 'When two commits are specified, format lines in the second commit that differ from the first commit' },
-      { paramName: '--', description: 'Separator, all subsequent content is treated as file paths to avoid conflicts between filenames and options' },
-      { paramName: '<commit>', description: 'Commit identifier (e.g., HEAD, HEAD~1, branch name), used to specify the comparison base; default base is HEAD' },
-      { paramName: '<file>...', description: 'Optional, specify list of files/directories to format; format all changed files if not specified' },
-      { paramName: '--binary', description: 'Specify path to clang-format executable (defaults to clangFormat.binary in git-config)' },
-      { paramName: '--style', description: 'Specify code formatting style (defaults to clangFormat.style in git-config, supports llvm, google, webkit, etc.)' },
-      { paramName: '--extensions', description: 'Specify file extensions to process (defaults to clangFormat.extensions in git-config)' }
-    ],
+      { paramName: '--binary', description: 'path to clang-format ")' },
+      { paramName: '--commit', description: 'default commit to use if none is specified ' },
+      { paramName: '--diff', description: 'print a diff instead of applying the changes' },
+      { paramName: '--diffstat', description: 'print a diffstat instead of applying the changes' },
+      { paramName: '--extensions', description: 'comma-separated list of file extensions to format, excluding the period and case-insensitive ' },
+      { paramName: '-f, --force', description: 'allow changes to unstaged files' },
+      { paramName: '-p, --patch', description: 'select hunks interactively' },
+      { paramName: '-q, --quiet', description: 'print less information ' },
+      { paramName: '--staged, --cached', description: 'format lines in the stage instead of the working dir' },
+      { paramName: '--style', description: 'passed to clang-format ' },
+      { paramName: '-v, --verbose', description: 'print extra information ' },
+      { paramName: '--diff_from_common_commit', description: 'diff from the last common commit for commits in separate branches rather than the exact point of the commits ' },
+      { paramName: '<commit>', description: 'Revision from which to compute the diff ' },
+      { paramName: '<file>...', description: 'if specified, only consider differences in these files' }
+  ],
     examples: [
       'git clang-format',
       'git clang-format HEAD~1',
