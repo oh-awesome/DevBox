@@ -1891,7 +1891,7 @@ const commandManualDataList: CommandManualData[] = [
     options: [
       { paramName: '-h', description: 'show this message and exit' },
       {
-        paramName: '-s <encodings>',
+        paramName: '-s',
         description: 'specify a list of "suspect encoding types" to test, separated by either ":" or ","'
       },
       {
