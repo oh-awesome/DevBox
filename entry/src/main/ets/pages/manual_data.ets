@@ -2173,10 +2173,9 @@ const commandManualDataList: CommandManualData[] = [
     description: '用于将长行文本折叠为指定宽度的短行，便于终端显示。',
     syntax: 'fold [-bs] [-w WIDTH] [FILE]...',
     options: [
-      { paramName: '-b', description: 'Count bytes rather than columns when wrapping lines' },
-      { paramName: '-s', description: 'Break lines at spaces (avoid splitting words) if possible' },
-      { paramName: '-w WIDTH', description: 'Use specified WIDTH columns as wrap width (default: 80 columns)' },
-      { paramName: 'FILE...', description: 'Input file(s) to process; read from stdin if no file is specified' }
+      { paramName: '-b', description: 'Count bytes rather than columns' },
+      { paramName: '-s', description: 'Break lines at spaces' },
+      { paramName: '-w', description: 'Use WIDTH columns instead of 80' }
 
     ],
     examples: [
