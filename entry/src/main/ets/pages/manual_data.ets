@@ -2764,28 +2764,6 @@ const commandManualDataList: CommandManualData[] = [
     showDetails: false
   },
   {
-    name: 'h2ph',
-    description: '将C头文件转换为Perl头文件的工具',
-    syntax: 'h2ph [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]',
-    options: [
-        { paramName: '-d', description: 'Specify parameters (used with arguments)' },
-        { paramName: '-D', description: 'Boolean option (no arguments)' },
-        { paramName: '-r', description: 'Boolean option (no arguments)' },
-        { paramName: '-l', description: 'Boolean option (no arguments)' },
-        { paramName: '-h', description: 'Boolean option (no arguments)' },
-        { paramName: '-a', description: 'Boolean option (no arguments)' },
-        { paramName: '-Q', description: 'Boolean option (no arguments)' },
-        { paramName: '-e', description: 'Boolean option (no arguments)' },
-        { paramName: '--', description: 'Stop processing subsequent options' }
-    ],
-    examples: [
-        'h2ph -d /path/to/directory',
-        'h2ph -D -r -- header.h',
-        'perldoc -F /data/service/hnp/bin/h2ph'
-    ],
-    showDetails: false
-  },
-  {
     name: 'h2xs',
     description: '用于将C头文件转换为Perl扩展模块的工具',
     syntax: 'h2xs [OPTIONS ... ] [headerfile [extra_libraries]]',
