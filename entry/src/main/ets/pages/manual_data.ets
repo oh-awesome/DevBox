@@ -2226,17 +2226,15 @@ const commandManualDataList: CommandManualData[] = [
     description: '用于解析命令行选项的工具，支持短选项和长选项。',
     syntax: 'getopt [options]',
     options: [
-      { paramName: '-a, --alternative', description: 'allow long options starting with -' },
-      { paramName: '-l, --longoptions <longopts>', description: 'define long options' },
-      { paramName: '-n, --name <progname>', description: 'set program name for error messages' },
-      { paramName: '-o, --options <opts>', description: 'define short options' },
-      { paramName: '-q, --quiet', description: 'suppress error messages' },
-      { paramName: '-Q, --quiet-output', description: 'suppress normal output' },
-      { paramName: '-s, --shell <shell>', description: 'set shell type' },
-      { paramName: '-T, --test', description: 'test for getopt compatibility' },
-      { paramName: '-u, --unquoted', description: 'do not quote output' },
-      { paramName: '-h, --help', description: 'display this help' },
-      { paramName: '-V, --version', description: 'display version' }
+      { paramName: '-a', description: 'Allow long options starting with single-' },
+      { paramName: '-l LOPT[,...]', description: 'Long options to recognize' },
+      { paramName: '-n PROGNAME', description: 'The name under which errors are reported' },
+      { paramName: '-o OPTSTRING', description: 'Short options to recognize' },
+      { paramName: '-q', description: 'No error messages on unrecognized options' },
+      { paramName: '-Q', description: 'No normal output' },
+      { paramName: '-s SHELL', description: 'Set shell quoting conventions' },
+      { paramName: '-T', description: 'Version test (exits with 4)' },
+      { paramName: '-u', description: 'Don\'t quote output' }
     ],
     examples: [
       'getopt --help',
@@ -2401,7 +2399,7 @@ const commandManualDataList: CommandManualData[] = [
     examples: [
       'gperf --help',
       'gperf -h',
-      'gperf -o output.h input.gperf'
+      'gperf input.gperf > output.h'
     ],
     showDetails: false
   },
@@ -2617,59 +2615,54 @@ const commandManualDataList: CommandManualData[] = [
   },
   {
     name: 'groff',
-    description: '文档格式化系统，用于将格式化的文本转换为各种输出格式。',
-    syntax: 'groff [options]',
+    description: 'groff（GNU roff）是一款排版系统，读取包含格式化命令的纯文本输入文件，可生成PostScript、HTML或DVI格式的输出，或直接在终端显示',
+    syntax: 'groff [-abcCeEgijkNpRsStUVzZ] [-d ctext] [-d string=text] [-D fallback-encoding] [-I inclusion-directory] [-K input-encoding] [-m macro-package] [-M macro-directory] [-n page-number] [-o page-list] [-P postprocessor-argument] [-r cnumeric-expression] [-r register=numeric-expression] [-T output-device] [-w warning-category] [-W warning-category] [file ...]\ngroff {-v | --version}\ngroff {-h | --help}',
     options: [
-      { paramName: '-h, --help', description: 'display this help' },
-      { paramName: '-v, --version', description: 'display version' },
-      { paramName: '-a, --ascii', description: 'use ASCII output' },
-      { paramName: '-c, --no-color', description: 'disable color output' },
-      { paramName: '-C, --color', description: 'enable color output' },
-      { paramName: '-d, --define <name>=<value>', description: 'define macro' },
-      { paramName: '-D, --device <device>', description: 'set output device' },
-      { paramName: '-e, --equations', description: 'process equations' },
-      { paramName: '-E, --preprocess-only', description: 'preprocess only' },
-      { paramName: '-f, --family <font>', description: 'set font family' },
-      { paramName: '-F, --font-directory <dir>', description: 'set font directory' },
-      { paramName: '-g, --grap', description: 'process grap code' },
-      { paramName: '-G, --no-grap', description: 'disable grap processing' },
-      { paramName: '-i, --include <dir>', description: 'add include directory' },
-      { paramName: '-I, --include-dir <dir>', description: 'add include directory' },
-      { paramName: '-k, --keep', description: 'keep intermediate files' },
-      { paramName: '-K, --no-keep', description: 'remove intermediate files' },
-      { paramName: '-l, --latin1', description: 'use Latin-1 input' },
-      { paramName: '-L, --locale <locale>', description: 'set locale' },
-      { paramName: '-m, --macro <name>', description: 'load macro package' },
-      { paramName: '-M, --macro-directory <dir>', description: 'set macro directory' },
-      { paramName: '-n, --page-number <num>', description: 'set starting page number' },
-      { paramName: '-N, --no-number', description: 'disable page numbering' },
-      { paramName: '-o, --output <file>', description: 'specify output file' },
-      { paramName: '-O, --option <option>', description: 'pass option to postprocessor' },
-      { paramName: '-p, --pic', description: 'process pic code' },
-      { paramName: '-P, --no-pic', description: 'disable pic processing' },
-      { paramName: '-q, --quiet', description: 'quiet mode' },
-      { paramName: '-Q, --verbose', description: 'verbose mode' },
-      { paramName: '-r, --resolution <dpi>', description: 'set resolution' },
-      { paramName: '-R, --no-resolution', description: 'use default resolution' },
-      { paramName: '-s, --safe', description: 'safe mode' },
-      { paramName: '-S, --no-safe', description: 'disable safe mode' },
-      { paramName: '-t, --tbl', description: 'process tbl code' },
-      { paramName: '-T, --output-format <format>', description: 'set output format' },
-      { paramName: '-u, --underline', description: 'enable underlining' },
-      { paramName: '-U, --no-underline', description: 'disable underlining' },
-      { paramName: '-w, --warning', description: 'enable warnings' },
-      { paramName: '-W, --no-warning', description: 'disable warnings' },
-      { paramName: '-x, --xroff', description: 'compatibility mode' },
-      { paramName: '-X, --no-xroff', description: 'disable compatibility mode' },
-      { paramName: '-y, --synctex', description: 'generate SyncTeX file' },
-      { paramName: '-Y, --no-synctex', description: 'disable SyncTeX' },
-      { paramName: '-z, --draft', description: 'draft mode' },
-      { paramName: '-Z, --debug', description: 'debug mode' }
+      { paramName: '-a', description: 'Enable a-related groff processing option' },
+      { paramName: '-b', description: 'Enable b-related groff processing option' },
+      { paramName: '-c', description: 'Enable c-related groff processing option' },
+      { paramName: '-C', description: 'Enable C-related groff processing option' },
+      { paramName: '-e', description: 'Enable e-related groff processing option' },
+      { paramName: '-E', description: 'Enable E-related groff processing option' },
+      { paramName: '-g', description: 'Enable g-related groff processing option' },
+      { paramName: '-i', description: 'Enable i-related groff processing option' },
+      { paramName: '-j', description: 'Enable j-related groff processing option' },
+      { paramName: '-k', description: 'Enable k-related groff processing option' },
+      { paramName: '-N', description: 'Enable N-related groff processing option' },
+      { paramName: '-p', description: 'Enable p-related groff processing option' },
+      { paramName: '-R', description: 'Enable R-related groff processing option' },
+      { paramName: '-s', description: 'Enable s-related groff processing option' },
+      { paramName: '-S', description: 'Enable S-related groff processing option' },
+      { paramName: '-t', description: 'Enable t-related groff processing option' },
+      { paramName: '-U', description: 'Enable U-related groff processing option' },
+      { paramName: '-V', description: 'Enable V-related groff processing option' },
+      { paramName: '-z', description: 'Enable z-related groff processing option' },
+      { paramName: '-Z', description: 'Enable Z-related groff processing option' },
+      { paramName: '-d ctext', description: 'Set ctext for groff processing' },
+      { paramName: '-d string=text', description: 'Set string=text for groff processing' },
+      { paramName: '-D fallback-encoding', description: 'Specify fallback encoding' },
+      { paramName: '-I inclusion-directory', description: 'Specify inclusion directory' },
+      { paramName: '-K input-encoding', description: 'Specify input encoding' },
+      { paramName: '-m macro-package', description: 'Specify macro package' },
+      { paramName: '-M macro-directory', description: 'Specify directory for macro files' },
+      { paramName: '-n page-number', description: 'Specify page number' },
+      { paramName: '-o page-list', description: 'Specify page list' },
+      { paramName: '-P postprocessor-argument', description: 'Specify postprocessor argument' },
+      { paramName: '-r cnumeric-expression', description: 'Set cnumeric expression for groff processing' },
+      { paramName: '-r register=numeric-expression', description: 'Set register=numeric-expression for groff processing' },
+      { paramName: '-T output-device', description: 'Specify output device' },
+      { paramName: '-w warning-category', description: 'Enable specified warning category' },
+      { paramName: '-W warning-category', description: 'Disable specified warning category' },
+      { paramName: '-v', description: 'Display version information' },
+      { paramName: '--version', description: 'Display version information' },
+      { paramName: '-h', description: 'Display help information' },
+      { paramName: '--help', description: 'Display help information' }
     ],
     examples: [
-      'groff --help',
-      'groff -h',
-      'groff -man manpage.1 | less'
+      'groff document.txt',
+      'groff -m man -T ps manual.man',
+      'groff -v',
+      'groff --help'
     ],
     showDetails: false
   },
@@ -2852,8 +2845,7 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-e FORMAT_STR', description: 'User-specified format string (Example: \'16/1 "%02x|""\\n"\')' },
       { paramName: '-f FMT_FILE', description: 'Read format from file' },
       { paramName: '-n LENGTH', description: 'Show only first LENGTH bytes' },
-      { paramName: '-s OFFSET', description: 'Skip OFFSET bytes' },
-      { paramName: '-h, --help', description: 'display this help' }
+      { paramName: '-s OFFSET', description: 'Skip OFFSET bytes' }
     ],
     examples: [
       'hexdump -C test.txt',
@@ -2871,24 +2863,23 @@ const commandManualDataList: CommandManualData[] = [
     options: [
       { paramName: '-a', description: 'Equivalent to -v -t ANY' },
       { paramName: '-A', description: 'Like -a but omits RRSIG, NSEC, NSEC3' },
-      { paramName: '-c class', description: 'Specifies query class for non-IN data' },
+      { paramName: '-c', description: 'Specifies query class for non-IN data' },
       { paramName: '-C', description: 'Compares SOA records on authoritative nameservers' },
       { paramName: '-d', description: 'Equivalent to -v' },
-      { paramName: '-i', description: 'Use IPv6 reverse lookup' },
       { paramName: '-l', description: 'Lists all hosts in a domain, using AXFR' },
-      { paramName: '-m flag', description: 'Set memory debugging flag (trace|record|usage)' },
-      { paramName: '-N ndots', description: 'Changes the number of dots allowed before root lookup is done' },
-      { paramName: '-p port', description: 'Specifies the port on the server to query' },
+      { paramName: '-m', description: 'Set memory debugging flag (trace|record|usage)' },
+      { paramName: '-N', description: 'Changes the number of dots allowed before root lookup is done' },
+      { paramName: '-p', description: 'Specifies the port on the server to query' },
       { paramName: '-r', description: 'Disables recursive processing' },
-      { paramName: '-R number', description: 'Specifies number of retries for UDP packets' },
+      { paramName: '-R', description: 'Specifies number of retries for UDP packets' },
       { paramName: '-s', description: 'A SERVFAIL response should stop query' },
-      { paramName: '-t type', description: 'Specifies the query type' },
+      { paramName: '-t', description: 'Specifies the query type' },
       { paramName: '-T', description: 'Enables TCP/IP mode' },
       { paramName: '-U', description: 'Enables UDP mode' },
       { paramName: '-v', description: 'Enables verbose output' },
       { paramName: '-V', description: 'Print version number and exit' },
       { paramName: '-w', description: 'Specifies to wait forever for a reply' },
-      { paramName: '-W time', description: 'Specifies how long to wait for a reply' },
+      { paramName: '-W', description: 'Specifies how long to wait for a reply' },
       { paramName: '-4', description: 'Use IPv4 query transport only' },
       { paramName: '-6', description: 'Use IPv6 query transport only' }
     ],
@@ -2921,16 +2912,12 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'instmodsh',
     options: [
       { paramName: 'l', description: 'List all installed modules' },
-      {
-        paramName: 'm <module>',
-        description: 'Select a specific module (replace <module> with the target module name)'
-      },
+      {paramName: 'm <module>', description: 'Select a module'},
       { paramName: 'q', description: 'Quit the program' }
     ],
     examples: [
       'instmodsh',
       'l',
-      'm Data::Dumper',
       'q'
     ],
     showDetails: false
@@ -4244,8 +4231,7 @@ const commandManualDataList: CommandManualData[] = [
     examples: [
       'libnetcfg -d -c',
       'libnetcfg -o output.conf',
-      'libnetcfg -h',
-      'perldoc -F /data/service/hnp/bin/libnetcfg'
+      'libnetcfg -h'
     ],
     showDetails: false
   },
@@ -4255,10 +4241,9 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'lld',
     options: [],
     examples: [
-      'ld.lld (Unix平台使用)',
-      'ld64.lld (macOS平台使用)',
-      'lld-link (Windows平台使用)',
-      'wasm-ld (WebAssembly平台使用)'
+      'ld.lld -o myapp main.o util.o ',
+      'ld64.lld -arch arm64 -o app app.o -L/path/to/libs -lbar',
+      'lld-link /OUT:hello.exe hello.obj kernel32.lib '
     ],
     showDetails: false
   },
@@ -4693,16 +4678,13 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'lldb-server [subcommand] [options]',
     options: [
       { paramName: 'v[ersion]', description: 'Display lldb-server version information' },
-      {
-        paramName: 'g[dbserver] [options]',
-        description: 'Run in gdbserver compatible mode, can specify additional options'
-      },
+      { paramName: 'g[dbserver] [options]', description: 'Run in gdbserver compatible mode, can specify additional options'},
       { paramName: 'p[latform] [options]', description: 'Run in platform service mode, can specify additional options' }
     ],
     examples: [
       'lldb-server version',
       'lldb-server gdbserver --help',
-      'lldb-server platform --help'
+      'lldb-server platform'
     ],
     showDetails: false
   },
