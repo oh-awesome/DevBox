@@ -184,7 +184,8 @@ export struct AboutDialog {
               alignment: DialogAlignment.Center,
               autoCancel: true, // 点击蒙层可关闭
               customStyle: false,
-              maskColor: "#00000040"  // 设置蒙层颜色
+              maskColor: "#00000040",  // 设置蒙层颜色
+              width: 700
             })
             openSourceDialogController.open()
           })
@@ -456,7 +457,7 @@ struct OpenSourceDialog {
                       right: 16
                     })
                 }
-                .layoutWeight(1)
+                .layoutWeight(5)
                 .justifyContent(FlexAlign.Center)
 
 
@@ -467,7 +468,7 @@ struct OpenSourceDialog {
                     .hitTestBehavior(12)
                     .padding({ left: 24 })
                 }
-                .layoutWeight(1)
+                .layoutWeight(4)
                 .justifyContent(FlexAlign.Center)
 
                 // 查看许可证
@@ -480,7 +481,7 @@ struct OpenSourceDialog {
                       this.timeStamp = Date.now();
                     })
                 }
-                .layoutWeight(1)
+                .layoutWeight(4)
                 .justifyContent(FlexAlign.Center)
               }
               .width('100%')

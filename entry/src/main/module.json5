@@ -21,12 +21,7 @@
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
         "minWindowHeight": 600,
-        "maxWindowHeight": 600,
-        "minWindowWidth": 900,
-        "maxWindowWidth": 900,
-        "supportWindowMode": [
-          "floating"
-         ],
+        "minWindowWidth": 800,
         "skills": [
           {
             "entities": [

@@ -1,5 +1,7 @@
-import { CommandManualData, CommandManualOption } from "./manual_data";
-import commandManualDataList from "./manual_data";
+import commandManualDataList, { CommandManualData, CommandManualOption } from './manual_data';
+import measure from '@ohos.measure';
+
+const TITLE_WIDTH = '200vp'
 
 @Component
 export struct CommandManual {
@@ -131,7 +133,7 @@ export struct CommandManual {
       .width('100%')
       .justifyContent(FlexAlign.Start)
 
-      // 命令清单列表
+      // 列表
       Column({ space: 15 }) {
         ForEach(this.commandLists,
           (item: CommandManualData, index: number) => {
@@ -202,21 +204,59 @@ export struct CommandManual {
 
                     ForEach(item.options,
                       (option: CommandManualOption, index: number) => {
-                        Row({ space: 4 }) {
-                          Text(option.paramName)
-                            .fontSize(16)
-                            .fontWeight(FontWeight.Normal)
-                            .fontColor(Color.Black)
-                            .backgroundColor($r('app.color.manual_code_bg_color'))
-                            .borderRadius(2)
+                        Column() {
+                          Stack() {
+                            Row() {
+                              Text(option.paramName)
+                                .fontSize(16)
+                                .fontWeight(FontWeight.Normal)
+                                .fontColor(Color.Black)
+                                .padding(6)
+                                .backgroundColor($r('app.color.manual_code_bg_color'))
+                                .borderRadius(6)
+                                .textAlign(TextAlign.Start)
+                                .copyOption(CopyOptions.InApp)
+                            }
+                            .constraintSize({ minWidth: TITLE_WIDTH })
                             .padding(8)
 
-                          Text(option.description)
-                            .fontSize(16)
-                            .fontWeight(FontWeight.Normal)
-                            .fontColor(Color.Black)
-                            .padding(8)
+                            Row() {
+                              Row()
+                                .width(TITLE_WIDTH)
+                                .padding(8)
+                              Text(option.description)
+                                .fontSize(16)
+                                .fontWeight(FontWeight.Normal)
+                                .textAlign(TextAlign.Start)
+                                .fontColor(Color.Black)
+                                .padding(8)
+                                .width('calc(100% - 230vp)')
+                                .copyOption(CopyOptions.InApp)
+                                .visibility(!this.needChangeLine(option.paramName) ? Visibility.Visible :
+                                Visibility.None)
+                            }
+                            .width('100%')
+                          }
+                          .alignContent(Alignment.Start)
+                          .width('100%')
+
+                          Row() {
+                            Row()
+                              .width(TITLE_WIDTH)
+                              .padding(8)
+                            Text(option.description)
+                              .fontSize(16)
+                              .fontWeight(FontWeight.Normal)
+                              .fontColor(Color.Black)
+                              .padding(8)
+                              .width('calc(100% - 230vp)')
+                              .copyOption(CopyOptions.InApp)
+                          }
+                          .width('100%')
+                          .visibility(this.needChangeLine(option.paramName) ? Visibility.Visible : Visibility.None)
                         }
+                        .alignItems(HorizontalAlign.Start)
+                        .width('100%')
                       })
 
                     Text("示意")
@@ -233,6 +273,7 @@ export struct CommandManual {
                         .fontColor(Color.Black)
                         .padding(8)
                         .borderRadius(2)
+                        .copyOption(CopyOptions.InApp)
                         .width('100%')
                         .backgroundColor($r('app.color.manual_code_bg_color'))
                     })
@@ -251,5 +292,16 @@ export struct CommandManual {
           })
       }
     }
+  }
+
+  needChangeLine(content: string): boolean {
+    const size = measure.measureTextSize({
+      textContent: content,
+      fontSize: '16fp',
+    })
+    if (!size || !size.width) {
+      return false;
+    }
+    return size.width > 330;
   }
 }
