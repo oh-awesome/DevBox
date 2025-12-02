@@ -13,306 +13,307 @@
  * See the Mulan PSL v2 for more details.
  */
 
-import { OpenSourceNoticeMetaData } from './opensource_info'
+import { LicenseType } from '../common/Constants';
+import { OpenSourceNoticeMetaData } from './opensource_info';
 
 const ossComponentsList: OpenSourceNoticeMetaData[] = [
   {
     "name": "autoconf",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://savannah.gnu.org/projects/autoconf",
     "licenseFile": "about_autoconf_opensource.html",
     "showLicense": false
   },
   {
     "name": "bind",
-    "license": "MPL-2.0",
+    "license": LicenseType.MPL_2,
     "source": "https://www.isc.org/bind/",
     "licenseFile": "about_bind_opensource.html",
     "showLicense": false
   },
   {
     "name": "binutils",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://ftp.gnu.org/gnu/binutils/",
     "licenseFile": "about_binutils_opensource.html",
     "showLicense": false
   },
   {
     "name": "busybox",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://github.com/mirror/busybox",
     "licenseFile": "about_busybox_opensource.html",
     "showLicense": false
   },
   {
     "name": "bzip2",
-    "license": "bzip2-1.0.6",
+    "license": LicenseType.BZIP_2,
     "source": "https://sourceware.org/bzip2/",
     "licenseFile": "about_bzip2_opensource.html",
     "showLicense": false
   },
   {
     "name": "cmake",
-    "license": "BSD-3-Clause",
+    "license": LicenseType.BSD_3,
     "source": "https://github.com/Kitware/CMake",
     "licenseFile": "about_cmake_opensource.html",
     "showLicense": false
   },
   {
     "name": "colrm",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://github.com/util-linux/util-linux",
     "licenseFile": "about_colrm_opensource.html",
     "showLicense": false
   },
   {
     "name": "column",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://github.com/util-linux/util-linux",
     "licenseFile": "about_column_opensource.html",
     "showLicense": false
   },
   {
     "name": "diffutils",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/diffutils/",
     "licenseFile": "about_diffutils_opensource.html",
     "showLicense": false
   },
   {
     "name": "expat",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://libexpat.github.io/",
     "licenseFile": "about_expat_opensource.html",
     "showLicense": false
   },
   {
     "name": "findutils",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/findutils/",
     "licenseFile": "about_findutils_opensource.html",
     "showLicense": false
   },
   {
     "name": "flex",
-    "license": "BSD-4-Clause",
+    "license": LicenseType.BSD_4,
     "source": "https://github.com/westes/flex",
     "licenseFile": "about_flex_opensource.html",
     "showLicense": false
   },
   {
     "name": "gettext",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/gettext/",
     "licenseFile": "about_gettext_opensource.html",
     "showLicense": false
   },
   {
     "name": "gperf",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/gperf/",
     "licenseFile": "about_gperf_opensource.html",
     "showLicense": false
   },
   {
     "name": "gprof",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://sourceware.org/binutils/docs/gprof/",
     "licenseFile": "about_gprof_opensource.html",
     "showLicense": false
   },
   {
     "name": "grep",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/grep/",
     "licenseFile": "about_grep_opensource.html",
     "showLicense": false
   },
   {
     "name": "groff",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/groff/",
     "licenseFile": "about_groff_opensource.html",
     "showLicense": false
   },
   {
     "name": "gzip",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/gzip/",
     "licenseFile": "about_gzip_opensource.html",
     "showLicense": false
   },
   {
     "name": "less",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/less/",
     "licenseFile": "about_less_opensource.html",
     "showLicense": false
   },
   {
     "name": "libedit",
-    "license": "BSD-3-Clause",
+    "license": LicenseType.BSD_3,
     "source": "https://thrysoee.dk/editline/",
     "licenseFile": "about_libedit_opensource.html",
     "showLicense": false
   },
   {
     "name": "libexpat",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://libexpat.github.io/",
     "licenseFile": "about_libexpat_opensource.html",
     "showLicense": false
   },
   {
     "name": "libffi",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://sourceware.org/libffi/",
     "licenseFile": "about_libffi_opensource.html",
     "showLicense": false
   },
   {
     "name": "libiconv",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/libiconv/",
     "licenseFile": "about_libiconv_opensource.html",
     "showLicense": false
   },
   {
     "name": "libunistring",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/libunistring/",
     "licenseFile": "about_libunistring_opensource.html",
     "showLicense": false
   },
   {
     "name": "libuv",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://github.com/libuv/libuv",
     "licenseFile": "about_libuv_opensource.html",
     "showLicense": false
   },
   {
     "name": "libxml",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://gitlab.gnome.org/GNOME/libxml2/",
     "licenseFile": "about_libxml_opensource.html",
     "showLicense": false
   },
   {
     "name": "libxslt",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://gitlab.gnome.org/GNOME/libxslt",
     "licenseFile": "about_libxslt_opensource.html",
     "showLicense": false
   },
   {
     "name": "libyaml",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://github.com/yaml/libyaml",
     "licenseFile": "about_libyaml_opensource.html",
     "showLicense": false
   },
   {
     "name": "llvm",
-    "license": "Apache-2.0",
+    "license": LicenseType.APACHE_2,
     "source": "https://github.com/llvm/llvm-project",
     "licenseFile": "about_llvm_opensource.html",
     "showLicense": false
   },
   {
     "name": "m4",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/m4/",
     "licenseFile": "about_m4_opensource.html",
     "showLicense": false
   },
   {
     "name": "make",
-    "license": "GPL-3.0-or-later",
+    "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/make/",
     "licenseFile": "about_make_opensource.html",
     "showLicense": false
   },
   {
     "name": "ncurses",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://github.com/mirror/ncurses",
     "licenseFile": "about_ncurses_opensource.html",
     "showLicense": false
   },
   {
     "name": "neovim",
-    "license": "Apache-2.0",
+    "license": LicenseType.APACHE_2,
     "source": "https://github.com/neovim/neovim",
     "licenseFile": "about_neovim_opensource.html",
     "showLicense": false
   },
   {
     "name": "nghttp",
-    "license": "MIT",
+    "license": LicenseType.MIT,
     "source": "https://github.com/nghttp2/nghttp2/",
     "licenseFile": "about_nghttp_opensource.html",
     "showLicense": false
   },
   {
     "name": "ninja",
-    "license": "Apache-2.0",
+    "license": LicenseType.APACHE_2,
     "source": "https://github.com/ninja-build/ninja",
     "licenseFile": "about_ninja_opensource.html",
     "showLicense": false
   },
   {
     "name": "openssl",
-    "license": "Apache-2.0",
+    "license": LicenseType.APACHE_2,
     "source": "https://github.com/openssl/openssl",
     "licenseFile": "about_openssl_opensource.html",
     "showLicense": false
   },
   {
     "name": "perl",
-    "license": "GPL-1.0-or-later",
+    "license": LicenseType.GPL_V1L,
     "source": "https://github.com/Perl/perl5",
     "licenseFile": "about_perl_opensource.html",
     "showLicense": false
   },
   {
     "name": "ruby",
-    "license": "BSD-2-Clause",
+    "license": LicenseType.BSD_2,
     "source": "https://github.com/ruby/ruby",
     "licenseFile": "about_ruby_opensource.html",
     "showLicense": false
   },
   {
     "name": "utils_linux",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://github.com/util-linux/util-linux",
     "licenseFile": "about_utils_linux_opensource.html",
     "showLicense": false
   },
   {
-    "name": "vim",
-    "license": "Vim",
+    "name": LicenseType.VIM,
+    "license": LicenseType.VIM,
     "source": "https://github.com/vim/vim",
     "licenseFile": "about_vim_opensource.html",
     "showLicense": false
   },
   {
     "name": "whereis",
-    "license": "GPL-2.0-or-later",
+    "license": LicenseType.GPL_V2L,
     "source": "https://github.com/util-linux/util-linux",
     "licenseFile": "about_whereis_opensource.html",
     "showLicense": false
   },
   {
     "name": "xz",
-    "license": "0BSD",
+    "license": LicenseType.BSD_0,
     "source": "https://tukaani.org/xz/",
     "licenseFile": "about_xz_opensource.html",
     "showLicense": false
   },
   {
     "name": "zlib",
-    "license": "Zlib",
+    "license": LicenseType.ZLIB,
     "source": "https://github.com/madler/zlib",
     "licenseFile": "about_zlib_opensource.html",
     "showLicense": false
