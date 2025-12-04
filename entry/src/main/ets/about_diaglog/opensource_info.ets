@@ -19,4 +19,5 @@ export class OpenSourceNoticeMetaData {
   source: string = '';
   licenseFile: string = '';
   showLicense: boolean = false;
+  isNeedHide?: boolean = false;
 }
