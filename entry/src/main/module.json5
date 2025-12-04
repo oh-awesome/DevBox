@@ -157,6 +157,14 @@
         "type": "public"
       },
       {
+        "package": "lz4.hnp",
+        "type": "public"
+      },
+      {
+        "package": "pcre2.hnp",
+        "type": "public"
+      },
+      {
         "package": "hdc.hnp",
         "type": "public"
       }

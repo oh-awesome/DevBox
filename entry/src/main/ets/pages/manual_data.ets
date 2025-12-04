@@ -10,6 +10,7 @@ export class CommandManualData {
   options: CommandManualOption[] = [];
   examples: string[] = [];
   showDetails: boolean = false;
+  isNeedHide?: boolean = false;
 }
 
 // 转换后的完整数据数组
@@ -1746,8 +1747,14 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-d, --minimal', description: 'Try hard to find a smaller set of changes' },
       { paramName: '--horizon-lines=NUM', description: 'Keep NUM lines of the common prefix and suffix' },
       { paramName: '--speed-large-files', description: 'Assume large files and many scattered small changes' },
-      { paramName: '--color[=WHEN]', description: 'Color output; WHEN is \'never\', \'always\', or \'auto\'; plain --color means --color=\'auto\'' },
-      { paramName: '--palette=PALETTE', description: 'The colors to use when --color is active; PALETTE is a colon-separated list of terminfo capabilities' },
+      {
+        paramName: '--color[=WHEN]',
+        description: 'Color output; WHEN is \'never\', \'always\', or \'auto\'; plain --color means --color=\'auto\''
+      },
+      {
+        paramName: '--palette=PALETTE',
+        description: 'The colors to use when --color is active; PALETTE is a colon-separated list of terminfo capabilities'
+      },
       { paramName: '-v, --version', description: 'output version information' },
       { paramName: '--help', description: 'display this help and exit' }
     ],
@@ -1807,7 +1814,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: 'q-class', description: 'Specify DNS query class (default: IN, other values include CH, HS)' },
       { paramName: '{q-opt}', description: 'Query-specific options (see "dig -h" for complete details)' },
       { paramName: '{global-d-opt}', description: 'Global DNS options (see "dig -h" for complete details)' },
-      { paramName: '{local-d-opt}', description: 'Local DNS options for the corresponding host (see "dig -h" for complete details)' },
+      {
+        paramName: '{local-d-opt}',
+        description: 'Local DNS options for the corresponding host (see "dig -h" for complete details)'
+      },
       { paramName: 'host', description: 'Target host to query (can be a domain name or IP address for reverse lookup)' }
     ],
     examples: [
@@ -2201,6 +2211,60 @@ const commandManualDataList: CommandManualData[] = [
     showDetails: false
   },
   {
+    "name": "gdb",
+    "description": "一个功能强大的源代码级调试工具，适用于 C、C++ 及其他编程语言，允许检查和控制程序执行。",
+    "syntax": "gdb [options] [executable-file [core-file or process-id]]\ngdb [options] --args executable-file [inferior-arguments ...]",
+    "options": [
+      { "paramName": "--args", "description": "Arguments after executable-file are passed to inferior." },
+      { "paramName": "--core=COREFILE", "description": "Analyze the core dump COREFILE." },
+      { "paramName": "--exec=EXECFILE", "description": "Use EXECFILE as the executable." },
+      { "paramName": "--pid=PID", "description": "Attach to running process PID." },
+      { "paramName": "--directory=DIR", "description": "Search for source files in DIR." },
+      { "paramName": "--se=FILE", "description": "Use FILE as symbol file and executable file." },
+      { "paramName": "--symbols=SYMFILE", "description": "Read symbols from SYMFILE." },
+      { "paramName": "--readnow", "description": "Fully read symbol files on first access." },
+      { "paramName": "--readnever", "description": "Do not read symbol files." },
+      { "paramName": "--write", "description": "Set writing into executable and core files." },
+      { "paramName": "--command=FILE, -x", "description": "Execute GDB commands from FILE." },
+      {
+        "paramName": "--init-command=FILE, -ix",
+        "description": "Like -x but execute commands before loading inferior."
+      },
+      {
+        "paramName": "--eval-command=COMMAND, -ex",
+        "description": "Execute a single GDB command. May be used multiple times and in conjunction with --command."
+      },
+      { "paramName": "--init-eval-command=COMMAND, -iex", "description": "Like -ex but before loading inferior." },
+      { "paramName": "--nh", "description": "Do not read ~/.gdbinit." },
+      { "paramName": "--nx", "description": "Do not read any .gdbinit files in any directory." },
+      { "paramName": "--fullname", "description": "Output information used by emacs-GDB interface." },
+      { "paramName": "--interpreter=INTERP", "description": "Select a specific interpreter / user interface." },
+      { "paramName": "--tty=TTY", "description": "Use TTY for input/output by the program being debugged." },
+      { "paramName": "-w", "description": "Use the GUI interface." },
+      { "paramName": "--nw", "description": "Do not use the GUI interface." },
+      { "paramName": "-q, --quiet, --silent", "description": "Do not print version number on startup." },
+      { "paramName": "--batch", "description": "Exit after processing options." },
+      { "paramName": "--batch-silent", "description": "Like --batch, but suppress all gdb stdout output." },
+      { "paramName": "--return-child-result", "description": "GDB exit code will be the child's exit code." },
+      { "paramName": "--configuration", "description": "Print details about GDB configuration and then exit." },
+      { "paramName": "--help", "description": "Print this message and then exit." },
+      { "paramName": "--version", "description": "Print version information and then exit." },
+      { "paramName": "-b BAUDRATE", "description": "Set serial port baud rate used for remote debugging." },
+      { "paramName": "-l TIMEOUT", "description": "Set timeout in seconds for remote debugging." },
+      { "paramName": "--cd=DIR", "description": "Change current directory to DIR." },
+      { "paramName": "--data-directory=DIR, -D", "description": "Set GDB's data-directory to DIR." }
+    ],
+    "examples": [
+      "gdb --args ./program arg1 arg2",
+      "gdb --pid=1234",
+      "gdb --core=core.dump ./program",
+      "gdb -ex 'break main' -ex 'run' ./program",
+      "gdb --batch --ex 'backtrace' --pid=5678",
+      "gdb --directory=/usr/src ./program"
+    ],
+    "showDetails": false
+  },
+  {
     name: 'gem',
     description: 'RubyGems 是 Ruby 语言的包管理器，用于安装、管理和发布 Ruby 软件包（gem）',
     syntax:
@@ -2251,17 +2315,23 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '--commit', description: 'default commit to use if none is specified ' },
       { paramName: '--diff', description: 'print a diff instead of applying the changes' },
       { paramName: '--diffstat', description: 'print a diffstat instead of applying the changes' },
-      { paramName: '--extensions', description: 'comma-separated list of file extensions to format, excluding the period and case-insensitive ' },
+      {
+        paramName: '--extensions',
+        description: 'comma-separated list of file extensions to format, excluding the period and case-insensitive '
+      },
       { paramName: '-f, --force', description: 'allow changes to unstaged files' },
       { paramName: '-p, --patch', description: 'select hunks interactively' },
       { paramName: '-q, --quiet', description: 'print less information ' },
       { paramName: '--staged, --cached', description: 'format lines in the stage instead of the working dir' },
       { paramName: '--style', description: 'passed to clang-format ' },
       { paramName: '-v, --verbose', description: 'print extra information ' },
-      { paramName: '--diff_from_common_commit', description: 'diff from the last common commit for commits in separate branches rather than the exact point of the commits ' },
+      {
+        paramName: '--diff_from_common_commit',
+        description: 'diff from the last common commit for commits in separate branches rather than the exact point of the commits '
+      },
       { paramName: '<commit>', description: 'Revision from which to compute the diff ' },
       { paramName: '<file>...', description: 'if specified, only consider differences in these files' }
-  ],
+    ],
     examples: [
       'git clang-format',
       'git clang-format HEAD~1',
@@ -2422,7 +2492,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-I dirs', description: 'Specify source file search directory (see --directory-path=dirs)' },
       { paramName: '-l', description: 'Analyze code by line (see --line)' },
       { paramName: '-L', description: 'Display file names of inline functions (see --inline-file-names)' },
-      { paramName: '-m min-count', description: 'Only display functions with execution count ≥ min-count (see --min-count=n)' },
+      {
+        paramName: '-m min-count',
+        description: 'Only display functions with execution count ≥ min-count (see --min-count=n)'
+      },
       { paramName: '-r', description: 'Output time-related statistics (see --time=name)' },
       { paramName: '-s', description: 'Set table length (see --table-length=len)' },
       { paramName: '-T', description: 'Set output width (see --width=n)' },
@@ -2431,8 +2504,14 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-x', description: 'Specify external symbol table file (see --external-symbol-table=name)' },
       { paramName: '-y', description: 'Ignore non-function symbols (duplicate with -i)' },
       { paramName: '-z', description: 'Display unused functions (duplicate with -D)' },
-      { paramName: '-A[name]', description: 'Do not generate annotated source listing (see --no-annotated-source[=name])' },
-      { paramName: '-C[name]', description: 'Do not output function execution count statistics (see --no-exec-counts[=name])' },
+      {
+        paramName: '-A[name]',
+        description: 'Do not generate annotated source listing (see --no-annotated-source[=name])'
+      },
+      {
+        paramName: '-C[name]',
+        description: 'Do not output function execution count statistics (see --no-exec-counts[=name])'
+      },
       { paramName: '-e[name]', description: 'Specify input file format (see --file-format=name)' },
       { paramName: '-E[name]', description: 'Display input file information (see --file-info)' },
       { paramName: '-f[name]', description: 'Output flat profile (see --flat-profile[=name])' },
@@ -2442,8 +2521,14 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-J[name]', description: 'Output in file order (see --file-ordering)' },
       { paramName: '-n[name]', description: 'Do not display static functions (see --no-static)' },
       { paramName: '-N[name]', description: 'Display source file path (see --print-path)' },
-      { paramName: '-O[name]', description: 'Integrated output parameter (associated with corresponding profile options)' },
-      { paramName: '-p[name]', description: 'Generate separate output files for each source file (see --separate-files)' },
+      {
+        paramName: '-O[name]',
+        description: 'Integrated output parameter (associated with corresponding profile options)'
+      },
+      {
+        paramName: '-p[name]',
+        description: 'Generate separate output files for each source file (see --separate-files)'
+      },
       { paramName: '-P[name]', description: 'Do not generate separate output files (see --no-separate-files)' },
       { paramName: '-q[name]', description: 'Summarize multiple profile files (see --sum)' },
       { paramName: '-Q[name]', description: 'Use traditional output format (see --traditional)' },
@@ -2452,7 +2537,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-t[name]', description: 'Analyze code by line (duplicate with -l, for compatibility)' },
       { paramName: '-Z[name]', description: 'Do not display unused functions (see --no-display-unused-functions)' },
       { paramName: '-d[num]', description: 'Enable debug mode, optional debug level (see --debug[=level])' },
-      { paramName: '-k from/to', description: 'Set start and end points for function call relationships (see --static-call-graph)' },
+      {
+        paramName: '-k from/to',
+        description: 'Set start and end points for function call relationships (see --static-call-graph)'
+      },
       { paramName: '-t table-length', description: 'Set table length (see --table-length=len)' },
       { paramName: '--annotated-source[=name]', description: 'Generate annotated source listing' },
       { paramName: '--no-annotated-source[=name]', description: 'Do not generate annotated source listing' },
@@ -2492,7 +2580,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '--external-symbol-table=name', description: 'Specify external symbol table file name' },
       { paramName: '@FILE', description: 'Read command line parameters from FILE' },
       { paramName: 'image-file', description: 'Executable image file (compiled program file)' },
-      { paramName: 'profile-file...', description: 'Profile data file(s) (generated by program execution, e.g., gmon.out)' }
+      {
+        paramName: 'profile-file...',
+        description: 'Profile data file(s) (generated by program execution, e.g., gmon.out)'
+      }
     ],
     examples: [
       'gprof --help',
@@ -2654,7 +2745,10 @@ const commandManualDataList: CommandManualData[] = [
       { paramName: '-o page-list', description: 'Specify page list' },
       { paramName: '-P postprocessor-argument', description: 'Specify postprocessor argument' },
       { paramName: '-r cnumeric-expression', description: 'Set cnumeric expression for groff processing' },
-      { paramName: '-r register=numeric-expression', description: 'Set register=numeric-expression for groff processing' },
+      {
+        paramName: '-r register=numeric-expression',
+        description: 'Set register=numeric-expression for groff processing'
+      },
       { paramName: '-T output-device', description: 'Specify output device' },
       { paramName: '-w warning-category', description: 'Enable specified warning category' },
       { paramName: '-W warning-category', description: 'Disable specified warning category' },
@@ -2669,7 +2763,8 @@ const commandManualDataList: CommandManualData[] = [
       'groff -v',
       'groff --help'
     ],
-    showDetails: false
+    showDetails: false,
+    isNeedHide: true
   },
   {
     name: 'grolbp',
@@ -2917,7 +3012,7 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'instmodsh',
     options: [
       { paramName: 'l', description: 'List all installed modules' },
-      {paramName: 'm <module>', description: 'Select a module'},
+      { paramName: 'm <module>', description: 'Select a module' },
       { paramName: 'q', description: 'Quit the program' }
     ],
     examples: [
@@ -4683,7 +4778,10 @@ const commandManualDataList: CommandManualData[] = [
     syntax: 'lldb-server [subcommand] [options]',
     options: [
       { paramName: 'v[ersion]', description: 'Display lldb-server version information' },
-      { paramName: 'g[dbserver] [options]', description: 'Run in gdbserver compatible mode, can specify additional options'},
+      {
+        paramName: 'g[dbserver] [options]',
+        description: 'Run in gdbserver compatible mode, can specify additional options'
+      },
       { paramName: 'p[latform] [options]', description: 'Run in platform service mode, can specify additional options' }
     ],
     examples: [
@@ -5831,6 +5929,158 @@ const commandManualDataList: CommandManualData[] = [
     showDetails: false
   },
   {
+    "name": "lz4",
+    "description": "极速的实时数据压缩算法和压缩工具，提供高压缩比和快速的解压速度。",
+    "syntax": "lz4 [arg] [input] [output]",
+    "options": [
+      { "paramName": "-1", "description": "fast compression (default)" },
+      { "paramName": "-12", "description": "slowest compression level" },
+      { "paramName": "-T#", "description": "use # threads for compression (default:0==auto)" },
+      { "paramName": "-d", "description": "decompression (default for .lz4 extension)" },
+      { "paramName": "-f", "description": "overwrite output without prompting" },
+      { "paramName": "-k", "description": "preserve source files(s)  (default)" },
+      { "paramName": "--rm", "description": "remove source file(s) after successful de/compression" },
+      { "paramName": "-h/-H", "description": "display help/long help and exit" },
+      { "paramName": "-V", "description": "display Version number and exit" },
+      { "paramName": "-v", "description": "verbose mode" },
+      { "paramName": "-q", "description": "suppress warnings; specify twice to suppress errors too" },
+      { "paramName": "-c", "description": "force write to standard output, even if it is the console" },
+      { "paramName": "-t", "description": "test compressed file integrity" },
+      { "paramName": "-m", "description": "multiple input files (implies automatic output filenames)" },
+      { "paramName": "-r", "description": "operate recursively on directories (sets also -m)" },
+      { "paramName": "-l", "description": "compress using Legacy format (Linux kernel compression)" },
+      { "paramName": "-z", "description": "force compression" },
+      { "paramName": "-D FILE", "description": "use FILE as dictionary (compression & decompression)" },
+      {
+        "paramName": "-B#",
+        "description": "cut file into blocks of size # bytes [32+] or predefined block size [4-7] (default: 7)"
+      },
+      { "paramName": "-BI", "description": "Block Independence (default)" },
+      { "paramName": "-BD", "description": "Block dependency (improves compression ratio)" },
+      { "paramName": "-BX", "description": "enable block checksum (default:disabled)" },
+      { "paramName": "--no-frame-crc", "description": "disable stream checksum (default:enabled)" },
+      { "paramName": "--content-size", "description": "compressed frame includes original size (default:not present)" },
+      {
+        "paramName": "--list FILE",
+        "description": "lists information about .lz4 files (useful for files compressed with --content-size flag)"
+      },
+      { "paramName": "--[no-]sparse", "description": "sparse mode (default:enabled on file, disabled on stdout)" },
+      { "paramName": "--favor-decSpeed", "description": "compressed files decompress faster, but are less compressed" },
+      { "paramName": "--fast[=#]", "description": "switch to ultra fast compression level (default: 1)" },
+      { "paramName": "--best", "description": "same as -12" },
+      { "paramName": "-b#", "description": "benchmark file(s), using # compression level (default : 1)" },
+      { "paramName": "-e#", "description": "test all compression levels from -bX to # (default : 1)" },
+      { "paramName": "-i#", "description": "minimum evaluation time in seconds (default : 3s)" }
+    ],
+    "examples": [
+      "lz4 -v file.txt",
+      "lz4 -d file.txt.lz4",
+      "lz4 -9 -T4 input.txt output.lz4",
+      "lz4 -c file.txt > compressed.lz4",
+      "lz4 -r -m source_dir/",
+      "lz4 --list archive.lz4",
+      "lz4 -t compressed.lz4",
+      "lz4 -B4 --content-size largefile.bin"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "lz4c",
+    "description": "lz4 压缩库的命令行界面",
+    "syntax": "lz4c [arg] [input] [output]",
+    "options": [
+      { "paramName": "-1", "description": "fast compression (default)" },
+      { "paramName": "-12", "description": "slowest compression level" },
+      { "paramName": "-T#", "description": "use # threads for compression (default:0==auto)" },
+      { "paramName": "-d", "description": "decompression (default for .lz4 extension)" },
+      { "paramName": "-f", "description": "overwrite output without prompting" },
+      { "paramName": "-k", "description": "preserve source files(s) (default)" },
+      { "paramName": "--rm", "description": "remove source file(s) after successful de/compression" },
+      { "paramName": "-h/-H", "description": "display help/long help and exit" }
+    ],
+    "examples": [
+      "lz4c -1 input.txt output.lz4",
+      "lz4c -d compressed.lz4 decompressed.txt",
+      "lz4c -f input.bin",
+      "lz4c -T4 largefile.dat",
+      "lz4c --rm archive.tar"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "lz4cat",
+    "description": "一个用于解压并将 lz4 压缩文件输出到标准输出的工具，类似于 gzip 的 'zcat'。",
+    "syntax": "lz4cat [arg] [input] [output]",
+    "options": [
+      { "paramName": "-1", "description": "fast compression (default)" },
+      { "paramName": "-12", "description": "slowest compression level" },
+      { "paramName": "-T#", "description": "use # threads for compression (default:0==auto)" },
+      { "paramName": "-d", "description": "decompression (default for .lz4 extension)" },
+      { "paramName": "-f", "description": "overwrite output without prompting" },
+      { "paramName": "-k", "description": "preserve source files(s) (default)" },
+      { "paramName": "--rm", "description": "remove source file(s) after successful de/compression" },
+      { "paramName": "-h/-H", "description": "display help/long help and exit" },
+      { "paramName": "-V", "description": "display Version number and exit" },
+      { "paramName": "-v", "description": "verbose mode" },
+      { "paramName": "-q", "description": "suppress warnings; specify twice to suppress errors too" },
+      { "paramName": "-c", "description": "force write to standard output, even if it is the console" },
+      { "paramName": "-t", "description": "test compressed file integrity" },
+      { "paramName": "-m", "description": "multiple input files (implies automatic output filenames)" },
+      { "paramName": "-r", "description": "operate recursively on directories (sets also -m)" },
+      { "paramName": "-l", "description": "compress using Legacy format (Linux kernel compression)" },
+      { "paramName": "-z", "description": "force compression" },
+      { "paramName": "-D FILE", "description": "use FILE as dictionary (compression & decompression)" },
+      {
+        "paramName": "-B#",
+        "description": "cut file into blocks of size # bytes [32+] or predefined block size [4-7] (default: 7)"
+      },
+      { "paramName": "-BI", "description": "Block Independence (default)" },
+      { "paramName": "-BD", "description": "Block dependency (improves compression ratio)" },
+      { "paramName": "-BX", "description": "enable block checksum (default:disabled)" },
+      { "paramName": "--no-frame-crc", "description": "disable stream checksum (default:enabled)" },
+      { "paramName": "--content-size", "description": "compressed frame includes original size (default:not present)" },
+      {
+        "paramName": "--list FILE",
+        "description": "lists information about .lz4 files (useful for files compressed with --content-size flag)"
+      },
+      { "paramName": "--[no-]sparse", "description": "sparse mode (default:enabled on file, disabled on stdout)" },
+      { "paramName": "--favor-decSpeed", "description": "compressed files decompress faster, but are less compressed" },
+      { "paramName": "--fast[=#]", "description": "switch to ultra fast compression level (default: 1)" },
+      { "paramName": "--best", "description": "same as -12" },
+      { "paramName": "-b#", "description": "benchmark file(s), using # compression level (default : 1)" },
+      { "paramName": "-e#", "description": "test all compression levels from -bX to # (default : 1)" },
+      { "paramName": "-i#", "description": "minimum evaluation time in seconds (default : 3s)" }
+    ],
+    "examples": [
+      "lz4cat compressed.lz4",
+      "lz4cat -v archive.lz4 | head -100",
+      "lz4cat -t file.lz4",
+      "lz4cat -c compressed.lz4 > decompressed.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unlz4",
+    "description": "一个专门用于解压使用 lz4 算法压缩的文件的工具",
+    "syntax": "unlz4 [arg] [input] [output]",
+    "options": [
+      { "paramName": "-1", "description": "fast compression (default)" },
+      { "paramName": "-12", "description": "slowest compression level" },
+      { "paramName": "-T#", "description": "use # threads for compression (default:0==auto)" },
+      { "paramName": "-d", "description": "decompression (default for .lz4 extension)" },
+      { "paramName": "-f", "description": "overwrite output without prompting" },
+      { "paramName": "-k", "description": "preserve source files(s) (default)" },
+      { "paramName": "--rm", "description": "remove source file(s) after successful de/compression" },
+      { "paramName": "-h/-H", "description": "display help/long help and exit" }
+    ],
+    "examples": [
+      "unlz4 compressed.lz4",
+      "unlz4 -f archive.lz4 output.txt",
+      "unlz4 -v input.lz4"
+    ],
+    "showDetails": false
+  },
+  {
     name: 'm4',
     description: '通用宏处理器，用于文本替换和宏扩展，常被其他工具使用。',
     syntax: 'm4 [options]',
@@ -6036,6 +6286,136 @@ const commandManualDataList: CommandManualData[] = [
       'nvim --listen localhost:6666'
     ],
     showDetails: false
+  },
+  {
+    "name": "pcre2grep",
+    "description": "一个基于 Perl 兼容正则表达式（PCRE2）的 grep 工具，提供高级模式匹配，支持完整的 Unicode 以及扩展的正则表达式功能。",
+    "syntax": "pcre2grep [OPTION]... [PATTERN] [FILE1 FILE2 ...]",
+    "options": [
+      { "paramName": "--help", "description": "display this help and exit" },
+      { "paramName": "-A, --after-context=number", "description": "set number of following context lines" },
+      { "paramName": "-a, --text", "description": "treat binary files as text" },
+      { "paramName": "-B, --before-context=number", "description": "set number of prior context lines" },
+      { "paramName": "--binary-files=word", "description": "set treatment of binary files" },
+      { "paramName": "--buffer-size=number", "description": "set processing buffer starting size" },
+      { "paramName": "--max-buffer-size=number", "description": "set processing buffer maximum size" },
+      { "paramName": "--color=option, --colour=option", "description": "matched text color option" },
+      { "paramName": "-C, --context=number", "description": "set number of context lines, before & after" },
+      { "paramName": "-c, --count", "description": "print only a count of matching lines per FILE" },
+      { "paramName": "-D, --devices=action", "description": "how to handle devices, FIFOs, and sockets" },
+      { "paramName": "-d, --directories=action", "description": "how to handle directories" },
+      { "paramName": "--posix-digit", "description": "\d always matches [0-9], even in UTF/UCP mode" },
+      { "paramName": "-E, --case-restrict", "description": "restrict case matching (no mix ASCII/non-ASCII)" },
+      { "paramName": "-e, --regex(p)=pattern", "description": "specify pattern (may be used more than once)" },
+      { "paramName": "-F, --fixed-strings", "description": "patterns are sets of newline-separated strings" },
+      { "paramName": "-f, --file=path", "description": "read patterns from file" },
+      { "paramName": "--posix-pattern-file", "description": "use POSIX semantics for pattern files" },
+      { "paramName": "--file-list=path", "description": "read files to search from file" },
+      { "paramName": "--file-offsets", "description": "output file offsets, not text" },
+      { "paramName": "--group-separator=text", "description": "set separator between groups of lines" },
+      { "paramName": "-H, --with-filename", "description": "force the prefixing filename on output" },
+      { "paramName": "-h, --no-filename", "description": "suppress the prefixing filename on output" },
+      { "paramName": "-I", "description": "treat binary files as not matching (ignore)" },
+      { "paramName": "-i, --ignore-case", "description": "ignore case distinctions" },
+      { "paramName": "-l, --files-with-matches", "description": "print only FILE names containing matches" },
+      { "paramName": "-L, --files-without-match", "description": "print only FILE names not containing matches" },
+      { "paramName": "--label=name", "description": "set name for standard input" },
+      { "paramName": "--line-buffered", "description": "use line buffering" },
+      { "paramName": "--line-offsets", "description": "output line numbers and offsets, not text" },
+      { "paramName": "--locale=locale", "description": "use the named locale" },
+      { "paramName": "--heap-limit=number", "description": "set PCRE2 heap limit option (kibibytes)" },
+      { "paramName": "--match-limit=number", "description": "set PCRE2 match limit option" },
+      { "paramName": "--depth-limit=number", "description": "set PCRE2 depth limit option" },
+      { "paramName": "--recursion-limit=number", "description": "obsolete synonym for depth-limit" },
+      { "paramName": "-M, --multiline", "description": "run in multiline mode" },
+      { "paramName": "-m, --max-count=number", "description": "stop after <number> matched lines" },
+      { "paramName": "-N, --newline=type", "description": "set newline type (CR, LF, CRLF, ANYCRLF, ANY, or NUL)" },
+      { "paramName": "-n, --line-number", "description": "print line number with output lines" },
+      { "paramName": "--no-jit", "description": "ignored: this pcre2grep does not support JIT" },
+      { "paramName": "--no-group-separator", "description": "suppress separators between groups of lines" },
+      { "paramName": "-O, --output=text", "description": "show only this text (possibly expanded)" },
+      { "paramName": "-o, --only-matching=n", "description": "show only the part of the line that matched" },
+      { "paramName": "--om-separator=text", "description": "set separator for multiple -o output" },
+      { "paramName": "--om-capture=n", "description": "set capture count for --only-matching" },
+      { "paramName": "-P, --no-ucp", "description": "do not enable UCP mode with Unicode" },
+      { "paramName": "-q, --quiet", "description": "suppress output, just set return code" },
+      { "paramName": "-r, --recursive", "description": "recursively scan sub-directories" },
+      { "paramName": "--exclude=pattern", "description": "exclude matching files when recursing" },
+      { "paramName": "--include=pattern", "description": "include matching files when recursing" },
+      { "paramName": "--exclude-dir=pattern", "description": "exclude matching directories when recursing" },
+      { "paramName": "--include-dir=pattern", "description": "include matching directories when recursing" },
+      { "paramName": "--exclude-from=path", "description": "read exclude list from file" },
+      { "paramName": "--include-from=path", "description": "read include list from file" },
+      { "paramName": "-s, --no-messages", "description": "suppress error messages" },
+      { "paramName": "-t, --total-count", "description": "print total count of matching lines" },
+      { "paramName": "-u, --utf", "description": "use UTF/Unicode" },
+      { "paramName": "-U, --utf-allow-invalid", "description": "use UTF/Unicode, allow for invalid code units" },
+      { "paramName": "-V, --version", "description": "print version information and exit" },
+      { "paramName": "-v, --invert-match", "description": "select non-matching lines" },
+      { "paramName": "-w, --word-regex(p)", "description": "force patterns to match only as words" },
+      { "paramName": "-x, --line-regex(p)", "description": "force patterns to match only whole lines" },
+      { "paramName": "--allow-lookaround-bsk", "description": "allow \K in lookarounds" },
+      { "paramName": "-Z, --null", "description": "output 0 byte after file names" }
+    ],
+    "examples": [
+      "pcre2grep -i 'hello.*world' menu.h main.c",
+      "pcre2grep -r --include='*.txt' 'pattern' directory/",
+      "pcre2grep -c 'error' logfile",
+      "pcre2grep -A 2 -B 2 'keyword' document.txt",
+      "pcre2grep -o --om-separator=', ' '\d+' data.txt",
+      "pcre2grep -v '^#' config.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pcre2test",
+    "description": "一个用于测试、调试和实验 Perl 兼容正则表达式（PCRE2）模式及匹配行为的全面工具。",
+    "syntax": "pcre2test [options] [<input file> [<output file>]]",
+    "options": [
+      { "paramName": "-8", "description": "use the 8-bit library" },
+      { "paramName": "-ac", "description": "set default pattern modifier PCRE2_AUTO_CALLOUT" },
+      { "paramName": "-AC", "description": "as -ac, but also set subject 'callout_extra' modifier" },
+      { "paramName": "-b", "description": "set default pattern modifier 'fullbincode'" },
+      { "paramName": "-C", "description": "show PCRE2 compile-time options and exit" },
+      {
+        "paramName": "-C arg",
+        "description": "show a specific compile-time option and exit with its value if numeric (else 0)"
+      },
+      { "paramName": "--colo[u]r[=<always,auto,never>]", "description": "show output in colour" },
+      { "paramName": "-d", "description": "set default pattern modifier 'debug'" },
+      { "paramName": "-dfa", "description": "set default subject modifier 'dfa'" },
+      { "paramName": "-E", "description": "preprocess input only (#if ... #endif)" },
+      { "paramName": "-error <n,m,..>", "description": "show messages for error numbers, then exit" },
+      { "paramName": "-help", "description": "show usage information" },
+      { "paramName": "-i", "description": "set default pattern modifier 'info'" },
+      { "paramName": "-jit", "description": "set default pattern modifier 'jit'" },
+      { "paramName": "-jitfast", "description": "set default pattern modifier 'jitfast'" },
+      { "paramName": "-jitverify", "description": "set default pattern modifier 'jitverify'" },
+      { "paramName": "-LM", "description": "list pattern and subject modifiers, then exit" },
+      { "paramName": "-LP", "description": "list non-script properties, then exit" },
+      { "paramName": "-LS", "description": "list supported scripts, then exit" },
+      { "paramName": "-malloc", "description": "exercise malloc() failures" },
+      { "paramName": "-q", "description": "quiet: do not output PCRE2 version number at start" },
+      { "paramName": "-pattern <s>", "description": "set default pattern modifier fields" },
+      { "paramName": "-subject <s>", "description": "set default subject modifier fields" },
+      { "paramName": "-S <n>", "description": "set stack size to <n> mebibytes" },
+      { "paramName": "-t [<n>]", "description": "time compilation and execution, repeating <n> times" },
+      { "paramName": "-tm [<n>]", "description": "time execution (matching) only, repeating <n> times" },
+      { "paramName": "-T", "description": "same as -t, but show total times at the end" },
+      { "paramName": "-TM", "description": "same as -tm, but show total time at the end" },
+      { "paramName": "-unittest", "description": "run unit tests, then exit" },
+      { "paramName": "-v, --version", "description": "show PCRE2 version and exit" }
+    ],
+    "examples": [
+      "pcre2test -8 testdata.txt",
+      "pcre2test -C jit",
+      "pcre2test -d pattern.txt",
+      "pcre2test -t 100 pattern.txt",
+      "pcre2test --colour=always test.txt",
+      "pcre2test -LM",
+      "pcre2test -C newline"
+    ],
+    "showDetails": false
   },
   {
     name: 'perl',
