@@ -153,6 +153,10 @@
         "type": "public"
       },
       {
+        "package": "gdb.hnp",
+        "type": "public"
+      },
+      {
         "package": "lz4.hnp",
         "type": "public"
       },

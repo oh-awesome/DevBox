@@ -2262,8 +2262,7 @@ const commandManualDataList: CommandManualData[] = [
       "gdb --batch --ex 'backtrace' --pid=5678",
       "gdb --directory=/usr/src ./program"
     ],
-    "showDetails": false,
-    isNeedHide: true
+    "showDetails": false
   },
   {
     name: 'gem',
