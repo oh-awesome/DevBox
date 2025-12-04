@@ -137,7 +137,7 @@ export struct CommandManual {
       Column({ space: 15 }) {
         ForEach(this.commandLists,
           (item: CommandManualData, index: number) => {
-            if ((this.timeStampFilter &&
+            if (!item.isNeedHide && (this.timeStampFilter &&
               (item.name.includes(this.searchText) === true || item.description.includes(this.searchText) === true ||
                 this.searchText === ""))) {
               Column({ space: 0 }) {

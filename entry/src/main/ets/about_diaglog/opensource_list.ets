@@ -102,6 +102,20 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "showLicense": false
   },
   {
+    "name": "gdb",
+    "license": LicenseType.GPL_V3L,
+    "source": "https://ftp.gnu.org/pub/gnu/gdb/",
+    "licenseFile": "about_gdb_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "gmp",
+    "license": LicenseType.GPL_V3L,
+    "source": "https://ftp.gnu.org/pub/gnu/gmp/",
+    "licenseFile": "about_gdb_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "gettext",
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/gettext/",
@@ -221,6 +235,13 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "showLicense": false
   },
   {
+    "name": "lz4",
+    "license": LicenseType.GPL_V2L,
+    "source": "https://github.com/lz4/lz4",
+    "licenseFile": "about_lz4_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "m4",
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/m4/",
@@ -232,6 +253,13 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/make/",
     "licenseFile": "about_make_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "mpfr",
+    "license": LicenseType.GPL_V3L,
+    "source": "https://ftp.gnu.org/pub/gnu/mpfr/",
+    "licenseFile": "about_mpfr_opensource.html",
     "showLicense": false
   },
   {
@@ -267,6 +295,13 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.APACHE_2,
     "source": "https://github.com/openssl/openssl",
     "licenseFile": "about_openssl_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "pcre2",
+    "license": LicenseType.BSD_3,
+    "source": "https://github.com/PCRE2Project/pcre2",
+    "licenseFile": "about_pcre2_opensource.html",
     "showLicense": false
   },
   {
