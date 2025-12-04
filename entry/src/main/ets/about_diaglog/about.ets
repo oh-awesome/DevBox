@@ -184,7 +184,7 @@ export struct AboutDialog {
               alignment: DialogAlignment.Center,
               autoCancel: true, // 点击蒙层可关闭
               customStyle: false,
-              maskColor: "#00000040",  // 设置蒙层颜色
+              maskColor: "#00000040", // 设置蒙层颜色
               width: 700
             })
             openSourceDialogController.open()
@@ -423,90 +423,92 @@ struct OpenSourceDialog {
       Column({ space: 15 }) {
         ForEach(this.ossComponents,
           (item: OpenSourceNoticeMetaData, index: number) => {
-            Column({ space: 0 }) {
-              // 组件标题
-              Row() {
-                Text(item.name)
-                  .fontSize(18)
-                  .fontWeight(FontWeight.Bold)
-                  .fontColor('#1f2937')
-              }
-              .width('100%')
-              .padding({
-                top: 16,
-                bottom: 8,
-                left: 16,
-                right: 16
-              })
-              .backgroundColor('#f9fafb')
-              .border({ width: { bottom: 1 }, color: '#e5e7eb' })
-
-              Row() {
-                // 协议类型
-                Column() {
-                  Text(item.license)
-                    .fontSize(12)
-                    .fontColor('#1e40af')
+            if (!item.isNeedHide) {
+              Column({ space: 0 }) {
+                // 组件标题
+                Row() {
+                  Text(item.name)
+                    .fontSize(18)
                     .fontWeight(FontWeight.Bold)
-                    .borderRadius(16)
-                    .backgroundColor($r('sys.color.ohos_id_color_palette_aux2_transparent'))
-                    .padding({
-                      top: 4,
-                      bottom: 4,
-                      left: 16,
-                      right: 16
-                    })
-                }
-                .layoutWeight(5)
-                .justifyContent(FlexAlign.Center)
-
-
-                // 代码仓地址
-                Column() {
-                  Hyperlink(item.source, $r('app.string.about_opensource_code_repository_URL'))
-                    .size({ height: 16 })
-                    .hitTestBehavior(12)
-                    .padding({ left: 24 })
-                }
-                .layoutWeight(4)
-                .justifyContent(FlexAlign.Center)
-
-                // 查看许可证
-                Column() {
-                  Text($r('app.string.about_opensource_view_license'))
-                    .fontSize(12)
-                    .fontColor('#059669')
-                    .onClick(() => {
-                      item.showLicense = !item.showLicense
-                      this.timeStamp = Date.now();
-                    })
-                }
-                .layoutWeight(4)
-                .justifyContent(FlexAlign.Center)
-              }
-              .width('100%')
-              .backgroundColor('#ffffff')
-              .border({
-                width: 1,
-                color: '#e5e7eb'
-              })
-              .height(40)
-
-              if (this.timeStamp && this.ossComponents[index].showLicense === true) {
-                Column() {
-                  Web({
-                    src: $rawfile(item.licenseFile),
-                    controller: this.webController
-                  })
+                    .fontColor('#1f2937')
                 }
                 .width('100%')
+                .padding({
+                  top: 16,
+                  bottom: 8,
+                  left: 16,
+                  right: 16
+                })
+                .backgroundColor('#f9fafb')
+                .border({ width: { bottom: 1 }, color: '#e5e7eb' })
+
+                Row() {
+                  // 协议类型
+                  Column() {
+                    Text(item.license)
+                      .fontSize(12)
+                      .fontColor('#1e40af')
+                      .fontWeight(FontWeight.Bold)
+                      .borderRadius(16)
+                      .backgroundColor($r('sys.color.ohos_id_color_palette_aux2_transparent'))
+                      .padding({
+                        top: 4,
+                        bottom: 4,
+                        left: 16,
+                        right: 16
+                      })
+                  }
+                  .layoutWeight(5)
+                  .justifyContent(FlexAlign.Center)
+
+
+                  // 代码仓地址
+                  Column() {
+                    Hyperlink(item.source, $r('app.string.about_opensource_code_repository_URL'))
+                      .size({ height: 16 })
+                      .hitTestBehavior(12)
+                      .padding({ left: 24 })
+                  }
+                  .layoutWeight(4)
+                  .justifyContent(FlexAlign.Center)
+
+                  // 查看许可证
+                  Column() {
+                    Text($r('app.string.about_opensource_view_license'))
+                      .fontSize(12)
+                      .fontColor('#059669')
+                      .onClick(() => {
+                        item.showLicense = !item.showLicense
+                        this.timeStamp = Date.now();
+                      })
+                  }
+                  .layoutWeight(4)
+                  .justifyContent(FlexAlign.Center)
+                }
+                .width('100%')
+                .backgroundColor('#ffffff')
+                .border({
+                  width: 1,
+                  color: '#e5e7eb'
+                })
+                .height(40)
+
+                if (this.timeStamp && this.ossComponents[index].showLicense === true) {
+                  Column() {
+                    Web({
+                      src: $rawfile(item.licenseFile),
+                      controller: this.webController
+                    })
+                  }
+                  .width('100%')
+                }
               }
+              .border({
+                width: 2,
+                color: '#ffcbcdcd'
+              })
+              .borderRadius(12)
             }
-            .border({
-              width: 2,
-              color: '#ffcbcdcd'
-            })
-            .borderRadius(12)
           })
       }
     }

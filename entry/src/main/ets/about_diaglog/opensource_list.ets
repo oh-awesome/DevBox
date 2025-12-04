@@ -106,14 +106,16 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/gdb/",
     "licenseFile": "about_gdb_opensource.html",
-    "showLicense": false
+    "showLicense": false,
+    isNeedHide: true
   },
   {
     "name": "gmp",
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/gmp/",
     "licenseFile": "about_gdb_opensource.html",
-    "showLicense": false
+    "showLicense": false,
+    isNeedHide: true
   },
   {
     "name": "gettext",
@@ -148,7 +150,8 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/gnu/groff/",
     "licenseFile": "about_groff_opensource.html",
-    "showLicense": false
+    "showLicense": false,
+    isNeedHide: true
   },
   {
     "name": "gzip",
@@ -260,7 +263,8 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.GPL_V3L,
     "source": "https://ftp.gnu.org/pub/gnu/mpfr/",
     "licenseFile": "about_mpfr_opensource.html",
-    "showLicense": false
+    "showLicense": false,
+    isNeedHide: true
   },
   {
     "name": "ncurses",
