@@ -151,6 +151,10 @@
       {
         "package": "ruby.hnp",
         "type": "public"
+      },
+      {
+        "package": "gdb.hnp",
+        "type": "public"
       }
     ]
   }
