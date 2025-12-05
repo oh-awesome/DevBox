@@ -1,0 +1,33 @@
+2025-11-07
+变更历史 1.0.0
+1、新增命令：
+        arp     diff   flex    grn     gzexe    m4        refer   unexpand    zcmp
+        bc      diff3  fold    grodvi  hexdump  make      script  updatedb    zdiff
+        bzip2   dig    frcode  groff   host     mpstat    soelim  whereis     zipdetails
+        bzless  eqn    getopt  grolbp  iostat   nslookup  stty    xmlcatalog
+        colrm   fgrep  gperf   grops   less     pic       tbl     xmllint
+        column  find   gprof   grotty  locate   preconv   troff   xsltproc
+2、新增迷你记事本、时间戳工具Unicode转换工具、二维码生成器、系统资源查看器、进制转换工具、迷你终端
+
+2025-12-05
+变更历史 1.0.1
+1、新增命令：
+        amdgpu-arch       clang-21                clang-sycl-linker  h2ph             lldb-argdumper  llvm-objdump     offload-arch  post-grohtml  scan-build-py
+        analyze-build     clang-check             cmake              h2xs             lldb-dap        llvm-pdbutil     perl          pre-grohtml   scan-view
+        autoconf          clang-cl                corelist           hmaptool         lldb-instr      llvm-profdata    perl5.42.0    prove         shasum
+        autoheader        clang-cpp               cpack              ifnames          lldb-server     llvm-profgen     perlbug       ptar          splain
+        autom4te          clang-extdef-mapping    cpan               instmodsh        llvm-ar         llvm-ranlib      perldoc       ptardiff      streamzip
+        autoreconf        clang-format            ctest              intercept-build  llvm-cov        llvm-rc          perlivp       ptargrep      syntax_suggest
+        autoscan          clang-installapi        diagtool           irb              llvm-cxxfilt    llvm-readobj     perlthanks    racc          typeprof
+        autoupdate        clang-linker-wrapper    egrep              json_pp          llvm-dlltool    llvm-size        piconv        rake          wasm-ld
+        binary-sign-tool  clang-nvlink-wrapper    enc2xs             ld.lld           llvm-dwp        llvm-strings     pl2pm         rbs           xmlwf
+        bundle            clang-offload-bundler   encguess           ld64.lld         llvm-lib        llvm-strip       pod2html      rdbg          xsubpp
+        bundler           clang-offload-packager  erb                libnetcfg        llvm-mca        llvm-symbolizer  pod2man       rdoc          gdb
+        busybox           clang-refactor          gem                lld              llvm-ml         ninja            pod2text      ri            hdc
+        clang             clang-repl              git-clang-format   lld-link         llvm-nm         nvim             pod2usage     ruby
+        clang++           clang-scan-deps         grep               lldb             llvm-objcopy    nvptx-arch       podchecker    scan-build
+2、新增命令手册功能，支持命令字和功能字查询
+3、增加软件帮助页，包含软件信息、开源声明、隐私协议等
+4、删除mini终端功能
+5、优化图形界面样式
+6、增加鸿蒙SDK安装方式
