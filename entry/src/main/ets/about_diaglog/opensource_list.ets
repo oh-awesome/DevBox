@@ -13,7 +13,7 @@
  * See the Mulan PSL v2 for more details.
  */
 
-import { LicenseType } from '../common/Constants';
+import { LicenseType } from './Constants';
 import { OpenSourceNoticeMetaData } from './opensource_info';
 
 const ossComponentsList: OpenSourceNoticeMetaData[] = [
@@ -352,6 +352,20 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.ZLIB,
     "source": "https://github.com/madler/zlib",
     "licenseFile": "about_zlib_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "hdc",
+    "license": LicenseType.APACHE_2,
+    "source": "https://gitcode.com/openharmony/developtools_hdc",
+    "licenseFile": "about_hdc_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "libusb",
+    "license": LicenseType.LGPL_V21,
+    "source": "https://gitcode.com/openharmony/third_party_libusb",
+    "licenseFile": "about_libusb_opensource.html",
     "showLicense": false
   }
 ]
