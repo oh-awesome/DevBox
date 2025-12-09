@@ -150,16 +150,6 @@
 
 ![image.png](https://raw.gitcode.com/user-images/assets/7354352/a77a0b10-9673-4a8a-890e-2381590d5b91/image.png 'image.png')
 
-# 附录：命令范围
-提供的命令有文件和目录操作命令、网络命令、构建命令等。
 
-## 分类
-|类型|命令样例|
-|--|--|
-|文本处理	|bc、bzless、colrm、fold、frcode、less、unexpand |
-|文本比对	|diff、diff3、zcmp、zdiff |
-|文件和目录操作 |	bzip2、find、gzexe、locate、updatedb、whereis |
-|开发与调试工具 	|flex、hexdump、m4、make|
-
-## 命令手册
+# 命令手册
 请参见ReleaseNode和应用内的手册页
