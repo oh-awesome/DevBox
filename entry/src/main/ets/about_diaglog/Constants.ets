@@ -42,6 +42,8 @@ export enum LicenseType {
   VIM = 'Vim', // Vim License
 
   ZLIB = 'Zlib', // zlib License
+
+  LGPL_V21 = 'LGPL-2.1', //GNU LESSER GENERAL PUBLIC LICENSE Version 2.1
 }
 
 export class Constants {
@@ -74,5 +76,7 @@ export class Constants {
     [LicenseType.VIM, $r('sys.color.ohos_id_color_titlebar_icon')],
 
     [LicenseType.ZLIB, $r('sys.color.ohos_id_color_titlebar_icon')],
+
+    [LicenseType.LGPL_V21, $r('sys.color.ohos_id_color_palette_aux1')],
   ]);
 }

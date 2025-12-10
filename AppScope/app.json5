@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.develop.opendource.devbox",
+    "bundleName": "com.develop.opensource.devbox",
     "vendor": "example",
     "versionCode": 1000001,
     "versionName": "1.0.1",

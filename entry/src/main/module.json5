@@ -163,6 +163,10 @@
       {
         "package": "pcre2.hnp",
         "type": "public"
+      },
+      {
+        "package": "hdc.hnp",
+        "type": "public"
       }
     ]
   }
