@@ -313,6 +313,13 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "showLicense": false
   },
   {
+    "name": "tree",
+    "license": LicenseType.GPL_V2L,
+    "source": "https://github.com/hongtaoh/tree-1.8.0",
+    "licenseFile": "about_tree_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "ruby",
     "license": LicenseType.BSD_2,
     "source": "https://github.com/ruby/ruby",
@@ -327,7 +334,7 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "showLicense": false
   },
   {
-    "name": LicenseType.VIM,
+    "name": 'vim',
     "license": LicenseType.VIM,
     "source": "https://github.com/vim/vim",
     "licenseFile": "about_vim_opensource.html",
