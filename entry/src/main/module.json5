@@ -167,6 +167,10 @@
       {
         "package": "hdc.hnp",
         "type": "public"
+      },
+      {
+        "package": "tree.hnp",
+        "type": "public"
       }
     ]
   }
