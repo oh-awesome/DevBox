@@ -15,7 +15,7 @@ export struct AboutDialog {
   @State private webAlias: Resource = $r('app.string.about_websiteAlias')
   @State private description: Resource = $r('app.string.about_description')
   @State private descriptionDetails: Resource = $r('app.string.about_description_details')
-  @State private showVersionInfo: boolean = false;
+  @State private showVersionInfo: boolean = false
   @State private showDescriptionDetails: boolean = false
 
   build() {
