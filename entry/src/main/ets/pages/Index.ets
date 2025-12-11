@@ -31,8 +31,7 @@ struct Index {
     alignment: DialogAlignment.Center,
     autoCancel: true, // 点击蒙层可关闭
     customStyle: false,
-    maskColor: "#00000040", // 设置蒙层颜色
-    width: 600
+    maskColor: "#00000040"  // 设置蒙层颜色
   })
 
   async aboutToAppear() {
@@ -129,7 +128,7 @@ struct Index {
       .alignItems(HorizontalAlign.Center)
     } else {
       Column() {
-        Flex({ justifyContent: FlexAlign.SpaceBetween }) {
+        Row({ space: 20 }) {
           Row({ space: 20 }) {
             Image($r('app.media.AppIcon'))
               .height(20)
@@ -139,11 +138,9 @@ struct Index {
               .fontSize(16)
               .fontWeight(FontWeight.Medium)
           }
-          .width('200vp')
-          .height('25vp')
-          .alignItems(VerticalAlign.Top)
+          .width('50%')
+          .alignItems(VerticalAlign.Center)
           .justifyContent(FlexAlign.Start)
-          .margin({ left: '15vp', top: '15vp' })
 
           Row({ space: 20 }) {
             Row() {
@@ -168,12 +165,15 @@ struct Index {
               }
             })
           }
-          .margin({ right: '150vp', top: '10vp' })
           .width('50%')
+          .alignItems(VerticalAlign.Center)
           .justifyContent(FlexAlign.End)
         }
         .height(48)
         .width('100%')
+        .alignItems(VerticalAlign.Center)
+        .justifyContent(FlexAlign.SpaceBetween)
+        .padding({ left: 16, right: 100 })
 
         Tabs({ controller: this.controller }) {
           TabContent() {
@@ -233,7 +233,7 @@ struct Index {
         })
         .height('92%')
       }
-      .justifyContent(FlexAlign.Start)
+      .justifyContent(FlexAlign.Center)
       .height('100%')
       .width('100%')
       .backgroundImage($r("app.media.nextBackground"))
