@@ -87,11 +87,13 @@ struct Index {
             .fontSize(24)
             .textAlign(TextAlign.Center)
             .fontWeight(FontWeight.Bold)
+            .fontColor(Color.Black)
             .margin({ bottom: 10, top: 25 })
 
           Text($r('app.string.restart_notice'))
             .fontSize(16)
             .textAlign(TextAlign.Center)
+            .fontColor(Color.Black)
             .margin({ bottom: 25, left: 15, right: 15 })
 
           Button($r('app.string.confirm_button'))
