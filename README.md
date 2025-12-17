@@ -11,11 +11,11 @@
 
 （二）界面布局
 
-软件主页包含关于、命令手冊、Uincode转换、迷你记事本、二维码生成器、时间戳转换、系统Media资源、系统Stmbol资源、系统Color资源、系统String资源和进制转换。
+软件主页包含关于、命令手册、Unicode转换、迷你记事本、二维码生成器、时间戳转换、系统Media资源、系统Symbol资源、系统Color资源、系统String资源和进制转换。
 
 ![screenshot_20251205_165600.jpg](https://raw.gitcode.com/user-images/assets/7354352/29cbd7c2-9184-4074-bee5-f4d7e674c8eb/screenshot_20251205_165600.jpg 'screenshot_20251205_165600.jpg')
 
-## 命令手冊
+## 命令手册
 本应用主要提供了文件和目录操作命令、网络命令、构建命令等，您可以查看我们支持的命令范围，依此判断是否满足您的使用需求。
 
 (一)	功能描述
@@ -24,7 +24,7 @@
 (二)	页面布局
  
 ![screenshot_20251205_165630.jpg](https://raw.gitcode.com/user-images/assets/7354352/11343199-099e-4a40-8e7a-e82d1cf56110/screenshot_20251205_165630.jpg 'screenshot_20251205_165630.jpg')
-##  Uincode转换
+##  Unicode转换
 (一)	功能介绍
 
 - 支持Unicode与ASCII互转
@@ -93,7 +93,7 @@
 
 (二)	界面布局
 
-以网格形式排列各种系统图标，每个图标下方都有对应的标识符，如：“sys.symbol.heart_slash”、“sys.symbol.ohos_mic”、“sys.symbol.checkmark_circle”等，点击不同图标复制标识符，可在在鸿蒙应用开发中使用。
+以网格形式排列各种系统图标，每个图标下方都有对应的标识符，如：“sys.symbol.heart_slash”、“sys.symbol.ohos_mic”、“sys.symbol.checkmark_circle”等，点击不同图标复制标识符，可在鸿蒙应用开发中使用。
 
 ![image.png](https://raw.gitcode.com/user-images/assets/7354352/e351caca-6f76-48c8-a4fc-d7700620ad01/image.png 'image.png')
 
@@ -102,7 +102,7 @@
 ## 系统Color资源
 (一)	功能描述
 
-通过系统Color资源功能模块允许浏览和选择系统预定义的颜色，这些颜色可以用于界面设计、应用开发等场景。系统Color资源提供了多种颜色选项，每个颜色有唯一标识符，方便再代码中引用。
+通过系统Color资源功能模块允许浏览和选择系统预定义的颜色，这些颜色可以用于界面设计、应用开发等场景。系统Color资源提供了多种颜色选项，每个颜色有唯一标识符，方便在代码中引用。
 
 (二)	界面布局
 
@@ -142,7 +142,7 @@
 
 (二)	页面布局
 
-该界面采用简洁直观的布局设计，主要分为俩个核心区域：
+该界面采用简洁直观的布局设计，主要分为两个核心区域：
 
 输入区位于界面上方，包含一个标注为 “Input” 的文本输入框，供用户输入需要转换的数值，下方设有一个标注为 “Result” 的文本显示框，用于展示进制转换后的结果
 
