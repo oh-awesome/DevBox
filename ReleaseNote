@@ -7,7 +7,7 @@
         bzless  eqn    getopt  grolbp  iostat   nslookup  stty    xmlcatalog
         colrm   fgrep  gperf   grops   less     pic       tbl     xmllint
         column  find   gprof   grotty  locate   preconv   troff   xsltproc
-2、新增迷你记事本、时间戳工具Unicode转换工具、二维码生成器、系统资源查看器、进制转换工具、迷你终端
+2、新增迷你记事本、时间戳工具、Unicode转换工具、二维码生成器、系统资源查看器、进制转换工具、迷你终端
 
 2025-12-05
 变更历史 1.0.1
