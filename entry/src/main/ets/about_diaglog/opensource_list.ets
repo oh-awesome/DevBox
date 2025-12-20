@@ -315,7 +315,7 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
   {
     "name": "tree",
     "license": LicenseType.GPL_V2L,
-    "source": "https://github.com/hongtaoh/tree-1.8.0",
+    "source": "https://github.com/Old-Man-Programmer/tree",
     "licenseFile": "about_tree_opensource.html",
     "showLicense": false
   },
@@ -373,6 +373,13 @@ const ossComponentsList: OpenSourceNoticeMetaData[] = [
     "license": LicenseType.LGPL_V21,
     "source": "https://gitcode.com/openharmony/third_party_libusb",
     "licenseFile": "about_libusb_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "startup_appspawn",
+    "license": LicenseType.APACHE_2,
+    "source": "https://gitcode.com/openharmony/startup_appspawn",
+    "licenseFile": "about_startup_appspawn_opensource.html",
     "showLicense": false
   }
 ]

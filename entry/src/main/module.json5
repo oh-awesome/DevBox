@@ -171,6 +171,10 @@
       {
         "package": "tree.hnp",
         "type": "public"
+      },
+      {
+        "package": "hnpcli.hnp",
+        "type": "public"
       }
     ]
   }

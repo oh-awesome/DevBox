@@ -8485,6 +8485,22 @@ const commandManualDataList: CommandManualData[] = [
     ],
     showDetails: false
   },
+  {
+    name: 'hnpcli',
+    description: '将native软件包打包为hnp格式',
+    syntax: ' hnpcli pack <-i [source path]> <-o [dst path]> <-n [software name]> <-v [software version]',
+    options: [
+      { paramName: '-i', description: '[必选]指定需要打包的软件包目录' },
+      { paramName: '-o', description: '指定hnp文件输入目录，若不指定，则默认写入当前目录' },
+      { paramName: '-n', description: '指定软件名称，若在输入目录中不存在hnp.json配置文件，则必须指定' },
+      { paramName: '-v', description: "指定软件版本信息，若在输入目录中不存在hnp.json配置文件，则必须指定" }
+    ],
+    examples: [
+      'hnpcli pack -i /storage/Users/currentUser/Desktop/native_sample -o /storage/Users/currentUser/Desktop/ -n native_sample -v 1.1',
+      'hnpcli pack -i /storage/Users/currentUser/Desktop/native_sample -o /storage/Users/currentUser/Desktop/'
+    ],
+    showDetails: false
+  },
 ];
 
 export default commandManualDataList;
