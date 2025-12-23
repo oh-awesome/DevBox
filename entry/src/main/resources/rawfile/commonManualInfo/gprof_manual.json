@@ -1,0 +1,335 @@
+[
+  {
+    "name": "gprof",
+    "description": "GNU 性能分析工具，用于分析程序的函数调用和执行时间。",
+    "syntax": "gprof [-[abcDhilLrsTvwxyz]] [-[ACeEfFJnNOpPqQRStZ][name]] [-I dirs] [-d[num]] [-k from/to] [-m min-count] [-t table-length] [--[no-]annotated-source[=name]] [--[no-]exec-counts[=name]] [--[no-]flat-profile[=name]] [--[no-]graph[=name]] [--[no-]time=name] [--all-lines] [--brief] [--debug[=level]] [--function-ordering] [--file-ordering] [--inline-file-names] [--directory-path=dirs] [--display-unused-functions] [--file-format=name] [--file-info] [--help] [--line] [--min-count=n] [--no-static] [--print-path] [--separate-files] [--static-call-graph] [--sum] [--table-length=len] [--traditional] [--version] [--width=n] [--ignore-non-functions] [--demangle[=STYLE]] [--no-demangle] [--external-symbol-table=name] [@FILE] [image-file] [profile-file...]",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Generate annotated source listing (see --annotated-source)"
+      },
+      {
+        "paramName": "-b",
+        "description": "Brief output mode (see --brief)"
+      },
+      {
+        "paramName": "-c",
+        "description": "Output function execution count statistics (see --exec-counts)"
+      },
+      {
+        "paramName": "-D",
+        "description": "Display unused functions (see --display-unused-functions)"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display help information (see --help)"
+      },
+      {
+        "paramName": "-i",
+        "description": "Ignore non-function symbols (see --ignore-non-functions)"
+      },
+      {
+        "paramName": "-I dirs",
+        "description": "Specify source file search directory (see --directory-path=dirs)"
+      },
+      {
+        "paramName": "-l",
+        "description": "Analyze code by line (see --line)"
+      },
+      {
+        "paramName": "-L",
+        "description": "Display file names of inline functions (see --inline-file-names)"
+      },
+      {
+        "paramName": "-m min-count",
+        "description": "Only display functions with execution count ≥ min-count (see --min-count=n)"
+      },
+      {
+        "paramName": "-r",
+        "description": "Output time-related statistics (see --time=name)"
+      },
+      {
+        "paramName": "-s",
+        "description": "Set table length (see --table-length=len)"
+      },
+      {
+        "paramName": "-T",
+        "description": "Set output width (see --width=n)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information (see --version)"
+      },
+      {
+        "paramName": "-w",
+        "description": "Demangle symbol names (see --demangle[=STYLE])"
+      },
+      {
+        "paramName": "-x",
+        "description": "Specify external symbol table file (see --external-symbol-table=name)"
+      },
+      {
+        "paramName": "-y",
+        "description": "Ignore non-function symbols (duplicate with -i)"
+      },
+      {
+        "paramName": "-z",
+        "description": "Display unused functions (duplicate with -D)"
+      },
+      {
+        "paramName": "-A[name]",
+        "description": "Do not generate annotated source listing (see --no-annotated-source[=name])"
+      },
+      {
+        "paramName": "-C[name]",
+        "description": "Do not output function execution count statistics (see --no-exec-counts[=name])"
+      },
+      {
+        "paramName": "-e[name]",
+        "description": "Specify input file format (see --file-format=name)"
+      },
+      {
+        "paramName": "-E[name]",
+        "description": "Display input file information (see --file-info)"
+      },
+      {
+        "paramName": "-f[name]",
+        "description": "Output flat profile (see --flat-profile[=name])"
+      },
+      {
+        "paramName": "-F[name]",
+        "description": "Do not output flat profile (see --no-flat-profile[=name])"
+      },
+      {
+        "paramName": "-g[name]",
+        "description": "Output call graph (see --graph[=name])"
+      },
+      {
+        "paramName": "-G[name]",
+        "description": "Do not output call graph (see --no-graph[=name])"
+      },
+      {
+        "paramName": "-J[name]",
+        "description": "Output in file order (see --file-ordering)"
+      },
+      {
+        "paramName": "-n[name]",
+        "description": "Do not display static functions (see --no-static)"
+      },
+      {
+        "paramName": "-N[name]",
+        "description": "Display source file path (see --print-path)"
+      },
+      {
+        "paramName": "-O[name]",
+        "description": "Integrated output parameter (associated with corresponding profile options)"
+      },
+      {
+        "paramName": "-p[name]",
+        "description": "Generate separate output files for each source file (see --separate-files)"
+      },
+      {
+        "paramName": "-P[name]",
+        "description": "Do not generate separate output files (see --no-separate-files)"
+      },
+      {
+        "paramName": "-q[name]",
+        "description": "Summarize multiple profile files (see --sum)"
+      },
+      {
+        "paramName": "-Q[name]",
+        "description": "Use traditional output format (see --traditional)"
+      },
+      {
+        "paramName": "-R[name]",
+        "description": "Do not output time-related statistics (see --no-time=name)"
+      },
+      {
+        "paramName": "-S[name]",
+        "description": "Do not limit table length (see --no-table-length)"
+      },
+      {
+        "paramName": "-t[name]",
+        "description": "Analyze code by line (duplicate with -l, for compatibility)"
+      },
+      {
+        "paramName": "-Z[name]",
+        "description": "Do not display unused functions (see --no-display-unused-functions)"
+      },
+      {
+        "paramName": "-d[num]",
+        "description": "Enable debug mode, optional debug level (see --debug[=level])"
+      },
+      {
+        "paramName": "-k from/to",
+        "description": "Set start and end points for function call relationships (see --static-call-graph)"
+      },
+      {
+        "paramName": "-t table-length",
+        "description": "Set table length (see --table-length=len)"
+      },
+      {
+        "paramName": "--annotated-source[=name]",
+        "description": "Generate annotated source listing"
+      },
+      {
+        "paramName": "--no-annotated-source[=name]",
+        "description": "Do not generate annotated source listing"
+      },
+      {
+        "paramName": "--exec-counts[=name]",
+        "description": "Output function execution count statistics"
+      },
+      {
+        "paramName": "--no-exec-counts[=name]",
+        "description": "Do not output function execution count statistics"
+      },
+      {
+        "paramName": "--flat-profile[=name]",
+        "description": "Output flat profile"
+      },
+      {
+        "paramName": "--no-flat-profile[=name]",
+        "description": "Do not output flat profile"
+      },
+      {
+        "paramName": "--graph[=name]",
+        "description": "Output call graph"
+      },
+      {
+        "paramName": "--no-graph[=name]",
+        "description": "Do not output call graph"
+      },
+      {
+        "paramName": "--time=name",
+        "description": "Output time-related statistics"
+      },
+      {
+        "paramName": "--no-time=name",
+        "description": "Do not output time-related statistics"
+      },
+      {
+        "paramName": "--all-lines",
+        "description": "Analyze all lines of code"
+      },
+      {
+        "paramName": "--brief",
+        "description": "Brief output mode (reduce verbose information)"
+      },
+      {
+        "paramName": "--debug[=level]",
+        "description": "Enable debug mode, optional debug level"
+      },
+      {
+        "paramName": "--function-ordering",
+        "description": "Sort by function execution time"
+      },
+      {
+        "paramName": "--file-ordering",
+        "description": "Output results in file order"
+      },
+      {
+        "paramName": "--inline-file-names",
+        "description": "Display file names of inline functions"
+      },
+      {
+        "paramName": "--directory-path=dirs",
+        "description": "Specify source file search directory"
+      },
+      {
+        "paramName": "--display-unused-functions",
+        "description": "Display unused functions"
+      },
+      {
+        "paramName": "--file-format=name",
+        "description": "Specify input file format"
+      },
+      {
+        "paramName": "--file-info",
+        "description": "Display input file information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display this help information and exit"
+      },
+      {
+        "paramName": "--line",
+        "description": "Analyze code by line (detailed line-level performance)"
+      },
+      {
+        "paramName": "--min-count=n",
+        "description": "Only display functions with execution count ≥ n"
+      },
+      {
+        "paramName": "--no-static",
+        "description": "Do not display static functions"
+      },
+      {
+        "paramName": "--print-path",
+        "description": "Display source file full path"
+      },
+      {
+        "paramName": "--separate-files",
+        "description": "Generate separate output files for each source file"
+      },
+      {
+        "paramName": "--static-call-graph",
+        "description": "Generate static call graph"
+      },
+      {
+        "paramName": "--sum",
+        "description": "Summarize statistics from multiple profile files"
+      },
+      {
+        "paramName": "--table-length=len",
+        "description": "Set output table length to len"
+      },
+      {
+        "paramName": "--traditional",
+        "description": "Use traditional output format (compatible with old versions)"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display gprof version information and exit"
+      },
+      {
+        "paramName": "--width=n",
+        "description": "Set output width to n columns"
+      },
+      {
+        "paramName": "--ignore-non-functions",
+        "description": "Ignore non-function symbols in analysis"
+      },
+      {
+        "paramName": "--demangle[=STYLE]",
+        "description": "Demangle symbol names (optional demangling style)"
+      },
+      {
+        "paramName": "--no-demangle",
+        "description": "Do not demangle symbol names"
+      },
+      {
+        "paramName": "--external-symbol-table=name",
+        "description": "Specify external symbol table file name"
+      },
+      {
+        "paramName": "@FILE",
+        "description": "Read command line parameters from FILE"
+      },
+      {
+        "paramName": "image-file",
+        "description": "Executable image file (compiled program file)"
+      },
+      {
+        "paramName": "profile-file...",
+        "description": "Profile data file(s) (generated by program execution, e.g., gmon.out)"
+      }
+    ],
+    "examples": [
+      "gprof --help",
+      "gprof a.out gmon.out",
+      "gprof -b a.out gmon.out"
+    ],
+    "showDetails": false
+  }
+]

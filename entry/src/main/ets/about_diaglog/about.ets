@@ -1,7 +1,11 @@
 import webview from '@ohos.web.webview';
 import { LevelMode } from '@kit.ArkUI';
 import { OpenSourceNoticeMetaData } from './opensource_info';
-import ossComponentsList from './opensource_list';
+import { DevBoxUtils } from '../utils/DevBoxUtils';
+import Logger from '../utils/Logger';
+
+const PATH_PRE: string = 'licenseList/';
+const TAG: string = '[AboutDialog] ';
 
 @CustomDialog
 export struct AboutDialog {
@@ -286,9 +290,28 @@ export struct AboutDialog {
 struct OpenSourceDialog {
   controller: CustomDialogController
   // 开源组件数据
-  @State ossComponents: OpenSourceNoticeMetaData[] = ossComponentsList;
+  @State ossComponents: OpenSourceNoticeMetaData[] = [];
   private webController: webview.WebviewController = new webview.WebviewController();
   @State timeStamp: number = new Date().getTime();
+
+  aboutToAppear(): void {
+    try {
+      this.getUIContext().getHostContext()?.resourceManager.getRawFileContent('softwareList/software_list.json')
+        .then(value => {
+          let res: string = DevBoxUtils.uint8ArrayToString(value);
+          this.ossComponents = JSON.parse(res) as OpenSourceNoticeMetaData[];
+          this.ossComponents.sort((a: OpenSourceNoticeMetaData, b: OpenSourceNoticeMetaData) => {
+            return a.name.localeCompare(b.name);
+          });
+          if (this.ossComponents.length === 0) {
+            Logger.error(TAG, 'ossComponents get failed');
+          }
+        });
+    } catch (e) {
+      const error = e as BusinessError;
+      Logger.error(TAG, `ossComponents error code is ${error?.code} mgs: ${error.message}`);
+    }
+  }
 
   build() {
     Column() {
@@ -496,7 +519,7 @@ struct OpenSourceDialog {
                 if (this.timeStamp && this.ossComponents[index].showLicense === true) {
                   Column() {
                     Web({
-                      src: $rawfile(item.licenseFile),
+                      src: $rawfile(PATH_PRE + item.licenseFile),
                       controller: this.webController
                     })
                   }

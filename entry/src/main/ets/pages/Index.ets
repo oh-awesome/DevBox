@@ -13,6 +13,7 @@ import { SysColor } from './sys_color';
 import { SysString } from './sys_string';
 import { AboutDialog } from '../about_diaglog/about';
 import { CommandManual } from './command_manual';
+import { DevBoxUtils } from '../utils/DevBoxUtils';
 
 @Entry
 @Component
@@ -40,12 +41,13 @@ struct Index {
       const context = getContext(this) as common.UIAbilityContext;
       this.pref = await dataPreferences.getPreferences(context, 'first_use_pref');
       const isFirstUse = await this.pref.get('isFirstUse', true);
+      DevBoxUtils.getInstance().setUIAbilityContext(context);
       if (isFirstUse) {
         this.showDialog = true;
       }
     } catch (err) {
       const error = err as BusinessError;
-      console.error(`get Preferences failed, err code is ${err?.code}, message is ${err?.message}`);
+      console.error(`get Preferences failed, err code is ${error?.code}, message is ${error?.message}`);
     }
   }
 

@@ -1,0 +1,38 @@
+[
+  {
+    "filename": [
+      "autoconf_manual.json",
+      "cmake_manual.json",
+      "find_manual.json",
+      "grep_manual.json",
+      "libxml2_manual.json",
+      "make_manual.json",
+      "ruby_manual.json",
+      "colrm_manual.json",
+      "flex_manual.json",
+      "groff_manual.json",
+      "libxslt_manual.json",
+      "nvim_manual.json",
+      "sign-tool_manual.json",
+      "bind_manual.json",
+      "gdb_manual.json",
+      "gzip_manual.json",
+      "llvm_manual.json",
+      "ninja_manual.json",
+      "busybox_manual.json",
+      "diff_manual.json",
+      "gperf_manual.json",
+      "lz4_manual.json",
+      "pcre2_manual.json",
+      "bzip2_manual.json",
+      "expat_manual.json",
+      "gprof_manual.json",
+      "less_manual.json",
+      "m4_manual.json",
+      "perl_manual.json",
+      "unknown_manual.json",
+      "hnpcli_manual.json",
+      "tree_manual.json"
+    ]
+  }
+]

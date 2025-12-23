@@ -1,14 +1,24 @@
-import commandManualDataList, { CommandManualData, CommandManualOption } from './manual_data';
+import { CommandManualData, CommandManualOption } from './manual_data';
 import measure from '@ohos.measure';
+import { DevBoxUtils } from '../utils/DevBoxUtils';
+import Logger from '../utils/Logger';
 
 const TITLE_WIDTH = '200vp'
+const TAG = '[CommandManual] '
 
 @Component
 export struct CommandManual {
-  @State commandLists: CommandManualData[] = commandManualDataList;
+  @State commandLists: CommandManualData[] = [];
   @State searchText: string = '';
   @State timeStamp: number = new Date().getTime();
   @State timeStampFilter: number = new Date().getTime();
+
+  aboutToAppear(): void {
+    this.commandLists = DevBoxUtils.getAllManualInfo();
+    if (this.commandLists.length === 0) {
+      Logger.error(TAG, 'commandLists get failed');
+    }
+  }
 
   build() {
     Column() {
@@ -66,7 +76,7 @@ export struct CommandManual {
       SymbolGlyph($r('sys.symbol.clean'))
         .fontSize(24)
         .fontColor([this.searchText === "" ? $r('sys.color.ohos_id_color_foreground_contrary_disable_dark') :
-        $r('sys.color.ohos_id_color_emphasize_contrary')])
+          $r('sys.color.ohos_id_color_emphasize_contrary')])
         .margin({ right: 8 })
         .onClick(() => {
           this.searchText = '';
@@ -233,7 +243,7 @@ export struct CommandManual {
                                 .width('calc(100% - 230vp)')
                                 .copyOption(CopyOptions.InApp)
                                 .visibility(!this.needChangeLine(option.paramName) ? Visibility.Visible :
-                                Visibility.None)
+                                  Visibility.None)
                             }
                             .width('100%')
                           }

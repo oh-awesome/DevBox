@@ -1,0 +1,317 @@
+[
+  {
+    "name": "colrm",
+    "description": "用于从标准输入中删除指定的列，常用于文本处理。",
+    "syntax": "colrm [startcol [endcol]]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display version"
+      }
+    ],
+    "examples": [
+      "colrm --help",
+      "colrm -h",
+      "colrm 5"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "column",
+    "description": "将输入文本格式化为多列输出，支持自动调整列宽和对齐。",
+    "syntax": "column [options] [<file>...]",
+    "options": [
+      {
+        "paramName": "-t, --table",
+        "description": "create a table"
+      },
+      {
+        "paramName": "-n, --table-name <name>",
+        "description": "table name for JSON output"
+      },
+      {
+        "paramName": "-O, --table-order <columns>",
+        "description": "specify order of output columns"
+      },
+      {
+        "paramName": "-C, --table-column <properties>",
+        "description": "define column"
+      },
+      {
+        "paramName": "-N, --table-columns <names>",
+        "description": "comma separated columns names"
+      },
+      {
+        "paramName": "-l, --table-columns-limit <num>",
+        "description": "maximal number of input columns"
+      },
+      {
+        "paramName": "-E, --table-noextreme <columns>",
+        "description": "don't count long text from the columns to column width"
+      },
+      {
+        "paramName": "-d, --table-noheadings",
+        "description": "don't print header"
+      },
+      {
+        "paramName": "-m, --table-maxout",
+        "description": "fill all available space"
+      },
+      {
+        "paramName": "-e, --table-header-repeat",
+        "description": "repeat header for each page"
+      },
+      {
+        "paramName": "-H, --table-hide <columns>",
+        "description": "don't print the columns"
+      },
+      {
+        "paramName": "-R, --table-right <columns>",
+        "description": "right align text in these columns"
+      },
+      {
+        "paramName": "-T, --table-truncate <columns>",
+        "description": "truncate text in the columns when necessary"
+      },
+      {
+        "paramName": "-W, --table-wrap <columns>",
+        "description": "wrap text in the columns when necessary"
+      },
+      {
+        "paramName": "-L, --keep-empty-lines",
+        "description": "don't ignore empty lines"
+      },
+      {
+        "paramName": "-J, --json",
+        "description": "use JSON output format for table"
+      },
+      {
+        "paramName": "-r, --tree <column>",
+        "description": "column to use tree-like output for the table"
+      },
+      {
+        "paramName": "-i, --tree-id <column>",
+        "description": "line ID to specify child-parent relation"
+      },
+      {
+        "paramName": "-p, --tree-parent <column>",
+        "description": "parent to specify child-parent relation"
+      },
+      {
+        "paramName": "-c, --output-width <width>",
+        "description": "width of output in number of characters"
+      },
+      {
+        "paramName": "-o, --output-separator <string>",
+        "description": "columns separator for table output (default is two spaces)"
+      },
+      {
+        "paramName": "-s, --separator <string>",
+        "description": "possible table delimiters"
+      },
+      {
+        "paramName": "-x, --fillrows",
+        "description": "fill rows before columns"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display version"
+      }
+    ],
+    "examples": [
+      "echo 'name:age:city' | column -t -s:",
+      "ls | column -c 80"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "getopt",
+    "description": "用于解析命令行选项的工具，支持短选项和长选项。",
+    "syntax": "getopt [options]",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Allow long options starting with single-"
+      },
+      {
+        "paramName": "-l LOPT[,...]",
+        "description": "Long options to recognize"
+      },
+      {
+        "paramName": "-n PROGNAME",
+        "description": "The name under which errors are reported"
+      },
+      {
+        "paramName": "-o OPTSTRING",
+        "description": "Short options to recognize"
+      },
+      {
+        "paramName": "-q",
+        "description": "No error messages on unrecognized options"
+      },
+      {
+        "paramName": "-Q",
+        "description": "No normal output"
+      },
+      {
+        "paramName": "-s SHELL",
+        "description": "Set shell quoting conventions"
+      },
+      {
+        "paramName": "-T",
+        "description": "Version test (exits with 4)"
+      },
+      {
+        "paramName": "-u",
+        "description": "Don't quote output"
+      }
+    ],
+    "examples": [
+      "getopt --help",
+      "getopt -h",
+      "getopt -o ab:c:: -l long,longopt: -- \"$@\""
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "hexdump",
+    "description": "以用户指定格式显示文件（或标准输入）的内容",
+    "syntax": "hexdump [-bcdoxCv] [-e FMT] [-f FMT_FILE] [-n LEN] [-s OFS] [FILE]...",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "1-byte octal display"
+      },
+      {
+        "paramName": "-c",
+        "description": "1-byte character display"
+      },
+      {
+        "paramName": "-d",
+        "description": "2-byte decimal display"
+      },
+      {
+        "paramName": "-o",
+        "description": "2-byte octal display"
+      },
+      {
+        "paramName": "-x",
+        "description": "2-byte hex display"
+      },
+      {
+        "paramName": "-C",
+        "description": "hex+ASCII 16 bytes per line"
+      },
+      {
+        "paramName": "-v",
+        "description": "Show all (no dup folding)"
+      },
+      {
+        "paramName": "-e FORMAT_STR",
+        "description": "User-specified format string (Example: '16/1 \"%02x|\"\"\\n\"')"
+      },
+      {
+        "paramName": "-f FMT_FILE",
+        "description": "Read format from file"
+      },
+      {
+        "paramName": "-n LENGTH",
+        "description": "Show only first LENGTH bytes"
+      },
+      {
+        "paramName": "-s OFFSET",
+        "description": "Skip OFFSET bytes"
+      }
+    ],
+    "examples": [
+      "hexdump -C test.txt",
+      "hexdump -b binary.file",
+      "hexdump -e '16/1 \"%02x \" \"\\n\"' data.bin",
+      "hexdump -n 100 -s 50 log.txt",
+      "hexdump --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "script",
+    "description": "用于记录终端会话的工具，将所有输入和输出保存到指定文件。",
+    "syntax": "script [options]",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Append output"
+      },
+      {
+        "paramName": "-c PROG",
+        "description": "Run PROG, not shell"
+      },
+      {
+        "paramName": "-q",
+        "description": "Quiet"
+      },
+      {
+        "paramName": "-t[FILE]",
+        "description": "Send timing to stderr or FILE"
+      }
+    ],
+    "examples": [
+      "script -q -c \"echo 'test content'\"",
+      "script session.log"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "whereis",
+    "description": "查找指定命令的二进制文件、源代码文件及对应手册页位置",
+    "syntax": "whereis [options] [-BMS <dir>... -f] <name>",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "Search only for binaries"
+      },
+      {
+        "paramName": "-B <dirs>",
+        "description": "Define binaries lookup path"
+      },
+      {
+        "paramName": "-f",
+        "description": "Terminate <dirs> argument list"
+      },
+      {
+        "paramName": "-g",
+        "description": "Interpret name as glob (pathnames pattern)"
+      },
+      {
+        "paramName": "-l",
+        "description": "Output effective lookup paths"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-M <dirs>",
+        "description": "Define manual pages lookup path"
+      },
+      {
+        "paramName": "-S <dirs>",
+        "description": "Define source files lookup path"
+      }
+    ],
+    "examples": [
+      "whereis ls",
+      "whereis -b python",
+      "whereis -B /usr/local/bin -f gcc",
+      "whereis -l"
+    ],
+    "showDetails": false
+  }
+]

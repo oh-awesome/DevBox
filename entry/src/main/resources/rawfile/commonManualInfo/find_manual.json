@@ -1,0 +1,473 @@
+[
+  {
+    "name": "find",
+    "description": "文件查找工具，用于在指定路径下根据条件搜索文件和目录，并执行相应操作",
+    "syntax": "find [-H] [-L] [-P] [-Olevel] [-D debugopts] [path...] [expression]",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "display this help and exit"
+      },
+      {
+        "paramName": "--version",
+        "description": "output version information and exit"
+      },
+      {
+        "paramName": "-H",
+        "description": "Follow symbolic links on command line, but not elsewhere"
+      },
+      {
+        "paramName": "-L",
+        "description": "Follow all symbolic links"
+      },
+      {
+        "paramName": "-P",
+        "description": "Do not follow symbolic links (default)"
+      },
+      {
+        "paramName": "-Olevel",
+        "description": "Set optimization level (0-3)"
+      },
+      {
+        "paramName": "-D debugopts",
+        "description": "Enable debugging; valid opts: exec, opt, rates, search, stat, time, tree, all, help"
+      },
+      {
+        "paramName": "-daystart",
+        "description": "Measure times from start of day instead of now"
+      },
+      {
+        "paramName": "-follow",
+        "description": "Equivalent to -L"
+      },
+      {
+        "paramName": "-nowarn",
+        "description": "Suppress warning messages"
+      },
+      {
+        "paramName": "-regextype",
+        "description": "Specify regex type (see find(1) for details)"
+      },
+      {
+        "paramName": "-warn",
+        "description": "Enable warning messages (default)"
+      },
+      {
+        "paramName": "-depth",
+        "description": "Process directory contents before the directory itself"
+      },
+      {
+        "paramName": "-files0-from FILE",
+        "description": "Read file names from FILE, separated by NUL"
+      },
+      {
+        "paramName": "-maxdepth LEVELS",
+        "description": "Descend at most LEVELS (a non-negative integer) levels of directories"
+      },
+      {
+        "paramName": "-mindepth LEVELS",
+        "description": "Do not apply any tests or actions at levels less than LEVELS"
+      },
+      {
+        "paramName": "-mount",
+        "description": "Equivalent to -xdev"
+      },
+      {
+        "paramName": "-noleaf",
+        "description": "Do not assume that directories have at least two entries"
+      },
+      {
+        "paramName": "-xautofs",
+        "description": "Do not descend into autofs mounted directories"
+      },
+      {
+        "paramName": "-xdev",
+        "description": "Do not descend into directories on other filesystems"
+      },
+      {
+        "paramName": "-ignore_readdir_race",
+        "description": "Suppress errors about race conditions in readdir"
+      },
+      {
+        "paramName": "-noignore_readdir_race",
+        "description": "Do not suppress errors about race conditions in readdir"
+      },
+      {
+        "paramName": "-amin N",
+        "description": "File was last accessed N minutes ago"
+      },
+      {
+        "paramName": "-anewer FILE",
+        "description": "File was last accessed more recently than FILE was modified"
+      },
+      {
+        "paramName": "-atime N",
+        "description": "File was last accessed N*24 hours ago"
+      },
+      {
+        "paramName": "-cmin N",
+        "description": "File's status was last changed N minutes ago"
+      },
+      {
+        "paramName": "-cnewer FILE",
+        "description": "File's status was last changed more recently than FILE was modified"
+      },
+      {
+        "paramName": "-context CONTEXT",
+        "description": "File's security context matches CONTEXT"
+      },
+      {
+        "paramName": "-ctime N",
+        "description": "File's status was last changed N*24 hours ago"
+      },
+      {
+        "paramName": "-empty",
+        "description": "File is empty (regular file or directory)"
+      },
+      {
+        "paramName": "-false",
+        "description": "Always false"
+      },
+      {
+        "paramName": "-fstype TYPE",
+        "description": "File is on a filesystem of type TYPE"
+      },
+      {
+        "paramName": "-gid N",
+        "description": "File's group ID is N"
+      },
+      {
+        "paramName": "-group NAME",
+        "description": "File's group name is NAME (or numeric GID)"
+      },
+      {
+        "paramName": "-ilname PATTERN",
+        "description": "Like -lname, but case-insensitive"
+      },
+      {
+        "paramName": "-iname PATTERN",
+        "description": "Like -name, but case-insensitive"
+      },
+      {
+        "paramName": "-inum N",
+        "description": "File's inode number is N"
+      },
+      {
+        "paramName": "-iwholename PATTERN",
+        "description": "Like -wholename, but case-insensitive"
+      },
+      {
+        "paramName": "-iregex PATTERN",
+        "description": "Like -regex, but case-insensitive"
+      },
+      {
+        "paramName": "-links N",
+        "description": "File has N links"
+      },
+      {
+        "paramName": "-lname PATTERN",
+        "description": "File is a symbolic link whose target matches PATTERN"
+      },
+      {
+        "paramName": "-mmin N",
+        "description": "File was last modified N minutes ago"
+      },
+      {
+        "paramName": "-mtime N",
+        "description": "File was last modified N*24 hours ago"
+      },
+      {
+        "paramName": "-name PATTERN",
+        "description": "File name matches PATTERN (does not match path)"
+      },
+      {
+        "paramName": "-newer FILE",
+        "description": "File was last modified more recently than FILE"
+      },
+      {
+        "paramName": "-nouser",
+        "description": "File has no owner (UID not in passwd)"
+      },
+      {
+        "paramName": "-nogroup",
+        "description": "File has no group (GID not in group)"
+      },
+      {
+        "paramName": "-path PATTERN",
+        "description": "File path matches PATTERN"
+      },
+      {
+        "paramName": "-perm [-/]MODE",
+        "description": "File's permissions match MODE; -MODE: all bits set, /MODE: any bit set"
+      },
+      {
+        "paramName": "-regex PATTERN",
+        "description": "File path matches regex PATTERN"
+      },
+      {
+        "paramName": "-readable",
+        "description": "File is readable by current user"
+      },
+      {
+        "paramName": "-writable",
+        "description": "File is writable by current user"
+      },
+      {
+        "paramName": "-executable",
+        "description": "File is executable by current user"
+      },
+      {
+        "paramName": "-wholename PATTERN",
+        "description": "Equivalent to -path"
+      },
+      {
+        "paramName": "-size N[bcwkMG]",
+        "description": "File size is N; units: b(512B), c(bytes), w(2B), k(KB), M(MB), G(GB)"
+      },
+      {
+        "paramName": "-true",
+        "description": "Always true"
+      },
+      {
+        "paramName": "-type [bcdpflsD]",
+        "description": "File type: b(block), c(character), d(directory), p(FIFO), f(regular), l(symlink), s(socket), D(door)"
+      },
+      {
+        "paramName": "-uid N",
+        "description": "File's user ID is N"
+      },
+      {
+        "paramName": "-used N",
+        "description": "File was last accessed N*24 hours after its status was last changed"
+      },
+      {
+        "paramName": "-user NAME",
+        "description": "File's owner is NAME (or numeric UID)"
+      },
+      {
+        "paramName": "-xtype [bcdpfls]",
+        "description": "Like -type, but follow symlinks (implies -L)"
+      },
+      {
+        "paramName": "-delete",
+        "description": "Delete files; implies -depth"
+      },
+      {
+        "paramName": "-print0",
+        "description": "Print file names, separated by NUL"
+      },
+      {
+        "paramName": "-printf FORMAT",
+        "description": "Print formatted output according to FORMAT"
+      },
+      {
+        "paramName": "-fprintf FILE FORMAT",
+        "description": "Like -printf, but write to FILE"
+      },
+      {
+        "paramName": "-print",
+        "description": "Print file names (default action)"
+      },
+      {
+        "paramName": "-fprint0 FILE",
+        "description": "Like -print0, but write to FILE"
+      },
+      {
+        "paramName": "-fprint FILE",
+        "description": "Like -print, but write to FILE"
+      },
+      {
+        "paramName": "-ls",
+        "description": "List files in ls -dils format"
+      },
+      {
+        "paramName": "-fls FILE",
+        "description": "Like -ls, but write to FILE"
+      },
+      {
+        "paramName": "-prune",
+        "description": "Do not descend into current directory"
+      },
+      {
+        "paramName": "-quit",
+        "description": "Exit after processing first match"
+      },
+      {
+        "paramName": "-exec COMMAND ;",
+        "description": "Execute COMMAND; {} replaces file name"
+      },
+      {
+        "paramName": "-exec COMMAND {} +",
+        "description": "Execute COMMAND with all matched files as arguments"
+      },
+      {
+        "paramName": "-ok COMMAND ;",
+        "description": "Like -exec, but prompt before execution"
+      },
+      {
+        "paramName": "-execdir COMMAND ;",
+        "description": "Execute COMMAND in file's directory; implies -depth"
+      },
+      {
+        "paramName": "-execdir COMMAND {} +",
+        "description": "Like -execdir ;, but pass multiple files"
+      },
+      {
+        "paramName": "-okdir COMMAND ;",
+        "description": "Like -execdir, but prompt before execution"
+      }
+    ],
+    "examples": [
+      "find . -name '*.txt'",
+      "find /home -maxdepth 2 -type d"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "locate",
+    "description": "快速查找文件的工具，基于预构建的文件数据库进行搜索。",
+    "syntax": "locate [options]",
+    "options": [
+      {
+        "paramName": "-A, --all",
+        "description": "only print entries that match all patterns"
+      },
+      {
+        "paramName": "-b, --basename",
+        "description": "match only the base name"
+      },
+      {
+        "paramName": "-c, --count",
+        "description": "print number of matches"
+      },
+      {
+        "paramName": "-d, --database <path>",
+        "description": "use database at path"
+      },
+      {
+        "paramName": "-e, --existing",
+        "description": "only print existing files"
+      },
+      {
+        "paramName": "-i, --ignore-case",
+        "description": "ignore case differences"
+      },
+      {
+        "paramName": "-L, --follow",
+        "description": "follow symbolic links"
+      },
+      {
+        "paramName": "-m, --mmap",
+        "description": "use mmap instead of read"
+      },
+      {
+        "paramName": "-n, --limit <number>",
+        "description": "limit number of matches"
+      },
+      {
+        "paramName": "-P, --nofollow",
+        "description": "do not follow symbolic links"
+      },
+      {
+        "paramName": "-0, --null",
+        "description": "separate output with null characters"
+      },
+      {
+        "paramName": "-S, --statistics",
+        "description": "print statistics about database"
+      },
+      {
+        "paramName": "-t, --basename",
+        "description": "match only the base name"
+      },
+      {
+        "paramName": "-U, --update",
+        "description": "update database"
+      },
+      {
+        "paramName": "-u, --unknown",
+        "description": "print unknown file types"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbose mode"
+      },
+      {
+        "paramName": "-w, --wholename",
+        "description": "match whole path name (default)"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display version"
+      }
+    ],
+    "examples": [
+      "locate --help",
+      "locate -h",
+      "locate filename.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "updatedb",
+    "description": "更新系统文件位置数据库（供locate命令快速查询文件）",
+    "syntax": "updatedb [--findoptions='options'] [--localpaths='dirs'] [--netpaths='dirs'] [--prunepaths='dirs'] [--prunefs='fs'] [--output=dbfile] [--netuser=user] [--localuser=user] [--dbformat] [--version] [--help]",
+    "options": [
+      {
+        "paramName": "--findoptions='-option1 -option2...'",
+        "description": "Specify options for find command"
+      },
+      {
+        "paramName": "--localpaths='dir1 dir2...'",
+        "description": "Specify local directories to search"
+      },
+      {
+        "paramName": "--netpaths='dir1 dir2...'",
+        "description": "Specify network directories to search"
+      },
+      {
+        "paramName": "--prunepaths='dir1 dir2...'",
+        "description": "Specify directories to exclude from search"
+      },
+      {
+        "paramName": "--prunefs='fs1 fs2...'",
+        "description": "Specify filesystem types to exclude"
+      },
+      {
+        "paramName": "--output=dbfile",
+        "description": "Specify output database file path"
+      },
+      {
+        "paramName": "--netuser=user",
+        "description": "Specify user for network directory search"
+      },
+      {
+        "paramName": "--localuser=user",
+        "description": "Specify user for local directory search"
+      },
+      {
+        "paramName": "--dbformat",
+        "description": "Specify database format"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "updatedb",
+      "updatedb --output=/var/lib/mlocate/mlocate.db",
+      "updatedb --prunepaths='/tmp /var/tmp'",
+      "updatedb --localpaths='/home /usr' --prunefs='nfs tmpfs'"
+    ],
+    "showDetails": false
+  }
+]

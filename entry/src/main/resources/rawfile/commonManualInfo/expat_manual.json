@@ -1,0 +1,90 @@
+[
+  {
+    "name": "xmlwf",
+    "description": "检查 XML 文档是否格式良好",
+    "syntax": "xmlwf [OPTIONS] [FILE ...]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Show help message and exit"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Show program is version number and exit"
+      },
+      {
+        "paramName": "-s",
+        "description": "Print an error if the document is not standalone"
+      },
+      {
+        "paramName": "-n",
+        "description": "Enable namespace processing"
+      },
+      {
+        "paramName": "-p",
+        "description": "Enable processing of external DTDs and parameter entities"
+      },
+      {
+        "paramName": "-x",
+        "description": "Enable processing of external entities"
+      },
+      {
+        "paramName": "-e ENCODING",
+        "description": "Override any in-document encoding declaration"
+      },
+      {
+        "paramName": "-w",
+        "description": "Enable support for Windows code pages"
+      },
+      {
+        "paramName": "-r",
+        "description": "Disable memory-mapping and use read calls instead"
+      },
+      {
+        "paramName": "-g BYTES",
+        "description": "Buffer size to request per call pair to XML_GetBuffer and read (default: 8 KiB)"
+      },
+      {
+        "paramName": "-k",
+        "description": "When processing multiple files, keep processing after first file with error"
+      },
+      {
+        "paramName": "-d DIRECTORY",
+        "description": "Output destination directory"
+      },
+      {
+        "paramName": "-c",
+        "description": "Write a copy of input XML, not canonical XML"
+      },
+      {
+        "paramName": "-m",
+        "description": "Write meta XML, not canonical XML"
+      },
+      {
+        "paramName": "-t",
+        "description": "Write no XML output for timing of plain parsing"
+      },
+      {
+        "paramName": "-N",
+        "description": "Enable adding doctype and notation declarations"
+      },
+      {
+        "paramName": "-a FACTOR",
+        "description": "Set maximum tolerated amplification factor (default: 100.0) for attack protection"
+      },
+      {
+        "paramName": "-b BYTES",
+        "description": "Set number of output bytes needed to activate amplification protection (default: 8 MiB/64 MiB)"
+      },
+      {
+        "paramName": "-q",
+        "description": "Disable reparse deferral, allow quadratic parse runtime with large tokens"
+      }
+    ],
+    "examples": [
+      "xmlwf document.xml",
+      "xmlwf -k file1.xml file2.xml file3.xml"
+    ],
+    "showDetails": false
+  }
+]

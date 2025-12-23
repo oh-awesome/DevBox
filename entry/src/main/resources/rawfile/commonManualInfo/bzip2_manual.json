@@ -1,0 +1,85 @@
+[
+  {
+    "name": "bzip2",
+    "description": "高效的文件压缩工具，使用Burrows-Wheeler块排序文本压缩算法和霍夫曼编码。",
+    "syntax": "bzip2 [flags and input files in any order]",
+    "options": [
+      {
+        "paramName": "-h --help",
+        "description": "print this message"
+      },
+      {
+        "paramName": "-d --decompress",
+        "description": "force decompression"
+      },
+      {
+        "paramName": "-z --compress",
+        "description": "force compression"
+      },
+      {
+        "paramName": "-k --keep",
+        "description": "keep (don't delete) input files"
+      },
+      {
+        "paramName": "-f --force",
+        "description": "overwrite existing output files"
+      },
+      {
+        "paramName": "-t --test",
+        "description": "test compressed file integrity"
+      },
+      {
+        "paramName": "-c --stdout",
+        "description": "output to standard out"
+      },
+      {
+        "paramName": "-q --quiet",
+        "description": "suppress noncritical error messages"
+      },
+      {
+        "paramName": "-v --verbose",
+        "description": "be verbose (a 2nd -v gives more)"
+      },
+      {
+        "paramName": "-L --license",
+        "description": "display software version & license"
+      },
+      {
+        "paramName": "-V --version",
+        "description": "display software version & license"
+      },
+      {
+        "paramName": "-s --small",
+        "description": "use less memory (at most 2500k)"
+      },
+      {
+        "paramName": "-1 to -9",
+        "description": "set block size to 100k .. 900k"
+      },
+      {
+        "paramName": "--fast",
+        "description": "alias for -1"
+      },
+      {
+        "paramName": "--best",
+        "description": "alias for -9"
+      }
+    ],
+    "examples": [
+      "bzip2 file.txt",
+      "bzip2 -d file.bz2",
+      "bzip2 -v file.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "bzless",
+    "description": "用于查看bzip2压缩文件的过滤器，类似于less命令。",
+    "syntax": "bzless files...",
+    "options": [],
+    "examples": [
+      "bzless a.bz2"
+    ],
+    "showDetails": false
+  }
+]

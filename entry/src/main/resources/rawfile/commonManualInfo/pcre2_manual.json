@@ -1,0 +1,411 @@
+[
+  {
+    "name": "pcre2grep",
+    "description": "一个基于 Perl 兼容正则表达式（PCRE2）的 grep 工具，提供高级模式匹配，支持完整的 Unicode 以及扩展的正则表达式功能。",
+    "syntax": "pcre2grep [OPTION]... [PATTERN] [FILE1 FILE2 ...]",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "display this help and exit"
+      },
+      {
+        "paramName": "-A, --after-context=number",
+        "description": "set number of following context lines"
+      },
+      {
+        "paramName": "-a, --text",
+        "description": "treat binary files as text"
+      },
+      {
+        "paramName": "-B, --before-context=number",
+        "description": "set number of prior context lines"
+      },
+      {
+        "paramName": "--binary-files=word",
+        "description": "set treatment of binary files"
+      },
+      {
+        "paramName": "--buffer-size=number",
+        "description": "set processing buffer starting size"
+      },
+      {
+        "paramName": "--max-buffer-size=number",
+        "description": "set processing buffer maximum size"
+      },
+      {
+        "paramName": "--color=option, --colour=option",
+        "description": "matched text color option"
+      },
+      {
+        "paramName": "-C, --context=number",
+        "description": "set number of context lines, before & after"
+      },
+      {
+        "paramName": "-c, --count",
+        "description": "print only a count of matching lines per FILE"
+      },
+      {
+        "paramName": "-D, --devices=action",
+        "description": "how to handle devices, FIFOs, and sockets"
+      },
+      {
+        "paramName": "-d, --directories=action",
+        "description": "how to handle directories"
+      },
+      {
+        "paramName": "--posix-digit",
+        "description": "\\d always matches [0-9], even in UTF/UCP mode"
+      },
+      {
+        "paramName": "-E, --case-restrict",
+        "description": "restrict case matching (no mix ASCII/non-ASCII)"
+      },
+      {
+        "paramName": "-e, --regex(p)=pattern",
+        "description": "specify pattern (may be used more than once)"
+      },
+      {
+        "paramName": "-F, --fixed-strings",
+        "description": "patterns are sets of newline-separated strings"
+      },
+      {
+        "paramName": "-f, --file=path",
+        "description": "read patterns from file"
+      },
+      {
+        "paramName": "--posix-pattern-file",
+        "description": "use POSIX semantics for pattern files"
+      },
+      {
+        "paramName": "--file-list=path",
+        "description": "read files to search from file"
+      },
+      {
+        "paramName": "--file-offsets",
+        "description": "output file offsets, not text"
+      },
+      {
+        "paramName": "--group-separator=text",
+        "description": "set separator between groups of lines"
+      },
+      {
+        "paramName": "-H, --with-filename",
+        "description": "force the prefixing filename on output"
+      },
+      {
+        "paramName": "-h, --no-filename",
+        "description": "suppress the prefixing filename on output"
+      },
+      {
+        "paramName": "-I",
+        "description": "treat binary files as not matching (ignore)"
+      },
+      {
+        "paramName": "-i, --ignore-case",
+        "description": "ignore case distinctions"
+      },
+      {
+        "paramName": "-l, --files-with-matches",
+        "description": "print only FILE names containing matches"
+      },
+      {
+        "paramName": "-L, --files-without-match",
+        "description": "print only FILE names not containing matches"
+      },
+      {
+        "paramName": "--label=name",
+        "description": "set name for standard input"
+      },
+      {
+        "paramName": "--line-buffered",
+        "description": "use line buffering"
+      },
+      {
+        "paramName": "--line-offsets",
+        "description": "output line numbers and offsets, not text"
+      },
+      {
+        "paramName": "--locale=locale",
+        "description": "use the named locale"
+      },
+      {
+        "paramName": "--heap-limit=number",
+        "description": "set PCRE2 heap limit option (kibibytes)"
+      },
+      {
+        "paramName": "--match-limit=number",
+        "description": "set PCRE2 match limit option"
+      },
+      {
+        "paramName": "--depth-limit=number",
+        "description": "set PCRE2 depth limit option"
+      },
+      {
+        "paramName": "--recursion-limit=number",
+        "description": "obsolete synonym for depth-limit"
+      },
+      {
+        "paramName": "-M, --multiline",
+        "description": "run in multiline mode"
+      },
+      {
+        "paramName": "-m, --max-count=number",
+        "description": "stop after <number> matched lines"
+      },
+      {
+        "paramName": "-N, --newline=type",
+        "description": "set newline type (CR, LF, CRLF, ANYCRLF, ANY, or NUL)"
+      },
+      {
+        "paramName": "-n, --line-number",
+        "description": "print line number with output lines"
+      },
+      {
+        "paramName": "--no-jit",
+        "description": "ignored: this pcre2grep does not support JIT"
+      },
+      {
+        "paramName": "--no-group-separator",
+        "description": "suppress separators between groups of lines"
+      },
+      {
+        "paramName": "-O, --output=text",
+        "description": "show only this text (possibly expanded)"
+      },
+      {
+        "paramName": "-o, --only-matching=n",
+        "description": "show only the part of the line that matched"
+      },
+      {
+        "paramName": "--om-separator=text",
+        "description": "set separator for multiple -o output"
+      },
+      {
+        "paramName": "--om-capture=n",
+        "description": "set capture count for --only-matching"
+      },
+      {
+        "paramName": "-P, --no-ucp",
+        "description": "do not enable UCP mode with Unicode"
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "suppress output, just set return code"
+      },
+      {
+        "paramName": "-r, --recursive",
+        "description": "recursively scan sub-directories"
+      },
+      {
+        "paramName": "--exclude=pattern",
+        "description": "exclude matching files when recursing"
+      },
+      {
+        "paramName": "--include=pattern",
+        "description": "include matching files when recursing"
+      },
+      {
+        "paramName": "--exclude-dir=pattern",
+        "description": "exclude matching directories when recursing"
+      },
+      {
+        "paramName": "--include-dir=pattern",
+        "description": "include matching directories when recursing"
+      },
+      {
+        "paramName": "--exclude-from=path",
+        "description": "read exclude list from file"
+      },
+      {
+        "paramName": "--include-from=path",
+        "description": "read include list from file"
+      },
+      {
+        "paramName": "-s, --no-messages",
+        "description": "suppress error messages"
+      },
+      {
+        "paramName": "-t, --total-count",
+        "description": "print total count of matching lines"
+      },
+      {
+        "paramName": "-u, --utf",
+        "description": "use UTF/Unicode"
+      },
+      {
+        "paramName": "-U, --utf-allow-invalid",
+        "description": "use UTF/Unicode, allow for invalid code units"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version information and exit"
+      },
+      {
+        "paramName": "-v, --invert-match",
+        "description": "select non-matching lines"
+      },
+      {
+        "paramName": "-w, --word-regex(p)",
+        "description": "force patterns to match only as words"
+      },
+      {
+        "paramName": "-x, --line-regex(p)",
+        "description": "force patterns to match only whole lines"
+      },
+      {
+        "paramName": "--allow-lookaround-bsk",
+        "description": "allow \\K in lookarounds"
+      },
+      {
+        "paramName": "-Z, --null",
+        "description": "output 0 byte after file names"
+      }
+    ],
+    "examples": [
+      "pcre2grep -i 'hello.*world' menu.h main.c",
+      "pcre2grep -r --include='*.txt' 'pattern' directory/",
+      "pcre2grep -c 'error' logfile",
+      "pcre2grep -A 2 -B 2 'keyword' document.txt",
+      "pcre2grep -o --om-separator=', ' '\\d+' data.txt",
+      "pcre2grep -v '^#' config.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pcre2test",
+    "description": "一个用于测试、调试和实验 Perl 兼容正则表达式（PCRE2）模式及匹配行为的全面工具。",
+    "syntax": "pcre2test [options] [<input file> [<output file>]]",
+    "options": [
+      {
+        "paramName": "-8",
+        "description": "use the 8-bit library"
+      },
+      {
+        "paramName": "-ac",
+        "description": "set default pattern modifier PCRE2_AUTO_CALLOUT"
+      },
+      {
+        "paramName": "-AC",
+        "description": "as -ac, but also set subject 'callout_extra' modifier"
+      },
+      {
+        "paramName": "-b",
+        "description": "set default pattern modifier 'fullbincode'"
+      },
+      {
+        "paramName": "-C",
+        "description": "show PCRE2 compile-time options and exit"
+      },
+      {
+        "paramName": "-C arg",
+        "description": "show a specific compile-time option and exit with its value if numeric (else 0)"
+      },
+      {
+        "paramName": "--colo[u]r[=<always,auto,never>]",
+        "description": "show output in colour"
+      },
+      {
+        "paramName": "-d",
+        "description": "set default pattern modifier 'debug'"
+      },
+      {
+        "paramName": "-dfa",
+        "description": "set default subject modifier 'dfa'"
+      },
+      {
+        "paramName": "-E",
+        "description": "preprocess input only (#if ... #endif)"
+      },
+      {
+        "paramName": "-error <n,m,..>",
+        "description": "show messages for error numbers, then exit"
+      },
+      {
+        "paramName": "-help",
+        "description": "show usage information"
+      },
+      {
+        "paramName": "-i",
+        "description": "set default pattern modifier 'info'"
+      },
+      {
+        "paramName": "-jit",
+        "description": "set default pattern modifier 'jit'"
+      },
+      {
+        "paramName": "-jitfast",
+        "description": "set default pattern modifier 'jitfast'"
+      },
+      {
+        "paramName": "-jitverify",
+        "description": "set default pattern modifier 'jitverify'"
+      },
+      {
+        "paramName": "-LM",
+        "description": "list pattern and subject modifiers, then exit"
+      },
+      {
+        "paramName": "-LP",
+        "description": "list non-script properties, then exit"
+      },
+      {
+        "paramName": "-LS",
+        "description": "list supported scripts, then exit"
+      },
+      {
+        "paramName": "-malloc",
+        "description": "exercise malloc() failures"
+      },
+      {
+        "paramName": "-q",
+        "description": "quiet: do not output PCRE2 version number at start"
+      },
+      {
+        "paramName": "-pattern <s>",
+        "description": "set default pattern modifier fields"
+      },
+      {
+        "paramName": "-subject <s>",
+        "description": "set default subject modifier fields"
+      },
+      {
+        "paramName": "-S <n>",
+        "description": "set stack size to <n> mebibytes"
+      },
+      {
+        "paramName": "-t [<n>]",
+        "description": "time compilation and execution, repeating <n> times"
+      },
+      {
+        "paramName": "-tm [<n>]",
+        "description": "time execution (matching) only, repeating <n> times"
+      },
+      {
+        "paramName": "-T",
+        "description": "same as -t, but show total times at the end"
+      },
+      {
+        "paramName": "-TM",
+        "description": "same as -tm, but show total time at the end"
+      },
+      {
+        "paramName": "-unittest",
+        "description": "run unit tests, then exit"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "show PCRE2 version and exit"
+      }
+    ],
+    "examples": [
+      "pcre2test -8 testdata.txt",
+      "pcre2test -C jit",
+      "pcre2test -d pattern.txt",
+      "pcre2test -t 100 pattern.txt",
+      "pcre2test --colour=always test.txt",
+      "pcre2test -LM",
+      "pcre2test -C newline"
+    ],
+    "showDetails": false
+  }
+]

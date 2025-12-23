@@ -1,0 +1,864 @@
+[
+  {
+    "name": "cmake",
+    "description": "跨平台构建系统生成工具，用于为不同的构建工具（如Makefile、Ninja）生成构建配置文件。",
+    "syntax": "cmake [options] <path-to-source>,\ncmake [options] <path-to-existing-build>,\ncmake [options] -S <path-to-source> -B <path-to-build>",
+    "options": [
+      {
+        "paramName": "-S <path-to-source>",
+        "description": "Explicitly specify a source directory"
+      },
+      {
+        "paramName": "-B <path-to-build>",
+        "description": "Explicitly specify a build directory"
+      },
+      {
+        "paramName": "-C <initial-cache>",
+        "description": "Pre-load a script to populate the cache"
+      },
+      {
+        "paramName": "-D <var>[:<type>]=<value>",
+        "description": "Create or update a cmake cache entry"
+      },
+      {
+        "paramName": "-U <globbing_expr>",
+        "description": "Remove matching entries from CMake cache"
+      },
+      {
+        "paramName": "-G <generator-name>",
+        "description": "Specify a build system generator"
+      },
+      {
+        "paramName": "-T <toolset-name>",
+        "description": "Specify toolset name if supported by generator"
+      },
+      {
+        "paramName": "-A <platform-name>",
+        "description": "Specify platform name if supported by generator"
+      },
+      {
+        "paramName": "--toolchain <file>",
+        "description": "Specify toolchain file [CMAKE_TOOLCHAIN_FILE]"
+      },
+      {
+        "paramName": "--install-prefix <directory>",
+        "description": "Specify install directory [CMAKE_INSTALL_PREFIX]"
+      },
+      {
+        "paramName": "--project-file <project-file-name>",
+        "description": "Specify an alternate project file name"
+      },
+      {
+        "paramName": "-Wdev",
+        "description": "Enable developer warnings"
+      },
+      {
+        "paramName": "-Wno-dev",
+        "description": "Suppress developer warnings"
+      },
+      {
+        "paramName": "-Werror=dev",
+        "description": "Make developer warnings errors"
+      },
+      {
+        "paramName": "-Wno-error=dev",
+        "description": "Make developer warnings not errors"
+      },
+      {
+        "paramName": "-Wdeprecated",
+        "description": "Enable deprecation warnings"
+      },
+      {
+        "paramName": "-Wno-deprecated",
+        "description": "Suppress deprecation warnings"
+      },
+      {
+        "paramName": "-Werror=deprecated",
+        "description": "Make deprecated macro and function warnings errors"
+      },
+      {
+        "paramName": "-Wno-error=deprecated",
+        "description": "Make deprecated macro and function warnings not errors"
+      },
+      {
+        "paramName": "--preset <preset>, --preset=<preset>",
+        "description": "Specify a configure preset"
+      },
+      {
+        "paramName": "--list-presets[=<type>]",
+        "description": "List available presets"
+      },
+      {
+        "paramName": "--workflow [<options>]",
+        "description": "Run a workflow preset"
+      },
+      {
+        "paramName": "-E",
+        "description": "CMake command mode. Run \"cmake -E\" for a summary of commands"
+      },
+      {
+        "paramName": "-L[A][H]",
+        "description": "List non-advanced cached variables"
+      },
+      {
+        "paramName": "-LR[A][H] <regex>",
+        "description": "Show cached variables that match the regex"
+      },
+      {
+        "paramName": "--fresh",
+        "description": "Configure a fresh build tree, removing any existing cache file"
+      },
+      {
+        "paramName": "--build <dir>",
+        "description": "Build a CMake-generated project binary tree. Run \"cmake --build\" to see compatible options and a quick help"
+      },
+      {
+        "paramName": "--install <dir>",
+        "description": "Install a CMake-generated project binary tree. Run \"cmake --install\" to see compatible options and a quick help"
+      },
+      {
+        "paramName": "--open <dir>",
+        "description": "Open generated project in the associated application"
+      },
+      {
+        "paramName": "-N",
+        "description": "View mode only"
+      },
+      {
+        "paramName": "-P <file>",
+        "description": "Process script mode"
+      },
+      {
+        "paramName": "--find-package",
+        "description": "Legacy pkg-config like mode. Do not use"
+      },
+      {
+        "paramName": "--graphviz=<file>",
+        "description": "Generate graphviz of dependencies, see CMakeGraphVizOptions.cmake for more"
+      },
+      {
+        "paramName": "--system-information [file]",
+        "description": "Dump information about this system"
+      },
+      {
+        "paramName": "--print-config-dir",
+        "description": "Print CMake config directory for user-wide FileAPI queries"
+      },
+      {
+        "paramName": "--log-level=<ERROR|WARNING|NOTICE|STATUS|VERBOSE|DEBUG|TRACE>",
+        "description": "Set the verbosity of messages from CMake files. --loglevel is also accepted for backward compatibility reasons"
+      },
+      {
+        "paramName": "--log-context",
+        "description": "Prepend log messages with context, if given"
+      },
+      {
+        "paramName": "--debug-trycompile",
+        "description": "Do not delete the try_compile build tree. Only useful on one try_compile at a time"
+      },
+      {
+        "paramName": "--debug-output",
+        "description": "Put cmake in a debug mode"
+      },
+      {
+        "paramName": "--debug-find",
+        "description": "Put cmake find in a debug mode"
+      },
+      {
+        "paramName": "--debug-find-pkg=<pkg-name>[,...]",
+        "description": "Limit cmake debug-find to the comma-separated list of packages"
+      },
+      {
+        "paramName": "--debug-find-var=<var-name>[,...]",
+        "description": "Limit cmake debug-find to the comma-separated list of result variables"
+      },
+      {
+        "paramName": "--trace",
+        "description": "Put cmake in trace mode"
+      },
+      {
+        "paramName": "--trace-expand",
+        "description": "Put cmake in trace mode with variable expansion"
+      },
+      {
+        "paramName": "--trace-format=<human|json-v1>",
+        "description": "Set the output format of the trace"
+      },
+      {
+        "paramName": "--trace-source=<file>",
+        "description": "Trace only this CMake file/module. Multiple options allowed"
+      },
+      {
+        "paramName": "--trace-redirect=<file>",
+        "description": "Redirect trace output to a file instead of stderr"
+      },
+      {
+        "paramName": "--warn-uninitialized",
+        "description": "Warn about uninitialized values"
+      },
+      {
+        "paramName": "--no-warn-unused-cli",
+        "description": "Don't warn about command line options"
+      },
+      {
+        "paramName": "--check-system-vars",
+        "description": "Find problems with variable usage in system files"
+      },
+      {
+        "paramName": "--compile-no-warning-as-error",
+        "description": "Ignore COMPILE_WARNING_AS_ERROR property and CMAKE_COMPILE_WARNING_AS_ERROR variable"
+      },
+      {
+        "paramName": "--link-no-warning-as-error",
+        "description": "Ignore LINK_WARNING_AS_ERROR property and CMAKE_LINK_WARNING_AS_ERROR variable"
+      },
+      {
+        "paramName": "--profiling-format=<fmt>",
+        "description": "Output data for profiling CMake scripts. Supported formats: google-trace"
+      },
+      {
+        "paramName": "--profiling-output=<file>",
+        "description": "Select an output path for the profiling data enabled through --profiling-format"
+      },
+      {
+        "paramName": "-h, -H, --help, -help, -usage, /?",
+        "description": "Print usage information and exit"
+      },
+      {
+        "paramName": "--version, -version, /V [<file>]",
+        "description": "Print version number and exit"
+      },
+      {
+        "paramName": "--help <keyword> [<file>]",
+        "description": "Print help for one keyword and exit"
+      },
+      {
+        "paramName": "--help-full [<file>]",
+        "description": "Print all help manuals and exit"
+      },
+      {
+        "paramName": "--help-manual <man> [<file>]",
+        "description": "Print one help manual and exit"
+      },
+      {
+        "paramName": "--help-manual-list [<file>]",
+        "description": "List help manuals available and exit"
+      },
+      {
+        "paramName": "--help-commands [<file>]",
+        "description": "Print cmake-commands manual and exit"
+      },
+      {
+        "paramName": "--help-module <mod> [<file>]",
+        "description": "Print help for one module and exit"
+      },
+      {
+        "paramName": "--help-module-list [<file>]",
+        "description": "List modules with help available and exit"
+      },
+      {
+        "paramName": "--help-modules [<file>]",
+        "description": "Print cmake-modules manual and exit"
+      },
+      {
+        "paramName": "--help-policy <cmp> [<file>]",
+        "description": "Print help for one policy and exit"
+      },
+      {
+        "paramName": "--help-policy-list [<file>]",
+        "description": "List policies with help available and exit"
+      },
+      {
+        "paramName": "--help-policies [<file>]",
+        "description": "Print cmake-policies manual and exit"
+      },
+      {
+        "paramName": "--help-property <prop> [<file>]",
+        "description": "Print help for one property and exit"
+      },
+      {
+        "paramName": "--help-property-list [<file>]",
+        "description": "List properties with help available and exit"
+      },
+      {
+        "paramName": "--help-properties [<file>]",
+        "description": "Print cmake-properties manual and exit"
+      },
+      {
+        "paramName": "--help-variable <var> [<file>]",
+        "description": "Print help for one variable and exit"
+      },
+      {
+        "paramName": "--help-variable-list [<file>]",
+        "description": "List variables with help available and exit"
+      },
+      {
+        "paramName": "--help-variables [<file>]",
+        "description": "Print cmake-variables manual and exit"
+      }
+    ],
+    "examples": [
+      "cmake .",
+      "cmake -S src -B build",
+      "cmake -D CMAKE_BUILD_TYPE=Release -S src -B build"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "cpack",
+    "description": "CMake 打包工具，用于将 CMake 构建的项目打包为各种格式的安装包或压缩包",
+    "syntax": "cpack [options]",
+    "options": [
+      {
+        "paramName": "-G <generators>",
+        "description": "Override/define CPACK_GENERATOR"
+      },
+      {
+        "paramName": "-C <Configurations>",
+        "description": "Specify the project configuration(s)"
+      },
+      {
+        "paramName": "-D <var>=<value>",
+        "description": "Set a CPack variable."
+      },
+      {
+        "paramName": "--config <configFile>",
+        "description": "Specify the config file."
+      },
+      {
+        "paramName": "-V, --verbose",
+        "description": "Enable verbose output"
+      },
+      {
+        "paramName": "--trace",
+        "description": "Put underlying cmake scripts in trace mode."
+      },
+      {
+        "paramName": "--trace-expand",
+        "description": "Put underlying cmake scripts in expanded trace mode."
+      },
+      {
+        "paramName": "--debug",
+        "description": "Enable debug output (for CPack developers)"
+      },
+      {
+        "paramName": "-P <packageName>",
+        "description": "Override/define CPACK_PACKAGE_NAME"
+      },
+      {
+        "paramName": "-R <packageVersion>",
+        "description": "Override/define CPACK_PACKAGE_VERSION"
+      },
+      {
+        "paramName": "-B <packageDirectory>",
+        "description": "Override/define CPACK_PACKAGE_DIRECTORY"
+      },
+      {
+        "paramName": "--vendor <vendorName>",
+        "description": "Override/define CPACK_PACKAGE_VENDOR"
+      },
+      {
+        "paramName": "--preset",
+        "description": "Read arguments from a package preset"
+      },
+      {
+        "paramName": "--list-presets",
+        "description": "List available package presets"
+      },
+      {
+        "paramName": "-h, -H, --help, -help, -usage, /?",
+        "description": "Print usage information and exit."
+      },
+      {
+        "paramName": "--version, -version, /V [<file>]",
+        "description": "Print version number and exit."
+      },
+      {
+        "paramName": "--help <keyword> [<file>]",
+        "description": "Print help for one keyword and exit."
+      },
+      {
+        "paramName": "--help-full [<file>]",
+        "description": "Print all help manuals and exit."
+      },
+      {
+        "paramName": "--help-manual <man> [<file>]",
+        "description": "Print one help manual and exit."
+      },
+      {
+        "paramName": "--help-manual-list [<file>]",
+        "description": "List help manuals available and exit."
+      },
+      {
+        "paramName": "--help-command <cmd> [<file>]",
+        "description": "Print help for one command and exit."
+      },
+      {
+        "paramName": "--help-command-list [<file>]",
+        "description": "List commands with help available and exit."
+      },
+      {
+        "paramName": "--help-commands [<file>]",
+        "description": "Print cmake-commands manual and exit."
+      },
+      {
+        "paramName": "--help-module <mod> [<file>]",
+        "description": "Print help for one module and exit."
+      },
+      {
+        "paramName": "--help-module-list [<file>]",
+        "description": "List modules with help available and exit."
+      },
+      {
+        "paramName": "--help-modules [<file>]",
+        "description": "Print cmake-modules manual and exit."
+      },
+      {
+        "paramName": "--help-policy <cmp> [<file>]",
+        "description": "Print help for one policy and exit."
+      },
+      {
+        "paramName": "--help-policy-list [<file>]",
+        "description": "List policies with help available and exit."
+      },
+      {
+        "paramName": "--help-policies [<file>]",
+        "description": "Print cmake-policies manual and exit."
+      },
+      {
+        "paramName": "--help-property <prop> [<file>]",
+        "description": "Print help for one property and exit."
+      },
+      {
+        "paramName": "--help-property-list [<file>]",
+        "description": "List properties with help available and exit."
+      },
+      {
+        "paramName": "--help-properties [<file>]",
+        "description": "Print cmake-properties manual and exit."
+      },
+      {
+        "paramName": "--help-variable <var> [<file>]",
+        "description": "Print help for one variable and exit."
+      },
+      {
+        "paramName": "--help-variable-list [<file>]",
+        "description": "List variables with help available and exit."
+      },
+      {
+        "paramName": "--help-variables [<file>]",
+        "description": "Print cmake-variables manual and exit."
+      }
+    ],
+    "examples": [
+      "cpack --help",
+      "cpack --version"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ctest",
+    "description": "CMake 测试工具，用于执行 CMake 项目中定义的测试用例，支持并行执行、测试过滤和结果输出",
+    "syntax": "ctest [options]",
+    "options": [
+      {
+        "paramName": "--preset <preset>, --preset=<preset>",
+        "description": "Read arguments from a test preset."
+      },
+      {
+        "paramName": "--list-presets",
+        "description": "List available test presets."
+      },
+      {
+        "paramName": "-C <cfg>, --build-config <cfg>",
+        "description": "Choose configuration to test."
+      },
+      {
+        "paramName": "--progress",
+        "description": "Enable short progress output from tests."
+      },
+      {
+        "paramName": "-V, --verbose",
+        "description": "Enable verbose output from tests."
+      },
+      {
+        "paramName": "-VV, --extra-verbose",
+        "description": "Enable more verbose output from tests."
+      },
+      {
+        "paramName": "--debug",
+        "description": "Displaying more verbose internals of CTest."
+      },
+      {
+        "paramName": "--output-on-failure",
+        "description": "Output anything outputted by the test program if the test should fail."
+      },
+      {
+        "paramName": "--stop-on-failure",
+        "description": "Stop running the tests after one has failed."
+      },
+      {
+        "paramName": "--test-output-size-passed <size>",
+        "description": "Limit the output for passed tests to <size> bytes"
+      },
+      {
+        "paramName": "--test-output-size-failed <size>",
+        "description": "Limit the output for failed tests to <size> bytes"
+      },
+      {
+        "paramName": "--test-output-truncation <mode>",
+        "description": "Truncate 'tail' (default), 'middle' or 'head' of test output once maximum output size is reached"
+      },
+      {
+        "paramName": "-F",
+        "description": "Enable failover."
+      },
+      {
+        "paramName": "-j [<level>], --parallel [<level>]",
+        "description": "Run tests in parallel, optionally limited to a given level of parallelism."
+      },
+      {
+        "paramName": "-Q, --quiet",
+        "description": "Make ctest quiet."
+      },
+      {
+        "paramName": "-O <file>, --output-log <file>",
+        "description": "Output to log file"
+      },
+      {
+        "paramName": "--output-junit <file>",
+        "description": "Output test results to JUnit XML file."
+      },
+      {
+        "paramName": "-N, --show-only[=format]",
+        "description": "Disable actual execution of tests.  The optional 'format' defines the format of the test information and can be 'human' for the current text format or 'json-v1' for json format.  Defaults to 'human'."
+      },
+      {
+        "paramName": "-L <regex>, --label-regex <regex>",
+        "description": "Run tests with labels matching regular expression.  With multiple -L, run tests where each regular expression matches at least one label."
+      },
+      {
+        "paramName": "-R <regex>, --tests-regex <regex>",
+        "description": "Run tests matching regular expression."
+      },
+      {
+        "paramName": "-E <regex>, --exclude-regex <regex>",
+        "description": "Exclude tests matching regular expression."
+      },
+      {
+        "paramName": "-LE <regex>, --label-exclude <regex>",
+        "description": "Exclude tests with labels matching regular expression.  With multiple -LE, exclude tests where each regular expression matches at least one label."
+      },
+      {
+        "paramName": "-FA <regex>, --fixture-exclude-any <regex>",
+        "description": "Do not automatically add any tests for fixtures matching regular expression."
+      },
+      {
+        "paramName": "-FS <regex>, --fixture-exclude-setup <regex>",
+        "description": "Do not automatically add setup tests for fixtures matching regular expression."
+      },
+      {
+        "paramName": "-FC <regex>, --fixture-exclude-cleanup <regex>",
+        "description": "Do not automatically add cleanup tests for fixtures matching regular expression."
+      },
+      {
+        "paramName": "-D <dashboard>, --dashboard <dashboard>",
+        "description": "Execute dashboard test"
+      },
+      {
+        "paramName": "-D <var>:<type>=<value>",
+        "description": "Define a variable for script mode"
+      },
+      {
+        "paramName": "-M <model>, --test-model <model>",
+        "description": "Sets the model for a dashboard"
+      },
+      {
+        "paramName": "-T <action>, --test-action <action>",
+        "description": "Sets the dashboard action to perform"
+      },
+      {
+        "paramName": "--group <group>",
+        "description": "Specify what build group on the dashboard you'd like to submit results to."
+      },
+      {
+        "paramName": "-S <script>, --script <script>",
+        "description": "Execute a dashboard for a configuration"
+      },
+      {
+        "paramName": "-SP <script>, --script-new-process <script>",
+        "description": "Execute a dashboard for a configuration"
+      },
+      {
+        "paramName": "-A <file>, --add-notes <file>",
+        "description": "Add a notes file with submission"
+      },
+      {
+        "paramName": "-I [Start,End,Stride,test#,test#|Test file], --tests-information",
+        "description": "Run a specific number of tests by number."
+      },
+      {
+        "paramName": "-U, --union",
+        "description": "Take the Union of -I and -R"
+      },
+      {
+        "paramName": "--rerun-failed",
+        "description": "Run only the tests that failed previously"
+      },
+      {
+        "paramName": "--tests-from-file <file>",
+        "description": "Run the tests listed in the given file"
+      },
+      {
+        "paramName": "--exclude-from-file <file>",
+        "description": "Run tests except those listed in the given file"
+      },
+      {
+        "paramName": "--repeat until-fail:<n>, --repeat-until-fail <n>",
+        "description": "Require each test to run <n> times without failing in order to pass"
+      },
+      {
+        "paramName": "--repeat until-pass:<n>",
+        "description": "Allow each test to run up to <n> times in order to pass"
+      },
+      {
+        "paramName": "--repeat after-timeout:<n>",
+        "description": "Allow each test to run up to <n> times if it times out"
+      },
+      {
+        "paramName": "--max-width <width>",
+        "description": "Set the max width for a test name to output"
+      },
+      {
+        "paramName": "--interactive-debug-mode [0|1]",
+        "description": "Set the interactive mode to 0 or 1."
+      },
+      {
+        "paramName": "--resource-spec-file <file>",
+        "description": "Set the resource spec file to use."
+      },
+      {
+        "paramName": "--no-label-summary",
+        "description": "Disable timing summary information for labels."
+      },
+      {
+        "paramName": "--no-subproject-summary",
+        "description": "Disable timing summary information for subprojects."
+      },
+      {
+        "paramName": "--test-dir <dir>",
+        "description": "Specify the directory in which to look for tests."
+      },
+      {
+        "paramName": "--build-and-test",
+        "description": "Configure, build and run a test."
+      },
+      {
+        "paramName": "--build-target",
+        "description": "Specify a specific target to build."
+      },
+      {
+        "paramName": "--build-nocmake",
+        "description": "Run the build without running cmake first."
+      },
+      {
+        "paramName": "--build-run-dir",
+        "description": "Specify directory to run programs from."
+      },
+      {
+        "paramName": "--build-two-config",
+        "description": "Run CMake twice"
+      },
+      {
+        "paramName": "--build-exe-dir",
+        "description": "Specify the directory for the executable."
+      },
+      {
+        "paramName": "--build-generator",
+        "description": "Specify the generator to use."
+      },
+      {
+        "paramName": "--build-generator-platform",
+        "description": "Specify the generator-specific platform."
+      },
+      {
+        "paramName": "--build-generator-toolset",
+        "description": "Specify the generator-specific toolset."
+      },
+      {
+        "paramName": "--build-project",
+        "description": "Specify the name of the project to build."
+      },
+      {
+        "paramName": "--build-makeprogram",
+        "description": "Specify the make program to use."
+      },
+      {
+        "paramName": "--build-noclean",
+        "description": "Skip the make clean step."
+      },
+      {
+        "paramName": "--build-config-sample",
+        "description": "A sample executable to use to determine the configuration"
+      },
+      {
+        "paramName": "--build-options",
+        "description": "Add extra options to the build step."
+      },
+      {
+        "paramName": "--test-command",
+        "description": "The test to run with the --build-and-test option."
+      },
+      {
+        "paramName": "--test-timeout",
+        "description": "The time limit in seconds, internal use only."
+      },
+      {
+        "paramName": "--test-load",
+        "description": "CPU load threshold for starting new parallel tests."
+      },
+      {
+        "paramName": "--tomorrow-tag",
+        "description": "Nightly or experimental starts with next day tag."
+      },
+      {
+        "paramName": "--overwrite",
+        "description": "Overwrite CTest configuration option."
+      },
+      {
+        "paramName": "--extra-submit <file>[;<file>]",
+        "description": "Submit extra files to the dashboard."
+      },
+      {
+        "paramName": "--http-header <header>",
+        "description": "Append HTTP header when submitting"
+      },
+      {
+        "paramName": "--schedule-random",
+        "description": "Use a random order for scheduling tests"
+      },
+      {
+        "paramName": "--schedule-random-seed",
+        "description": "Override seed for random order of tests"
+      },
+      {
+        "paramName": "--submit-index",
+        "description": "Submit individual dashboard tests with specific index"
+      },
+      {
+        "paramName": "--timeout <seconds>",
+        "description": "Set the default test timeout."
+      },
+      {
+        "paramName": "--stop-time <time>",
+        "description": "Set a time at which all tests should stop running."
+      },
+      {
+        "paramName": "--http1.0",
+        "description": "Submit using HTTP 1.0."
+      },
+      {
+        "paramName": "--no-compress-output",
+        "description": "Do not compress test output when submitting."
+      },
+      {
+        "paramName": "--print-labels",
+        "description": "Print all available test labels."
+      },
+      {
+        "paramName": "--no-tests=<[error|ignore]>",
+        "description": "Regard no tests found either as 'error' or 'ignore' it."
+      },
+      {
+        "paramName": "-h, -H, --help, -help, -usage, /?",
+        "description": "Print usage information and exit."
+      },
+      {
+        "paramName": "--version, -version, /V [<file>]",
+        "description": "Print version number and exit."
+      },
+      {
+        "paramName": "--help <keyword> [<file>]",
+        "description": "Print help for one keyword and exit."
+      },
+      {
+        "paramName": "--help-full [<file>]",
+        "description": "Print all help manuals and exit."
+      },
+      {
+        "paramName": "--help-manual <man> [<file>]",
+        "description": "Print one help manual and exit."
+      },
+      {
+        "paramName": "--help-manual-list [<file>]",
+        "description": "List help manuals available and exit."
+      },
+      {
+        "paramName": "--help-command <cmd> [<file>]",
+        "description": "Print help for one command and exit."
+      },
+      {
+        "paramName": "--help-command-list [<file>]",
+        "description": "List commands with help available and exit."
+      },
+      {
+        "paramName": "--help-commands [<file>]",
+        "description": "Print cmake-commands manual and exit."
+      },
+      {
+        "paramName": "--help-module <mod> [<file>]",
+        "description": "Print help for one module and exit."
+      },
+      {
+        "paramName": "--help-module-list [<file>]",
+        "description": "List modules with help available and exit."
+      },
+      {
+        "paramName": "--help-modules [<file>]",
+        "description": "Print cmake-modules manual and exit."
+      },
+      {
+        "paramName": "--help-policy <cmp> [<file>]",
+        "description": "Print help for one policy and exit."
+      },
+      {
+        "paramName": "--help-policy-list [<file>]",
+        "description": "List policies with help available and exit."
+      },
+      {
+        "paramName": "--help-policies [<file>]",
+        "description": "Print cmake-policies manual and exit."
+      },
+      {
+        "paramName": "--help-property <prop> [<file>]",
+        "description": "Print help for one property and exit."
+      },
+      {
+        "paramName": "--help-property-list [<file>]",
+        "description": "List properties with help available and exit."
+      },
+      {
+        "paramName": "--help-properties [<file>]",
+        "description": "Print cmake-properties manual and exit."
+      },
+      {
+        "paramName": "--help-variable <var> [<file>]",
+        "description": "Print help for one variable and exit."
+      },
+      {
+        "paramName": "--help-variable-list [<file>]",
+        "description": "List variables with help available and exit."
+      },
+      {
+        "paramName": "--help-variables [<file>]",
+        "description": "Print cmake-variables manual and exit."
+      }
+    ],
+    "examples": [
+      "ctest --help",
+      "ctest --version",
+      "ctest -C Release -V"
+    ],
+    "showDetails": false
+  }
+]

@@ -1,0 +1,479 @@
+[
+  {
+    "name": "egrep",
+    "description": "正则表达式匹配工具（grep的扩展版本），用于查找文件中匹配扩展正则表达式的行。",
+    "syntax": "egrep [-EFrivwcloqsHbhn] [-ABC NUM] [-m MAX] [-e REGEX]... [-MS PATTERN]... [-f REGFILE] [FILE]...",
+    "options": [
+      {
+        "paramName": "-e",
+        "description": "Regex to match. (May be repeated.)"
+      },
+      {
+        "paramName": "-f",
+        "description": "File listing regular expressions to match."
+      },
+      {
+        "paramName": "-r",
+        "description": "Recurse into subdirectories (defaults FILE to \".\")"
+      },
+      {
+        "paramName": "-R",
+        "description": "Recurse into subdirectories and symlinks to directories"
+      },
+      {
+        "paramName": "-M",
+        "description": "Match filename pattern (--include)"
+      },
+      {
+        "paramName": "-S",
+        "description": "Skip filename pattern (--exclude)"
+      },
+      {
+        "paramName": "--exclude-dir=PATTERN",
+        "description": "Skip directory pattern"
+      },
+      {
+        "paramName": "-I",
+        "description": "Ignore binary files"
+      },
+      {
+        "paramName": "-A",
+        "description": "Show NUM lines after match"
+      },
+      {
+        "paramName": "-B",
+        "description": "Show NUM lines before match"
+      },
+      {
+        "paramName": "-C",
+        "description": "NUM lines context (A+B)"
+      },
+      {
+        "paramName": "-E",
+        "description": "extended regex syntax"
+      },
+      {
+        "paramName": "-F",
+        "description": "fixed (literal match)"
+      },
+      {
+        "paramName": "-a",
+        "description": "always text (not binary)"
+      },
+      {
+        "paramName": "-i",
+        "description": "case insensitive"
+      },
+      {
+        "paramName": "-m",
+        "description": "match MAX many lines"
+      },
+      {
+        "paramName": "-v",
+        "description": "invert match"
+      },
+      {
+        "paramName": "-w",
+        "description": "whole word (implies -E)"
+      },
+      {
+        "paramName": "-x",
+        "description": "whole line"
+      },
+      {
+        "paramName": "-z",
+        "description": "input NUL terminated"
+      },
+      {
+        "paramName": "-L",
+        "description": "filenames with no match"
+      },
+      {
+        "paramName": "-Z",
+        "description": "output is NUL terminated"
+      },
+      {
+        "paramName": "-c",
+        "description": "count of matching lines"
+      },
+      {
+        "paramName": "-l",
+        "description": "filenames with a match"
+      },
+      {
+        "paramName": "-o",
+        "description": "only matching part"
+      },
+      {
+        "paramName": "-q",
+        "description": "quiet (errors only)"
+      },
+      {
+        "paramName": "-s",
+        "description": "silent (no error msg)"
+      },
+      {
+        "paramName": "-H",
+        "description": "force filename"
+      },
+      {
+        "paramName": "-b",
+        "description": "byte offset of match"
+      },
+      {
+        "paramName": "-h",
+        "description": "hide filename"
+      },
+      {
+        "paramName": "-n",
+        "description": "line number of match"
+      }
+    ],
+    "examples": [
+      "egrep 'pattern' file.txt",
+      "egrep -i 'pattern' file1.txt file2.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "fgrep",
+    "description": "固定字符串匹配工具（grep的快速版本），用于按字面意思匹配固定字符串，不解析正则表达式",
+    "syntax": "fgrep [-EFrivwcloqsHbhn] [-ABC NUM] [-m MAX] [-e REGEX]... [-MS PATTERN]... [-f REGFILE] [FILE]...",
+    "options": [
+      {
+        "paramName": "-e",
+        "description": "Regex to match. (May be repeated.)"
+      },
+      {
+        "paramName": "-f",
+        "description": "File listing regular expressions to match."
+      },
+      {
+        "paramName": "-r",
+        "description": "Recurse into subdirectories (defaults FILE to \".\")"
+      },
+      {
+        "paramName": "-R",
+        "description": "Recurse into subdirectories and symlinks to directories"
+      },
+      {
+        "paramName": "-M",
+        "description": "Match filename pattern (--include)"
+      },
+      {
+        "paramName": "-S",
+        "description": "Skip filename pattern (--exclude)"
+      },
+      {
+        "paramName": "--exclude-dir=PATTERN",
+        "description": "Skip directory pattern"
+      },
+      {
+        "paramName": "-I",
+        "description": "Ignore binary files"
+      },
+      {
+        "paramName": "-A",
+        "description": "Show NUM lines after match"
+      },
+      {
+        "paramName": "-B",
+        "description": "Show NUM lines before match"
+      },
+      {
+        "paramName": "-C",
+        "description": "NUM lines context (A+B)"
+      },
+      {
+        "paramName": "-E",
+        "description": "extended regex syntax"
+      },
+      {
+        "paramName": "-F",
+        "description": "fixed (literal match)"
+      },
+      {
+        "paramName": "-a",
+        "description": "always text (not binary)"
+      },
+      {
+        "paramName": "-i",
+        "description": "case insensitive"
+      },
+      {
+        "paramName": "-m",
+        "description": "match MAX many lines"
+      },
+      {
+        "paramName": "-v",
+        "description": "invert match"
+      },
+      {
+        "paramName": "-w",
+        "description": "whole word (implies -E)"
+      },
+      {
+        "paramName": "-x",
+        "description": "whole line"
+      },
+      {
+        "paramName": "-z",
+        "description": "input NUL terminated"
+      },
+      {
+        "paramName": "-L",
+        "description": "filenames with no match"
+      },
+      {
+        "paramName": "-Z",
+        "description": "output is NUL terminated"
+      },
+      {
+        "paramName": "-c",
+        "description": "count of matching lines"
+      },
+      {
+        "paramName": "-l",
+        "description": "filenames with a match"
+      },
+      {
+        "paramName": "-o",
+        "description": "only matching part"
+      },
+      {
+        "paramName": "-q",
+        "description": "quiet (errors only)"
+      },
+      {
+        "paramName": "-s",
+        "description": "silent (no error msg)"
+      },
+      {
+        "paramName": "-H",
+        "description": "force filename"
+      },
+      {
+        "paramName": "-b",
+        "description": "byte offset of match"
+      },
+      {
+        "paramName": "-h",
+        "description": "hide filename"
+      },
+      {
+        "paramName": "-n",
+        "description": "line number of match"
+      }
+    ],
+    "examples": [
+      "fgrep 'hello world' file.txt",
+      "fgrep -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "grep",
+    "description": "文本搜索工具，用于在文件或标准输入中查找匹配指定模式（PATTERNS）的行",
+    "syntax": "grep [OPTION]... PATTERNS [FILE]...",
+    "options": [
+      {
+        "paramName": "-E, --extended-regexp",
+        "description": "PATTERNS are extended regular expressions"
+      },
+      {
+        "paramName": "-F, --fixed-strings",
+        "description": "PATTERNS are strings"
+      },
+      {
+        "paramName": "-G, --basic-regexp",
+        "description": "PATTERNS are basic regular expressions"
+      },
+      {
+        "paramName": "-P, --perl-regexp",
+        "description": "PATTERNS are Perl regular expressions"
+      },
+      {
+        "paramName": "-e, --regexp=PATTERNS",
+        "description": "use PATTERNS for matching"
+      },
+      {
+        "paramName": "-f, --file=FILE",
+        "description": "take PATTERNS from FILE"
+      },
+      {
+        "paramName": "-i, --ignore-case",
+        "description": "ignore case distinctions in patterns and data"
+      },
+      {
+        "paramName": "--no-ignore-case",
+        "description": "do not ignore case distinctions (default)"
+      },
+      {
+        "paramName": "-w, --word-regexp",
+        "description": "match only whole words"
+      },
+      {
+        "paramName": "-x, --line-regexp",
+        "description": "match only whole lines"
+      },
+      {
+        "paramName": "-z, --null-data",
+        "description": "a data line ends in 0 byte, not newline"
+      },
+      {
+        "paramName": "-s, --no-messages",
+        "description": "suppress error messages"
+      },
+      {
+        "paramName": "-v, --invert-match",
+        "description": "select non-matching lines"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display version information and exit"
+      },
+      {
+        "paramName": "--help",
+        "description": "display this help text and exit"
+      },
+      {
+        "paramName": "-m, --max-count=NUM",
+        "description": "stop after NUM selected lines"
+      },
+      {
+        "paramName": "-b, --byte-offset",
+        "description": "print the byte offset with output lines"
+      },
+      {
+        "paramName": "-n, --line-number",
+        "description": "print line number with output lines"
+      },
+      {
+        "paramName": "--line-buffered",
+        "description": "flush output on every line"
+      },
+      {
+        "paramName": "-H, --with-filename",
+        "description": "print file name with output lines"
+      },
+      {
+        "paramName": "-h, --no-filename",
+        "description": "suppress the file name prefix on output"
+      },
+      {
+        "paramName": "--label=LABEL",
+        "description": "use LABEL as the standard input file name prefix"
+      },
+      {
+        "paramName": "-o, --only-matching",
+        "description": "show only nonempty parts of lines that match"
+      },
+      {
+        "paramName": "-q, --quiet, --silent",
+        "description": "suppress all normal output"
+      },
+      {
+        "paramName": "--binary-files=TYPE",
+        "description": "assume that binary files are TYPE; TYPE is 'binary', 'text', or 'without-match'"
+      },
+      {
+        "paramName": "-a, --text",
+        "description": "equivalent to --binary-files=text"
+      },
+      {
+        "paramName": "-I",
+        "description": "equivalent to --binary-files=without-match"
+      },
+      {
+        "paramName": "-d, --directories=ACTION",
+        "description": "how to handle directories; ACTION is 'read', 'recurse', or 'skip'"
+      },
+      {
+        "paramName": "-D, --devices=ACTION",
+        "description": "how to handle devices, FIFOs and sockets; ACTION is 'read' or 'skip'"
+      },
+      {
+        "paramName": "-r, --recursive",
+        "description": "like --directories=recurse"
+      },
+      {
+        "paramName": "-R, --dereference-recursive",
+        "description": "likewise, but follow all symlinks"
+      },
+      {
+        "paramName": "--include=GLOB",
+        "description": "search only files that match GLOB (a file pattern)"
+      },
+      {
+        "paramName": "--exclude=GLOB",
+        "description": "skip files that match GLOB"
+      },
+      {
+        "paramName": "--exclude-from=FILE",
+        "description": "skip files that match any file pattern from FILE"
+      },
+      {
+        "paramName": "--exclude-dir=GLOB",
+        "description": "skip directories that match GLOB"
+      },
+      {
+        "paramName": "-L, --files-without-match",
+        "description": "print only names of FILEs with no selected lines"
+      },
+      {
+        "paramName": "-l, --files-with-matches",
+        "description": "print only names of FILEs with selected lines"
+      },
+      {
+        "paramName": "-c, --count",
+        "description": "print only a count of selected lines per FILE"
+      },
+      {
+        "paramName": "-T, --initial-tab",
+        "description": "make tabs line up (if needed)"
+      },
+      {
+        "paramName": "-Z, --null",
+        "description": "print 0 byte after FILE name"
+      },
+      {
+        "paramName": "-B, --before-context=NUM",
+        "description": "print NUM lines of leading context"
+      },
+      {
+        "paramName": "-A, --after-context=NUM",
+        "description": "print NUM lines of trailing context"
+      },
+      {
+        "paramName": "-C, --context=NUM",
+        "description": "print NUM lines of output context"
+      },
+      {
+        "paramName": "-NUM",
+        "description": "same as --context=NUM"
+      },
+      {
+        "paramName": "--group-separator=SEP",
+        "description": "print SEP on line between matches with context"
+      },
+      {
+        "paramName": "--no-group-separator",
+        "description": "do not print separator for matches with context"
+      },
+      {
+        "paramName": "--color[=WHEN], --colour[=WHEN]",
+        "description": "use markers to highlight the matching strings; WHEN is 'always', 'never', or 'auto'"
+      },
+      {
+        "paramName": "-U, --binary",
+        "description": "do not strip CR characters at EOL (MSDOS/Windows)"
+      }
+    ],
+    "examples": [
+      "grep -i 'hello world' menu.h main.c",
+      "grep -n 'error' log.txt",
+      "grep -f patterns.txt input.txt"
+    ],
+    "showDetails": false
+  }
+]

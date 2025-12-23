@@ -1,0 +1,131 @@
+[
+  {
+    "name": "xsltproc",
+    "description": "应用 XSLT 样式表将 XML 文档转换为其他格式（如 HTML、文本等）",
+    "syntax": "xsltproc [options] stylesheet file [file ...]",
+    "options": [
+      {
+        "paramName": "--version, -V",
+        "description": "Show the version of libxml and libxslt used"
+      },
+      {
+        "paramName": "--verbose, -v",
+        "description": "Show logs of what is happening"
+      },
+      {
+        "paramName": "--output file, -o file",
+        "description": "Save transformation result to a given file"
+      },
+      {
+        "paramName": "--timing",
+        "description": "Display the time used for transformation"
+      },
+      {
+        "paramName": "--repeat",
+        "description": "Run the transformation 20 times (for performance testing)"
+      },
+      {
+        "paramName": "--debug",
+        "description": "Dump the tree of the result instead of actual content"
+      },
+      {
+        "paramName": "--dumpextensions",
+        "description": "Dump the registered extension elements and functions to stdout"
+      },
+      {
+        "paramName": "--novalid",
+        "description": "Skip the DTD loading phase"
+      },
+      {
+        "paramName": "--nodtdattr",
+        "description": "Do not default attributes from the DTD"
+      },
+      {
+        "paramName": "--noout",
+        "description": "Do not dump the transformation result"
+      },
+      {
+        "paramName": "--maxdepth val",
+        "description": "Increase the maximum depth (default 3000)"
+      },
+      {
+        "paramName": "--maxvars val",
+        "description": "Increase the maximum variables (default 15000)"
+      },
+      {
+        "paramName": "--maxparserdepth val",
+        "description": "Increase the maximum parser depth"
+      },
+      {
+        "paramName": "--huge",
+        "description": "Relax any hardcoded limit from the parser, fixes \"parser error : internal error: Huge input lookup\""
+      },
+      {
+        "paramName": "--seed-rand val",
+        "description": "Initialize pseudo random number generator with specific seed"
+      },
+      {
+        "paramName": "--html",
+        "description": "Treat input document(s) as HTML file(s)"
+      },
+      {
+        "paramName": "--encoding",
+        "description": "Specify the input document character encoding"
+      },
+      {
+        "paramName": "--param name value",
+        "description": "Pass a (parameter, value) pair; name is a QName or {URI}NCName, value is UTF8 XPath expression (string values must be quoted)"
+      },
+      {
+        "paramName": "--stringparam name value",
+        "description": "Pass a (parameter, UTF8 string value) pair without XPath syntax"
+      },
+      {
+        "paramName": "--path \"paths\"",
+        "description": "Provide a set of paths for resources (DTDs, stylesheets, etc.)"
+      },
+      {
+        "paramName": "--nonet",
+        "description": "Refuse to fetch DTDs or entities over network"
+      },
+      {
+        "paramName": "--nowrite",
+        "description": "Refuse to write to any file or resource"
+      },
+      {
+        "paramName": "--nomkdir",
+        "description": "Refuse to create directories"
+      },
+      {
+        "paramName": "--writesubtree path",
+        "description": "Allow file write only within the specified path subtree"
+      },
+      {
+        "paramName": "--catalogs",
+        "description": "Use SGML catalogs from $SGML_CATALOG_FILES; default uses XML Catalogs from file:///etc/xml/catalog"
+      },
+      {
+        "paramName": "--xinclude",
+        "description": "Do XInclude processing on document input"
+      },
+      {
+        "paramName": "--xincludestyle",
+        "description": "Do XInclude processing on stylesheets"
+      },
+      {
+        "paramName": "--load-trace",
+        "description": "Print trace of all external entities loaded"
+      },
+      {
+        "paramName": "--profile, --norman",
+        "description": "Dump profiling information"
+      }
+    ],
+    "examples": [
+      "xsltproc style.xsl document.xml",
+      "xsltproc -o output.html style.xsl document.xml",
+      "xsltproc --timing --repeat style.xsl test.xml"
+    ],
+    "showDetails": false
+  }
+]

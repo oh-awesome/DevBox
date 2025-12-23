@@ -1,0 +1,339 @@
+[
+  {
+    "name": "autoconf",
+    "description": "从模板文件生成配置脚本的工具",
+    "syntax": "autoconf [OPTION]... [TEMPLATE-FILE]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "consider all files obsolete"
+      },
+      {
+        "paramName": "-o, --output=FILE",
+        "description": "save output in FILE (stdout is the default)"
+      },
+      {
+        "paramName": "-W, --warnings=CATEGORY",
+        "description": "report the warnings falling in CATEGORY (comma-separated list accepted)"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      },
+      {
+        "paramName": "-t, --trace=MACRO[:FORMAT]",
+        "description": "report the list of calls to MACRO"
+      },
+      {
+        "paramName": "-i, --initialization",
+        "description": "also trace Autoconf's initialization process"
+      }
+    ],
+    "examples": [
+      "autoconf -h",
+      "autoconf -V"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "autoheader",
+    "description": "为configure创建C语言#define语句模板文件的工具",
+    "syntax": "autoheader [OPTION]... [TEMPLATE-FILE]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "consider all files obsolete"
+      },
+      {
+        "paramName": "-W, --warnings=CATEGORY",
+        "description": "report the warnings falling in CATEGORY (comma-separated list accepted)"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      }
+    ],
+    "examples": [
+      "autoheader -V",
+      "autoheader --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "autom4te",
+    "description": "在文件上运行GNU M4，避免无用运行的工具",
+    "syntax": "autom4te [OPTION]... [FILES]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-o, --output=FILE",
+        "description": "save output in FILE (defaults to '-', stdout)"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "don't rely on cached values"
+      },
+      {
+        "paramName": "-W, --warnings=CATEGORY",
+        "description": "report the warnings falling in CATEGORY (comma-separated list accepted)"
+      },
+      {
+        "paramName": "-l, --language=LANG",
+        "description": "specify the set of M4 macros to use"
+      },
+      {
+        "paramName": "-C, --cache=DIRECTORY",
+        "description": "preserve results for future runs in DIRECTORY"
+      },
+      {
+        "paramName": "--no-cache",
+        "description": "disable the cache"
+      },
+      {
+        "paramName": "-m, --mode=OCTAL",
+        "description": "change the non trace output file mode (0666)"
+      },
+      {
+        "paramName": "-M, --melt",
+        "description": "don't use M4 frozen files"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      },
+      {
+        "paramName": "-t, --trace=MACRO[:FORMAT]",
+        "description": "report the MACRO invocations"
+      },
+      {
+        "paramName": "-p, --preselect=MACRO",
+        "description": "prepare to trace MACRO in a future run"
+      },
+      {
+        "paramName": "-F, --freeze",
+        "description": "produce an M4 frozen state file for FILES"
+      }
+    ],
+    "examples": [
+      "autom4te --version",
+      "autom4te -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "autoreconf",
+    "description": "自动重新生成GNU构建系统文件的工具",
+    "syntax": "autoreconf [OPTION]... [DIRECTORY]...",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "consider all generated and standard files obsolete"
+      },
+      {
+        "paramName": "-i, --install",
+        "description": "copy missing standard auxiliary files"
+      },
+      {
+        "paramName": "--no-recursive",
+        "description": "don't rebuild sub-packages"
+      },
+      {
+        "paramName": "-s, --symlink",
+        "description": "with -i, install symbolic links instead of copies"
+      },
+      {
+        "paramName": "-m, --make",
+        "description": "when applicable, re-run ./configure && make"
+      },
+      {
+        "paramName": "-W, --warnings=CATEGORY",
+        "description": "report the warnings falling in CATEGORY (comma-separated list accepted)"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      }
+    ],
+    "examples": [
+      "autoreconf -V",
+      "autoreconf  -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "autoscan",
+    "description": "检查源代码文件中的可移植性问题并为软件包创建初步configure.ac文件的工具",
+    "syntax": "autoscan [OPTION]... [SRCDIR]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      }
+    ],
+    "examples": [
+      "autoscan -h",
+      "autoscan -V"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "autoupdate",
+    "description": "将模板文件更新为当前Autoconf版本语法的工具",
+    "syntax": "autoupdate [OPTION]... [TEMPLATE-FILE]...",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print version number, then exit"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbosely report processing"
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "don't remove temporary files"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "consider all files obsolete"
+      },
+      {
+        "paramName": "-B, --prepend-include=DIR",
+        "description": "prepend directory DIR to search path"
+      },
+      {
+        "paramName": "-I, --include=DIR",
+        "description": "append directory DIR to search path"
+      }
+    ],
+    "examples": [
+      "autoupdate -h",
+      "autoupdate -V"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ifnames",
+    "description": "扫描C源文件中出现在#if、#elif、#ifdef或#ifndef指令中的标识符，并输出排序后的标识符列表及其所在文件",
+    "syntax": "/data/service/hnp/bin/ifnames [OPTION]... [FILE]...",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Print this help, then exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "Print version number, then exit"
+      }
+    ],
+    "examples": [
+      "ifnames file1.c file2.c",
+      "ifnames -h",
+      "ifnames --version"
+    ],
+    "showDetails": false
+  }
+]

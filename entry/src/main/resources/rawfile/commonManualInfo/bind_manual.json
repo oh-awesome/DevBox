@@ -1,0 +1,178 @@
+[
+  {
+    "name": "dig",
+    "description": "域名系统(DNS)查询工具，用于查询DNS服务器获取域名解析信息。",
+    "syntax": "dig [options]",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "Display complete list of options (use \"dig -h | more\" for pagination)"
+      },
+      {
+        "paramName": "@global-server",
+        "description": "Specify global DNS server to query (e.g., @8.8.8.8)"
+      },
+      {
+        "paramName": "@local-server",
+        "description": "Specify local DNS server to query for the corresponding host"
+      },
+      {
+        "paramName": "domain",
+        "description": "Target domain name to query (e.g., example.com)"
+      },
+      {
+        "paramName": "q-type",
+        "description": "Specify DNS query type (e.g., A, AAAA, MX, TXT, NS, CNAME)"
+      },
+      {
+        "paramName": "q-class",
+        "description": "Specify DNS query class (default: IN, other values include CH, HS)"
+      },
+      {
+        "paramName": "{q-opt}",
+        "description": "Query-specific options (see \"dig -h\" for complete details)"
+      },
+      {
+        "paramName": "{global-d-opt}",
+        "description": "Global DNS options (see \"dig -h\" for complete details)"
+      },
+      {
+        "paramName": "{local-d-opt}",
+        "description": "Local DNS options for the corresponding host (see \"dig -h\" for complete details)"
+      },
+      {
+        "paramName": "host",
+        "description": "Target host to query (can be a domain name or IP address for reverse lookup)"
+      }
+    ],
+    "examples": [
+      "dig example.com",
+      "dig @8.8.8.8 example.com",
+      "dig -x 8.8.8.8"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "host",
+    "description": "用于DNS查询的工具，可获取主机名对应的IP地址或域名相关的DNS记录信息",
+    "syntax": "host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time] [-R number] [-m flag] [-p port] hostname [server]\nhost -h (illegal, use --help reference)",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Equivalent to -v -t ANY"
+      },
+      {
+        "paramName": "-A",
+        "description": "Like -a but omits RRSIG, NSEC, NSEC3"
+      },
+      {
+        "paramName": "-c",
+        "description": "Specifies query class for non-IN data"
+      },
+      {
+        "paramName": "-C",
+        "description": "Compares SOA records on authoritative nameservers"
+      },
+      {
+        "paramName": "-d",
+        "description": "Equivalent to -v"
+      },
+      {
+        "paramName": "-l",
+        "description": "Lists all hosts in a domain, using AXFR"
+      },
+      {
+        "paramName": "-m",
+        "description": "Set memory debugging flag (trace|record|usage)"
+      },
+      {
+        "paramName": "-N",
+        "description": "Changes the number of dots allowed before root lookup is done"
+      },
+      {
+        "paramName": "-p",
+        "description": "Specifies the port on the server to query"
+      },
+      {
+        "paramName": "-r",
+        "description": "Disables recursive processing"
+      },
+      {
+        "paramName": "-R",
+        "description": "Specifies number of retries for UDP packets"
+      },
+      {
+        "paramName": "-s",
+        "description": "A SERVFAIL response should stop query"
+      },
+      {
+        "paramName": "-t",
+        "description": "Specifies the query type"
+      },
+      {
+        "paramName": "-T",
+        "description": "Enables TCP/IP mode"
+      },
+      {
+        "paramName": "-U",
+        "description": "Enables UDP mode"
+      },
+      {
+        "paramName": "-v",
+        "description": "Enables verbose output"
+      },
+      {
+        "paramName": "-V",
+        "description": "Print version number and exit"
+      },
+      {
+        "paramName": "-w",
+        "description": "Specifies to wait forever for a reply"
+      },
+      {
+        "paramName": "-W",
+        "description": "Specifies how long to wait for a reply"
+      },
+      {
+        "paramName": "-4",
+        "description": "Use IPv4 query transport only"
+      },
+      {
+        "paramName": "-6",
+        "description": "Use IPv6 query transport only"
+      }
+    ],
+    "examples": [
+      "host google.com",
+      "host -a github.com",
+      "host -t AAAA ipv6.google.com",
+      "host -V"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "nslookup",
+    "description": "DNS查询工具，用于查询域名解析信息，支持交互式操作。",
+    "syntax": "nslookup [options]",
+    "options": [
+      {
+        "paramName": "- server",
+        "description": "interactive mode using server"
+      },
+      {
+        "paramName": "host",
+        "description": "just look up host using default server"
+      },
+      {
+        "paramName": "host server",
+        "description": "just look up host using server"
+      }
+    ],
+    "examples": [
+      "nslookup example.com",
+      "nslookup example.com 8.8.8.8",
+      "nslookup -type=mx example.com"
+    ],
+    "showDetails": false
+  }
+]

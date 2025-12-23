@@ -1,0 +1,382 @@
+[
+  {
+    "name": "lz4",
+    "description": "极速的实时数据压缩算法和压缩工具，提供高压缩比和快速的解压速度。",
+    "syntax": "lz4 [arg] [input] [output]",
+    "options": [
+      {
+        "paramName": "-1",
+        "description": "fast compression (default)"
+      },
+      {
+        "paramName": "-12",
+        "description": "slowest compression level"
+      },
+      {
+        "paramName": "-T#",
+        "description": "use # threads for compression (default:0==auto)"
+      },
+      {
+        "paramName": "-d",
+        "description": "decompression (default for .lz4 extension)"
+      },
+      {
+        "paramName": "-f",
+        "description": "overwrite output without prompting"
+      },
+      {
+        "paramName": "-k",
+        "description": "preserve source files(s)  (default)"
+      },
+      {
+        "paramName": "--rm",
+        "description": "remove source file(s) after successful de/compression"
+      },
+      {
+        "paramName": "-h/-H",
+        "description": "display help/long help and exit"
+      },
+      {
+        "paramName": "-V",
+        "description": "display Version number and exit"
+      },
+      {
+        "paramName": "-v",
+        "description": "verbose mode"
+      },
+      {
+        "paramName": "-q",
+        "description": "suppress warnings; specify twice to suppress errors too"
+      },
+      {
+        "paramName": "-c",
+        "description": "force write to standard output, even if it is the console"
+      },
+      {
+        "paramName": "-t",
+        "description": "test compressed file integrity"
+      },
+      {
+        "paramName": "-m",
+        "description": "multiple input files (implies automatic output filenames)"
+      },
+      {
+        "paramName": "-r",
+        "description": "operate recursively on directories (sets also -m)"
+      },
+      {
+        "paramName": "-l",
+        "description": "compress using Legacy format (Linux kernel compression)"
+      },
+      {
+        "paramName": "-z",
+        "description": "force compression"
+      },
+      {
+        "paramName": "-D FILE",
+        "description": "use FILE as dictionary (compression & decompression)"
+      },
+      {
+        "paramName": "-B#",
+        "description": "cut file into blocks of size # bytes [32+] or predefined block size [4-7] (default: 7)"
+      },
+      {
+        "paramName": "-BI",
+        "description": "Block Independence (default)"
+      },
+      {
+        "paramName": "-BD",
+        "description": "Block dependency (improves compression ratio)"
+      },
+      {
+        "paramName": "-BX",
+        "description": "enable block checksum (default:disabled)"
+      },
+      {
+        "paramName": "--no-frame-crc",
+        "description": "disable stream checksum (default:enabled)"
+      },
+      {
+        "paramName": "--content-size",
+        "description": "compressed frame includes original size (default:not present)"
+      },
+      {
+        "paramName": "--list FILE",
+        "description": "lists information about .lz4 files (useful for files compressed with --content-size flag)"
+      },
+      {
+        "paramName": "--[no-]sparse",
+        "description": "sparse mode (default:enabled on file, disabled on stdout)"
+      },
+      {
+        "paramName": "--favor-decSpeed",
+        "description": "compressed files decompress faster, but are less compressed"
+      },
+      {
+        "paramName": "--fast[=#]",
+        "description": "switch to ultra fast compression level (default: 1)"
+      },
+      {
+        "paramName": "--best",
+        "description": "same as -12"
+      },
+      {
+        "paramName": "-b#",
+        "description": "benchmark file(s), using # compression level (default : 1)"
+      },
+      {
+        "paramName": "-e#",
+        "description": "test all compression levels from -bX to # (default : 1)"
+      },
+      {
+        "paramName": "-i#",
+        "description": "minimum evaluation time in seconds (default : 3s)"
+      }
+    ],
+    "examples": [
+      "lz4 -v file.txt",
+      "lz4 -d file.txt.lz4",
+      "lz4 -9 -T4 input.txt output.lz4",
+      "lz4 -c file.txt > compressed.lz4",
+      "lz4 -r -m source_dir/",
+      "lz4 --list archive.lz4",
+      "lz4 -t compressed.lz4",
+      "lz4 -B4 --content-size largefile.bin"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "lz4c",
+    "description": "lz4 压缩库的命令行界面",
+    "syntax": "lz4c [arg] [input] [output]",
+    "options": [
+      {
+        "paramName": "-1",
+        "description": "fast compression (default)"
+      },
+      {
+        "paramName": "-12",
+        "description": "slowest compression level"
+      },
+      {
+        "paramName": "-T#",
+        "description": "use # threads for compression (default:0==auto)"
+      },
+      {
+        "paramName": "-d",
+        "description": "decompression (default for .lz4 extension)"
+      },
+      {
+        "paramName": "-f",
+        "description": "overwrite output without prompting"
+      },
+      {
+        "paramName": "-k",
+        "description": "preserve source files(s) (default)"
+      },
+      {
+        "paramName": "--rm",
+        "description": "remove source file(s) after successful de/compression"
+      },
+      {
+        "paramName": "-h/-H",
+        "description": "display help/long help and exit"
+      }
+    ],
+    "examples": [
+      "lz4c -1 input.txt output.lz4",
+      "lz4c -d compressed.lz4 decompressed.txt",
+      "lz4c -f input.bin",
+      "lz4c -T4 largefile.dat",
+      "lz4c --rm archive.tar"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "lz4cat",
+    "description": "一个用于解压并将 lz4 压缩文件输出到标准输出的工具，类似于 gzip 的 'zcat'。",
+    "syntax": "lz4cat [arg] [input] [output]",
+    "options": [
+      {
+        "paramName": "-1",
+        "description": "fast compression (default)"
+      },
+      {
+        "paramName": "-12",
+        "description": "slowest compression level"
+      },
+      {
+        "paramName": "-T#",
+        "description": "use # threads for compression (default:0==auto)"
+      },
+      {
+        "paramName": "-d",
+        "description": "decompression (default for .lz4 extension)"
+      },
+      {
+        "paramName": "-f",
+        "description": "overwrite output without prompting"
+      },
+      {
+        "paramName": "-k",
+        "description": "preserve source files(s) (default)"
+      },
+      {
+        "paramName": "--rm",
+        "description": "remove source file(s) after successful de/compression"
+      },
+      {
+        "paramName": "-h/-H",
+        "description": "display help/long help and exit"
+      },
+      {
+        "paramName": "-V",
+        "description": "display Version number and exit"
+      },
+      {
+        "paramName": "-v",
+        "description": "verbose mode"
+      },
+      {
+        "paramName": "-q",
+        "description": "suppress warnings; specify twice to suppress errors too"
+      },
+      {
+        "paramName": "-c",
+        "description": "force write to standard output, even if it is the console"
+      },
+      {
+        "paramName": "-t",
+        "description": "test compressed file integrity"
+      },
+      {
+        "paramName": "-m",
+        "description": "multiple input files (implies automatic output filenames)"
+      },
+      {
+        "paramName": "-r",
+        "description": "operate recursively on directories (sets also -m)"
+      },
+      {
+        "paramName": "-l",
+        "description": "compress using Legacy format (Linux kernel compression)"
+      },
+      {
+        "paramName": "-z",
+        "description": "force compression"
+      },
+      {
+        "paramName": "-D FILE",
+        "description": "use FILE as dictionary (compression & decompression)"
+      },
+      {
+        "paramName": "-B#",
+        "description": "cut file into blocks of size # bytes [32+] or predefined block size [4-7] (default: 7)"
+      },
+      {
+        "paramName": "-BI",
+        "description": "Block Independence (default)"
+      },
+      {
+        "paramName": "-BD",
+        "description": "Block dependency (improves compression ratio)"
+      },
+      {
+        "paramName": "-BX",
+        "description": "enable block checksum (default:disabled)"
+      },
+      {
+        "paramName": "--no-frame-crc",
+        "description": "disable stream checksum (default:enabled)"
+      },
+      {
+        "paramName": "--content-size",
+        "description": "compressed frame includes original size (default:not present)"
+      },
+      {
+        "paramName": "--list FILE",
+        "description": "lists information about .lz4 files (useful for files compressed with --content-size flag)"
+      },
+      {
+        "paramName": "--[no-]sparse",
+        "description": "sparse mode (default:enabled on file, disabled on stdout)"
+      },
+      {
+        "paramName": "--favor-decSpeed",
+        "description": "compressed files decompress faster, but are less compressed"
+      },
+      {
+        "paramName": "--fast[=#]",
+        "description": "switch to ultra fast compression level (default: 1)"
+      },
+      {
+        "paramName": "--best",
+        "description": "same as -12"
+      },
+      {
+        "paramName": "-b#",
+        "description": "benchmark file(s), using # compression level (default : 1)"
+      },
+      {
+        "paramName": "-e#",
+        "description": "test all compression levels from -bX to # (default : 1)"
+      },
+      {
+        "paramName": "-i#",
+        "description": "minimum evaluation time in seconds (default : 3s)"
+      }
+    ],
+    "examples": [
+      "lz4cat compressed.lz4",
+      "lz4cat -v archive.lz4 | head -100",
+      "lz4cat -t file.lz4",
+      "lz4cat -c compressed.lz4 > decompressed.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unlz4",
+    "description": "一个专门用于解压使用 lz4 算法压缩的文件的工具",
+    "syntax": "unlz4 [arg] [input] [output]",
+    "options": [
+      {
+        "paramName": "-1",
+        "description": "fast compression (default)"
+      },
+      {
+        "paramName": "-12",
+        "description": "slowest compression level"
+      },
+      {
+        "paramName": "-T#",
+        "description": "use # threads for compression (default:0==auto)"
+      },
+      {
+        "paramName": "-d",
+        "description": "decompression (default for .lz4 extension)"
+      },
+      {
+        "paramName": "-f",
+        "description": "overwrite output without prompting"
+      },
+      {
+        "paramName": "-k",
+        "description": "preserve source files(s) (default)"
+      },
+      {
+        "paramName": "--rm",
+        "description": "remove source file(s) after successful de/compression"
+      },
+      {
+        "paramName": "-h/-H",
+        "description": "display help/long help and exit"
+      }
+    ],
+    "examples": [
+      "unlz4 compressed.lz4",
+      "unlz4 -f archive.lz4 output.txt",
+      "unlz4 -v input.lz4"
+    ],
+    "showDetails": false
+  }
+]

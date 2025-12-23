@@ -1,0 +1,348 @@
+[
+  {
+    "name": "less",
+    "description": "分页显示文件内容的工具，支持交互式浏览、搜索、跳转等操作",
+    "syntax": "less [OPTIONS] [FILE...]\nless --help\nless --version",
+    "options": [
+      {
+        "paramName": "-?",
+        "description": "--help (Display help from command line)"
+      },
+      {
+        "paramName": "-a",
+        "description": "--search-skip-screen (Search skips current screen)"
+      },
+      {
+        "paramName": "-A",
+        "description": "--SEARCH-SKIP-SCREEN (Search starts just after target line)"
+      },
+      {
+        "paramName": "-b [N]",
+        "description": "--buffers=[N] (Number of buffers)"
+      },
+      {
+        "paramName": "-B",
+        "description": "--auto-buffers (Don't automatically allocate buffers for pipes)"
+      },
+      {
+        "paramName": "-c",
+        "description": "--clear-screen (Repaint by clearing rather than scrolling)"
+      },
+      {
+        "paramName": "-d",
+        "description": "--dumb (Dumb terminal)"
+      },
+      {
+        "paramName": "-D xcolor",
+        "description": "--color=xcolor (Set screen colors)"
+      },
+      {
+        "paramName": "-e",
+        "description": "--quit-at-eof (Quit at end of file)"
+      },
+      {
+        "paramName": "-E",
+        "description": "--QUIT-AT-EOF (Quit at end of file)"
+      },
+      {
+        "paramName": "-f",
+        "description": "--force (Force open non-regular files)"
+      },
+      {
+        "paramName": "-F",
+        "description": "--quit-if-one-screen (Quit if entire file fits on first screen)"
+      },
+      {
+        "paramName": "-g",
+        "description": "--hilite-search (Highlight only last match for searches)"
+      },
+      {
+        "paramName": "-G",
+        "description": "--HILITE-SEARCH (Don't highlight any matches for searches)"
+      },
+      {
+        "paramName": "-h [N]",
+        "description": "--max-back-scroll=[N] (Backward scroll limit)"
+      },
+      {
+        "paramName": "-i",
+        "description": "--ignore-case (Ignore case in searches that do not contain uppercase)"
+      },
+      {
+        "paramName": "-I",
+        "description": "--IGNORE-CASE (Ignore case in all searches)"
+      },
+      {
+        "paramName": "-j [N]",
+        "description": "--jump-target=[N] (Screen position of target lines)"
+      },
+      {
+        "paramName": "-J",
+        "description": "--status-column (Display a status column at left edge of screen)"
+      },
+      {
+        "paramName": "-k [file]",
+        "description": "--lesskey-file=[file] (Use a lesskey file)"
+      },
+      {
+        "paramName": "-K",
+        "description": "--quit-on-intr (Exit less in response to ctrl-C)"
+      },
+      {
+        "paramName": "-L",
+        "description": "--no-lessopen (Ignore the LESSOPEN environment variable)"
+      },
+      {
+        "paramName": "-m",
+        "description": "--long-prompt (Set prompt style)"
+      },
+      {
+        "paramName": "-M",
+        "description": "--LONG-PROMPT (Set prompt style)"
+      },
+      {
+        "paramName": "-n",
+        "description": "--line-numbers (Suppress line numbers in prompts and messages)"
+      },
+      {
+        "paramName": "-N",
+        "description": "--LINE-NUMBERS (Display line number at start of each line)"
+      },
+      {
+        "paramName": "-o [file]",
+        "description": "--log-file=[file] (Copy to log file (standard input only))"
+      },
+      {
+        "paramName": "-O [file]",
+        "description": "--LOG-FILE=[file] (Copy to log file (unconditionally overwrite))"
+      },
+      {
+        "paramName": "-p [pattern]",
+        "description": "--pattern=[pattern] (Start at pattern (from command line))"
+      },
+      {
+        "paramName": "-P [prompt]",
+        "description": "--prompt=[prompt] (Define new prompt)"
+      },
+      {
+        "paramName": "-q",
+        "description": "--quiet (Quiet the terminal bell)"
+      },
+      {
+        "paramName": "-Q",
+        "description": "--QUIET (Quiet the terminal bell)"
+      },
+      {
+        "paramName": "-s",
+        "description": "--silent (Quiet the terminal bell)"
+      },
+      {
+        "paramName": "-S",
+        "description": "--SILENT (Quiet the terminal bell)"
+      },
+      {
+        "paramName": "-r",
+        "description": "--raw-control-chars (Output \"raw\" control characters)"
+      },
+      {
+        "paramName": "-R",
+        "description": "--RAW-CONTROL-CHARS (Output \"raw\" control characters)"
+      },
+      {
+        "paramName": "-s",
+        "description": "--squeeze-blank-lines (Squeeze multiple blank lines)"
+      },
+      {
+        "paramName": "-S",
+        "description": "--chop-long-lines (Chop (truncate) long lines rather than wrapping)"
+      },
+      {
+        "paramName": "-t [tag]",
+        "description": "--tag=[tag] (Find a tag)"
+      },
+      {
+        "paramName": "-T [tagsfile]",
+        "description": "--tag-file=[tagsfile] (Use an alternate tags file)"
+      },
+      {
+        "paramName": "-u",
+        "description": "--underline-special (Change handling of backspaces, tabs and carriage returns)"
+      },
+      {
+        "paramName": "-U",
+        "description": "--UNDERLINE-SPECIAL (Change handling of backspaces, tabs and carriage returns)"
+      },
+      {
+        "paramName": "-V",
+        "description": "--version (Display the version number of \"less\")"
+      },
+      {
+        "paramName": "-w",
+        "description": "--hilite-unread (Highlight first new line after forward-screen)"
+      },
+      {
+        "paramName": "-W",
+        "description": "--HILITE-UNREAD (Highlight first new line after any forward movement)"
+      },
+      {
+        "paramName": "-x [N[,...]]",
+        "description": "--tabs=[N[,...]] (Set tab stops)"
+      },
+      {
+        "paramName": "-X",
+        "description": "--no-init (Don't use termcap init/deinit strings)"
+      },
+      {
+        "paramName": "-y [N]",
+        "description": "--max-forw-scroll=[N] (Forward scroll limit)"
+      },
+      {
+        "paramName": "-z [N]",
+        "description": "--window=[N] (Set size of window)"
+      },
+      {
+        "paramName": "-\" [c[c]]",
+        "description": "--quotes=[c[c]] (Set shell quote characters)"
+      },
+      {
+        "paramName": "-~",
+        "description": "--tilde (Don't display tildes after end of file)"
+      },
+      {
+        "paramName": "-# [N]",
+        "description": "--shift=[N] (Set horizontal scroll amount (0 = one half screen width))"
+      },
+      {
+        "paramName": "--exit-follow-on-close",
+        "description": "Exit F command on a pipe when writer closes pipe"
+      },
+      {
+        "paramName": "--file-size",
+        "description": "Automatically determine the size of the input file"
+      },
+      {
+        "paramName": "--follow-name",
+        "description": "The F command changes files if the input file is renamed"
+      },
+      {
+        "paramName": "--header=[N[,M]]",
+        "description": "Use N lines and M columns to display file headers"
+      },
+      {
+        "paramName": "--incsearch",
+        "description": "Search file as each pattern character is typed in"
+      },
+      {
+        "paramName": "--intr=C",
+        "description": "Use C instead of ^X to interrupt a read"
+      },
+      {
+        "paramName": "--line-num-width=N",
+        "description": "Set the width of the -N line number field to N characters"
+      },
+      {
+        "paramName": "--modelines=N",
+        "description": "Read N lines from the input file and look for vim modelines"
+      },
+      {
+        "paramName": "--mouse",
+        "description": "Enable mouse input"
+      },
+      {
+        "paramName": "--no-keypad",
+        "description": "Don't send termcap keypad init/deinit strings"
+      },
+      {
+        "paramName": "--no-histdups",
+        "description": "Remove duplicates from command history"
+      },
+      {
+        "paramName": "--no-number-headers",
+        "description": "Don't give line numbers to header lines"
+      },
+      {
+        "paramName": "--no-search-headers",
+        "description": "Don't search in header lines or columns"
+      },
+      {
+        "paramName": "--no-vbell",
+        "description": "Disable the terminal's visual bell"
+      },
+      {
+        "paramName": "--redraw-on-quit",
+        "description": "Redraw final screen when quitting"
+      },
+      {
+        "paramName": "--rscroll=C",
+        "description": "Set the character used to mark truncated lines"
+      },
+      {
+        "paramName": "--save-marks",
+        "description": "Retain marks across invocations of less"
+      },
+      {
+        "paramName": "--search-options=[EFKNRW-]",
+        "description": "Set default options for every search"
+      },
+      {
+        "paramName": "--show-preproc-errors",
+        "description": "Display a message if preprocessor exits with an error status"
+      },
+      {
+        "paramName": "--proc-backspace",
+        "description": "Process backspaces for bold/underline"
+      },
+      {
+        "paramName": "--SPECIAL-BACKSPACE",
+        "description": "Treat backspaces as control characters"
+      },
+      {
+        "paramName": "--proc-return",
+        "description": "Delete carriage returns before newline"
+      },
+      {
+        "paramName": "--SPECIAL-RETURN",
+        "description": "Treat carriage returns as control characters"
+      },
+      {
+        "paramName": "--proc-tab",
+        "description": "Expand tabs to spaces"
+      },
+      {
+        "paramName": "--SPECIAL-TAB",
+        "description": "Treat tabs as control characters"
+      },
+      {
+        "paramName": "--status-col-width=N",
+        "description": "Set the width of the -J status column to N characters"
+      },
+      {
+        "paramName": "--status-line",
+        "description": "Highlight or color the entire line containing a mark"
+      },
+      {
+        "paramName": "--use-backslash",
+        "description": "Subsequent options use backslash as escape char"
+      },
+      {
+        "paramName": "--use-color",
+        "description": "Enables colored text"
+      },
+      {
+        "paramName": "--wheel-lines=N",
+        "description": "Each click of the mouse wheel moves N lines"
+      },
+      {
+        "paramName": "--wordwrap",
+        "description": "Wrap lines at spaces"
+      }
+    ],
+    "examples": [
+      "less file.txt",
+      "less -N logfile.log",
+      "less -i -p \"pattern\" document.txt",
+      "less --version"
+    ],
+    "showDetails": false
+  }
+]

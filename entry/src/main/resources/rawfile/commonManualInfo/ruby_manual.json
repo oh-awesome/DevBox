@@ -1,0 +1,1895 @@
+[
+  {
+    "name": "bundle",
+    "description": "Ruby依赖管理工具，为Ruby项目提供一致的运行环境",
+    "syntax": "bundle COMMAND [--no-color] [--verbose] [ARGS]",
+    "options": [
+      {
+        "paramName": "--no-color",
+        "description": "Print all output without color"
+      },
+      {
+        "paramName": "--retry, -r",
+        "description": "Specify the number of times you wish to attempt network commands"
+      },
+      {
+        "paramName": "--verbose, -V",
+        "description": "Print out additional logging information"
+      },
+      {
+        "paramName": "install",
+        "description": "Install the gems specified by the `Gemfile` or `Gemfile.lock`"
+      },
+      {
+        "paramName": "update",
+        "description": "Update dependencies to their latest versions"
+      },
+      {
+        "paramName": "cache",
+        "description": "Package the .gem files required by your application into the `vendor/cache` directory (aliases: `bundle package`, `bundle pack`)"
+      },
+      {
+        "paramName": "exec",
+        "description": "Execute a script in the current bundle"
+      },
+      {
+        "paramName": "config",
+        "description": "Specify and read configuration options for Bundler"
+      },
+      {
+        "paramName": "help",
+        "description": "Display detailed help for each subcommand"
+      },
+      {
+        "paramName": "add",
+        "description": "Add the named gem to the Gemfile and run `bundle install`"
+      },
+      {
+        "paramName": "binstubs",
+        "description": "Generate binstubs for executables in a gem"
+      },
+      {
+        "paramName": "check",
+        "description": "Determine whether the requirements for your application are installed and available to Bundler"
+      },
+      {
+        "paramName": "show",
+        "description": "Show the source location of a particular gem in the bundle"
+      },
+      {
+        "paramName": "outdated",
+        "description": "Show all of the outdated gems in the current bundle"
+      },
+      {
+        "paramName": "console",
+        "description": "Start an IRB session in the current bundle (deprecated)"
+      },
+      {
+        "paramName": "open",
+        "description": "Open an installed gem in the editor"
+      },
+      {
+        "paramName": "lock",
+        "description": "Generate a lockfile for your dependencies"
+      },
+      {
+        "paramName": "viz",
+        "description": "Generate a visual representation of your dependencies (deprecated)"
+      },
+      {
+        "paramName": "init",
+        "description": "Generate a simple `Gemfile`, placed in the current directory"
+      },
+      {
+        "paramName": "gem",
+        "description": "Create a simple gem, suitable for development with Bundler"
+      },
+      {
+        "paramName": "platform",
+        "description": "Display platform compatibility information"
+      },
+      {
+        "paramName": "clean",
+        "description": "Clean up unused gems in your Bundler directory"
+      },
+      {
+        "paramName": "doctor",
+        "description": "Display warnings about common problems"
+      },
+      {
+        "paramName": "remove",
+        "description": "Removes gems from the Gemfile"
+      },
+      {
+        "paramName": "plugin",
+        "description": "Manage Bundler plugins"
+      },
+      {
+        "paramName": "version",
+        "description": "Prints Bundler version information"
+      },
+      {
+        "paramName": "inject",
+        "description": "Obsolete command, should no longer be used"
+      }
+    ],
+    "examples": [
+      "bundle install",
+      "bundle update"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "bundler",
+    "description": "Ruby依赖管理工具，为Ruby项目提供一致的运行环境",
+    "syntax": "bundle COMMAND [--no-color] [--verbose] [ARGS]",
+    "options": [
+      {
+        "paramName": "--no-color",
+        "description": "Print all output without color"
+      },
+      {
+        "paramName": "--retry, -r",
+        "description": "Specify the number of times you wish to attempt network commands"
+      },
+      {
+        "paramName": "--verbose, -V",
+        "description": "Print out additional logging information"
+      },
+      {
+        "paramName": "install",
+        "description": "Install the gems specified by the `Gemfile` or `Gemfile.lock`"
+      },
+      {
+        "paramName": "update",
+        "description": "Update dependencies to their latest versions"
+      },
+      {
+        "paramName": "cache",
+        "description": "Package the .gem files required by your application into the `vendor/cache` directory (aliases: `bundle package`, `bundle pack`)"
+      },
+      {
+        "paramName": "exec",
+        "description": "Execute a script in the current bundle"
+      },
+      {
+        "paramName": "config",
+        "description": "Specify and read configuration options for Bundler"
+      },
+      {
+        "paramName": "help",
+        "description": "Display detailed help for each subcommand"
+      },
+      {
+        "paramName": "add",
+        "description": "Add the named gem to the Gemfile and run `bundle install`"
+      },
+      {
+        "paramName": "binstubs",
+        "description": "Generate binstubs for executables in a gem"
+      },
+      {
+        "paramName": "check",
+        "description": "Determine whether the requirements for your application are installed and available to Bundler"
+      },
+      {
+        "paramName": "show",
+        "description": "Show the source location of a particular gem in the bundle"
+      },
+      {
+        "paramName": "outdated",
+        "description": "Show all of the outdated gems in the current bundle"
+      },
+      {
+        "paramName": "console",
+        "description": "Start an IRB session in the current bundle (deprecated)"
+      },
+      {
+        "paramName": "open",
+        "description": "Open an installed gem in the editor"
+      },
+      {
+        "paramName": "lock",
+        "description": "Generate a lockfile for your dependencies"
+      },
+      {
+        "paramName": "viz",
+        "description": "Generate a visual representation of your dependencies (deprecated)"
+      },
+      {
+        "paramName": "init",
+        "description": "Generate a simple `Gemfile`, placed in the current directory"
+      },
+      {
+        "paramName": "gem",
+        "description": "Create a simple gem, suitable for development with Bundler"
+      },
+      {
+        "paramName": "platform",
+        "description": "Display platform compatibility information"
+      },
+      {
+        "paramName": "clean",
+        "description": "Clean up unused gems in your Bundler directory"
+      },
+      {
+        "paramName": "doctor",
+        "description": "Display warnings about common problems"
+      },
+      {
+        "paramName": "remove",
+        "description": "Removes gems from the Gemfile"
+      },
+      {
+        "paramName": "plugin",
+        "description": "Manage Bundler plugins"
+      },
+      {
+        "paramName": "version",
+        "description": "Prints Bundler version information"
+      },
+      {
+        "paramName": "inject",
+        "description": "Obsolete command, should no longer be used"
+      }
+    ],
+    "examples": [
+      "bundler --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "erb",
+    "description": "Ruby 嵌入式模板引擎，用于处理包含 Ruby 代码的模板文件，生成动态内容",
+    "syntax": "erb [switches] [var=value...] [inputfile]",
+    "options": [
+      {
+        "paramName": "-x",
+        "description": "print ruby script"
+      },
+      {
+        "paramName": "-n",
+        "description": "print ruby script with line number"
+      },
+      {
+        "paramName": "-v",
+        "description": "enable verbose mode"
+      },
+      {
+        "paramName": "-d",
+        "description": "set $DEBUG to true"
+      },
+      {
+        "paramName": "-r library",
+        "description": "load a library"
+      },
+      {
+        "paramName": "-E ex[:in]",
+        "description": "set default external/internal encodings"
+      },
+      {
+        "paramName": "-U",
+        "description": "set default encoding to UTF-8"
+      },
+      {
+        "paramName": "-T trim_mode",
+        "description": "specify trim_mode (0..2, -)"
+      },
+      {
+        "paramName": "-P",
+        "description": "disable ruby code evaluation for lines beginning with %"
+      },
+      {
+        "paramName": "var=value",
+        "description": "set variable"
+      }
+    ],
+    "examples": [
+      "erb --help",
+      "erb -x template.erb",
+      "erb -n -v template.erb"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "gem",
+    "description": "RubyGems 是 Ruby 语言的包管理器，用于安装、管理和发布 Ruby 软件包（gem）",
+    "syntax": "gem -h/--help,gem -v/--version,gem [global options...] command [arguments...] [options...]",
+    "options": [
+      {
+        "paramName": "-C PATH",
+        "description": "run as if gem was started in <PATH> instead of the current working directory"
+      }
+    ],
+    "examples": [
+      "gem --help",
+      "gem --version",
+      "gem install rake"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "irb",
+    "description": "Ruby的交互式解释器，用于交互式执行Ruby代码",
+    "syntax": "irb.rb [options] [programfile] [arguments]",
+    "options": [
+      {
+        "paramName": "-f",
+        "description": "Don't initialize from configuration file."
+      },
+      {
+        "paramName": "-d",
+        "description": "Set $DEBUG and $VERBOSE to true (same as 'ruby -d')."
+      },
+      {
+        "paramName": "-r load-module",
+        "description": "Require load-module (same as 'ruby -r')."
+      },
+      {
+        "paramName": "-I path",
+        "description": "Specify $LOAD_PATH directory (same as 'ruby -I')."
+      },
+      {
+        "paramName": "-U",
+        "description": "Set external and internal encodings to UTF-8."
+      },
+      {
+        "paramName": "-E ex[:in]",
+        "description": "Set default external (ex) and internal (in) encodings (same as 'ruby -E')."
+      },
+      {
+        "paramName": "-w",
+        "description": "Suppress warnings (same as 'ruby -w')."
+      },
+      {
+        "paramName": "-W[level=2]",
+        "description": "Set warning level: 0=silence, 1=medium, 2=verbose (same as 'ruby -W')."
+      },
+      {
+        "paramName": "--context-mode n",
+        "description": "Set n[0-4] to method to create Binding Object, when new workspace was created."
+      },
+      {
+        "paramName": "--extra-doc-dir",
+        "description": "Add an extra doc dir for the doc dialog."
+      },
+      {
+        "paramName": "--echo",
+        "description": "Show result (default)."
+      },
+      {
+        "paramName": "--noecho",
+        "description": "Don't show result."
+      },
+      {
+        "paramName": "--echo-on-assignment",
+        "description": "Show result on assignment."
+      },
+      {
+        "paramName": "--noecho-on-assignment",
+        "description": "Don't show result on assignment."
+      },
+      {
+        "paramName": "--truncate-echo-on-assignment",
+        "description": "Show truncated result on assignment (default)."
+      },
+      {
+        "paramName": "--inspect",
+        "description": "Use 'inspect' for output."
+      },
+      {
+        "paramName": "--noinspect",
+        "description": "Don't use 'inspect' for output."
+      },
+      {
+        "paramName": "--no-pager",
+        "description": "Don't use pager."
+      },
+      {
+        "paramName": "--multiline",
+        "description": "Use multiline editor module (default)."
+      },
+      {
+        "paramName": "--nomultiline",
+        "description": "Don't use multiline editor module."
+      },
+      {
+        "paramName": "--singleline",
+        "description": "Use single line editor module."
+      },
+      {
+        "paramName": "--nosingleline",
+        "description": "Don't use single line editor module (default)."
+      },
+      {
+        "paramName": "--colorize",
+        "description": "Use color-highlighting (default)."
+      },
+      {
+        "paramName": "--nocolorize",
+        "description": "Don't use color-highlighting."
+      },
+      {
+        "paramName": "--autocomplete",
+        "description": "Use auto-completion (default)."
+      },
+      {
+        "paramName": "--noautocomplete",
+        "description": "Don't use auto-completion."
+      },
+      {
+        "paramName": "--regexp-completor",
+        "description": "Use regexp based completion (default)."
+      },
+      {
+        "paramName": "--type-completor",
+        "description": "Use type based completion."
+      },
+      {
+        "paramName": "--prompt prompt-mode, --prompt-mode prompt-mode",
+        "description": "Set prompt mode. Pre-defined prompt modes are: 'default', 'classic', 'simple', 'inf-ruby', 'xmp', 'null'."
+      },
+      {
+        "paramName": "--inf-ruby-mode",
+        "description": "Use prompt appropriate for inf-ruby-mode on emacs. Suppresses --multiline and --singleline."
+      },
+      {
+        "paramName": "--sample-book-mode, --simple-prompt",
+        "description": "Set prompt mode to 'simple'."
+      },
+      {
+        "paramName": "--noprompt",
+        "description": "Don't output prompt."
+      },
+      {
+        "paramName": "--script",
+        "description": "Script mode (default, treat first argument as script)."
+      },
+      {
+        "paramName": "--noscript",
+        "description": "No script mode (leave arguments in argv)."
+      },
+      {
+        "paramName": "--single-irb",
+        "description": "Share self with sub-irb."
+      },
+      {
+        "paramName": "--tracer",
+        "description": "Show stack trace for each command."
+      },
+      {
+        "paramName": "--back-trace-limit n[=16]",
+        "description": "Display backtrace top n and bottom n."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Show details."
+      },
+      {
+        "paramName": "--noverbose",
+        "description": "Don't show details."
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Print the version of irb."
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Print help."
+      },
+      {
+        "paramName": "--",
+        "description": "Separate options of irb from the list of command-line args."
+      }
+    ],
+    "examples": [
+      "irb -f",
+      "irb -r json",
+      "irb --prompt simple",
+      "irb --version"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "racc",
+    "description": "Ruby 用 LALR 语法分析器生成器",
+    "syntax": "racc [options] [input]",
+    "options": [
+      {
+        "paramName": "-o",
+        "description": "output file name [<input>.tab.rb]"
+      },
+      {
+        "paramName": "--output-file=PATH",
+        "description": "output file name [<input>.tab.rb]"
+      },
+      {
+        "paramName": "-t",
+        "description": "Outputs debugging parser."
+      },
+      {
+        "paramName": "--debug",
+        "description": "Outputs debugging parser."
+      },
+      {
+        "paramName": "-g",
+        "description": "Equivalent to -t (obsolete)."
+      },
+      {
+        "paramName": "-v",
+        "description": "Creates <filename>.output log file."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Creates <filename>.output log file."
+      },
+      {
+        "paramName": "-O",
+        "description": "Log file name [<input>.output]"
+      },
+      {
+        "paramName": "--log-file=PATH",
+        "description": "Log file name [<input>.output]"
+      },
+      {
+        "paramName": "-e",
+        "description": "Makes executable parser."
+      },
+      {
+        "paramName": "--executable [RUBYPATH]",
+        "description": "Makes executable parser."
+      },
+      {
+        "paramName": "-E",
+        "description": "Embeds Racc runtime in output."
+      },
+      {
+        "paramName": "--embedded",
+        "description": "Embeds Racc runtime in output."
+      },
+      {
+        "paramName": "-F",
+        "description": "Add frozen_string_literals: true."
+      },
+      {
+        "paramName": "--frozen",
+        "description": "Add frozen_string_literals: true."
+      },
+      {
+        "paramName": "--line-convert-all",
+        "description": "Converts line numbers of user codes."
+      },
+      {
+        "paramName": "-l",
+        "description": "Never convert line numbers."
+      },
+      {
+        "paramName": "--no-line-convert",
+        "description": "Never convert line numbers."
+      },
+      {
+        "paramName": "-a",
+        "description": "Never omit actions."
+      },
+      {
+        "paramName": "--no-omit-actions",
+        "description": "Never omit actions."
+      },
+      {
+        "paramName": "--superclass=CLASSNAME",
+        "description": "Uses CLASSNAME instead of Racc::Parser."
+      },
+      {
+        "paramName": "-C",
+        "description": "Checks syntax and quit immediately."
+      },
+      {
+        "paramName": "--check-only",
+        "description": "Checks syntax and quit immediately."
+      },
+      {
+        "paramName": "-S",
+        "description": "Outputs internal status time to time."
+      },
+      {
+        "paramName": "--output-status",
+        "description": "Outputs internal status time to time."
+      },
+      {
+        "paramName": "-P",
+        "description": "Enables generator profile"
+      },
+      {
+        "paramName": "-D flags",
+        "description": "Flags for Racc debugging (do not use)."
+      },
+      {
+        "paramName": "--version",
+        "description": "Prints version and quit."
+      },
+      {
+        "paramName": "--runtime-version",
+        "description": "Prints runtime version and quit."
+      },
+      {
+        "paramName": "--copyright",
+        "description": "Prints copyright and quit."
+      },
+      {
+        "paramName": "--help",
+        "description": "Prints this message and quit."
+      }
+    ],
+    "examples": [
+      "racc calc.y",
+      "racc -o parser.rb -v grammar.y"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "rake",
+    "description": "Ruby 构建自动化工具（类似 make，基于 Rakefile 定义任务和依赖）",
+    "syntax": "rake [-f rakefile] {options} targets...",
+    "options": [
+      {
+        "paramName": "--backtrace=[OUT]",
+        "description": "Enable full backtrace. OUT can be stderr (default) or stdout."
+      },
+      {
+        "paramName": "--comments",
+        "description": "Show commented tasks only"
+      },
+      {
+        "paramName": "--job-stats [LEVEL]",
+        "description": "Display job statistics. LEVEL=history displays a complete job list"
+      },
+      {
+        "paramName": "--rules",
+        "description": "Trace the rules resolution."
+      },
+      {
+        "paramName": "--suppress-backtrace PATTERN",
+        "description": "Suppress backtrace lines matching regexp PATTERN. Ignored if --trace is on."
+      },
+      {
+        "paramName": "-A",
+        "description": "Show all tasks, even uncommented ones (in combination with -T or -D)"
+      },
+      {
+        "paramName": "--all",
+        "description": "Same as -A: show all tasks"
+      },
+      {
+        "paramName": "-B",
+        "description": "Build all prerequisites, including those which are up-to-date."
+      },
+      {
+        "paramName": "--build-all",
+        "description": "Same as -B: build all prerequisites"
+      },
+      {
+        "paramName": "-C",
+        "description": "Change to DIRECTORY before doing anything."
+      },
+      {
+        "paramName": "--directory [DIRECTORY]",
+        "description": "Same as -C: change working directory"
+      },
+      {
+        "paramName": "-D",
+        "description": "Describe the tasks (matching optional PATTERN), then exit."
+      },
+      {
+        "paramName": "--describe [PATTERN]",
+        "description": "Same as -D: describe tasks"
+      },
+      {
+        "paramName": "-e",
+        "description": "Execute some Ruby code and exit."
+      },
+      {
+        "paramName": "--execute CODE",
+        "description": "Same as -e: execute Ruby code"
+      },
+      {
+        "paramName": "-E",
+        "description": "Execute some Ruby code, then continue with normal task processing."
+      },
+      {
+        "paramName": "--execute-continue CODE",
+        "description": "Same as -E: execute Ruby code and continue"
+      },
+      {
+        "paramName": "-f",
+        "description": "Use FILENAME as the rakefile to search for."
+      },
+      {
+        "paramName": "--rakefile [FILENAME]",
+        "description": "Same as -f: specify Rakefile"
+      },
+      {
+        "paramName": "-G",
+        "description": "Use standard project Rakefile search paths, ignore system wide rakefiles."
+      },
+      {
+        "paramName": "--no-system",
+        "description": "Same as -G: ignore system-wide Rakefiles"
+      },
+      {
+        "paramName": "--nosystem",
+        "description": "Same as -G: ignore system-wide Rakefiles"
+      },
+      {
+        "paramName": "-g",
+        "description": "Using system wide (global) rakefiles (usually '~/.rake/*.rake')."
+      },
+      {
+        "paramName": "--system",
+        "description": "Same as -g: use system-wide Rakefiles"
+      },
+      {
+        "paramName": "-I",
+        "description": "Include LIBDIR in the search path for required modules."
+      },
+      {
+        "paramName": "--libdir LIBDIR",
+        "description": "Same as -I: add lib directory to search path"
+      },
+      {
+        "paramName": "-j",
+        "description": "Specifies the maximum number of tasks to execute in parallel. (default is number of CPU cores + 4)"
+      },
+      {
+        "paramName": "--jobs [NUMBER]",
+        "description": "Same as -j: parallel task execution"
+      },
+      {
+        "paramName": "-m",
+        "description": "Treat all tasks as multitasks."
+      },
+      {
+        "paramName": "--multitask",
+        "description": "Same as -m: multitask mode"
+      },
+      {
+        "paramName": "-n",
+        "description": "Do a dry run without executing actions."
+      },
+      {
+        "paramName": "--dry-run",
+        "description": "Same as -n: dry run"
+      },
+      {
+        "paramName": "-N",
+        "description": "Do not search parent directories for the Rakefile."
+      },
+      {
+        "paramName": "--no-search",
+        "description": "Same as -N: no Rakefile search in parent dirs"
+      },
+      {
+        "paramName": "--nosearch",
+        "description": "Same as -N: no Rakefile search in parent dirs"
+      },
+      {
+        "paramName": "-P",
+        "description": "Display the tasks and dependencies, then exit."
+      },
+      {
+        "paramName": "--prereqs",
+        "description": "Same as -P: show tasks and dependencies"
+      },
+      {
+        "paramName": "-p",
+        "description": "Execute some Ruby code, print the result, then exit."
+      },
+      {
+        "paramName": "--execute-print CODE",
+        "description": "Same as -p: execute Ruby code and print result"
+      },
+      {
+        "paramName": "-q",
+        "description": "Do not log messages to standard output."
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Same as -q: quiet mode"
+      },
+      {
+        "paramName": "-r",
+        "description": "Require MODULE before executing rakefile."
+      },
+      {
+        "paramName": "--require MODULE",
+        "description": "Same as -r: require module"
+      },
+      {
+        "paramName": "-R",
+        "description": "Auto-import any .rake files in RAKELIBDIR. (default is 'rakelib')"
+      },
+      {
+        "paramName": "--rakelibdir RAKELIBDIR",
+        "description": "Same as -R: specify rakelib directory"
+      },
+      {
+        "paramName": "--rakelib",
+        "description": "Same as -R: use default rakelib directory"
+      },
+      {
+        "paramName": "-s",
+        "description": "Like --quiet, but also suppresses the 'in directory' announcement."
+      },
+      {
+        "paramName": "--silent",
+        "description": "Same as -s: silent mode"
+      },
+      {
+        "paramName": "-t",
+        "description": "Turn on invoke/execute tracing, enable full backtrace. OUT can be stderr (default) or stdout."
+      },
+      {
+        "paramName": "--trace=[OUT]",
+        "description": "Same as -t: enable tracing"
+      },
+      {
+        "paramName": "-T",
+        "description": "Display the tasks (matching optional PATTERN) with descriptions, then exit. -AT combination displays all the tasks, including those without descriptions."
+      },
+      {
+        "paramName": "--tasks [PATTERN]",
+        "description": "Same as -T: list tasks"
+      },
+      {
+        "paramName": "-v",
+        "description": "Log message to standard output."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Same as -v: verbose mode"
+      },
+      {
+        "paramName": "-V",
+        "description": "Display the program version."
+      },
+      {
+        "paramName": "--version",
+        "description": "Same as -V: show version"
+      },
+      {
+        "paramName": "-W",
+        "description": "Describe the tasks (matching optional PATTERN), then exit."
+      },
+      {
+        "paramName": "--where [PATTERN]",
+        "description": "Same as -W: show task locations"
+      },
+      {
+        "paramName": "-X",
+        "description": "Disable the deprecation warnings."
+      },
+      {
+        "paramName": "--no-deprecation-warnings",
+        "description": "Same as -X: disable deprecation warnings"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display this help message."
+      },
+      {
+        "paramName": "-H",
+        "description": "Display this help message."
+      },
+      {
+        "paramName": "--help",
+        "description": "Display this help message."
+      }
+    ],
+    "examples": [
+      "rake build",
+      "rake -T",
+      "rake -D build",
+      "rake -e 'puts Rake.application.tasks.map(&:name)'"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "rbs",
+    "description": "Ruby 类型签名工具（用于定义和验证 Ruby 代码的类型信息）",
+    "syntax": "rbs [options...] [command...]",
+    "options": [
+      {
+        "paramName": "-r LIBRARY",
+        "description": "Load RBS files of the library"
+      },
+      {
+        "paramName": "-I DIR",
+        "description": "Load RBS files from the directory"
+      },
+      {
+        "paramName": "--no-stdlib",
+        "description": "Skip loading standard library signatures"
+      },
+      {
+        "paramName": "--collection PATH",
+        "description": "File path of collection configuration (default: rbs_collection.yaml)"
+      },
+      {
+        "paramName": "--no-collection",
+        "description": "Ignore collection configuration"
+      },
+      {
+        "paramName": "--repo DIR",
+        "description": "Add RBS repository"
+      },
+      {
+        "paramName": "--log-level LEVEL",
+        "description": "Specify log level (defaults to `warn`)"
+      },
+      {
+        "paramName": "--log-output OUTPUT",
+        "description": "Specify the file to output log (defaults to stderr)"
+      }
+    ],
+    "examples": [
+      "rbs list String",
+      "rbs validate lib/"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "rdbg",
+    "description": "Ruby 调试器（支持本地调试控制台、远程调试和进程附加，兼容多种前端工具）",
+    "syntax": "rdbg [options] -- [debuggee options]",
+    "options": [
+      {
+        "paramName": "-n",
+        "description": "Do not stop at the beginning of the script."
+      },
+      {
+        "paramName": "--nonstop",
+        "description": "Same as -n: do not stop at script start"
+      },
+      {
+        "paramName": "-e DEBUG_COMMAND",
+        "description": "Execute debug command at the beginning of the script."
+      },
+      {
+        "paramName": "-x",
+        "description": "Execute debug command in the FILE."
+      },
+      {
+        "paramName": "--init-script=FILE",
+        "description": "Same as -x: execute debug commands from file"
+      },
+      {
+        "paramName": "--no-rc",
+        "description": "Ignore ~/.rdbgrc"
+      },
+      {
+        "paramName": "--no-color",
+        "description": "Disable colorize"
+      },
+      {
+        "paramName": "--no-sigint-hook",
+        "description": "Disable to trap SIGINT"
+      },
+      {
+        "paramName": "-c",
+        "description": "Enable command mode. The first argument should be a command name in $PATH."
+      },
+      {
+        "paramName": "--command",
+        "description": "Same as -c: enable command mode"
+      },
+      {
+        "paramName": "-O",
+        "description": "Start remote debugging with opening the network port. If TCP/IP options are not given, a UNIX domain socket will be used. If FRONTEND is given, prepare for the FRONTEND (supports rdbg, vscode and chrome)."
+      },
+      {
+        "paramName": "--open=[FRONTEND]",
+        "description": "Same as -O: start remote debugging"
+      },
+      {
+        "paramName": "--sock-path=SOCK_PATH",
+        "description": "UNIX Domain socket path"
+      },
+      {
+        "paramName": "--port=PORT",
+        "description": "Listening TCP/IP port"
+      },
+      {
+        "paramName": "--port-range=PORT_RANGE",
+        "description": "Number of ports to try to connect to"
+      },
+      {
+        "paramName": "--host=HOST",
+        "description": "Listening TCP/IP host"
+      },
+      {
+        "paramName": "--cookie=COOKIE",
+        "description": "Set a cookie for connection"
+      },
+      {
+        "paramName": "--session-name=NAME",
+        "description": "Session name"
+      },
+      {
+        "paramName": "-A",
+        "description": "Attach to debuggee process."
+      },
+      {
+        "paramName": "--attach",
+        "description": "Same as -A: attach to debuggee process"
+      },
+      {
+        "paramName": "-v",
+        "description": "Show version number"
+      },
+      {
+        "paramName": "--version",
+        "description": "Show version number and exit"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print help"
+      },
+      {
+        "paramName": "--help",
+        "description": "Print help"
+      },
+      {
+        "paramName": "--util=NAME",
+        "description": "Utility mode (used by tools)"
+      },
+      {
+        "paramName": "--stop-at-load",
+        "description": "Stop immediately when the debugging feature is loaded."
+      }
+    ],
+    "examples": [
+      "rdbg target.rb foo bar",
+      "rdbg -A 1234",
+      "rdbg -A localhost 1234"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "rdoc",
+    "description": "Ruby 文档生成工具（解析 Ruby/C/Markdown 等文件，生成 HTML/ri 格式文档，支持跨文件交叉引用）",
+    "syntax": "rdoc [options] [names...]",
+    "options": [
+      {
+        "paramName": "-e",
+        "description": "Specifies the output encoding (preferred over --charset). All files read will be converted to this encoding. Default: UTF-8."
+      },
+      {
+        "paramName": "--encoding",
+        "description": "Same as -e: set output encoding"
+      },
+      {
+        "paramName": "--charset",
+        "description": "Deprecated. Specifies the output HTML character-set. Use --encoding instead."
+      },
+      {
+        "paramName": "--locale=NAME",
+        "description": "Specifies the output locale."
+      },
+      {
+        "paramName": "--locale-data-dir=DIR",
+        "description": "Specifies the directory where locale data live."
+      },
+      {
+        "paramName": "-a",
+        "description": "Synonym for --visibility=private."
+      },
+      {
+        "paramName": "--all",
+        "description": "Same as -a: set visibility to private"
+      },
+      {
+        "paramName": "-x",
+        "description": "Do not process files or directories matching PATTERN."
+      },
+      {
+        "paramName": "--exclude=PATTERN",
+        "description": "Same as -x: exclude files/directories by pattern"
+      },
+      {
+        "paramName": "--apply-default-exclude",
+        "description": "Use default PATTERN to exclude (default behavior)"
+      },
+      {
+        "paramName": "--no-apply-default-exclude",
+        "description": "Do not use default exclude PATTERN"
+      },
+      {
+        "paramName": "--no-skipping-tests",
+        "description": "Don't skip generating documentation for test and spec files"
+      },
+      {
+        "paramName": "-E",
+        "description": "Treat files ending with .new as if they ended with .old (e.g., -E cgi=rb parses xxx.cgi as Ruby)"
+      },
+      {
+        "paramName": "--extension=NEW=OLD",
+        "description": "Same as -E: map file extensions for parsing"
+      },
+      {
+        "paramName": "--force-update",
+        "description": "Forces rdoc to scan all sources even if no files are newer than the flag file"
+      },
+      {
+        "paramName": "--no-force-update",
+        "description": "Do not force scan all sources (default behavior)"
+      },
+      {
+        "paramName": "-p",
+        "description": "Convert RDoc on stdin to HTML"
+      },
+      {
+        "paramName": "--pipe",
+        "description": "Same as -p: process stdin to HTML"
+      },
+      {
+        "paramName": "-w",
+        "description": "Set the width of tab characters."
+      },
+      {
+        "paramName": "--tab-width=WIDTH",
+        "description": "Same as -w: set tab width"
+      },
+      {
+        "paramName": "--visibility=VISIBILITY",
+        "description": "Minimum visibility to document a method. One of public, protected (default), private, nodoc (show everything)"
+      },
+      {
+        "paramName": "--embed-mixins",
+        "description": "Embed mixin methods, attributes, and constants into class documentation (default false)"
+      },
+      {
+        "paramName": "--no-embed-mixins",
+        "description": "Do not embed mixin content (default behavior)"
+      },
+      {
+        "paramName": "--markup=MARKUP",
+        "description": "The markup format for the named files. Valid values: markdown, rd, rdoc (default), tomdoc"
+      },
+      {
+        "paramName": "--root=ROOT",
+        "description": "Root of the source tree for documentation. Default: current directory"
+      },
+      {
+        "paramName": "--page-dir=DIR",
+        "description": "Directory for guides/FAQ (non-class associated pages). Do not use duplicate filenames with project root"
+      },
+      {
+        "paramName": "-O",
+        "description": "Forces rdoc to write output files even if output directory exists and not created by rdoc"
+      },
+      {
+        "paramName": "--force-output",
+        "description": "Same as -O: force output writing"
+      },
+      {
+        "paramName": "-f",
+        "description": "Set the output formatter. One of: darkfish (HTML), pot (.pot file), ri (ri data files)"
+      },
+      {
+        "paramName": "--fmt",
+        "description": "Same as -f: set output formatter"
+      },
+      {
+        "paramName": "--format=FORMAT",
+        "description": "Same as -f: set output formatter"
+      },
+      {
+        "paramName": "-i",
+        "description": "Add to directories searched for :include: requests (can be used multiple times)"
+      },
+      {
+        "paramName": "--include=DIRECTORIES",
+        "description": "Same as -i: add include directories"
+      },
+      {
+        "paramName": "-C[LEVEL]",
+        "description": "Prints a report on undocumented items. Does not generate files."
+      },
+      {
+        "paramName": "--coverage-report",
+        "description": "Same as -C: show undocumented items report"
+      },
+      {
+        "paramName": "--no-coverage-report",
+        "description": "Do not show undocumented items report"
+      },
+      {
+        "paramName": "--dcov",
+        "description": "Same as -C: coverage report alias"
+      },
+      {
+        "paramName": "--no-dcov",
+        "description": "Same as --no-coverage-report"
+      },
+      {
+        "paramName": "-o",
+        "description": "Set the output directory."
+      },
+      {
+        "paramName": "--output",
+        "description": "Same as -o: set output directory"
+      },
+      {
+        "paramName": "--op=DIR",
+        "description": "Same as -o: set output directory"
+      },
+      {
+        "paramName": "-d",
+        "description": "Deprecated --diagram option. Prevents firing debug mode with legacy invocation."
+      },
+      {
+        "paramName": "-c",
+        "description": "Deprecated. Specifies the output HTML character-set. Use --encoding instead."
+      },
+      {
+        "paramName": "--autolink-excluded-words=WORDS",
+        "description": "Words to be ignored in autolink cross-references"
+      },
+      {
+        "paramName": "-A",
+        "description": "Generate hyperlinks for all known method words (legacy behavior, no #/:: required)"
+      },
+      {
+        "paramName": "--hyperlink-all",
+        "description": "Same as -A: hyperlink all known method words"
+      },
+      {
+        "paramName": "-m",
+        "description": "NAME will be the initial page displayed."
+      },
+      {
+        "paramName": "--main=NAME",
+        "description": "Same as -m: set main initial page"
+      },
+      {
+        "paramName": "--line-numbers",
+        "description": "Include line numbers in source code (default: only first line number in comment)"
+      },
+      {
+        "paramName": "--no-line-numbers",
+        "description": "Do not include line numbers in source code"
+      },
+      {
+        "paramName": "-H",
+        "description": "Retain '#' in method links (e.g., #name instead of name)"
+      },
+      {
+        "paramName": "--show-hash",
+        "description": "Same as -H: show hash in method links"
+      },
+      {
+        "paramName": "-T",
+        "description": "Set the template used for HTML output (default depends on formatter)"
+      },
+      {
+        "paramName": "--template=NAME",
+        "description": "Same as -T: set HTML template"
+      },
+      {
+        "paramName": "--template-stylesheets=FILES",
+        "description": "Add stylesheets to HTML template"
+      },
+      {
+        "paramName": "-t",
+        "description": "Set TITLE as the title for HTML output."
+      },
+      {
+        "paramName": "--title=TITLE",
+        "description": "Same as -t: set HTML title"
+      },
+      {
+        "paramName": "--copy-files=PATH",
+        "description": "Copy static files/directories to output dir (can be used multiple times)"
+      },
+      {
+        "paramName": "-W",
+        "description": "Specify URL for web CVS frontend (replace %s with filename or append filename)"
+      },
+      {
+        "paramName": "--webcvs=URL",
+        "description": "Same as -W: set web CVS URL"
+      },
+      {
+        "paramName": "-r",
+        "description": "Generate ri data files (stored in ~/.rdoc unless --op is set)"
+      },
+      {
+        "paramName": "--ri",
+        "description": "Same as -r: generate user-specific ri data"
+      },
+      {
+        "paramName": "-R",
+        "description": "Generate site-wide ri data files (requires special privileges)"
+      },
+      {
+        "paramName": "--ri-site",
+        "description": "Same as -R: generate site-wide ri data"
+      },
+      {
+        "paramName": "--write-options",
+        "description": "Write .rdoc_options to current directory with given options"
+      },
+      {
+        "paramName": "--dry-run",
+        "description": "Don't write any files"
+      },
+      {
+        "paramName": "--no-dry-run",
+        "description": "Write files (default behavior)"
+      },
+      {
+        "paramName": "--debug",
+        "description": "Displays lots of internal stuff"
+      },
+      {
+        "paramName": "--no-debug",
+        "description": "Do not show debug output (default behavior)"
+      },
+      {
+        "paramName": "--warn-missing-rdoc-ref",
+        "description": "Warn if rdoc-ref links can't be resolved"
+      },
+      {
+        "paramName": "--ignore-invalid",
+        "description": "Ignore invalid options and continue (default true)"
+      },
+      {
+        "paramName": "--no-ignore-invalid",
+        "description": "Abort on invalid options"
+      },
+      {
+        "paramName": "-q",
+        "description": "Don't show progress while parsing"
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Same as -q: quiet mode"
+      },
+      {
+        "paramName": "-V",
+        "description": "Display extra progress during parsing"
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Same as -V: verbose progress output"
+      },
+      {
+        "paramName": "-v",
+        "description": "Print the version"
+      },
+      {
+        "paramName": "--version",
+        "description": "Same as -v: show version"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display this help"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display this help"
+      },
+      {
+        "paramName": "--accessor",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--diagram",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--help-output",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--image-format",
+        "description": "Deprecated: was an option for --diagram"
+      },
+      {
+        "paramName": "--inline-source",
+        "description": "Deprecated: source code is now always inlined"
+      },
+      {
+        "paramName": "--merge",
+        "description": "Deprecated: ri now always merges class information"
+      },
+      {
+        "paramName": "--one-file",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--op-name",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--opname",
+        "description": "Deprecated: support discontinued"
+      },
+      {
+        "paramName": "--promiscuous",
+        "description": "Deprecated: files always only document their content"
+      },
+      {
+        "paramName": "--ri-system",
+        "description": "Deprecated: Ruby installers use other techniques"
+      }
+    ],
+    "examples": [
+      "rdoc",
+      "rdoc lib/ docs/"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ri",
+    "description": "Ruby 文档查询工具（用于查看 Ruby 核心库、 gems 及自定义代码的 ri 格式文档）",
+    "syntax": "ri [options] [name ...]",
+    "options": [
+      {
+        "paramName": "-i",
+        "description": "In interactive mode you can repeatedly look up methods with autocomplete."
+      },
+      {
+        "paramName": "--interactive",
+        "description": "Same as -i: enable interactive mode with autocomplete"
+      },
+      {
+        "paramName": "--no-interactive",
+        "description": "Disable interactive mode (default behavior)"
+      },
+      {
+        "paramName": "-a",
+        "description": "Show all documentation for a class or module."
+      },
+      {
+        "paramName": "--all",
+        "description": "Same as -a: show full documentation for class/module"
+      },
+      {
+        "paramName": "--no-all",
+        "description": "Show partial documentation (default behavior)"
+      },
+      {
+        "paramName": "-l",
+        "description": "List classes ri knows about."
+      },
+      {
+        "paramName": "--list",
+        "description": "Same as -l: list known classes"
+      },
+      {
+        "paramName": "--no-list",
+        "description": "Do not list classes (default behavior)"
+      },
+      {
+        "paramName": "--pager",
+        "description": "Send output to a pager (default for paged output)"
+      },
+      {
+        "paramName": "--no-pager",
+        "description": "Send output directly to stdout"
+      },
+      {
+        "paramName": "-T",
+        "description": "Synonym for --no-pager"
+      },
+      {
+        "paramName": "-w",
+        "description": "Set the width of the output."
+      },
+      {
+        "paramName": "--width=WIDTH",
+        "description": "Same as -w: set output width"
+      },
+      {
+        "paramName": "--server[=PORT]",
+        "description": "Run RDoc server on the given port (default: 8214)"
+      },
+      {
+        "paramName": "-f",
+        "description": "Use the selected formatter. Valid options: ansi, bs (default for paged), markdown, rdoc"
+      },
+      {
+        "paramName": "--format=NAME",
+        "description": "Same as -f: set output formatter"
+      },
+      {
+        "paramName": "--expand-refs",
+        "description": "Expand rdoc-refs at the end of output (default behavior)"
+      },
+      {
+        "paramName": "--no-expand-refs",
+        "description": "Do not expand rdoc-refs"
+      },
+      {
+        "paramName": "-h",
+        "description": "Show help and exit."
+      },
+      {
+        "paramName": "--help",
+        "description": "Same as -h: show help message"
+      },
+      {
+        "paramName": "-v",
+        "description": "Output version information and exit."
+      },
+      {
+        "paramName": "--version",
+        "description": "Same as -v: show version"
+      },
+      {
+        "paramName": "--list-doc-dirs",
+        "description": "List directories from which ri sources documentation and exit"
+      },
+      {
+        "paramName": "--no-list-doc-dirs",
+        "description": "Do not list doc directories (default behavior)"
+      },
+      {
+        "paramName": "-d",
+        "description": "Add directory to source documentation (may be repeated)"
+      },
+      {
+        "paramName": "--doc-dir=DIRNAME",
+        "description": "Same as -d: add documentation directory"
+      },
+      {
+        "paramName": "--no-standard-docs",
+        "description": "Do not include standard docs (Ruby stdlib, site_lib, gems, ~/.rdoc). Use with --doc-dir."
+      },
+      {
+        "paramName": "--system",
+        "description": "Include documentation from Ruby's standard library (default: true)"
+      },
+      {
+        "paramName": "--no-system",
+        "description": "Exclude standard library documentation"
+      },
+      {
+        "paramName": "--site",
+        "description": "Include documentation from site_lib (default: true)"
+      },
+      {
+        "paramName": "--no-site",
+        "description": "Exclude site_lib documentation"
+      },
+      {
+        "paramName": "--gems",
+        "description": "Include documentation from RubyGems (default: true)"
+      },
+      {
+        "paramName": "--no-gems",
+        "description": "Exclude RubyGems documentation"
+      },
+      {
+        "paramName": "--home",
+        "description": "Include documentation stored in ~/.rdoc (default: true)"
+      },
+      {
+        "paramName": "--no-home",
+        "description": "Exclude ~/.rdoc documentation"
+      },
+      {
+        "paramName": "--profile",
+        "description": "Run with the ruby profiler"
+      },
+      {
+        "paramName": "--no-profile",
+        "description": "Do not run with profiler (default behavior)"
+      },
+      {
+        "paramName": "--dump=CACHE",
+        "description": "Dump data from an ri cache or data file"
+      }
+    ],
+    "examples": [
+      "ri File",
+      "ri -i"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ruby",
+    "description": "Ruby编程语言的解释器，用于执行Ruby代码",
+    "syntax": "ruby [options] [--] [filepath] [arguments]",
+    "options": [
+      {
+        "paramName": "-0[octal]",
+        "description": "Set input record separator ($/): -0 for \\0; -00 for paragraph mode; -0777 for slurp mode."
+      },
+      {
+        "paramName": "-a",
+        "description": "Split each input line ($_$) into fields ($F)."
+      },
+      {
+        "paramName": "-c",
+        "description": "Check syntax (no execution)."
+      },
+      {
+        "paramName": "-Cdirpath",
+        "description": "Execute program in specified directory."
+      },
+      {
+        "paramName": "-d, --debug",
+        "description": "Set debugging flag ($DEBUG) to true."
+      },
+      {
+        "paramName": "-e 'code'",
+        "description": "Execute given Ruby code; multiple -e allowed."
+      },
+      {
+        "paramName": "-Eex[:in], --encoding=ex[:in]",
+        "description": "Set default external and internal encodings."
+      },
+      {
+        "paramName": "-Fpattern",
+        "description": "Set input field separator ($;); used with -a."
+      },
+      {
+        "paramName": "-i[extension]",
+        "description": "Set ARGF in-place mode; create backup files with given extension."
+      },
+      {
+        "paramName": "-Idirpath",
+        "description": "Add specified directory to load paths ($LOAD_PATH); multiple -I allowed."
+      },
+      {
+        "paramName": "-l",
+        "description": "Set output record separator ($\\) to $/; used for line-oriented output."
+      },
+      {
+        "paramName": "-n",
+        "description": "Run program in gets loop."
+      },
+      {
+        "paramName": "-p",
+        "description": "Like -n, with printing added."
+      },
+      {
+        "paramName": "-rlibrary",
+        "description": "Require the given library."
+      },
+      {
+        "paramName": "-s",
+        "description": "Define global variables using switches following program path."
+      },
+      {
+        "paramName": "-S",
+        "description": "Search directories found in the PATH environment variable."
+      },
+      {
+        "paramName": "-v",
+        "description": "Print version; set $VERBOSE to true."
+      },
+      {
+        "paramName": "-w",
+        "description": "Synonym for -W1."
+      },
+      {
+        "paramName": "-W[level=2|:category]",
+        "description": "Set warning flag ($-W): 0 for silent; 1 for moderate; 2 for verbose."
+      },
+      {
+        "paramName": "-x[dirpath]",
+        "description": "Execute Ruby code starting from a #!ruby line."
+      },
+      {
+        "paramName": "--jit",
+        "description": "Enable JIT for the platform; same as --rjit (experimental)."
+      },
+      {
+        "paramName": "--rjit",
+        "description": "Enable pure-Ruby JIT compiler (experimental)."
+      },
+      {
+        "paramName": "--backtrace-limit=num",
+        "description": "Set backtrace limit."
+      },
+      {
+        "paramName": "--copyright",
+        "description": "Print Ruby copyright."
+      },
+      {
+        "paramName": "--crash-report=template",
+        "description": "Set template for crash report file."
+      },
+      {
+        "paramName": "--disable=features",
+        "description": "Disable features; see list below."
+      },
+      {
+        "paramName": "--dump=items",
+        "description": "Dump items; see list below."
+      },
+      {
+        "paramName": "--enable=features",
+        "description": "Enable features; see list below."
+      },
+      {
+        "paramName": "--external-encoding=encoding",
+        "description": "Set default external encoding."
+      },
+      {
+        "paramName": "--help",
+        "description": "Print long help message; use -h for short message."
+      },
+      {
+        "paramName": "--internal-encoding=encoding",
+        "description": "Set default internal encoding."
+      },
+      {
+        "paramName": "--parser=parser",
+        "description": "Set Ruby parser: parse.y or prism."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Set $VERBOSE to true; ignore input from $stdin."
+      },
+      {
+        "paramName": "--version",
+        "description": "Print Ruby version."
+      },
+      {
+        "paramName": "-y, --yydebug",
+        "description": "Print parser log; backward compatibility not guaranteed."
+      },
+      {
+        "paramName": "--rjit-exec-mem-size=num",
+        "description": "Size of executable memory block in MiB (default: 64)."
+      },
+      {
+        "paramName": "--rjit-call-threshold=num",
+        "description": "Number of calls to trigger JIT (default: 10)."
+      },
+      {
+        "paramName": "--rjit-stats",
+        "description": "Enable collecting RJIT statistics."
+      },
+      {
+        "paramName": "--rjit-disable",
+        "description": "Disable RJIT for lazily enabling it with RubyVM::RJIT.enable."
+      },
+      {
+        "paramName": "--rjit-trace",
+        "description": "Allow TracePoint during JIT compilation."
+      },
+      {
+        "paramName": "--rjit-trace-exits",
+        "description": "Trace side exit locations."
+      }
+    ],
+    "examples": [
+      "ruby -e 'puts \"Hello, Ruby!\"'",
+      "ruby -c my_script.rb"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "syntax_suggest",
+    "description": "解析Ruby源文件并搜索语法错误（如意外的`end`、缺少结束符等）的工具",
+    "syntax": "syntax_suggest <file> [options]",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "Display this help message"
+      },
+      {
+        "paramName": "--record <dir>",
+        "description": "Records the steps used to search for a syntax error to the given directory"
+      },
+      {
+        "paramName": "--terminal",
+        "description": "Enable terminal highlighting"
+      },
+      {
+        "paramName": "--no-terminal",
+        "description": "Disable terminal highlighting"
+      }
+    ],
+    "examples": [
+      "syntax_suggest dog.rb",
+      "syntax_suggest app.rb --record ./debug",
+      "syntax_suggest script.rb --terminal"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "typeprof",
+    "description": "Ruby类型分析工具，用于分析Ruby代码的类型信息并生成类型注解",
+    "syntax": "typeprof [options] files_or_dirs...",
+    "options": [
+      {
+        "paramName": "-o OUTFILE",
+        "description": "Output to OUTFILE instead of stdout"
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "Quiet mode"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "Verbose mode"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display typeprof version"
+      },
+      {
+        "paramName": "--collection PATH",
+        "description": "File path of collection configuration"
+      },
+      {
+        "paramName": "--no-collection",
+        "description": "Ignore collection configuration"
+      },
+      {
+        "paramName": "--lsp",
+        "description": "LSP server mode"
+      },
+      {
+        "paramName": "--show-typeprof-version",
+        "description": "Display TypeProf version in a header"
+      },
+      {
+        "paramName": "--no-show-typeprof-version",
+        "description": "Do not display TypeProf version in a header"
+      },
+      {
+        "paramName": "--show-errors",
+        "description": "Display possible errors found during the analysis"
+      },
+      {
+        "paramName": "--no-show-errors",
+        "description": "Do not display possible errors found during the analysis"
+      },
+      {
+        "paramName": "--show-parameter-names",
+        "description": "Display parameter names for methods"
+      },
+      {
+        "paramName": "--no-show-parameter-names",
+        "description": "Do not display parameter names for methods"
+      },
+      {
+        "paramName": "--show-source-locations",
+        "description": "Display definition source locations for methods"
+      },
+      {
+        "paramName": "--no-show-source-locations",
+        "description": "Do not display definition source locations for methods"
+      },
+      {
+        "paramName": "--stackprof MODE",
+        "description": "Enable stackprof (for debugging purpose)"
+      },
+      {
+        "paramName": "--no-stackprof",
+        "description": "Disable stackprof"
+      },
+      {
+        "paramName": "--port PORT",
+        "description": "Specify a port number to listen for requests on"
+      },
+      {
+        "paramName": "--stdio",
+        "description": "Use stdio for LSP transport"
+      }
+    ],
+    "examples": [
+      "typeprof app.rb",
+      "typeprof -o types.txt lib/",
+      "typeprof --lsp --stdio",
+      "typeprof --verbose --show-errors src/"
+    ],
+    "showDetails": false
+  }
+]

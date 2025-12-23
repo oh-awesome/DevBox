@@ -1,0 +1,143 @@
+[
+  {
+    "name": "m4",
+    "description": "通用宏处理器，用于文本替换和宏扩展，常被其他工具使用。",
+    "syntax": "m4 [options]",
+    "options": [
+      {
+        "paramName": "-D, --define <name>=<value>",
+        "description": "define macro"
+      },
+      {
+        "paramName": "-E, --fatal-warnings",
+        "description": "treat warnings as errors"
+      },
+      {
+        "paramName": "-e, --interactive",
+        "description": "interactive mode"
+      },
+      {
+        "paramName": "-F, --freeze-state <file>",
+        "description": "freeze state to file"
+      },
+      {
+        "paramName": "-f, --force-frozen",
+        "description": "force frozen state"
+      },
+      {
+        "paramName": "-G, --traditional",
+        "description": "traditional mode"
+      },
+      {
+        "paramName": "-g, --gnu",
+        "description": "GNU mode (default)"
+      },
+      {
+        "paramName": "-H, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-I, --include <dir>",
+        "description": "add include directory"
+      },
+      {
+        "paramName": "-L, --nesting-limit <limit>",
+        "description": "set nesting limit"
+      },
+      {
+        "paramName": "-l, --load <file>",
+        "description": "load frozen state from file"
+      },
+      {
+        "paramName": "-M, --error-output <file>",
+        "description": "send errors to file"
+      },
+      {
+        "paramName": "-N, --no-predefined",
+        "description": "no predefined macros"
+      },
+      {
+        "paramName": "-n, --line-directives",
+        "description": "generate line directives"
+      },
+      {
+        "paramName": "-o, --output <file>",
+        "description": "specify output file"
+      },
+      {
+        "paramName": "-P, --prefix-builtins",
+        "description": "prefix built-in macros"
+      },
+      {
+        "paramName": "-p, --no-line-directives",
+        "description": "no line directives"
+      },
+      {
+        "paramName": "-Q, --quiet",
+        "description": "quiet mode"
+      },
+      {
+        "paramName": "-R, --random-seed <seed>",
+        "description": "set random seed"
+      },
+      {
+        "paramName": "-r, --reload-state <file>",
+        "description": "reload state from file"
+      },
+      {
+        "paramName": "-S, --synclines",
+        "description": "generate synclines"
+      },
+      {
+        "paramName": "-s, --silent",
+        "description": "silent mode"
+      },
+      {
+        "paramName": "-T, --trace <name>",
+        "description": "trace macro"
+      },
+      {
+        "paramName": "-t, --debug",
+        "description": "debug mode"
+      },
+      {
+        "paramName": "-U, --undefine <name>",
+        "description": "undefine macro"
+      },
+      {
+        "paramName": "-u, --unload-state",
+        "description": "unload state"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display version"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "verbose mode"
+      },
+      {
+        "paramName": "-W, --warning <warning>",
+        "description": "enable warning"
+      },
+      {
+        "paramName": "-w, --no-warnings",
+        "description": "disable warnings"
+      },
+      {
+        "paramName": "-X, --dump-definitions <file>",
+        "description": "dump definitions to file"
+      },
+      {
+        "paramName": "-x, --dump-macros <file>",
+        "description": "dump macros to file"
+      }
+    ],
+    "examples": [
+      "m4 --help",
+      "m4 -h",
+      "m4 input.m4 > output.txt"
+    ],
+    "showDetails": false
+  }
+]
