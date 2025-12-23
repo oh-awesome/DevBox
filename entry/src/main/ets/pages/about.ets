@@ -130,7 +130,7 @@ export struct AboutPage {
       this.sdk_6_0_0_Path = await this.pref.get('6_0_0', "") as string;
     } catch (err) {
       const error = err as BusinessError;
-      console.error(`get Preferences failed, err code is ${err?.code}, message is ${err?.message}`);
+      console.error(`get Preferences failed, err code is ${error?.code}, message is ${error?.message}`);
     }
   }
 

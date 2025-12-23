@@ -1,4 +1,4 @@
-import commandManualDataList, { CommandManualData, CommandManualOption } from './manual_data';
+import { CommandManualData, CommandManualOption } from './manual_data';
 import measure from '@ohos.measure';
 import { DevBoxUtils } from '../utils/DevBoxUtils';
 import Logger from '../utils/Logger';
@@ -16,8 +16,7 @@ export struct CommandManual {
   aboutToAppear(): void {
     this.commandLists = DevBoxUtils.getAllManualInfo();
     if (this.commandLists.length === 0) {
-      Logger.error(TAG, 'commandLists get failed, restore default');
-      this.commandLists = commandManualDataList;
+      Logger.error(TAG, 'commandLists get failed');
     }
   }
 

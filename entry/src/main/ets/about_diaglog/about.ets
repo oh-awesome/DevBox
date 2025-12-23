@@ -1,7 +1,6 @@
 import webview from '@ohos.web.webview';
 import { LevelMode } from '@kit.ArkUI';
 import { OpenSourceNoticeMetaData } from './opensource_info';
-import ossComponentsList from './opensource_list';
 import { DevBoxUtils } from '../utils/DevBoxUtils';
 import Logger from '../utils/Logger';
 
@@ -305,13 +304,12 @@ struct OpenSourceDialog {
             return a.name.localeCompare(b.name);
           });
           if (this.ossComponents.length === 0) {
-            this.ossComponents = ossComponentsList;
+            Logger.error(TAG, 'ossComponents get failed');
           }
-
         });
     } catch (e) {
-      Logger.error(TAG, 'ossComponents get failed, restore default');
-      this.ossComponents = ossComponentsList;
+      const error = e as BusinessError;
+      Logger.error(TAG, `ossComponents error code is ${error?.code} mgs: ${error.message}`);
     }
   }
 
