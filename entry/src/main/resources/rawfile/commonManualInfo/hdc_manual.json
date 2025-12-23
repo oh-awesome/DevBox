@@ -1,0 +1,131 @@
+[
+  {
+    "name": "hdc",
+    "description": "OpenHarmony 设备连接器(HDC)",
+    "syntax": "hdc [OPTION] [COMMAND] [ARGS...]\nhdc -h|hdc help [verbose]\nhdc -v|hdc version",
+    "options": [
+      {
+        "paramName": "-h / help [verbose]",
+        "description": "Print hdc help, 'verbose' for more other cmds"
+      },
+      {
+        "paramName": "-v / version",
+        "description": "Print hdc version"
+      },
+      {
+        "paramName": "-t connectkey",
+        "description": "Use device with given connect key"
+      },
+      {
+        "paramName": "list targets [-v]",
+        "description": "List all devices status, -v for detail"
+      },
+      {
+        "paramName": "start [-r]",
+        "description": "Start server. If with '-r', will be restart server"
+      },
+      {
+        "paramName": "kill [-r]",
+        "description": "Kill server. If with '-r', will be restart server"
+      },
+      {
+        "paramName": "target mount",
+        "description": "Set /system /vendor partition read-write"
+      },
+      {
+        "paramName": "wait",
+        "description": "Wait for the device to become available"
+      },
+      {
+        "paramName": "target boot [-bootloader|-recovery]",
+        "description": "Reboot the device or boot into bootloader\\recovery."
+      },
+      {
+        "paramName": "target boot [MODE]",
+        "description": "Reboot the into MODE."
+      },
+      {
+        "paramName": "smode [-r]",
+        "description": "Restart daemon with root permissions, '-r' to cancel root\npermissions"
+      },
+      {
+        "paramName": "tmode usb",
+        "description": "Reboot the device, listening on USB"
+      },
+      {
+        "paramName": "tmode port [port]",
+        "description": "Reboot the device, listening on TCP port"
+      },
+      {
+        "paramName": "file send [option] local remote",
+        "description": "Send file to device"
+      },
+      {
+        "paramName": "file recv [option] remote local",
+        "description": "Recv file from device option is -a|-s|-z\n-a: hold target file timestamp\n-sync: just update newer file\n-z: compress transfer, not improve transmission efficiency\nfor compressed files\n-m: mode sync\n-b: send/receive file to debug application directory"
+      },
+      {
+        "paramName": "fport localnode remotenode",
+        "description": "Forward local traffic to remote device"
+      },
+      {
+        "paramName": "rport remotenode localnode",
+        "description": "Reserve remote traffic to local host\nnode config name format 'schema:content'\nexamples are below:\ntcp:<port>\nlocalfilesystem:<unix domain socket name>\nlocalreserved:<unix domain socket name>\nlocalabstract:<unix domain socket name>\ndev:<device name>\njdwp:<pid> (remote only)\nark:pid@tid@Debugger fport ls                              - Display forward/reverse tasks"
+      },
+      {
+        "paramName": "fport rm taskstr",
+        "description": "Remove forward/reverse task by taskstring"
+      },
+      {
+        "paramName": "install [-r|-s] src",
+        "description": "Send package(s) to device and install them\nsrc examples: single or multiple packages and directories\n(.hap .hsp)\n-r: replace existing application\n-s: install shared bundle for multi-apps"
+      },
+      {
+        "paramName": "uninstall [-k] [-s] package",
+        "description": "Remove application package from device\n-k: keep the data and cache directories\n-s: remove shared bundle"
+      },
+      {
+        "paramName": "hilog [-h]",
+        "description": "Show device log, -h for detail"
+      },
+      {
+        "paramName": "shell [-b bundlename] [COMMAND...]",
+        "description": "Run shell command (interactive shell if no command given)\n-b: run command in specified debug application bundle path\nbundle parameter only support non-interactive shell"
+      },
+      {
+        "paramName": "bugreport [FILE]",
+        "description": "Return all information from the device, stored in file if FILE is specified"
+      },
+      {
+        "paramName": "jpid",
+        "description": "List PIDs of processes hosting a JDWP transport"
+      },
+      {
+        "paramName": "track-jpid [-a|-p]",
+        "description": "Track PIDs of debug processes hosting a JDWP transport\n-a: include debug and release processes\n-p: don't display debug and release tags"
+      },
+      {
+        "paramName": "keygen FILE",
+        "description": "Generate public/private key; key stored in FILE and FILE.pub"
+      }
+    ],
+    "examples": [
+      "hdc list targets",
+      "hdc list targets -v",
+      "hdc start -r",
+      "hdc kill",
+      "hdc target mount",
+      "hdc wait",
+      "hdc tmode usb",
+      "hdc tmode port 8888",
+      "hdc file send local.txt /data/remote.txt",
+      "hdc fport rm tcp:8080-tcp:8080",
+      "hdc install app.hap",
+      "hdc install -r app.hap",
+      "hdc uninstall com.example.app",
+      "hdc shell",
+      "hdc shell ls /"
+    ],
+    "showDetails": false
+  }
+]
