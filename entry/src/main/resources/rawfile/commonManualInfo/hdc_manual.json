@@ -1,7 +1,7 @@
 [
   {
     "name": "hdc",
-    "description": "OpenHarmony device connector(HDC) ...",
+    "description": "OpenHarmony 设备连接器(HDC)",
     "syntax": "hdc [OPTION] [COMMAND] [ARGS...]\nhdc -h|hdc help [verbose]\nhdc -v|hdc version",
     "options": [
       {
