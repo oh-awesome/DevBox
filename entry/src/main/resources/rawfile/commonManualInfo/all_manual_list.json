@@ -32,7 +32,8 @@
       "perl_manual.json",
       "unknown_manual.json",
       "hnpcli_manual.json",
-      "tree_manual.json"
+      "tree_manual.json",
+      "hdc_manual.json"
     ]
   }
 ]
