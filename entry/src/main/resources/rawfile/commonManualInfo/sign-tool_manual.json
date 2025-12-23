@@ -1,0 +1,62 @@
+[
+  {
+    "name": "binary-sign-tool",
+    "description": "用于ELF文件签名和显示签名信息的工具",
+    "syntax": "binary-sign-tool <sign|display-sign>[options]",
+    "options": [
+      {
+        "paramName": "-keyAlias",
+        "description": "key alias, required fields"
+      },
+      {
+        "paramName": "-keyPwd",
+        "description": "key password, optional fields on localSign mode"
+      },
+      {
+        "paramName": "-appCertFile",
+        "description": "application signature certificate file, required fields on localSign mode, optional fields on remoteSign mode"
+      },
+      {
+        "paramName": "-profileFile",
+        "description": "signed Provision Profile file, p7b format, required fields"
+      },
+      {
+        "paramName": "-profileSigned",
+        "description": "indicates whether the profile file has a signature.The options are as follows: 1 : yes; 0:no; default value:1. optional fields"
+      },
+      {
+        "paramName": "-inFile",
+        "description": "input original elf file (for sign) / display-sign elf file sign information (for display-sign), required fields"
+      },
+      {
+        "paramName": "-signAlg",
+        "description": "signature algorithm, required fields, including SHA256withECDSA/SHA384withECDSA"
+      },
+      {
+        "paramName": "-keystoreFile",
+        "description": "keystore file, if signature mode is localSign, required fields on localSign mode, JKS or P12 format"
+      },
+      {
+        "paramName": "-keystorePwd",
+        "description": "keystore password, optional fields on localSign mode"
+      },
+      {
+        "paramName": "-outFile",
+        "description": "output the signed Provision Profile file, required fields"
+      },
+      {
+        "paramName": "-moduleFile",
+        "description": "module.json file"
+      },
+      {
+        "paramName": "-selfSign",
+        "description": "Whether the elf file is self sign, The value 1 means enable self sign, and value 0 means disable. The default value is 0. It is optional"
+      }
+    ],
+    "examples": [
+      "binary-sign-tool sign -keyAlias \"oh-app1-key-v1\" -appCertFile \"/home/app-release-cert.cer\" -signCode \"1\" -keystoreFile \"/home/app-keypair.jks\" -keystorePwd ‌******‌ -outFile \"signed.elf\" -profileFile \"/home/signed-profile.p7b\" -inFile \"unsigned.elf\" -signAlg SHA256withECDSA",
+      "binary-sign-tool display-sign -inFile \"signed.elf\""
+    ],
+    "showDetails": false
+  }
+]

@@ -1,0 +1,265 @@
+[
+  {
+    "name": "gzexe",
+    "description": "将可执行文件替换为其压缩版本，同时保留原文件备份，也可对已压缩文件进行解压操作",
+    "syntax": "gzexe [OPTION] FILE...\ngzexe --help\ngzexe --version",
+    "options": [
+      {
+        "paramName": "-d",
+        "description": "Decompress each FILE instead of compressing it"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information and exit"
+      },
+      {
+        "paramName": "--version",
+        "description": "Output version information and exit"
+      }
+    ],
+    "examples": [
+      "gzexe script.sh",
+      "gzexe -d compressed_script.sh",
+      "gzexe --help",
+      "gzexe --version"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "zdiff",
+    "description": "逐行比较文件内容（自动解压压缩文件）",
+    "syntax": "zdiff [OPTION]... FILE1 [FILE2]",
+    "options": [
+      {
+        "paramName": "--normal",
+        "description": "Output a normal diff (the default)"
+      },
+      {
+        "paramName": "-q, --brief",
+        "description": "Report only when files differ"
+      },
+      {
+        "paramName": "-s, --report-identical-files",
+        "description": "Report when two files are the same"
+      },
+      {
+        "paramName": "-c, -C NUM, --context[=NUM]",
+        "description": "Output NUM (default 3) lines of copied context"
+      },
+      {
+        "paramName": "-u, -U NUM, --unified[=NUM]",
+        "description": "Output NUM (default 3) lines of unified context"
+      },
+      {
+        "paramName": "-e, --ed",
+        "description": "Output an ed script"
+      },
+      {
+        "paramName": "-n, --rcs",
+        "description": "Output an RCS format diff"
+      },
+      {
+        "paramName": "-y, --side-by-side",
+        "description": "Output in two columns"
+      },
+      {
+        "paramName": "-W, --width=NUM",
+        "description": "Output at most NUM (default 130) print columns"
+      },
+      {
+        "paramName": "--left-column",
+        "description": "Output only the left column of common lines"
+      },
+      {
+        "paramName": "--suppress-common-lines",
+        "description": "Do not output common lines"
+      },
+      {
+        "paramName": "-p, --show-c-function",
+        "description": "Show which C function each change is in"
+      },
+      {
+        "paramName": "-F, --show-function-line=RE",
+        "description": "Show the most recent line matching RE"
+      },
+      {
+        "paramName": "--label LABEL",
+        "description": "Use LABEL instead of file name and timestamp (can be repeated)"
+      },
+      {
+        "paramName": "-t, --expand-tabs",
+        "description": "Expand tabs to spaces in output"
+      },
+      {
+        "paramName": "-T, --initial-tab",
+        "description": "Make tabs line up by prepending a tab"
+      },
+      {
+        "paramName": "--tabsize=NUM",
+        "description": "Tab stops every NUM (default 8) print columns"
+      },
+      {
+        "paramName": "--suppress-blank-empty",
+        "description": "Suppress space or tab before empty output lines"
+      },
+      {
+        "paramName": "-l, --paginate",
+        "description": "Pass output through \"pr\" to paginate it"
+      },
+      {
+        "paramName": "-r, --recursive",
+        "description": "Recursively compare any subdirectories found"
+      },
+      {
+        "paramName": "--no-dereference",
+        "description": "Don it follow symbolic links"
+      },
+      {
+        "paramName": "-N, --new-file",
+        "description": "Treat absent files as empty"
+      },
+      {
+        "paramName": "--unidirectional-new-file",
+        "description": "Treat absent first files as empty"
+      },
+      {
+        "paramName": "--ignore-file-name-case",
+        "description": "Ignore case when comparing file names"
+      },
+      {
+        "paramName": "--no-ignore-file-name-case",
+        "description": "Consider case when comparing file names"
+      },
+      {
+        "paramName": "-x, --exclude=PAT",
+        "description": "Exclude files that match PAT"
+      },
+      {
+        "paramName": "-X, --exclude-from=FILE",
+        "description": "Exclude files that match any pattern in FILE"
+      },
+      {
+        "paramName": "-S, --starting-file=FILE",
+        "description": "Start with FILE when comparing directories"
+      },
+      {
+        "paramName": "--from-file=FILE1",
+        "description": "Compare FILE1 to all operands; FILE1 can be a directory"
+      },
+      {
+        "paramName": "--to-file=FILE2",
+        "description": "Compare all operands to FILE2; FILE2 can be a directory"
+      },
+      {
+        "paramName": "-i, --ignore-case",
+        "description": "Ignore case differences in file contents"
+      },
+      {
+        "paramName": "-E, --ignore-tab-expansion",
+        "description": "Ignore changes due to tab expansion"
+      },
+      {
+        "paramName": "-Z, --ignore-trailing-space",
+        "description": "Ignore white space at line end"
+      },
+      {
+        "paramName": "-b, --ignore-space-change",
+        "description": "Ignore changes in the amount of white space"
+      },
+      {
+        "paramName": "-w, --ignore-all-space",
+        "description": "Ignore all white space"
+      },
+      {
+        "paramName": "-B, --ignore-blank-lines",
+        "description": "Ignore changes where lines are all blank"
+      },
+      {
+        "paramName": "-I, --ignore-matching-lines=RE",
+        "description": "Ignore changes where all lines match RE"
+      },
+      {
+        "paramName": "-a, --text",
+        "description": "Treat all files as text"
+      },
+      {
+        "paramName": "--strip-trailing-cr",
+        "description": "Strip trailing carriage return on input"
+      },
+      {
+        "paramName": "-D, --ifdef=NAME",
+        "description": "Output merged file with \"#ifdef NAME\" diffs"
+      },
+      {
+        "paramName": "--GTYPE-group-format=GFMT",
+        "description": "Format GTYPE input groups with GFMT"
+      },
+      {
+        "paramName": "--line-format=LFMT",
+        "description": "Format all input lines with LFMT"
+      },
+      {
+        "paramName": "--LTYPE-line-format=LFMT",
+        "description": "Format LTYPE input lines with LFMT"
+      },
+      {
+        "paramName": "-d, --minimal",
+        "description": "Try hard to find a smaller set of changes"
+      },
+      {
+        "paramName": "--horizon-lines=NUM",
+        "description": "Keep NUM lines of the common prefix and suffix"
+      },
+      {
+        "paramName": "--speed-large-files",
+        "description": "Assume large files and many scattered small changes"
+      },
+      {
+        "paramName": "--color[=WHEN]",
+        "description": "Color output; WHEN is \"never\", \"always\", or \"auto\"; plain --color means --color=\"auto\""
+      },
+      {
+        "paramName": "--palette=PALETTE",
+        "description": "The colors to use when --color is active; PALETTE is a colon-separated list of terminfo capabilities"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display this help and exit"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Output version information and exit"
+      }
+    ],
+    "examples": [
+      "zdiff file1.txt file2.txt",
+      "zdiff data.txt",
+      "zdiff -r dir1 dir2"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "zcmp",
+    "description": "直接对比两个压缩文件的字节内容，无需手动解压",
+    "syntax": "zcmp [OPTION]... FILE1 [FILE2]",
+    "options": [
+      {
+        "paramName": "-l, --list",
+        "description": "List all differing bytes"
+      },
+      {
+        "paramName": "-n, --bytes=N",
+        "description": "Compare only first N bytes"
+      },
+      {
+        "paramName": "-s, --quiet, --silent",
+        "description": "Suppress all output"
+      }
+    ],
+    "examples": [
+      "zcmp file1.gz file2.gz",
+      "zcmp -l a.zip b.zip"
+    ],
+    "showDetails": false
+  }
+]

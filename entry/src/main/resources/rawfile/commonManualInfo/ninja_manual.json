@@ -1,0 +1,69 @@
+[
+  {
+    "name": "ninja",
+    "description": "快速构建系统工具，用于通过build.ninja文件定义的构建规则自动化编译流程，专注于高速并行构建，常用于替代make",
+    "syntax": "ninja [options] [targets...]",
+    "options": [
+      {
+        "paramName": "--version",
+        "description": "Print ninja version (\"1.13.1\")"
+      },
+      {
+        "paramName": "-v",
+        "description": "Show all command lines while building"
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Show all command lines while building"
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Don't show progress status, just command output"
+      },
+      {
+        "paramName": "-C DIR",
+        "description": "Change to DIR before doing anything else"
+      },
+      {
+        "paramName": "-f FILE",
+        "description": "Specify input build file [default=build.ninja]"
+      },
+      {
+        "paramName": "-j N",
+        "description": "Run N jobs in parallel (0 means infinity) [default=22 on this system]"
+      },
+      {
+        "paramName": "-k N",
+        "description": "Keep going until N jobs fail (0 means infinity) [default=1]"
+      },
+      {
+        "paramName": "-l N",
+        "description": "Do not start new jobs if the load average is greater than N"
+      },
+      {
+        "paramName": "-n",
+        "description": "Dry run (don't run commands but act like they succeeded)"
+      },
+      {
+        "paramName": "-d MODE",
+        "description": "Enable debugging (use '-d list' to list modes)"
+      },
+      {
+        "paramName": "-t TOOL",
+        "description": "Run a subtool (use '-t list' to list subtools); terminates toplevel options; further flags are passed to the tool"
+      },
+      {
+        "paramName": "-w FLAG",
+        "description": "Adjust warnings (use '-w list' to list warnings)"
+      }
+    ],
+    "examples": [
+      "ninja",
+      "ninja -v",
+      "ninja -t list",
+      "ninja -d list",
+      "ninja -w list"
+    ],
+    "showDetails": false
+  }
+]

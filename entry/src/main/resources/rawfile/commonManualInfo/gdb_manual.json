@@ -1,0 +1,146 @@
+[
+  {
+    "name": "gdb",
+    "description": "一个功能强大的源代码级调试工具，适用于 C、C++ 及其他编程语言，允许检查和控制程序执行。",
+    "syntax": "gdb [options] [executable-file [core-file or process-id]]\ngdb [options] --args executable-file [inferior-arguments ...]",
+    "options": [
+      {
+        "paramName": "--args",
+        "description": "Arguments after executable-file are passed to inferior."
+      },
+      {
+        "paramName": "--core=COREFILE",
+        "description": "Analyze the core dump COREFILE."
+      },
+      {
+        "paramName": "--exec=EXECFILE",
+        "description": "Use EXECFILE as the executable."
+      },
+      {
+        "paramName": "--pid=PID",
+        "description": "Attach to running process PID."
+      },
+      {
+        "paramName": "--directory=DIR",
+        "description": "Search for source files in DIR."
+      },
+      {
+        "paramName": "--se=FILE",
+        "description": "Use FILE as symbol file and executable file."
+      },
+      {
+        "paramName": "--symbols=SYMFILE",
+        "description": "Read symbols from SYMFILE."
+      },
+      {
+        "paramName": "--readnow",
+        "description": "Fully read symbol files on first access."
+      },
+      {
+        "paramName": "--readnever",
+        "description": "Do not read symbol files."
+      },
+      {
+        "paramName": "--write",
+        "description": "Set writing into executable and core files."
+      },
+      {
+        "paramName": "--command=FILE, -x",
+        "description": "Execute GDB commands from FILE."
+      },
+      {
+        "paramName": "--init-command=FILE, -ix",
+        "description": "Like -x but execute commands before loading inferior."
+      },
+      {
+        "paramName": "--eval-command=COMMAND, -ex",
+        "description": "Execute a single GDB command. May be used multiple times and in conjunction with --command."
+      },
+      {
+        "paramName": "--init-eval-command=COMMAND, -iex",
+        "description": "Like -ex but before loading inferior."
+      },
+      {
+        "paramName": "--nh",
+        "description": "Do not read ~/.gdbinit."
+      },
+      {
+        "paramName": "--nx",
+        "description": "Do not read any .gdbinit files in any directory."
+      },
+      {
+        "paramName": "--fullname",
+        "description": "Output information used by emacs-GDB interface."
+      },
+      {
+        "paramName": "--interpreter=INTERP",
+        "description": "Select a specific interpreter / user interface."
+      },
+      {
+        "paramName": "--tty=TTY",
+        "description": "Use TTY for input/output by the program being debugged."
+      },
+      {
+        "paramName": "-w",
+        "description": "Use the GUI interface."
+      },
+      {
+        "paramName": "--nw",
+        "description": "Do not use the GUI interface."
+      },
+      {
+        "paramName": "-q, --quiet, --silent",
+        "description": "Do not print version number on startup."
+      },
+      {
+        "paramName": "--batch",
+        "description": "Exit after processing options."
+      },
+      {
+        "paramName": "--batch-silent",
+        "description": "Like --batch, but suppress all gdb stdout output."
+      },
+      {
+        "paramName": "--return-child-result",
+        "description": "GDB exit code will be the child's exit code."
+      },
+      {
+        "paramName": "--configuration",
+        "description": "Print details about GDB configuration and then exit."
+      },
+      {
+        "paramName": "--help",
+        "description": "Print this message and then exit."
+      },
+      {
+        "paramName": "--version",
+        "description": "Print version information and then exit."
+      },
+      {
+        "paramName": "-b BAUDRATE",
+        "description": "Set serial port baud rate used for remote debugging."
+      },
+      {
+        "paramName": "-l TIMEOUT",
+        "description": "Set timeout in seconds for remote debugging."
+      },
+      {
+        "paramName": "--cd=DIR",
+        "description": "Change current directory to DIR."
+      },
+      {
+        "paramName": "--data-directory=DIR, -D",
+        "description": "Set GDB's data-directory to DIR."
+      }
+    ],
+    "examples": [
+      "gdb --args ./program arg1 arg2",
+      "gdb --pid=1234",
+      "gdb --core=core.dump ./program",
+      "gdb -ex 'break main' -ex 'run' ./program",
+      "gdb --batch --ex 'backtrace' --pid=5678",
+      "gdb --directory=/usr/src ./program"
+    ],
+    "showDetails": false
+  }
+]

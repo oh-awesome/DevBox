@@ -1,0 +1,2272 @@
+[
+  {
+    "name": "corelist",
+    "description": "Perl 核心模块查询工具，用于查看 Perl 核心模块的包含版本、发布信息及相关特性。",
+    "syntax": "corelist -v,\ncorelist [-a|-d] <ModuleName> | /<ModuleRegex>/ [<ModuleVersion>] ...,\ncorelist [-v <PerlVersion>] [ <ModuleName> | /<ModuleRegex>/ ] ...,\ncorelist [-r <PerlVersion>] ...,\ncorelist --utils [-d] <UtilityName> [<UtilityName>] ...,\ncorelist --utils -v <PerlVersion>,\ncorelist --feature <FeatureName> [<FeatureName>] ...,\ncorelist --diff PerlVersion PerlVersion,\ncorelist --upstream <ModuleName>",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "lists all versions of the given module (or the matching modules, in case you used a module regexp) in the perls Module::CoreList knows about"
+      },
+      {
+        "paramName": "-d",
+        "description": "finds the first perl version where a module has been released by date, and not by version number (as is the default)"
+      },
+      {
+        "paramName": "--diff",
+        "description": "Given two versions of perl, this prints a human-readable table of all module changes between the two. The output format may change in the future, and is meant for humans, not programs. For programs, use the Module::CoreList API"
+      },
+      {
+        "paramName": "-?, -help",
+        "description": "help! help! help! to see more help, try --man"
+      },
+      {
+        "paramName": "-man",
+        "description": "all of the help"
+      },
+      {
+        "paramName": "-v",
+        "description": "lists all of the perl release versions we got the CoreList for. If you pass a version argument (value of $], like 5.00503 or 5.008008), you get a list of all the modules and their respective versions. (If you have the \"version\" module, you can also use new-style version numbers, like 5.8.8.) In module filtering context, it can be used as Perl version filter"
+      },
+      {
+        "paramName": "-r",
+        "description": "lists all of the perl releases and when they were released. If you pass a perl version you get the release date for that version only"
+      },
+      {
+        "paramName": "--utils",
+        "description": "lists the first version of perl each named utility program was released with. May be used with -d to modify the first release criteria. If used with -v <version> then all utilities released with that version of perl are listed, and any utility programs named on the command line are ignored"
+      },
+      {
+        "paramName": "--feature, -f",
+        "description": "lists the first version bundle of each named feature given"
+      },
+      {
+        "paramName": "--upstream, -u",
+        "description": "Shows if the given module is primarily maintained in perl core or on CPAN and bug tracker URL"
+      }
+    ],
+    "examples": [
+      "corelist -v",
+      "corelist -a Unicode",
+      "corelist strict warnings"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "cpan",
+    "description": "Perl 模块管理工具，用于安装、升级和管理 Perl 模块，支持从 CPAN 仓库获取模块",
+    "syntax": "cpan [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "Display help information (run perldoc for details)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Verbose mode (show detailed execution process)"
+      },
+      {
+        "paramName": "-V",
+        "description": "Display cpan and Perl version information"
+      },
+      {
+        "paramName": "-I",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-g",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-G",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-C",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-A",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-D",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-O",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-l",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-L",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-a",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-r",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-p",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-P",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-J",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-w",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-x",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-X",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-T",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-c",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-f",
+        "description": "Force install (ignore dependencies or errors)"
+      },
+      {
+        "paramName": "-i",
+        "description": "Install specified Perl module(s)"
+      },
+      {
+        "paramName": "-m",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-s",
+        "description": "Boolean option (see perldoc for specific function)"
+      },
+      {
+        "paramName": "-t",
+        "description": "Run test cases before installing"
+      },
+      {
+        "paramName": "-u",
+        "description": "Upgrade specified Perl module(s)"
+      },
+      {
+        "paramName": "-M",
+        "description": "Option with argument (specify module or related parameters)"
+      },
+      {
+        "paramName": "-j",
+        "description": "Option with argument (specify configuration file or related parameters)"
+      },
+      {
+        "paramName": "--",
+        "description": "Stop processing of options, subsequent content as program arguments"
+      }
+    ],
+    "examples": [
+      "cpan Module::Name",
+      "cpan -t Module::Name"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "enc2xs",
+    "description": "Perl 字符编码转换模块生成工具",
+    "syntax": "enc2xs [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]",
+    "options": [
+      {
+        "paramName": "-M",
+        "description": "Option with argument (see perldoc for details)"
+      },
+      {
+        "paramName": "-o",
+        "description": "Option with argument (see perldoc for details)"
+      },
+      {
+        "paramName": "-f",
+        "description": "Option with argument (see perldoc for details)"
+      },
+      {
+        "paramName": "-n",
+        "description": "Option with argument (see perldoc for details)"
+      },
+      {
+        "paramName": "-C",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-S",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-Q",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-q",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-O",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "--",
+        "description": "Stop processing options, subsequent content as program arguments"
+      }
+    ],
+    "examples": [
+      "enc2xs --help",
+      "enc2xs -v",
+      "enc2xs -o output_dir -f input_file"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "encguess",
+    "description": "Perl 编码探测工具，用于识别文件的字符编码类型",
+    "syntax": "encguess [switches] filename...",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "show this message and exit"
+      },
+      {
+        "paramName": "-s",
+        "description": "specify a list of \"suspect encoding types\" to test, separated by either \":\" or \",\""
+      },
+      {
+        "paramName": "-S",
+        "description": "output a list of all acceptable encoding types that can be used with the -s param"
+      },
+      {
+        "paramName": "-u",
+        "description": "suppress display of unidentified types"
+      }
+    ],
+    "examples": [
+      "encguess test.txt",
+      "encguess -s euc-jp,shiftjis,7bit-jis test.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "h2xs",
+    "description": "用于将C头文件转换为Perl扩展模块的工具",
+    "syntax": "h2xs [OPTIONS ... ] [headerfile [extra_libraries]]",
+    "options": [
+      {
+        "paramName": "-A, --omit-autoload",
+        "description": "Omit all autoloading facilities (implies -c)"
+      },
+      {
+        "paramName": "-B, --beta-version",
+        "description": "Use beta $VERSION of 0.00_01 (ignored if -v)"
+      },
+      {
+        "paramName": "-C, --omit-changes",
+        "description": "Omit creating the Changes file, add HISTORY heading to stub POD"
+      },
+      {
+        "paramName": "-F, --cpp-flags",
+        "description": "Additional flags for C preprocessor/compile"
+      },
+      {
+        "paramName": "-M, --func-mask",
+        "description": "Mask to select C functions/macros (default is select all)"
+      },
+      {
+        "paramName": "-O, --overwrite-ok",
+        "description": "Allow overwriting of a pre-existing extension directory"
+      },
+      {
+        "paramName": "-P, --omit-pod",
+        "description": "Omit the stub POD section"
+      },
+      {
+        "paramName": "-X, --omit-XS",
+        "description": "Omit the XS portion (implies both -c and -f)"
+      },
+      {
+        "paramName": "-a, --gen-accessors",
+        "description": "Generate get/set accessors for struct and union members (used with -x)"
+      },
+      {
+        "paramName": "-b, --compat-version",
+        "description": "Specify a perl version to be backwards compatible with"
+      },
+      {
+        "paramName": "-c, --omit-constant",
+        "description": "Omit the constant() function and specialised AUTOLOAD from the XS file"
+      },
+      {
+        "paramName": "-d, --debugging",
+        "description": "Turn on debugging messages"
+      },
+      {
+        "paramName": "-e, --omit-enums",
+        "description": "Omit constants from enums in the constant() function. If a pattern is given, only the matching enums are ignored"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "Force creation of the extension even if the C header does not exist"
+      },
+      {
+        "paramName": "-g, --global",
+        "description": "Include code for safely storing static data in the .xs file"
+      },
+      {
+        "paramName": "-h, -?, --help",
+        "description": "Display this help message"
+      },
+      {
+        "paramName": "-k, --omit-const-func",
+        "description": "Omit 'const' attribute on function arguments (used with -x)"
+      },
+      {
+        "paramName": "-m, --gen-tied-var",
+        "description": "Generate tied variables for access to declared variables"
+      },
+      {
+        "paramName": "-n, --name",
+        "description": "Specify a name to use for the extension (recommended)"
+      },
+      {
+        "paramName": "-o, --opaque-re",
+        "description": "Regular expression for \"opaque\" types"
+      },
+      {
+        "paramName": "-p, --remove-prefix",
+        "description": "Specify a prefix which should be removed from the Perl function names"
+      },
+      {
+        "paramName": "-s, --const-subs",
+        "description": "Create subroutines for specified macros"
+      },
+      {
+        "paramName": "-t, --default-type",
+        "description": "Default type for autoloaded constants (default is IV)"
+      },
+      {
+        "paramName": "--use-new-tests",
+        "description": "Use Test::More in backward compatible modules"
+      },
+      {
+        "paramName": "--use-old-tests",
+        "description": "Use the module Test rather than Test::More"
+      },
+      {
+        "paramName": "--skip-exporter",
+        "description": "Do not export symbols"
+      },
+      {
+        "paramName": "--skip-ppport",
+        "description": "Do not use portability layer"
+      },
+      {
+        "paramName": "--skip-autoloader",
+        "description": "Do not use the module C<AutoLoader>"
+      },
+      {
+        "paramName": "--skip-strict",
+        "description": "Do not use the pragma C<strict>"
+      },
+      {
+        "paramName": "--skip-warnings",
+        "description": "Do not use the pragma C<warnings>"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Specify a version number for this extension"
+      },
+      {
+        "paramName": "-x, --autogen-xsubs",
+        "description": "Autogenerate XSUBs using C::Scan"
+      },
+      {
+        "paramName": "--use-xsloader",
+        "description": "Use XSLoader in backward compatible modules (ignored when used with -X)"
+      }
+    ],
+    "examples": [
+      "h2xs -n MyModule header.h",
+      "h2xs -A -c header.h -lm",
+      "h2xs -x -a header.h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "instmodsh",
+    "description": "用于与已安装的Perl模块交互的工具，提供列出和选择模块的功能",
+    "syntax": "instmodsh",
+    "options": [
+      {
+        "paramName": "l",
+        "description": "List all installed modules"
+      },
+      {
+        "paramName": "m <module>",
+        "description": "Select a module"
+      },
+      {
+        "paramName": "q",
+        "description": "Quit the program"
+      }
+    ],
+    "examples": [
+      "instmodsh",
+      "l",
+      "q"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "json_pp",
+    "description": "用于JSON数据的格式化和转换工具",
+    "syntax": "/data/service/hnp/bin/json_pp [-V] [-f from_format] [-t to_format] [-json_opt options_to_json1[,options_to_json2[,...]]]",
+    "options": [
+      {
+        "paramName": "-V",
+        "description": "Version information (note: duplicate specification with 'v' exists)"
+      },
+      {
+        "paramName": "-f from_format",
+        "description": "Specify the input format"
+      },
+      {
+        "paramName": "-t to_format",
+        "description": "Specify the output format"
+      },
+      {
+        "paramName": "-json_opt options_to_json",
+        "description": "Options for JSON processing (multiple options separated by commas)"
+      }
+    ],
+    "examples": [
+      "json_pp -f json -t yaml",
+      "json_pp -json_opt pretty,canonical",
+      "json_pp -V"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "libnetcfg",
+    "description": "Perl libnet 配置工具，用于配置网络相关参数",
+    "syntax": "libnetcfg [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]",
+    "options": [
+      {
+        "paramName": "-o",
+        "description": "Specify output-related parameters (requires argument)"
+      },
+      {
+        "paramName": "-i",
+        "description": "Specify input-related parameters (requires argument)"
+      },
+      {
+        "paramName": "-d",
+        "description": "Enable debug mode (boolean option)"
+      },
+      {
+        "paramName": "-c",
+        "description": "Perform configuration-related operations (boolean option)"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display help information (boolean option)"
+      },
+      {
+        "paramName": "--",
+        "description": "Stop processing subsequent options"
+      }
+    ],
+    "examples": [
+      "libnetcfg -d -c",
+      "libnetcfg -o output.conf",
+      "libnetcfg -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perl",
+    "description": "Perl 编程语言解释器，用于执行 Perl 脚本或单行命令",
+    "syntax": "perl [switches] [--] [programfile] [arguments]",
+    "options": [
+      {
+        "paramName": "-0[octal/hexadecimal]",
+        "description": "specify record separator (\\0, if no argument)"
+      },
+      {
+        "paramName": "-a",
+        "description": "autosplit mode with -n or -p (splits $_ into @F)"
+      },
+      {
+        "paramName": "-C[number/list]",
+        "description": "enables the listed Unicode features"
+      },
+      {
+        "paramName": "-c",
+        "description": "check syntax only (runs BEGIN and CHECK blocks)"
+      },
+      {
+        "paramName": "-d[t][:MOD]",
+        "description": "run program under debugger or module Devel::MOD"
+      },
+      {
+        "paramName": "-D[number/letters]",
+        "description": "set debugging flags (argument is a bit mask or alphabets)"
+      },
+      {
+        "paramName": "-e commandline",
+        "description": "one line of program (several -e's allowed, omit programfile)"
+      },
+      {
+        "paramName": "-E commandline",
+        "description": "like -e, but enables all optional features"
+      },
+      {
+        "paramName": "-f",
+        "description": "don't do $sitelib/sitecustomize.pl at startup"
+      },
+      {
+        "paramName": "-F/pattern/",
+        "description": "split() pattern for -a switch (//'s are optional)"
+      },
+      {
+        "paramName": "-g",
+        "description": "read all input in one go (slurp), rather than line-by-line (alias for -0777)"
+      },
+      {
+        "paramName": "-i[extension]",
+        "description": "edit <> files in place (makes backup if extension supplied)"
+      },
+      {
+        "paramName": "-Idirectory",
+        "description": "specify @INC/#include directory (several -I's allowed)"
+      },
+      {
+        "paramName": "-l[octnum]",
+        "description": "enable line ending processing, specifies line terminator"
+      },
+      {
+        "paramName": "-[mM][-]module",
+        "description": "execute \"use/no module...\" before executing program"
+      },
+      {
+        "paramName": "-n",
+        "description": "assume \"while (<>) { ... }\" loop around program"
+      },
+      {
+        "paramName": "-p",
+        "description": "assume loop like -n but print line also, like sed"
+      },
+      {
+        "paramName": "-s",
+        "description": "enable rudimentary parsing for switches after programfile"
+      },
+      {
+        "paramName": "-S",
+        "description": "look for programfile using PATH environment variable"
+      },
+      {
+        "paramName": "-t",
+        "description": "enable tainting warnings"
+      },
+      {
+        "paramName": "-T",
+        "description": "enable tainting checks"
+      },
+      {
+        "paramName": "-u",
+        "description": "dump core after parsing program"
+      },
+      {
+        "paramName": "-U",
+        "description": "allow unsafe operations"
+      },
+      {
+        "paramName": "-v",
+        "description": "print version, patchlevel and license"
+      },
+      {
+        "paramName": "-V[:configvar]",
+        "description": "print configuration summary (or a single Config.pm variable)"
+      },
+      {
+        "paramName": "-w",
+        "description": "enable many useful warnings"
+      },
+      {
+        "paramName": "-W",
+        "description": "enable all warnings"
+      },
+      {
+        "paramName": "-x[directory]",
+        "description": "ignore text before #!perl line (optionally cd to directory)"
+      },
+      {
+        "paramName": "-X",
+        "description": "disable all warnings"
+      },
+      {
+        "paramName": "--help",
+        "description": "display this help"
+      }
+    ],
+    "examples": [
+      "perl script.pl",
+      "perl -pi.bak -e 's/old/new/g' file.txt",
+      "perl -Mstrict -w script.pl",
+      "perl -c script.pl"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perl5.42.0",
+    "description": "Perl 5.42.0 编程语言解释器，用于执行 Perl 脚本或单行命令",
+    "syntax": "perl5.42.0 [switches] [--] [programfile] [arguments]",
+    "options": [
+      {
+        "paramName": "-0[octal/hexadecimal]",
+        "description": "specify record separator (\\0, if no argument)"
+      },
+      {
+        "paramName": "-a",
+        "description": "autosplit mode with -n or -p (splits $_ into @F)"
+      },
+      {
+        "paramName": "-C[number/list]",
+        "description": "enables the listed Unicode features"
+      },
+      {
+        "paramName": "-c",
+        "description": "check syntax only (runs BEGIN and CHECK blocks)"
+      },
+      {
+        "paramName": "-d[t][:MOD]",
+        "description": "run program under debugger or module Devel::MOD"
+      },
+      {
+        "paramName": "-D[number/letters]",
+        "description": "set debugging flags (argument is a bit mask or alphabets)"
+      },
+      {
+        "paramName": "-e commandline",
+        "description": "one line of program (several -e's allowed, omit programfile)"
+      },
+      {
+        "paramName": "-E commandline",
+        "description": "like -e, but enables all optional features"
+      },
+      {
+        "paramName": "-f",
+        "description": "don't do $sitelib/sitecustomize.pl at startup"
+      },
+      {
+        "paramName": "-F/pattern/",
+        "description": "split() pattern for -a switch (//'s are optional)"
+      },
+      {
+        "paramName": "-g",
+        "description": "read all input in one go (slurp), rather than line-by-line (alias for -0777)"
+      },
+      {
+        "paramName": "-i[extension]",
+        "description": "edit <> files in place (makes backup if extension supplied)"
+      },
+      {
+        "paramName": "-Idirectory",
+        "description": "specify @INC/#include directory (several -I's allowed)"
+      },
+      {
+        "paramName": "-l[octnum]",
+        "description": "enable line ending processing, specifies line terminator"
+      },
+      {
+        "paramName": "-[mM][-]module",
+        "description": "execute \"use/no module...\" before executing program"
+      },
+      {
+        "paramName": "-n",
+        "description": "assume \"while (<>) { ... }\" loop around program"
+      },
+      {
+        "paramName": "-p",
+        "description": "assume loop like -n but print line also, like sed"
+      },
+      {
+        "paramName": "-s",
+        "description": "enable rudimentary parsing for switches after programfile"
+      },
+      {
+        "paramName": "-S",
+        "description": "look for programfile using PATH environment variable"
+      },
+      {
+        "paramName": "-t",
+        "description": "enable tainting warnings"
+      },
+      {
+        "paramName": "-T",
+        "description": "enable tainting checks"
+      },
+      {
+        "paramName": "-u",
+        "description": "dump core after parsing program"
+      },
+      {
+        "paramName": "-U",
+        "description": "allow unsafe operations"
+      },
+      {
+        "paramName": "-v",
+        "description": "print version, patchlevel and license"
+      },
+      {
+        "paramName": "-V[:configvar]",
+        "description": "print configuration summary (or a single Config.pm variable)"
+      },
+      {
+        "paramName": "-w",
+        "description": "enable many useful warnings"
+      },
+      {
+        "paramName": "-W",
+        "description": "enable all warnings"
+      },
+      {
+        "paramName": "-x[directory]",
+        "description": "ignore text before #!perl line (optionally cd to directory)"
+      },
+      {
+        "paramName": "-X",
+        "description": "disable all warnings"
+      },
+      {
+        "paramName": "--help",
+        "description": "display this help"
+      }
+    ],
+    "examples": [
+      "perl5.42.0 script.pl",
+      "perl5.42.0 -pi.bak -e 's/old/new/g' file.txt",
+      "perl5.42.0 -Mstrict -w script.pl",
+      "perl5.42.0 -c script.pl"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perlbug",
+    "description": "用于生成关于perl5及其附带模块的bug报告或感谢信的工具",
+    "syntax": "perlbug [-v] [-a address] [-s subject] [-b body | -f inpufile ] [ -F outputfile ] [-r returnaddress] [-e editor] [-c adminaddress | -C] [-S] [-t] [-h] [-p patchfile ] perlbug [-v] [-r returnaddress] [-ok | -okay | -nok | -nokay]",
+    "options": [
+      {
+        "paramName": "-v",
+        "description": "Include Verbose configuration data in the report"
+      },
+      {
+        "paramName": "-f",
+        "description": "File containing the body of the report"
+      },
+      {
+        "paramName": "-p",
+        "description": "File containing a patch or other text attachment (separate multiple files with commas)"
+      },
+      {
+        "paramName": "-F",
+        "description": "File to output the resulting report to (defaults to 'perlbug.rep')"
+      },
+      {
+        "paramName": "-S",
+        "description": "Save or send the report without asking for confirmation"
+      },
+      {
+        "paramName": "-a",
+        "description": "Send the report to this address, instead of saving to a file"
+      },
+      {
+        "paramName": "-c",
+        "description": "Address to send copy of report to (defaults to 'root@8e660ce0d05e.nonet')"
+      },
+      {
+        "paramName": "-C",
+        "description": "Don't send copy to administrator"
+      },
+      {
+        "paramName": "-s",
+        "description": "Subject to include with the report"
+      },
+      {
+        "paramName": "-b",
+        "description": "Body of the report"
+      },
+      {
+        "paramName": "-r",
+        "description": "Your return address"
+      },
+      {
+        "paramName": "-e",
+        "description": "Editor to use"
+      },
+      {
+        "paramName": "-t",
+        "description": "Test mode"
+      },
+      {
+        "paramName": "-T",
+        "description": "Thank-you mode (target address defaults to 'perl-thanks@perl.org')"
+      },
+      {
+        "paramName": "-d",
+        "description": "Data mode (prints out configuration data without mailing anything)"
+      },
+      {
+        "paramName": "-ok",
+        "description": "Report successful build on this system to perl porters"
+      },
+      {
+        "paramName": "-okay",
+        "description": "As -ok but allow report from old builds"
+      },
+      {
+        "paramName": "-nok",
+        "description": "Report unsuccessful build on this system to perl porters"
+      },
+      {
+        "paramName": "-nokay",
+        "description": "As -nok but allow report from old builds"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print this help message"
+      }
+    ],
+    "examples": [
+      "perlbug",
+      "perlbug -v -a bug-report@perl.org -s \"Perl Bug Report\" -f report.txt",
+      "perlbug -ok",
+      "perlbug -nok -v",
+      "perlbug -d -v"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perldoc",
+    "description": "Perl 文档浏览器",
+    "syntax": "perldoc [options] PageName|ModuleName|ProgramName|URL...\nperldoc [options] -f BuiltinFunction\nperldoc [options] -q FAQRegex\nperldoc [options] -v PerlVariable",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "Display this help message"
+      },
+      {
+        "paramName": "-V",
+        "description": "Report version"
+      },
+      {
+        "paramName": "-r",
+        "description": "Recursive search (slow)"
+      },
+      {
+        "paramName": "-i",
+        "description": "Ignore case"
+      },
+      {
+        "paramName": "-t",
+        "description": "Display pod using pod2text instead of Pod::Man and groff (-t is the default on win32 unless -n is specified)"
+      },
+      {
+        "paramName": "-u",
+        "description": "Display unformatted pod text"
+      },
+      {
+        "paramName": "-m",
+        "description": "Display module's file in its entirety"
+      },
+      {
+        "paramName": "-n",
+        "description": "Specify replacement for groff"
+      },
+      {
+        "paramName": "-l",
+        "description": "Display the module's file name"
+      },
+      {
+        "paramName": "-U",
+        "description": "Don't attempt to drop privs for security"
+      },
+      {
+        "paramName": "-F",
+        "description": "Arguments are file names, not modules (implies -U)"
+      },
+      {
+        "paramName": "-D",
+        "description": "Verbosely describe what's going on"
+      },
+      {
+        "paramName": "-T",
+        "description": "Send output to STDOUT without any pager"
+      },
+      {
+        "paramName": "-d",
+        "description": "output_filename_to_send_to"
+      },
+      {
+        "paramName": "-o",
+        "description": "output_format_name"
+      },
+      {
+        "paramName": "-M",
+        "description": "FormatterModuleNameToUse"
+      },
+      {
+        "paramName": "-w",
+        "description": "formatter_option:option_value"
+      },
+      {
+        "paramName": "-L",
+        "description": "translation_code   Choose doc translation (if any)"
+      },
+      {
+        "paramName": "-X",
+        "description": "Use index if present (looks for pod.idx at /data/service/hnp/perl.org/perl_5.42.0/lib/5.42.0/aarch64-linux)"
+      },
+      {
+        "paramName": "-q",
+        "description": "Search the text of questions (not answers) in perlfaq[1-9]"
+      },
+      {
+        "paramName": "-f",
+        "description": "Search Perl built-in functions"
+      },
+      {
+        "paramName": "-a",
+        "description": "Search Perl API"
+      },
+      {
+        "paramName": "-v",
+        "description": "Search predefined Perl variables"
+      }
+    ],
+    "examples": [
+      "perldoc perl",
+      "perldoc perlsyn",
+      "perldoc -f print",
+      "perldoc -q array"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perlivp",
+    "description": "Perl 安装验证程序",
+    "syntax": "perlivp [-p] [-v] | [-h]",
+    "options": [
+      {
+        "paramName": "-p",
+        "description": "Print a preface before each test telling what it will test."
+      },
+      {
+        "paramName": "-v",
+        "description": "Verbose mode in which extra information about test results is printed.  Test failures always print out some extra information regardless of whether or not this switch is set."
+      },
+      {
+        "paramName": "-h",
+        "description": "Prints this help message."
+      }
+    ],
+    "examples": [
+      "perlivp",
+      "perlivp -p",
+      "perlivp -v",
+      "perlivp -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "perlthanks",
+    "description": "生成关于 perl5 及其附带模块的感谢信或错误报告的工具",
+    "syntax": "perlthanks [-v] [-a address] [-s subject] [-b body | -f inpufile ] [ -F outputfile ] [-r returnaddress] [-e editor] [-c adminaddress | -C] [-S] [-t] [-h] [-p patchfile ]\nperlthanks [-v] [-r returnaddress] [-ok | -okay | -nok | -nokay]",
+    "options": [
+      {
+        "paramName": "-v",
+        "description": "Include Verbose configuration data in the report"
+      },
+      {
+        "paramName": "-f",
+        "description": "File containing the body of the report. Use this to quickly send a prepared report."
+      },
+      {
+        "paramName": "-p",
+        "description": "File containing a patch or other text attachment. Separate multiple files with commas."
+      },
+      {
+        "paramName": "-F",
+        "description": "File to output the resulting report to. Defaults to 'perlthanks.rep'."
+      },
+      {
+        "paramName": "-S",
+        "description": "Save or send the report without asking for confirmation."
+      },
+      {
+        "paramName": "-a",
+        "description": "Send the report to this address, instead of saving to a file."
+      },
+      {
+        "paramName": "-c",
+        "description": "Address to send copy of report to. Defaults to 'root@8e660ce0d05e.nonet'."
+      },
+      {
+        "paramName": "-C",
+        "description": "Don't send copy to administrator."
+      },
+      {
+        "paramName": "-s",
+        "description": "Subject to include with the report. You will be prompted if you don't supply one on the command line."
+      },
+      {
+        "paramName": "-b",
+        "description": "Body of the report. If not included on the command line, or in a file with -f, you will get a chance to edit the report."
+      },
+      {
+        "paramName": "-r",
+        "description": "Your return address. The program will ask you to confirm this if you don't give it here."
+      },
+      {
+        "paramName": "-e",
+        "description": "Editor to use."
+      },
+      {
+        "paramName": "-t",
+        "description": "Test mode."
+      },
+      {
+        "paramName": "-T",
+        "description": "Thank-you mode. The target address defaults to 'perl-thanks@perl.org'."
+      },
+      {
+        "paramName": "-d",
+        "description": "Data mode. This prints out your configuration data, without mailing anything. You can use this with -v to get more complete data."
+      },
+      {
+        "paramName": "-ok",
+        "description": "Report successful build on this system to perl porters (use alone or with -v). Only use -ok if *everything* was ok: if there were *any* problems at all, use -nok."
+      },
+      {
+        "paramName": "-okay",
+        "description": "As -ok but allow report from old builds."
+      },
+      {
+        "paramName": "-nok",
+        "description": "Report unsuccessful build on this system to perl porters (use alone or with -v). You must describe what went wrong in the body of the report which you will be asked to edit."
+      },
+      {
+        "paramName": "-nokay",
+        "description": "As -nok but allow report from old builds."
+      },
+      {
+        "paramName": "-h",
+        "description": "Print this help message."
+      }
+    ],
+    "examples": [
+      "perlthanks",
+      "perlthanks -ok"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "piconv",
+    "description": "Perl 图标v 编码转换工具",
+    "syntax": "piconv [-f from_encoding] [-t to_encoding] [-p|--perlqq|--htmlcref|--xmlcref] [-C N|-c] [-D] [-S scheme] [-s string|file...]\npiconv -l\npiconv -r encoding_alias\npiconv -h",
+    "options": [
+      {
+        "paramName": "-l",
+        "description": "lists all available encodings"
+      },
+      {
+        "paramName": "-r",
+        "description": "resolve encoding to its (Encode) canonical name"
+      },
+      {
+        "paramName": "-f",
+        "description": "when omitted, the current locale will be used"
+      },
+      {
+        "paramName": "-t",
+        "description": "when omitted, the current locale will be used"
+      },
+      {
+        "paramName": "-s",
+        "description": "\"string\" will be the input instead of STDIN or files"
+      },
+      {
+        "paramName": "-C",
+        "description": "check the validity of the input"
+      },
+      {
+        "paramName": "-D",
+        "description": "show debug information"
+      },
+      {
+        "paramName": "-S",
+        "description": "use the scheme for conversion"
+      },
+      {
+        "paramName": "-p",
+        "description": "transliterate characters missing in encoding to \\x{HHHH} where HHHH is the hexadecimal Unicode code point"
+      },
+      {
+        "paramName": "--perlqq",
+        "description": "transliterate characters missing in encoding to \\x{HHHH} where HHHH is the hexadecimal Unicode code point"
+      },
+      {
+        "paramName": "--htmlcref",
+        "description": "transliterate characters missing in encoding to &#NNN; where NNN is the decimal Unicode code point"
+      },
+      {
+        "paramName": "--xmlcref",
+        "description": "transliterate characters missing in encoding to &#xHHHH; where HHHH is the hexadecimal Unicode code point"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print this help message"
+      }
+    ],
+    "examples": [
+      "piconv -r cp936",
+      "piconv -s \"Hello, word\" -f utf-8 -t ascii -p"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pl2pm",
+    "description": "将 Perl 脚本（.pl)转换为 Perl 模块（.pm)的工具,自动处理包声明、子程序提取、POD 文档格式转换，简化脚本模块化流程",
+    "syntax": "pl2pm  script.pl [module.pm]",
+    "options": [],
+    "examples": [
+      "pl2pm myscript.pl"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pod2html",
+    "description": "将 POD 格式文档转换为 HTML 的工具",
+    "syntax": "pod2html --help --htmldir=<name> --htmlroot=<URL> --infile=<name> --outfile=<name> --podpath=<name>:...:<name> --podroot=<name> --cachedir=<name> --flush --recurse --norecurse --quiet --noquiet --verbose --noverbose --index --noindex --backlink --nobacklink --header --noheader --poderrors --nopoderrors --css=<URL> --title=<name>",
+    "options": [
+      {
+        "paramName": "--backlink",
+        "description": "turn =head1 directives into links pointing to the top of the page (off by default)."
+      },
+      {
+        "paramName": "--nobacklink",
+        "description": "do not turn =head1 directives into links pointing to the top of the page."
+      },
+      {
+        "paramName": "--cachedir",
+        "description": "directory for the directory cache files."
+      },
+      {
+        "paramName": "--css",
+        "description": "stylesheet URL"
+      },
+      {
+        "paramName": "--flush",
+        "description": "flushes the directory cache."
+      },
+      {
+        "paramName": "--header",
+        "description": "produce block header/footer."
+      },
+      {
+        "paramName": "--noheader",
+        "description": "do not produce block header/footer (default)."
+      },
+      {
+        "paramName": "--help",
+        "description": "prints this message."
+      },
+      {
+        "paramName": "--htmldir",
+        "description": "directory for resulting HTML files."
+      },
+      {
+        "paramName": "--htmlroot",
+        "description": "http-server base directory from which all relative paths in podpath stem (default is /)."
+      },
+      {
+        "paramName": "--index",
+        "description": "generate an index at the top of the resulting html (default behaviour)."
+      },
+      {
+        "paramName": "--noindex",
+        "description": "do not generate an index at the top of the resulting html."
+      },
+      {
+        "paramName": "--infile",
+        "description": "filename for the pod to convert (input taken from stdin by default)."
+      },
+      {
+        "paramName": "--outfile",
+        "description": "filename for the resulting html file (output sent to stdout by default)."
+      },
+      {
+        "paramName": "--poderrors",
+        "description": "include a POD ERRORS section in the output if there were any POD errors in the input (default behavior)."
+      },
+      {
+        "paramName": "--nopoderrors",
+        "description": "do not include a POD ERRORS section in the output."
+      },
+      {
+        "paramName": "--podpath",
+        "description": "colon-separated list of directories containing library pods (empty by default)."
+      },
+      {
+        "paramName": "--podroot",
+        "description": "filesystem base directory from which all relative paths in podpath stem (default is .)."
+      },
+      {
+        "paramName": "--quiet",
+        "description": "suppress some benign warning messages."
+      },
+      {
+        "paramName": "--noquiet",
+        "description": "do not suppress some benign warning messages (default)."
+      },
+      {
+        "paramName": "--recurse",
+        "description": "recurse on those subdirectories listed in podpath (default behaviour)."
+      },
+      {
+        "paramName": "--norecurse",
+        "description": "do not recurse on those subdirectories listed in podpath."
+      },
+      {
+        "paramName": "--title",
+        "description": "title that will appear in resulting html file."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "self-explanatory."
+      },
+      {
+        "paramName": "--noverbose",
+        "description": "self-explanatory (off by default)."
+      }
+    ],
+    "examples": [
+      "pod2html --podpath=lib:docs --htmlroot=/docs --htmldir=html",
+      "pod2html --css=style.css --title=\"My Document\" my.pod"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pod2man",
+    "description": "将 POD 格式文档转换为 man 页面的工具",
+    "syntax": "pod2man [--center=string] [--date=string] [--encoding=encoding] [--errors=style] [--fixed=font] [--fixedbold=font] [--fixeditalic=font] [--fixedbolditalic=font] [--guesswork=rule[,rule...]] [--name=name] [--nourls] [--official] [--release=version] [--section=manext] [--quotes=quotes] [--lquote=quote] [--rquote=quote] [--stderr] [--utf8] [--verbose] [input [output] ...]\npod2man --help",
+    "options": [
+      {
+        "paramName": "--center=string",
+        "description": "Sets the centered page header for the \".TH\" macro to string. The default is \"User Contributed Perl Documentation\", but also see --official below."
+      },
+      {
+        "paramName": "--date=string",
+        "description": "Set the left-hand footer string for the \".TH\" macro to string. By default, the first of POD_MAN_DATE, SOURCE_DATE_EPOCH, the modification date of the input file, or the current date (if input comes from \"STDIN\") will be used, and the date will be in UTC."
+      },
+      {
+        "paramName": "--encoding=encoding",
+        "description": "Specifies the encoding of the output. encoding must be an encoding recognized by the Encode module. The default on non-EBCDIC systems is UTF-8."
+      },
+      {
+        "paramName": "--errors=style",
+        "description": "Set the error handling style. \"die\" says to throw an exception on any POD formatting error. \"stderr\" says to report errors on standard error, but not to throw an exception. \"pod\" says to include a POD ERRORS section in the resulting documentation summarizing the errors. \"none\" ignores POD errors entirely, as much as possible. The default is \"die\"."
+      },
+      {
+        "paramName": "--fixed=font",
+        "description": "The fixed-width font to use for verbatim text and code. Defaults to \"CW\". Some systems may want \"CR\" instead. Only matters for troff output."
+      },
+      {
+        "paramName": "--fixedbold=font",
+        "description": "Bold version of the fixed-width font. Defaults to \"CB\". Only matters for troff output."
+      },
+      {
+        "paramName": "--fixeditalic=font",
+        "description": "Italic version of the fixed-width font. Defaults to \"CI\". Only matters for troff output."
+      },
+      {
+        "paramName": "--fixedbolditalic=font",
+        "description": "Bold italic version of the fixed-width font. Defaults to \"CB\". Only matters for troff output."
+      },
+      {
+        "paramName": "--guesswork=rule[,rule...]",
+        "description": "Allows turning off some default formatting rules based on guesswork. The special rule \"all\" enables all guesswork. \"none\" disables all. Otherwise, a comma-separated list of \"functions\", \"manref\", \"quoting\", \"variables\"."
+      },
+      {
+        "paramName": "--name=name",
+        "description": "Set the name of the manual page for the \".TH\" macro to name. Overrides any automatic determination of the name."
+      },
+      {
+        "paramName": "--nourls",
+        "description": "Suppresses the URL when anchor text is given in L<> formatting codes."
+      },
+      {
+        "paramName": "--official",
+        "description": "Set the default header to indicate that this page is part of the standard Perl release, if --center is not also given."
+      },
+      {
+        "paramName": "--release=version",
+        "description": "Set the centered footer for the \".TH\" macro to version. By default, this is set to the version of Perl you run pod2man under."
+      },
+      {
+        "paramName": "--section=manext",
+        "description": "Set the section for the \".TH\" macro. Defaults to 1 unless the file ends in \".pm\", in which case section 3 will be selected."
+      },
+      {
+        "paramName": "--quotes=quotes",
+        "description": "Sets the quote marks used to surround C<> text to quotes. If quotes is a single character, it is used as both the left and right quote. Otherwise, it is split in half."
+      },
+      {
+        "paramName": "--lquote=quote",
+        "description": "Sets the left quote mark used to surround C<> text."
+      },
+      {
+        "paramName": "--rquote=quote",
+        "description": "Sets the right quote mark used to surround C<> text."
+      },
+      {
+        "paramName": "--stderr",
+        "description": "Equivalent to \"--errors=stderr\". Supported for backward compatibility."
+      },
+      {
+        "paramName": "--utf8",
+        "description": "This option is now ignored as UTF-8 is the default output encoding."
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Print out the name of each output file as it is being generated."
+      },
+      {
+        "paramName": "--help",
+        "description": "Print out usage information."
+      }
+    ],
+    "examples": [
+      "pod2man my.pod > my.1",
+      "pod2man --section=3 --name=My::Module My/Module.pm > My::Module.3",
+      "pod2man --center=\"My Project Documentation\" --release=\"Version 1.0\" input.pod output.man"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pod2text",
+    "description": "将 POD 格式文档转换为纯文本的工具",
+    "syntax": "pod2text [-aclostu] [--code] [-e encoding] [--errors=style] [--guesswork=rule[,rule...]] [-i indent] [-q quotes] [--nourls] [--stderr] [-w width] [input [output ...]]\npod2text -h",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Use an alternate output format with different heading style and colon-marked =item entries"
+      },
+      {
+        "paramName": "--alt",
+        "description": "Same as -a: alternate output format"
+      },
+      {
+        "paramName": "--code",
+        "description": "Include non-POD text from input file in output (preserves code with rendered POD)"
+      },
+      {
+        "paramName": "-c",
+        "description": "Format output with ANSI color escape sequences (requires Term::ANSIColor)"
+      },
+      {
+        "paramName": "--color",
+        "description": "Same as -c: ANSI color formatting"
+      },
+      {
+        "paramName": "-e encoding",
+        "description": "Specify output encoding (recognized by Encode module); unrepresentable chars handled per --errors"
+      },
+      {
+        "paramName": "--encoding=encoding",
+        "description": "Same as -e: set output encoding"
+      },
+      {
+        "paramName": "--errors=style",
+        "description": "Set error handling style: die (default), stderr, pod, or none"
+      },
+      {
+        "paramName": "--guesswork=rule[,rule...]",
+        "description": "Enable/disable guesswork formatting rules: all (default), none, or quoting"
+      },
+      {
+        "paramName": "-i indent",
+        "description": "Set spaces for regular text indent and default =over block indent (default: 4)"
+      },
+      {
+        "paramName": "--indent=indent",
+        "description": "Same as -i: set indentation spaces"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print usage information and exit"
+      },
+      {
+        "paramName": "--help",
+        "description": "Same as -h: show help message"
+      },
+      {
+        "paramName": "-l",
+        "description": "Print blank line after =head1 headings (recommended for arbitrary text documents)"
+      },
+      {
+        "paramName": "--loose",
+        "description": "Same as -l: add blank line after =head1"
+      },
+      {
+        "paramName": "-m width",
+        "description": "Set left margin width (default: 0; applies to all text including headings)"
+      },
+      {
+        "paramName": "--left-margin=width",
+        "description": "Same as -m: set left margin width"
+      },
+      {
+        "paramName": "--margin=width",
+        "description": "Same as -m: set left margin width"
+      },
+      {
+        "paramName": "--nourls",
+        "description": "Suppress URLs in L<> formatting codes when anchor text is present"
+      },
+      {
+        "paramName": "-o",
+        "description": "Format output with overstrike (bold/italics via backspace sequences)"
+      },
+      {
+        "paramName": "--overstrike",
+        "description": "Same as -o: overstrike formatting"
+      },
+      {
+        "paramName": "-q quotes",
+        "description": "Set quote marks for C<> text (single char = both quotes; split 2-part string)"
+      },
+      {
+        "paramName": "--quotes=quotes",
+        "description": "Same as -q: set C<> quote marks"
+      },
+      {
+        "paramName": "-s",
+        "description": "Preserve two-space sentence endings (compresses whitespace otherwise)"
+      },
+      {
+        "paramName": "--sentence",
+        "description": "Same as -s: preserve two-space sentence endings"
+      },
+      {
+        "paramName": "--stderr",
+        "description": "Equivalent to --errors=stderr (report errors to STDERR without aborting)"
+      },
+      {
+        "paramName": "-t",
+        "description": "Use termcap for terminal width/bold/underline (requires Term::Cap and termios)"
+      },
+      {
+        "paramName": "--termcap",
+        "description": "Same as -t: termcap-based terminal formatting"
+      },
+      {
+        "paramName": "-u",
+        "description": "Set output encoding to UTF-8 (equivalent to --encoding=UTF-8)"
+      },
+      {
+        "paramName": "--utf8",
+        "description": "Same as -u: UTF-8 output encoding"
+      },
+      {
+        "paramName": "-w width",
+        "description": "Set right-hand text wrap column (default: 76; adjusted for -t)"
+      },
+      {
+        "paramName": "--width=width",
+        "description": "Same as -w: set text wrap width"
+      },
+      {
+        "paramName": "-width",
+        "description": "Same as -w: set text wrap width"
+      }
+    ],
+    "examples": [
+      "pod2text my.pod > my.txt",
+      "pod2text --color --width=80 input.pod output.txt",
+      "pod2text --code --nourls script.pl",
+      "pod2text -t -a module.pm"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pod2usage",
+    "description": "从 POD 文档中提取并格式化使用信息的工具",
+    "syntax": "pod2usage [-help] [-man] [-exit exitval] [-output outfile] [-verbose level] [-pathlist dirlist] [-formatter module] [-utf8] file",
+    "options": [
+      {
+        "paramName": "-help",
+        "description": "Prints a brief help message and exit."
+      },
+      {
+        "paramName": "-man",
+        "description": "Prints this command's manual page and exit."
+      },
+      {
+        "paramName": "-exit exitval",
+        "description": "The exit status value to return."
+      },
+      {
+        "paramName": "-output outfile",
+        "description": "The output file to print to. Use \"-\", \">&1\", or \">&STDOUT\" for standard output; \">&2\" or \">&STDERR\" for standard error."
+      },
+      {
+        "paramName": "-verbose level",
+        "description": "Set verbosity level: 1 (SYNOPSIS only), 2 (SYNOPSIS + OPTIONS/ARGUMENTS), 3 (entire manpage)."
+      },
+      {
+        "paramName": "-pathlist dirlist",
+        "description": "Directories to search for input file (separated by \":\" on Unix, \";\" on Windows)."
+      },
+      {
+        "paramName": "-formatter module",
+        "description": "Text formatter to use (default: Pod::Text; e.g., Pod::Text::Termcap)."
+      },
+      {
+        "paramName": "-utf8",
+        "description": "Enable UTF-8 output (requires formatter support for \"utf8\" option)."
+      }
+    ],
+    "examples": [
+      "pod2usage myscript.pl",
+      "pod2usage -verbose 2 -exit 1 -output /dev/stderr myscript.pl",
+      "pod2usage -man -formatter Pod::Text::Termcap mymodule.pm"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "podchecker",
+    "description": "检查 POD 文档语法正确性的工具",
+    "syntax": "podchecker [-help] [-man] [-(no)warnings] [file ...]",
+    "options": [
+      {
+        "paramName": "-help",
+        "description": "Print a brief help message and exit."
+      },
+      {
+        "paramName": "-man",
+        "description": "Print the manual page and exit."
+      },
+      {
+        "paramName": "-quiet",
+        "description": "Do not print a success message."
+      },
+      {
+        "paramName": "-warnings",
+        "description": "Turn on printing of warnings; repeating increases warning level (level 2 flags unescaped \"<,>\" characters)."
+      },
+      {
+        "paramName": "-nowarnings",
+        "description": "Turn off printing of warnings."
+      }
+    ],
+    "examples": [
+      "podchecker my.pod",
+      "podchecker -warnings -quiet script.pl",
+      "podchecker -nowarnings file1.pod file2.pod"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "prove",
+    "description": "Perl 测试套件运行工具（执行 TAP 格式测试脚本并生成汇总报告）",
+    "syntax": "prove [options] [files or directories]",
+    "options": [
+      {
+        "paramName": "-v",
+        "description": "Print all test lines. Also sets TEST_VERBOSE"
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Same as -v: print all test lines"
+      },
+      {
+        "paramName": "-l",
+        "description": "Add 'lib' to the path for your tests (-Ilib)"
+      },
+      {
+        "paramName": "--lib",
+        "description": "Same as -l: add 'lib' to test path"
+      },
+      {
+        "paramName": "-b",
+        "description": "Add 'blib/lib' and 'blib/arch' to the path for your tests"
+      },
+      {
+        "paramName": "--blib",
+        "description": "Same as -b: add blib directories to test path"
+      },
+      {
+        "paramName": "-s",
+        "description": "Run the tests in random order"
+      },
+      {
+        "paramName": "--shuffle",
+        "description": "Same as -s: randomize test order"
+      },
+      {
+        "paramName": "-c",
+        "description": "Colored test output (default)"
+      },
+      {
+        "paramName": "--color",
+        "description": "Same as -c: enable colored output"
+      },
+      {
+        "paramName": "--nocolor",
+        "description": "Do not color test output"
+      },
+      {
+        "paramName": "--count",
+        "description": "Show the X/Y test count when not verbose (default)"
+      },
+      {
+        "paramName": "--nocount",
+        "description": "Disable the X/Y test count"
+      },
+      {
+        "paramName": "-D",
+        "description": "Dry run. Show tests that would have run"
+      },
+      {
+        "paramName": "--dry",
+        "description": "Same as -D: dry run mode"
+      },
+      {
+        "paramName": "-f",
+        "description": "Show failed tests"
+      },
+      {
+        "paramName": "--failures",
+        "description": "Same as -f: show failed tests"
+      },
+      {
+        "paramName": "-o",
+        "description": "Show comments"
+      },
+      {
+        "paramName": "--comments",
+        "description": "Same as -o: show comments"
+      },
+      {
+        "paramName": "--ignore-exit",
+        "description": "Ignore exit status from test scripts"
+      },
+      {
+        "paramName": "-m",
+        "description": "Merge test scripts' STDERR with their STDOUT"
+      },
+      {
+        "paramName": "--merge",
+        "description": "Same as -m: merge STDERR and STDOUT"
+      },
+      {
+        "paramName": "-r",
+        "description": "Recursively descend into directories"
+      },
+      {
+        "paramName": "--recurse",
+        "description": "Same as -r: recursive directory processing"
+      },
+      {
+        "paramName": "--reverse",
+        "description": "Run the tests in reverse order"
+      },
+      {
+        "paramName": "-q",
+        "description": "Suppress some test output while running tests"
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Same as -q: quiet mode"
+      },
+      {
+        "paramName": "-Q",
+        "description": "Only print summary results"
+      },
+      {
+        "paramName": "--QUIET",
+        "description": "Same as -Q: minimal output (only summary)"
+      },
+      {
+        "paramName": "-p",
+        "description": "Show full list of TAP parse errors, if any"
+      },
+      {
+        "paramName": "--parse",
+        "description": "Same as -p: show all TAP parse errors"
+      },
+      {
+        "paramName": "--directives",
+        "description": "Only show results with TODO or SKIP directives"
+      },
+      {
+        "paramName": "--timer",
+        "description": "Print elapsed time after each test"
+      },
+      {
+        "paramName": "--trap",
+        "description": "Trap Ctrl-C and print summary on interrupt"
+      },
+      {
+        "paramName": "--normalize",
+        "description": "Normalize TAP output in verbose output"
+      },
+      {
+        "paramName": "-T",
+        "description": "Enable tainting checks"
+      },
+      {
+        "paramName": "-t",
+        "description": "Enable tainting warnings"
+      },
+      {
+        "paramName": "-W",
+        "description": "Enable fatal warnings"
+      },
+      {
+        "paramName": "-w",
+        "description": "Enable warnings"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display this help"
+      },
+      {
+        "paramName": "--help",
+        "description": "Same as -h: display help message"
+      },
+      {
+        "paramName": "-?",
+        "description": "Display this help"
+      },
+      {
+        "paramName": "-V",
+        "description": "Display the version"
+      },
+      {
+        "paramName": "--version",
+        "description": "Same as -V: show version information"
+      },
+      {
+        "paramName": "-H",
+        "description": "Longer manpage for prove"
+      },
+      {
+        "paramName": "--man",
+        "description": "Same as -H: show full manpage"
+      },
+      {
+        "paramName": "--norc",
+        "description": "Don't process default .proverc"
+      },
+      {
+        "paramName": "-I",
+        "description": "Library paths to include"
+      },
+      {
+        "paramName": "-P",
+        "description": "Load plugin (searches App::Prove::Plugin::*.)"
+      },
+      {
+        "paramName": "-M",
+        "description": "Load a module"
+      },
+      {
+        "paramName": "-e",
+        "description": "Interpreter to run the tests ( for compiled tests.)"
+      },
+      {
+        "paramName": "--exec",
+        "description": "Same as -e: specify test interpreter"
+      },
+      {
+        "paramName": "--ext",
+        "description": "Set the extension for tests (default '.t')"
+      },
+      {
+        "paramName": "--harness",
+        "description": "Define test harness to use. See TAP::Harness."
+      },
+      {
+        "paramName": "--formatter",
+        "description": "Result formatter to use. See FORMATTERS."
+      },
+      {
+        "paramName": "--source",
+        "description": "Load and/or configure a SourceHandler. See SOURCE HANDLERS."
+      },
+      {
+        "paramName": "-a",
+        "description": "Store the resulting TAP in an archive file"
+      },
+      {
+        "paramName": "--archive",
+        "description": "Same as -a: save TAP output to archive"
+      },
+      {
+        "paramName": "-j",
+        "description": "Run N test jobs in parallel (try 9.)"
+      },
+      {
+        "paramName": "--jobs",
+        "description": "Same as -j: parallel test jobs (N = number of jobs)"
+      },
+      {
+        "paramName": "--state=opts",
+        "description": "Control prove's persistent state"
+      },
+      {
+        "paramName": "--statefile=file",
+        "description": "Use `file` instead of `.prove` for state"
+      },
+      {
+        "paramName": "--rc=rcfile",
+        "description": "Process options from rcfile"
+      },
+      {
+        "paramName": "--rules",
+        "description": "Rules for parallel vs sequential processing"
+      }
+    ],
+    "examples": [
+      "prove",
+      "prove -v t/",
+      "prove --norc --ignore-exit bad-tests/"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ptar",
+    "description": "Perl 编写的类 tar 归档工具（基于 Archive::Tar 模块，支持创建、提取、列出 tar 归档文件）",
+    "syntax": "ptar -c [-v] [-z] [-C] [-f ARCHIVE_FILE | -] FILE FILE ...\nptar -c [-v] [-z] [-C] [-T index | -] [-f ARCHIVE_FILE | -]\nptar -x [-v] [-z] [-f ARCHIVE_FILE | -]\nptar -t [-z] [-f ARCHIVE_FILE | -]\nptar -h",
+    "options": [
+      {
+        "paramName": "-c",
+        "description": "Create ARCHIVE_FILE or STDOUT (-) from FILE"
+      },
+      {
+        "paramName": "-x",
+        "description": "Extract from ARCHIVE_FILE or STDIN (-)"
+      },
+      {
+        "paramName": "-t",
+        "description": "List the contents of ARCHIVE_FILE or STDIN (-)"
+      },
+      {
+        "paramName": "-f",
+        "description": "Name of the ARCHIVE_FILE to use. Default is './default.tar'"
+      },
+      {
+        "paramName": "-z",
+        "description": "Read/Write zlib compressed ARCHIVE_FILE (not always available)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Print filenames as they are added or extracted from ARCHIVE_FILE"
+      },
+      {
+        "paramName": "-h",
+        "description": "Prints this help message"
+      },
+      {
+        "paramName": "-C",
+        "description": "CPAN mode - drop 022 from permissions"
+      },
+      {
+        "paramName": "-T",
+        "description": "Get names to create from file"
+      },
+      {
+        "paramName": "-D",
+        "description": "Boolean option (backward compatibility support)"
+      },
+      {
+        "paramName": "-d",
+        "description": "Boolean option (backward compatibility support)"
+      },
+      {
+        "paramName": "-I",
+        "description": "Boolean option (backward compatibility support)"
+      }
+    ],
+    "examples": [
+      "ptar -c -f archive.tar file1.txt dir/",
+      "ptar -t -z -f archive.tar.gz",
+      "ptar -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ptardiff",
+    "description": "比较两个 tar 归档文件差异的工具（依赖 Text::Diff 模块，Perl 编写）",
+    "syntax": "ptardiff [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "Display help information (requires argument; see perldoc for details)"
+      }
+    ],
+    "examples": [
+      "ptardiff archive1.tar archive2.tar",
+      "ptardiff -h"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "ptargrep",
+    "description": "对 tar 归档文件中的文件内容执行模式匹配的工具",
+    "syntax": "ptargrep [options] <pattern> <tar file> ...",
+    "options": [
+      {
+        "paramName": "--basename",
+        "description": "When matching files are extracted, ignore the directory path from the archive and write to the current directory using the basename of the file from the archive."
+      },
+      {
+        "paramName": "-b",
+        "description": "Same as --basename"
+      },
+      {
+        "paramName": "--ignore-case",
+        "description": "Make pattern matching case-insensitive."
+      },
+      {
+        "paramName": "-i",
+        "description": "Same as --ignore-case"
+      },
+      {
+        "paramName": "--list-only",
+        "description": "Print the pathname of each matching file from the archive to STDOUT. Without this option, the default behaviour is to extract each matching file."
+      },
+      {
+        "paramName": "-l",
+        "description": "Same as --list-only"
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Log debugging info to STDERR."
+      },
+      {
+        "paramName": "-v",
+        "description": "Same as --verbose"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display this documentation."
+      },
+      {
+        "paramName": "-?",
+        "description": "Same as --help"
+      }
+    ],
+    "examples": [
+      "ptargrep \"use strict\" archive.tar",
+      "ptargrep -i -l \"TODO\" project.tar.gz"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "shasum",
+    "description": "SHA 校验和工具，用于计算或验证文件的 SHA 哈希值（支持多种 SHA 算法）",
+    "syntax": "shasum [OPTION]... [FILE]...",
+    "options": [
+      {
+        "paramName": "-a, --algorithm",
+        "description": "Specify hash algorithm: 1 (default), 224, 256, 384, 512, 512224, 512256"
+      },
+      {
+        "paramName": "-b, --binary",
+        "description": "Read in binary mode"
+      },
+      {
+        "paramName": "-c, --check",
+        "description": "Read SHA sums from the FILEs and check them"
+      },
+      {
+        "paramName": "--tag",
+        "description": "Create a BSD-style checksum"
+      },
+      {
+        "paramName": "-t, --text",
+        "description": "Read in text mode (default)"
+      },
+      {
+        "paramName": "-U, --UNIVERSAL",
+        "description": "Read in Universal Newlines mode; produces same digest on Windows/Unix/Mac"
+      },
+      {
+        "paramName": "-0, --01",
+        "description": "Read in BITS mode; ASCII '0' interpreted as 0-bit, ASCII '1' as 1-bit, other characters ignored"
+      },
+      {
+        "paramName": "--ignore-missing",
+        "description": "Don't fail or report status for missing files (useful only when verifying)"
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "Don't print OK for each successfully verified file (useful only when verifying)"
+      },
+      {
+        "paramName": "-s, --status",
+        "description": "Don't output anything; status code shows success (useful only when verifying)"
+      },
+      {
+        "paramName": "--strict",
+        "description": "Exit non-zero for improperly formatted checksum lines (useful only when verifying)"
+      },
+      {
+        "paramName": "-w, --warn",
+        "description": "Warn about improperly formatted checksum lines (useful only when verifying)"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Display this help and exit"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Output version information and exit"
+      }
+    ],
+    "examples": [
+      "shasum file.txt",
+      "shasum -a 256 document.pdf",
+      "shasum -c checksum.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "splain",
+    "description": "Perl 错误解释工具，用于简化和解释 Perl 脚本的错误提示信息",
+    "syntax": "splain [-OPTIONS [-MORE_OPTIONS]] [--] [PROGRAM_ARG1 ...]",
+    "options": [
+      {
+        "paramName": "-f",
+        "description": "Option with argument (see perldoc for details)"
+      },
+      {
+        "paramName": "-p",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-d",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Boolean option (no argument, see perldoc for details)"
+      },
+      {
+        "paramName": "--",
+        "description": "Stop processing of options, subsequent content as program arguments"
+      }
+    ],
+    "examples": [
+      "splain script.pl",
+      "perl -w script.pl 2>&1 | splain -v",
+      "splain -f config.txt -- input.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "streamzip",
+    "description": "将标准输入流压缩为Zip容器，并输出到标准输出或写入指定文件。",
+    "syntax": "producer | streamzip [OPTIONS] | consumer, producer | streamzip [OPTIONS] -zipfile output.zip",
+    "options": [
+      {
+        "paramName": "-zipfile=F",
+        "description": "Write zip container to the filename 'F'. Outputs to stdout if zipfile not specified."
+      },
+      {
+        "paramName": "-member-name=M",
+        "description": "Set member name to 'M' [Default '-']"
+      },
+      {
+        "paramName": "-0 ... -9",
+        "description": "Set compression level for Deflate [Default: 6]"
+      },
+      {
+        "paramName": "-zip64",
+        "description": "Create a Zip64-compliant zip file [Default: No]. Enable Zip64 if input is greater than 4Gig."
+      },
+      {
+        "paramName": "-stream",
+        "description": "Force a streamed zip file when 'zipfile' option is also enabled. Only applies when 'zipfile' option is used. [Default: No]. Stream is always enabled when writing to stdout."
+      },
+      {
+        "paramName": "-method=M",
+        "description": "Compress using method 'M'. Valid methods are store (Store without compression), deflate (Use Deflate compression [Default]), bzip2 (Use Bzip2 compression), lzma (Use LZMA compression [needs IO::Compress::Lzma]), xz (Use LZMA compression [needs IO::Compress::Xz]), zstd (Use LZMA compression [needs IO::Compress::Zstd])"
+      },
+      {
+        "paramName": "-version",
+        "description": "Display version number [1.00]"
+      }
+    ],
+    "examples": [
+      "ls -la | streamzip -method=store",
+      "cat test.pl | streamzip -zipfile=output.zip"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "xsubpp",
+    "description": "Perl XS 代码预处理器（eXtended Subroutine Preprocessor）",
+    "syntax": "xsubpp [options] [input.xs [output.c]]",
+    "options": [
+      {
+        "paramName": "-v",
+        "description": "Enable verbose mode, output additional processing information"
+      },
+      {
+        "paramName": "-csuffix csuffix",
+        "description": "Specify suffix for C output files (default: .c)"
+      },
+      {
+        "paramName": "-except",
+        "description": "Generate exception checking code"
+      },
+      {
+        "paramName": "-prototypes",
+        "description": "Generate function prototypes in the output C code"
+      },
+      {
+        "paramName": "-noversioncheck",
+        "description": "Disable Perl version checking during processing"
+      },
+      {
+        "paramName": "-nolinenumbers",
+        "description": "Exclude line number information from generated C code"
+      },
+      {
+        "paramName": "-nooptimize",
+        "description": "Disable code optimization, generate more readable (but potentially less efficient) C code"
+      },
+      {
+        "paramName": "-noinout",
+        "description": "Do not generate automatic handling code for IN/OUT parameters"
+      },
+      {
+        "paramName": "-noargtypes",
+        "description": "Do not generate parameter type checking code"
+      },
+      {
+        "paramName": "-strip",
+        "description": "Strip comments and blank lines from the generated C code"
+      },
+      {
+        "paramName": "-typemap typemap",
+        "description": "Specify additional typemap file for Perl/C data type conversion rules"
+      }
+    ],
+    "examples": [
+      "xsubpp MyModule.xs",
+      "xsubpp -v -prototypes MyModule.xs MyModule.c",
+      "xsubpp -nooptimize -nolinenumbers Utils.xs Utils.c"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "zipdetails",
+    "description": "显示ZIP文件的内部结构和元数据信息",
+    "syntax": "zipdetails [OPTIONS] file",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Display help"
+      },
+      {
+        "paramName": "--redact",
+        "description": "Hide filename and payload data in the output"
+      },
+      {
+        "paramName": "--scan",
+        "description": "Enable pessimistic scanning mode. Blindly scan the file looking for zip headers. Expect false-positives."
+      },
+      {
+        "paramName": "--utc",
+        "description": "Display date/time fields in UTC. Default is local time"
+      },
+      {
+        "paramName": "-v",
+        "description": "Enable verbose mode -- output more stuff"
+      },
+      {
+        "paramName": "--version",
+        "description": "Print zipdetails version number. This is version 4.004"
+      },
+      {
+        "paramName": "--walk",
+        "description": "Enable optimistic scanning mode. Blindly scan the file looking for zip headers. Expect false-positives."
+      },
+      {
+        "paramName": "--encoding e",
+        "description": "Use encoding \"e\" when reading filename/comments from the zip file. Uses system encoding (\"utf-8-strict\") by default"
+      },
+      {
+        "paramName": "--no-encoding",
+        "description": "Disable filename & comment encoding. Default disabled."
+      },
+      {
+        "paramName": "--output-encoding e",
+        "description": "Use encoding \"e\" when writing filename/comments to the display. Uses system encoding (\"utf-8-strict\") by default"
+      },
+      {
+        "paramName": "--debug-encoding",
+        "description": "Display extra info when a filename/comment encoding has changed"
+      },
+      {
+        "paramName": "--language-encoding, --no-language-encoding",
+        "description": "Enable/disable support for the zip file \"Language Encoding\" flag. When this flag is set in a zip file the filename/comment is assumed to be encoded in UTF8. Default is enabled"
+      },
+      {
+        "paramName": "--messages, --no-messages",
+        "description": "Enable/disable all info/warning/error messages. Default enabled."
+      },
+      {
+        "paramName": "--exit-bitmask, --no-exit-bitmask",
+        "description": "Enable/disable exit status bitmask for messages. Default disabled. Bitmask values are Info 1, Warning 2, Error 4"
+      }
+    ],
+    "examples": [
+      "zipdetails archive.zip",
+      "zipdetails -v --utc myfile.zip",
+      "zipdetails --version"
+    ],
+    "showDetails": false
+  }
+]

@@ -1,0 +1,197 @@
+{
+  "name": "flex",
+  "description": "词法分析器生成器，用于生成处理文本的程序，常与bison配合使用。",
+  "syntax": "flex [OPTIONS] [FILE]...",
+  "options": [
+    {
+      "paramName": "-Ca, --align",
+      "description": "Trade off larger tables for better memory alignment"
+    },
+    {
+      "paramName": "-Ce, --ecs",
+      "description": "Construct equivalence classes"
+    },
+    {
+      "paramName": "-Cf",
+      "description": "Do not compress tables; use -f representation"
+    },
+    {
+      "paramName": "-CF",
+      "description": "Do not compress tables; use -F representation"
+    },
+    {
+      "paramName": "-Cm, --meta-ecs",
+      "description": "Construct meta-equivalence classes"
+    },
+    {
+      "paramName": "-Cr, --read",
+      "description": "Use read() instead of stdio for scanner input"
+    },
+    {
+      "paramName": "-f, --full",
+      "description": "Generate fast, large scanner. Same as -Cfr"
+    },
+    {
+      "paramName": "-F, --fast",
+      "description": "Use alternate table representation. Same as -CFr"
+    },
+    {
+      "paramName": "-Cem",
+      "description": "Default compression (same as --ecs --meta-ecs)"
+    },
+    {
+      "paramName": "-d, --debug",
+      "description": "Enable debug mode in scanner"
+    },
+    {
+      "paramName": "-b, --backup",
+      "description": "Write backing-up information to lex.backup"
+    },
+    {
+      "paramName": "-p, --perf-report",
+      "description": "Write performance report to stderr"
+    },
+    {
+      "paramName": "-s, --nodefault",
+      "description": "Suppress default rule to ECHO unmatched text"
+    },
+    {
+      "paramName": "-T, --trace",
+      "description": "flex should run in trace mode"
+    },
+    {
+      "paramName": "-w, --nowarn",
+      "description": "Do not generate warnings"
+    },
+    {
+      "paramName": "-v, --verbose",
+      "description": "Write summary of scanner statistics to stdout"
+    },
+    {
+      "paramName": "--hex",
+      "description": "Use hexadecimal numbers instead of octal in debug outputs"
+    },
+    {
+      "paramName": "-o, --outfile=FILE",
+      "description": "Specify output filename"
+    },
+    {
+      "paramName": "-S, --skel=FILE",
+      "description": "Specify skeleton file"
+    },
+    {
+      "paramName": "-t, --stdout",
+      "description": "Write scanner on stdout instead of lex.yy.c"
+    },
+    {
+      "paramName": "--yyclass=NAME",
+      "description": "Name of C++ class"
+    },
+    {
+      "paramName": "--header-file=FILE",
+      "description": "Create a C header file in addition to the scanner"
+    },
+    {
+      "paramName": "--tables-file[=FILE]",
+      "description": "Write tables to FILE"
+    },
+    {
+      "paramName": "-7, --7bit",
+      "description": "Generate 7-bit scanner"
+    },
+    {
+      "paramName": "-8, --8bit",
+      "description": "Generate 8-bit scanner"
+    },
+    {
+      "paramName": "-B, --batch",
+      "description": "Generate batch scanner (opposite of -I)"
+    },
+    {
+      "paramName": "-i, --case-insensitive",
+      "description": "Ignore case in patterns"
+    },
+    {
+      "paramName": "-l, --lex-compat",
+      "description": "Maximal compatibility with original lex"
+    },
+    {
+      "paramName": "-X, --posix-compat",
+      "description": "Maximal compatibility with POSIX lex"
+    },
+    {
+      "paramName": "-I, --interactive",
+      "description": "Generate interactive scanner (opposite of -B)"
+    },
+    {
+      "paramName": "--yylineno",
+      "description": "Track line count in yylineno"
+    },
+    {
+      "paramName": "-+, --c++",
+      "description": "Generate C++ scanner class"
+    },
+    {
+      "paramName": "-Dmacro[=defn]",
+      "description": "#define macro defn (default defn is '1')"
+    },
+    {
+      "paramName": "-L, --noline",
+      "description": "Suppress #line directives in scanner"
+    },
+    {
+      "paramName": "-P, --prefix=STRING",
+      "description": "Use STRING as prefix instead of \"yy\""
+    },
+    {
+      "paramName": "-R, --reentrant",
+      "description": "Generate a reentrant C scanner"
+    },
+    {
+      "paramName": "--bison-bridge",
+      "description": "Scanner for bison pure parser"
+    },
+    {
+      "paramName": "--bison-locations",
+      "description": "Include yylloc support"
+    },
+    {
+      "paramName": "--stdinit",
+      "description": "Initialize yyin/yyout to stdin/stdout"
+    },
+    {
+      "paramName": "--nounistd",
+      "description": "Do not include <unistd.h>"
+    },
+    {
+      "paramName": "--noFUNCTION",
+      "description": "Do not generate a particular FUNCTION"
+    },
+    {
+      "paramName": "-c",
+      "description": "Do-nothing POSIX option"
+    },
+    {
+      "paramName": "-n",
+      "description": "Do-nothing POSIX option"
+    },
+    {
+      "paramName": "-?",
+      "description": "Produce help message (same as -h/--help)"
+    },
+    {
+      "paramName": "-h, --help",
+      "description": "Produce this help message"
+    },
+    {
+      "paramName": "-V, --version",
+      "description": "Report flex version"
+    }
+  ],
+  "examples": [
+    "flex --help",
+    "flex -h",
+    "flex scanner.l"
+  ],
+  "showDetails": false
+}

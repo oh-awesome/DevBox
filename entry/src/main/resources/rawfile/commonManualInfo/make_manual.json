@@ -1,0 +1,124 @@
+[
+  {
+    "name": "make",
+    "description": "自动化构建工具，用于根据Makefile中的规则编译和链接程序。",
+    "syntax": "make [options]",
+    "options": [
+      {
+        "paramName": "-b, -m",
+        "description": "POSIX compatibility"
+      },
+      {
+        "paramName": "-B, --always-make",
+        "description": "unconditionally make all targets"
+      },
+      {
+        "paramName": "-C, --directory <dir>",
+        "description": "change to directory dir"
+      },
+      {
+        "paramName": "-d",
+        "description": "print debugging information"
+      },
+      {
+        "paramName": "-e, --environment-overrides",
+        "description": "environment variables override makefiles"
+      },
+      {
+        "paramName": "-f, --file <file>",
+        "description": "read makefile from file"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      },
+      {
+        "paramName": "-i, --ignore-errors",
+        "description": "ignore errors from commands"
+      },
+      {
+        "paramName": "-I, --include-dir <dir>",
+        "description": "search dir for included makefiles"
+      },
+      {
+        "paramName": "-j, --jobs <n>",
+        "description": "allow n jobs at once"
+      },
+      {
+        "paramName": "-k, --keep-going",
+        "description": "keep going when some targets can't be made"
+      },
+      {
+        "paramName": "-l, --load-average <n>",
+        "description": "don't start new jobs if load average is at least n"
+      },
+      {
+        "paramName": "-L, --check-symlink-times",
+        "description": "use symlink times for target files"
+      },
+      {
+        "paramName": "-n, --just-print",
+        "description": "print commands but don't execute them"
+      },
+      {
+        "paramName": "-o, --old-file <file>",
+        "description": "don't remake file"
+      },
+      {
+        "paramName": "-O, --output-sync <type>",
+        "description": "synchronize output of parallel jobs"
+      },
+      {
+        "paramName": "-p, --print-data-base",
+        "description": "print make's internal database"
+      },
+      {
+        "paramName": "-q, --question",
+        "description": "don't run any commands; exit status says if up to date"
+      },
+      {
+        "paramName": "-r, --no-builtin-rules",
+        "description": "disable built-in rules"
+      },
+      {
+        "paramName": "-R, --no-builtin-variables",
+        "description": "disable built-in variables"
+      },
+      {
+        "paramName": "-s, --silent",
+        "description": "don't print commands"
+      },
+      {
+        "paramName": "-S, --no-keep-going",
+        "description": "turn off -k"
+      },
+      {
+        "paramName": "-t, --touch",
+        "description": "touch targets instead of remaking them"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "display version"
+      },
+      {
+        "paramName": "-w, --print-directory",
+        "description": "print directory names as make enters and leaves them"
+      },
+      {
+        "paramName": "-W, --what-if <file>",
+        "description": "pretend file was modified"
+      },
+      {
+        "paramName": "-X, --exclude <dir>",
+        "description": "exclude directory from search"
+      }
+    ],
+    "examples": [
+      "make",
+      "make install",
+      "make clean",
+      "make -j4"
+    ],
+    "showDetails": false
+  }
+]

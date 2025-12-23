@@ -1,0 +1,159 @@
+[
+  {
+    "name": "xmlcatalog",
+    "description": "XML/SGML目录管理工具，用于解析、查询、创建和修改XML/SGML目录文件，管理实体引用的映射关系",
+    "syntax": "xmlcatalog [options] catalogfile entities...",
+    "options": [
+      {
+        "paramName": "--sgml",
+        "description": "Handle SGML Super catalogs for --add and --del"
+      },
+      {
+        "paramName": "--shell",
+        "description": "Run a shell allowing interactive queries"
+      },
+      {
+        "paramName": "--create",
+        "description": "Create a new catalog"
+      },
+      {
+        "paramName": "--add 'type' 'orig' 'replace'",
+        "description": "Add an XML entry"
+      },
+      {
+        "paramName": "--add 'entry'",
+        "description": "Add an SGML entry"
+      },
+      {
+        "paramName": "--del 'values'",
+        "description": "Remove values"
+      },
+      {
+        "paramName": "--noout",
+        "description": "Avoid dumping the result on stdout; used with --add or --del to save catalog changes, and with --sgml to automatically update the super catalog"
+      },
+      {
+        "paramName": "--no-super-update",
+        "description": "Do not update the SGML super catalog"
+      },
+      {
+        "paramName": "-v",
+        "description": "Provide debug information"
+      },
+      {
+        "paramName": "--verbose",
+        "description": "Provide debug information"
+      }
+    ],
+    "examples": [
+      "xmlcatalog",
+      "xmlcatalog --create",
+      "xmlcatalog -v new.xml",
+      "xmlcatalog --shell catalog.xml"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "xmllint",
+    "description": "对 XML 文件进行解析、验证、格式化及语法检查的工具",
+    "syntax": "xmllint [options] XMLfiles ...",
+    "options": [
+      {
+        "paramName": "--version",
+        "description": "Display the version of the XML library used"
+      },
+      {
+        "paramName": "--debug",
+        "description": "Dump a debug tree of the in-memory document"
+      },
+      {
+        "paramName": "--shell",
+        "description": "Run a navigating shell"
+      },
+      {
+        "paramName": "--debugent",
+        "description": "Debug the entities defined in the document"
+      },
+      {
+        "paramName": "--copy",
+        "description": "Test the internal copy implementation"
+      },
+      {
+        "paramName": "--recover",
+        "description": "Output what was parsable on broken XML documents"
+      },
+      {
+        "paramName": "--huge",
+        "description": "Remove any internal arbitrary parser limits"
+      },
+      {
+        "paramName": "--noent",
+        "description": "Substitute entity references by their value"
+      },
+      {
+        "paramName": "--noenc",
+        "description": "Ignore any encoding specified inside the document"
+      },
+      {
+        "paramName": "--noout",
+        "description": "Don't output the result tree"
+      },
+      {
+        "paramName": "--path 'paths'",
+        "description": "Provide a set of paths for resources"
+      },
+      {
+        "paramName": "--load-trace",
+        "description": "Print trace of all external entities loaded"
+      },
+      {
+        "paramName": "--nonet",
+        "description": "Refuse to fetch DTDs or entities over network"
+      },
+      {
+        "paramName": "--nocompact",
+        "description": "Do not generate compact text nodes"
+      },
+      {
+        "paramName": "--htmlout",
+        "description": "Output results as HTML"
+      },
+      {
+        "paramName": "--nowrap",
+        "description": "Do not put HTML doc wrapper"
+      },
+      {
+        "paramName": "--valid",
+        "description": "Validate the document in addition to standard well-formed check"
+      },
+      {
+        "paramName": "--postvalid",
+        "description": "Do a posteriori validation, i.e after parsing"
+      },
+      {
+        "paramName": "--dtdvalid URL",
+        "description": "Do a posteriori validation against a given DTD"
+      },
+      {
+        "paramName": "--dtdvalidfpi FPI",
+        "description": "Same as --dtdvalid but name the DTD with a Public Identifier"
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Be quiet when succeeded"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      }
+    ],
+    "examples": [
+      "xmllint document.xml",
+      "xmllint --valid --noout config.xml",
+      "xmllint --format input.xml > output.xml",
+      "xmllint --nonet --dtdvalid http://example.com/dtd.dtd data.xml",
+      "xmllint --shell document.xml"
+    ],
+    "showDetails": false
+  }
+]

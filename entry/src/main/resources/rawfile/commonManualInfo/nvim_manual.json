@@ -1,0 +1,140 @@
+[
+  {
+    "name": "nvim",
+    "description": "Neovim文本编辑器，Vim的增强版，支持现代特性和扩展，用于文本编辑、代码编写等场景",
+    "syntax": "nvim [options] [file ...]",
+    "options": [
+      {
+        "paramName": "--cmd <cmd>",
+        "description": "Execute <cmd> before any config"
+      },
+      {
+        "paramName": "+<cmd>",
+        "description": "Execute <cmd> after config and first file"
+      },
+      {
+        "paramName": "-c <cmd>",
+        "description": "Execute <cmd> after config and first file"
+      },
+      {
+        "paramName": "-l <script> [args...]",
+        "description": "Execute Lua <script> (with optional args)"
+      },
+      {
+        "paramName": "-S <session>",
+        "description": "Source <session> after loading the first file"
+      },
+      {
+        "paramName": "-s <scriptin>",
+        "description": "Read Normal mode commands from <scriptin>"
+      },
+      {
+        "paramName": "-u <config>",
+        "description": "Use this config file"
+      },
+      {
+        "paramName": "-d",
+        "description": "Diff mode"
+      },
+      {
+        "paramName": "-es",
+        "description": "Silent (batch) mode"
+      },
+      {
+        "paramName": "-Es",
+        "description": "Silent (batch) mode"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print this help message"
+      },
+      {
+        "paramName": "--help",
+        "description": "Print this help message"
+      },
+      {
+        "paramName": "-i <shada>",
+        "description": "Use this shada file"
+      },
+      {
+        "paramName": "-n",
+        "description": "No swap file, use memory only"
+      },
+      {
+        "paramName": "-o[N]",
+        "description": "Open N windows (default: one per file)"
+      },
+      {
+        "paramName": "-O[N]",
+        "description": "Open N vertical windows (default: one per file)"
+      },
+      {
+        "paramName": "-p[N]",
+        "description": "Open N tab pages (default: one per file)"
+      },
+      {
+        "paramName": "-R",
+        "description": "Read-only (view) mode"
+      },
+      {
+        "paramName": "-v",
+        "description": "Print version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Print version information"
+      },
+      {
+        "paramName": "-V[N][file]",
+        "description": "Verbose [level][file]"
+      },
+      {
+        "paramName": "--",
+        "description": "Only file names after this"
+      },
+      {
+        "paramName": "--api-info",
+        "description": "Write msgpack-encoded API metadata to stdout"
+      },
+      {
+        "paramName": "--clean",
+        "description": "\"Factory defaults\" (skip user config and plugins, shada)"
+      },
+      {
+        "paramName": "--embed",
+        "description": "Use stdin/stdout as a msgpack-rpc channel"
+      },
+      {
+        "paramName": "--headless",
+        "description": "Don't start a user interface"
+      },
+      {
+        "paramName": "--listen <address>",
+        "description": "Serve RPC API from this address"
+      },
+      {
+        "paramName": "--remote[-subcommand]",
+        "description": "Execute commands remotely on a server"
+      },
+      {
+        "paramName": "--server <address>",
+        "description": "Connect to this Nvim server"
+      },
+      {
+        "paramName": "--startuptime <file>",
+        "description": "Write startup timing messages to <file>"
+      }
+    ],
+    "examples": [
+      "nvim test.txt",
+      "nvim -c \"set number\" code.py",
+      "nvim -d file1.txt file2.txt",
+      "nvim -p doc1.md doc2.md",
+      "nvim --clean",
+      "nvim --startuptime startup.log",
+      "nvim -l script.lua arg1 arg2",
+      "nvim --listen localhost:6666"
+    ],
+    "showDetails": false
+  }
+]

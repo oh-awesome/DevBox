@@ -1,0 +1,243 @@
+[
+  {
+    "name": "bc",
+    "description": "任意精度的计算器语言，支持基本的算术运算和复杂的数学函数。",
+    "syntax": "bc [-sqlw] [FILE]...",
+    "options": [
+      {
+        "paramName": "-q",
+        "description": "Quiet"
+      },
+      {
+        "paramName": "-l",
+        "description": "Load standard library"
+      },
+      {
+        "paramName": "-s",
+        "description": "Be POSIX compatible"
+      },
+      {
+        "paramName": "-w",
+        "description": "Warn if extensions are used"
+      }
+    ],
+    "examples": [
+      "bc -l",
+      "bc script.bc",
+      "echo '1+1' | bc"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unexpand",
+    "description": "将文件中的空格转换为制表符，可指定转换规则",
+    "syntax": "unexpand [-fa][-t N] [FILE]...",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Convert all blanks"
+      },
+      {
+        "paramName": "-f",
+        "description": "Convert only leading blanks"
+      },
+      {
+        "paramName": "-t N",
+        "description": "Tabstops every N chars"
+      }
+    ],
+    "examples": [
+      "unexpand file.txt",
+      "unexpand -a document.txt",
+      "unexpand -t 4 sourcecode.c",
+      "unexpand -f -t 8 input.txt > output.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "stty",
+    "description": "配置和查看终端设备的设置",
+    "syntax": "stty [-a|g] [-F DEVICE] [SETTING]...",
+    "options": [
+      {
+        "paramName": "-F DEVICE",
+        "description": "Open device instead of stdin"
+      },
+      {
+        "paramName": "-a",
+        "description": "Print all current settings in human-readable form"
+      },
+      {
+        "paramName": "-g",
+        "description": "Print in stty-readable form"
+      },
+      {
+        "paramName": "speed",
+        "description": "Set terminal baud rate (e.g., 9600, 115200)"
+      },
+      {
+        "paramName": "csN",
+        "description": "Set character size to N bits (5, 6, 7, 8)"
+      },
+      {
+        "paramName": "parity",
+        "description": "Set parity checking (even, odd, none)"
+      },
+      {
+        "paramName": "stopb",
+        "description": "Set number of stop bits (1, 2)"
+      },
+      {
+        "paramName": "echo",
+        "description": "Enable echoing of input characters"
+      },
+      {
+        "paramName": "-echo",
+        "description": "Disable echoing of input characters"
+      },
+      {
+        "paramName": "icanon",
+        "description": "Enable canonical mode (line-by-line input)"
+      },
+      {
+        "paramName": "-icanon",
+        "description": "Disable canonical mode (character-by-character input)"
+      },
+      {
+        "paramName": "sane",
+        "description": "Set terminal to sane settings"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this help"
+      }
+    ],
+    "examples": [
+      "stty",
+      "stty -a",
+      "stty -g",
+      "stty -F /dev/ttyUSB0 115200 cs8 -parity",
+      "stty echo",
+      "stty -echo",
+      "stty sane"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "mpstat",
+    "description": "显示每个处理器的统计信息，用于监控多处理器系统中各个 CPU 的利用率、中断等状态",
+    "syntax": "mpstat [-A] [-I SUM|CPU|ALL|SCPU] [-u] [-P num|ALL] [INTERVAL [COUNT]]",
+    "options": [
+      {
+        "paramName": "-A",
+        "description": "Equivalent to -I ALL -u -P ALL (enable all statistics for all processors)"
+      },
+      {
+        "paramName": "-I SUM|CPU|ALL|SCPU",
+        "description": "Report interrupt statistics; valid arguments: SUM (summary), CPU (per-CPU), ALL (both SUM and CPU), SCPU (per-software CPU)"
+      },
+      {
+        "paramName": "-u",
+        "description": "Report CPU utilization statistics (default if no other statistics option is specified)"
+      },
+      {
+        "paramName": "-P num|ALL",
+        "description": "Specify the processor to monitor; num is the CPU number (0-based), ALL means monitor all processors"
+      }
+    ],
+    "examples": [
+      "mpstat",
+      "mpstat 2 5",
+      "mpstat -A 3"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "iostat",
+    "description": "系统 CPU 和 I/O 统计报告工具（BusyBox 版本）",
+    "syntax": "iostat [-c] [-d] [-t] [-z] [-k|-m] [ALL|BLOCKDEV...] [INTERVAL [COUNT]]",
+    "options": [
+      {
+        "paramName": "-c",
+        "description": "Show CPU utilization"
+      },
+      {
+        "paramName": "-d",
+        "description": "Show device utilization"
+      },
+      {
+        "paramName": "-t",
+        "description": "Print current time"
+      },
+      {
+        "paramName": "-z",
+        "description": "Omit devices with no activity"
+      },
+      {
+        "paramName": "-k",
+        "description": "Use kb/s as data transfer unit"
+      },
+      {
+        "paramName": "-m",
+        "description": "Use Mb/s as data transfer unit"
+      }
+    ],
+    "examples": [
+      "iostat",
+      "iostat -c -d",
+      "iostat -t -k sda 2 10",
+      "iostat -m -z ALL 5",
+      "iostat sdb sdc 1"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "frcode",
+    "description": "findutils 工具集的辅助工具，用于处理文件名编码和压缩（通常与 find、xargs 等工具配合使用）",
+    "syntax": "frcode [-0 | --null] [--version] [--help]",
+    "options": [
+      {
+        "paramName": "-0, --null",
+        "description": "Use NUL as the record separator"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information and exit"
+      },
+      {
+        "paramName": "--version",
+        "description": "Output version information and exit"
+      }
+    ],
+    "examples": [
+      "frcode --help",
+      "frcode --version",
+      "find . -name \".Trash\" -prune -o -name \"appdata\" -prune -o -name \".Recent\" -prune -o -name \".thumbs\" -prune -o -print0 | frcode -0 > encoded_list"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "fold",
+    "description": "用于将长行文本折叠为指定宽度的短行，便于终端显示。",
+    "syntax": "fold [-bs] [-w WIDTH] [FILE]...",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "Count bytes rather than columns"
+      },
+      {
+        "paramName": "-s",
+        "description": "Break lines at spaces"
+      },
+      {
+        "paramName": "-w",
+        "description": "Use WIDTH columns instead of 80"
+      }
+    ],
+    "examples": [
+      "fold --help",
+      "fold -w 80 file.txt"
+    ],
+    "showDetails": false
+  }
+]

@@ -1,0 +1,1039 @@
+[
+  {
+    "name": "eqn",
+    "description": "groff文档格式化系统的公式处理工具，用于在roff格式文档中排版数学公式",
+    "syntax": "eqn [-CNrR] [-d xy] [-f font] [-m n] [-M dir] [-p n] [-s n] [-T name] [file ...],eqn {-v | --version},eqn --help",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-C",
+        "description": "Enable specific formatting option (details refer to groff documentation)"
+      },
+      {
+        "paramName": "-N",
+        "description": "Disable specific formatting option (details refer to groff documentation)"
+      },
+      {
+        "paramName": "-r",
+        "description": "Enable raw output mode (details refer to groff documentation)"
+      },
+      {
+        "paramName": "-R",
+        "description": "Disable raw output mode (details refer to groff documentation)"
+      },
+      {
+        "paramName": "-d xy",
+        "description": "Set dimension parameters for formula layout"
+      },
+      {
+        "paramName": "-f font",
+        "description": "Specify font for formula rendering"
+      },
+      {
+        "paramName": "-m n",
+        "description": "Set magnification factor for formulas"
+      },
+      {
+        "paramName": "-M dir",
+        "description": "Specify directory for macro files"
+      },
+      {
+        "paramName": "-p n",
+        "description": "Set precision parameter for formula typesetting"
+      },
+      {
+        "paramName": "-s n",
+        "description": "Set size parameter for formula elements"
+      },
+      {
+        "paramName": "-T name",
+        "description": "Specify output device or format (e.g., ps, pdf, html)"
+      }
+    ],
+    "examples": [
+      "eqn --help",
+      "eqn --version",
+      "eqn -T ps formula.roff > formatted.ps"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "grn",
+    "description": "groff相关的处理工具，支持指定宏文件目录、字体文件目录及输出设备等参数进行操作",
+    "syntax": "grn [-Cs] [-M dir] [-F dir] [-T dev] [file ...]\ngrn {-v | --version}\ngrn --help",
+    "options": [
+      {
+        "paramName": "-C",
+        "description": "Enable C-related groff processing option"
+      },
+      {
+        "paramName": "-s",
+        "description": "Enable s-related groff processing option"
+      },
+      {
+        "paramName": "-M dir",
+        "description": "Specify directory for macro files"
+      },
+      {
+        "paramName": "-F dir",
+        "description": "Specify directory for font files"
+      },
+      {
+        "paramName": "-T dev",
+        "description": "Specify output device"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "grn test.grn",
+      "grn -Cs -M ./macros -F ./fonts -T ps doc.grn",
+      "grn --version",
+      "grn --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "grodvi",
+    "description": "将groff输出转换为DVI格式的工具，支持设置纸张格式、输出宽度等参数",
+    "syntax": "grodvi [-dl] [-F dir] [-p paper-format] [-w n] [file ...]\ngrodvi {-v | --version}\ngrodvi --help",
+    "options": [
+      {
+        "paramName": "-d",
+        "description": "Enable debug mode"
+      },
+      {
+        "paramName": "-l",
+        "description": "Enable landscape mode"
+      },
+      {
+        "paramName": "-F dir",
+        "description": "Specify directory for font files"
+      },
+      {
+        "paramName": "-p paper-format",
+        "description": "Set paper format"
+      },
+      {
+        "paramName": "-w n",
+        "description": "Set output width"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "grodvi document.groff",
+      "grodvi -dl -F ./fonts -p a4 -w 80 report.groff",
+      "grodvi --version",
+      "grodvi --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "groff",
+    "description": "groff（GNU roff）是一款排版系统，读取包含格式化命令的纯文本输入文件，可生成PostScript、HTML或DVI格式的输出，或直接在终端显示",
+    "syntax": "groff [-abcCeEgijkNpRsStUVzZ] [-d ctext] [-d string=text] [-D fallback-encoding] [-I inclusion-directory] [-K input-encoding] [-m macro-package] [-M macro-directory] [-n page-number] [-o page-list] [-P postprocessor-argument] [-r cnumeric-expression] [-r register=numeric-expression] [-T output-device] [-w warning-category] [-W warning-category] [file ...]\ngroff {-v | --version}\ngroff {-h | --help}",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Enable a-related groff processing option"
+      },
+      {
+        "paramName": "-b",
+        "description": "Enable b-related groff processing option"
+      },
+      {
+        "paramName": "-c",
+        "description": "Enable c-related groff processing option"
+      },
+      {
+        "paramName": "-C",
+        "description": "Enable C-related groff processing option"
+      },
+      {
+        "paramName": "-e",
+        "description": "Enable e-related groff processing option"
+      },
+      {
+        "paramName": "-E",
+        "description": "Enable E-related groff processing option"
+      },
+      {
+        "paramName": "-g",
+        "description": "Enable g-related groff processing option"
+      },
+      {
+        "paramName": "-i",
+        "description": "Enable i-related groff processing option"
+      },
+      {
+        "paramName": "-j",
+        "description": "Enable j-related groff processing option"
+      },
+      {
+        "paramName": "-k",
+        "description": "Enable k-related groff processing option"
+      },
+      {
+        "paramName": "-N",
+        "description": "Enable N-related groff processing option"
+      },
+      {
+        "paramName": "-p",
+        "description": "Enable p-related groff processing option"
+      },
+      {
+        "paramName": "-R",
+        "description": "Enable R-related groff processing option"
+      },
+      {
+        "paramName": "-s",
+        "description": "Enable s-related groff processing option"
+      },
+      {
+        "paramName": "-S",
+        "description": "Enable S-related groff processing option"
+      },
+      {
+        "paramName": "-t",
+        "description": "Enable t-related groff processing option"
+      },
+      {
+        "paramName": "-U",
+        "description": "Enable U-related groff processing option"
+      },
+      {
+        "paramName": "-V",
+        "description": "Enable V-related groff processing option"
+      },
+      {
+        "paramName": "-z",
+        "description": "Enable z-related groff processing option"
+      },
+      {
+        "paramName": "-Z",
+        "description": "Enable Z-related groff processing option"
+      },
+      {
+        "paramName": "-d ctext",
+        "description": "Set ctext for groff processing"
+      },
+      {
+        "paramName": "-d string=text",
+        "description": "Set string=text for groff processing"
+      },
+      {
+        "paramName": "-D fallback-encoding",
+        "description": "Specify fallback encoding"
+      },
+      {
+        "paramName": "-I inclusion-directory",
+        "description": "Specify inclusion directory"
+      },
+      {
+        "paramName": "-K input-encoding",
+        "description": "Specify input encoding"
+      },
+      {
+        "paramName": "-m macro-package",
+        "description": "Specify macro package"
+      },
+      {
+        "paramName": "-M macro-directory",
+        "description": "Specify directory for macro files"
+      },
+      {
+        "paramName": "-n page-number",
+        "description": "Specify page number"
+      },
+      {
+        "paramName": "-o page-list",
+        "description": "Specify page list"
+      },
+      {
+        "paramName": "-P postprocessor-argument",
+        "description": "Specify postprocessor argument"
+      },
+      {
+        "paramName": "-r cnumeric-expression",
+        "description": "Set cnumeric expression for groff processing"
+      },
+      {
+        "paramName": "-r register=numeric-expression",
+        "description": "Set register=numeric-expression for groff processing"
+      },
+      {
+        "paramName": "-T output-device",
+        "description": "Specify output device"
+      },
+      {
+        "paramName": "-w warning-category",
+        "description": "Enable specified warning category"
+      },
+      {
+        "paramName": "-W warning-category",
+        "description": "Disable specified warning category"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display help information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "groff document.txt",
+      "groff -m man -T ps manual.man",
+      "groff -v",
+      "groff --help"
+    ],
+    "showDetails": false,
+    "isNeedHide": true
+  },
+  {
+    "name": "grolbp",
+    "description": "将troff(1)的输出转换为适用于Canon LBP-4和LBP-8打印机的CaPSL和VDM格式的工具",
+    "syntax": "grolbp [-l] [-c num-copies] [-F font-directory] [-o orientation] [-p paper-format] [-w width] [file ...]\ngrolbp {-v | --version}\ngrolbp {-h | --help}",
+    "options": [
+      {
+        "paramName": "-l",
+        "description": "Enable landscape mode"
+      },
+      {
+        "paramName": "-c num-copies",
+        "description": "Set number of copies to print"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Specify directory for font files"
+      },
+      {
+        "paramName": "-o orientation",
+        "description": "Set page orientation"
+      },
+      {
+        "paramName": "-p paper-format",
+        "description": "Set paper format"
+      },
+      {
+        "paramName": "-w width",
+        "description": "Set page width"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display help information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "grolbp document.lbp",
+      "grolbp -l -c 3 -F ./fonts -o portrait -p a4 -w 80 report.lbp",
+      "grolbp --version",
+      "grolbp --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "grops",
+    "description": "将troff(1)的输出转换为PostScript格式的工具",
+    "syntax": "grops [-glm] [-b brokenness-flags] [-c num-copies] [-F font-directory] [-I inclusion-directory] [-p paper-format] [-P prologue-file] [-w rule-thickness] [file ...]\ngrops {-v | --version}\ngrops --help",
+    "options": [
+      {
+        "paramName": "-g",
+        "description": "Enable grid fitting"
+      },
+      {
+        "paramName": "-l",
+        "description": "Enable landscape mode"
+      },
+      {
+        "paramName": "-m",
+        "description": "Enable manual feed"
+      },
+      {
+        "paramName": "-b brokenness-flags",
+        "description": "Set brokenness flags"
+      },
+      {
+        "paramName": "-c num-copies",
+        "description": "Set number of copies"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Specify directory for font files"
+      },
+      {
+        "paramName": "-I inclusion-directory",
+        "description": "Add directory to inclusion path"
+      },
+      {
+        "paramName": "-p paper-format",
+        "description": "Set paper format"
+      },
+      {
+        "paramName": "-P prologue-file",
+        "description": "Use specified prologue file"
+      },
+      {
+        "paramName": "-w rule-thickness",
+        "description": "Set rule thickness"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "grops document.ps",
+      "grops -glm -b 4 -c 2 -F ./fonts -I ./include -p a4 -P prologue.ps -w 0.5 report.ps",
+      "grops --version",
+      "grops --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "grotty",
+    "description": "将troff(1)的输出转换为适用于打字机类设备（包括终端模拟器）的格式的工具",
+    "syntax": "grotty [-bBcdfhioruU] [-F font-directory] [file ...]\ngrotty {-v | --version}\ngrotty --help",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "Use bold text instead of reverse video"
+      },
+      {
+        "paramName": "-B",
+        "description": "Assume terminal uses ISO 6429 (ECMA-48, ANSI X3.64) escape sequences"
+      },
+      {
+        "paramName": "-c",
+        "description": "Suppress use of color escape sequences"
+      },
+      {
+        "paramName": "-d",
+        "description": "Ignore \\D commands"
+      },
+      {
+        "paramName": "-f",
+        "description": "Use form feeds for page breaks"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Specify directory for font files"
+      },
+      {
+        "paramName": "-h",
+        "description": "Use horizontal tabs"
+      },
+      {
+        "paramName": "-i",
+        "description": "Use italics instead of underlining"
+      },
+      {
+        "paramName": "-o",
+        "description": "Override tabs with spaces"
+      },
+      {
+        "paramName": "-r",
+        "description": "Use reverse video instead of bold text"
+      },
+      {
+        "paramName": "-u",
+        "description": "Use underlining instead of italics"
+      },
+      {
+        "paramName": "-U",
+        "description": "Suppress underlining"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "grotty document.tty",
+      "grotty -bBc -F ./fonts report.tty",
+      "grotty --version",
+      "grotty --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pic",
+    "description": "troff 绘图预处理程序，用于处理图片描述语言并生成格式化输出",
+    "syntax": "pic [-CnSU] [file ...]",
+    "options": [
+      {
+        "paramName": "-C",
+        "description": "Enable specific compatibility mode processing"
+      },
+      {
+        "paramName": "-n",
+        "description": "Disable certain default processing behaviors"
+      },
+      {
+        "paramName": "-S",
+        "description": "Enable specific syntax or output features"
+      },
+      {
+        "paramName": "-U",
+        "description": "Enable or disable Unicode-related processing"
+      },
+      {
+        "paramName": "-t",
+        "description": "Process input in troff-compatible mode"
+      },
+      {
+        "paramName": "-c",
+        "description": "Specific option for -t mode to control output format"
+      },
+      {
+        "paramName": "-z",
+        "description": "Specific processing option in -t mode"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Display version information and exit"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information and exit"
+      }
+    ],
+    "examples": [
+      "pic input.pic",
+      "pic -CnSU document.pic",
+      "pic -v"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "post-grohtml",
+    "description": "将 groff 输出转换为 HTML 的工具",
+    "syntax": "post-grohtml [-bCGhlnrVy] [-F font-directory] [-j output-stem] [-s base-type-size] [-S heading-level] [-x html-dialect] [file ...]\npost-grohtml {-v | --version}\npost-grohtml --help",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "Enable specified formatting behavior (see groff documentation for details)"
+      },
+      {
+        "paramName": "-C",
+        "description": "Enable compatibility mode for specific HTML rendering"
+      },
+      {
+        "paramName": "-G",
+        "description": "Apply groff-specific HTML generation rules"
+      },
+      {
+        "paramName": "-h",
+        "description": "Print brief help information"
+      },
+      {
+        "paramName": "-l",
+        "description": "Enable line-specific formatting or logging"
+      },
+      {
+        "paramName": "-n",
+        "description": "Disable default naming convention for output files"
+      },
+      {
+        "paramName": "-r",
+        "description": "Enable recursive processing of input files"
+      },
+      {
+        "paramName": "-V",
+        "description": "Enable verbose output for debugging"
+      },
+      {
+        "paramName": "-y",
+        "description": "Apply strict syntax checking for input files"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Specify directory containing custom fonts"
+      },
+      {
+        "paramName": "-j output-stem",
+        "description": "Set base name (stem) for output files"
+      },
+      {
+        "paramName": "-s base-type-size",
+        "description": "Define base type size for HTML content"
+      },
+      {
+        "paramName": "-S heading-level",
+        "description": "Set default heading level for HTML output"
+      },
+      {
+        "paramName": "-x html-dialect",
+        "description": "Specify target HTML dialect (e.g., HTML5, XHTML)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Print detailed help message and exit"
+      }
+    ],
+    "examples": [
+      "post-grohtml input.roff > output.html",
+      "post-grohtml --version",
+      "post-grohtml --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "pre-grohtml",
+    "description": "为 HTML 格式化准备 troff 文档（groff 流水线组件，通常不单独执行）",
+    "syntax": "pre-grohtml [-epV] [-a anti-aliasing-text-bits] [-D image-directory] [-F font-directory] [-g anti-aliasing-graphics-bits] [-i resolution] [-I image-stem] [-o image-vertical-offset] [-x html-dialect] troff-command troff-argument ...\npre-grohtml {-v | --version}\npre-grohtml --help",
+    "options": [
+      {
+        "paramName": "-e",
+        "description": "Enable extended processing for troff content"
+      },
+      {
+        "paramName": "-p",
+        "description": "Enable preview-related formatting options"
+      },
+      {
+        "paramName": "-V",
+        "description": "Enable verbose output for debugging"
+      },
+      {
+        "paramName": "-a anti-aliasing-text-bits",
+        "description": "Set anti-aliasing bits for text"
+      },
+      {
+        "paramName": "-D image-directory",
+        "description": "Specify directory for output images"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Specify directory for custom fonts"
+      },
+      {
+        "paramName": "-g anti-aliasing-graphics-bits",
+        "description": "Set anti-aliasing bits for graphics"
+      },
+      {
+        "paramName": "-i resolution",
+        "description": "Define image resolution"
+      },
+      {
+        "paramName": "-I image-stem",
+        "description": "Set base name (stem) for output images"
+      },
+      {
+        "paramName": "-o image-vertical-offset",
+        "description": "Set vertical offset for images"
+      },
+      {
+        "paramName": "-x html-dialect",
+        "description": "Specify target HTML dialect (e.g., HTML5, XHTML)"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Print detailed help message and exit"
+      }
+    ],
+    "examples": [
+      "pre-grohtml -D ./images -x HTML5 groff -Thtml document.roff",
+      "pre-grohtml --version",
+      "pre-grohtml --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "preconv",
+    "description": "将文件编码字符转换为GNU troff可解释的形式，输出到标准输出流",
+    "syntax": "preconv [-dr] [-D fallback-encoding] [-e encoding] [file ...]",
+    "options": [
+      {
+        "paramName": "-d",
+        "description": "Enable debug output"
+      },
+      {
+        "paramName": "-r",
+        "description": "Use strict rules for encoding detection"
+      },
+      {
+        "paramName": "-D fallback-encoding",
+        "description": "Set fallback encoding (default is UTF-8)"
+      },
+      {
+        "paramName": "-e encoding",
+        "description": "Specify input encoding explicitly"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Display version information and exit"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Display help information and exit"
+      }
+    ],
+    "examples": [
+      "preconv document.txt",
+      "preconv -e GBK chinese.txt",
+      "preconv --version"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "refer",
+    "description": "处理文档中的参考文献引用，用于排版时插入参考文献条目",
+    "syntax": "refer [-bCenPRS] [-aN] [-cXYZ] [-fN] [-iXYZ] [-kX] [-lM,N] [-p db-file] [-sXYZ] [-tN] [-Bl.m] [file ...]",
+    "options": [
+      {
+        "paramName": "-b",
+        "description": "Use brief output format"
+      },
+      {
+        "paramName": "-C",
+        "description": "Disable citation compression"
+      },
+      {
+        "paramName": "-e",
+        "description": "Enable extended regular expression matching"
+      },
+      {
+        "paramName": "-n",
+        "description": "Suppress sorting of references"
+      },
+      {
+        "paramName": "-P",
+        "description": "Preserve original order of references"
+      },
+      {
+        "paramName": "-R",
+        "description": "Disable replacement of citations"
+      },
+      {
+        "paramName": "-S",
+        "description": "Sort references alphabetically"
+      },
+      {
+        "paramName": "-aN",
+        "description": "Set maximum number of authors to display"
+      },
+      {
+        "paramName": "-cXYZ",
+        "description": "Set citation delimiter characters"
+      },
+      {
+        "paramName": "-fN",
+        "description": "Set field number for sorting"
+      },
+      {
+        "paramName": "-iXYZ",
+        "description": "Set input delimiter characters"
+      },
+      {
+        "paramName": "-kX",
+        "description": "Set citation key format"
+      },
+      {
+        "paramName": "-lM,N",
+        "description": "Set page range for references"
+      },
+      {
+        "paramName": "-p db-file",
+        "description": "Specify reference database file"
+      },
+      {
+        "paramName": "-sXYZ",
+        "description": "Set sort delimiter characters"
+      },
+      {
+        "paramName": "-tN",
+        "description": "Set reference type filter"
+      },
+      {
+        "paramName": "-Bl.m",
+        "description": "Set line length and margin for output"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Display version information and exit"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information and exit"
+      }
+    ],
+    "examples": [
+      "refer paper.txt",
+      "refer -p references.bib document.ms",
+      "refer -v",
+      "refer --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "soelim",
+    "description": "groff文档格式化系统的预处理器，递归解析并替换roff格式文件中的.so指令，嵌入外部文件内容以实现文档模块化整合，支持错误溯源与格式兼容。",
+    "syntax": "soelim [-Crt] [-I dir] [file ...]\nsoelim {-v | --version}\nsoelim --help",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-C",
+        "description": "Case-insensitive matching of .so directives (supported by some system implementations, adapting to non-standard case writing)"
+      },
+      {
+        "paramName": "-r",
+        "description": "Cancel the lf directive that records the original file name and line number, adapting to plain text flattening processing"
+      },
+      {
+        "paramName": "-t",
+        "description": "Convert line number information to TeX comment format, compatible with TeX-related processing workflows"
+      },
+      {
+        "paramName": "-I dir",
+        "description": "Specify an additional directory for .so directives to find external files, with higher priority than the default search path"
+      }
+    ],
+    "examples": [
+      "soelim main.roff",
+      "soelim -r -t module.roff > merged.txt",
+      "soelim --version"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "tbl",
+    "description": "用于处理表格数据的工具，通常与troff/nroff文档系统配合使用，格式化表格输出",
+    "syntax": "tbl [-C] [file ...]\ntbl {-v | --version}\ntbl --help",
+    "options": [
+      {
+        "paramName": "-C",
+        "description": "Center-align table columns"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "tbl table.txt",
+      "tbl -C report.tbl",
+      "tbl --version",
+      "tbl --help"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "troff",
+    "description": "排版格式化工具，用于将标记文本转换为格式化输出（如PostScript、PDF或打印格式）",
+    "syntax": "troff [-abcCEiRUz] [-d ct] [-d string=text] [-f font-family] [-F font-directory] [-I inclusion-directory] [-m macro-package] [-M macro-directory] [-n page-number] [-o page-list] [-r cnumeric-expression] [-r register=numeric-expression] [-T output-device] [-w warning-category] [-W warning-category] [file ...]\ntroff {-v | --version}\ntroff {-h | --help}",
+    "options": [
+      {
+        "paramName": "-a",
+        "description": "Generate ASCII output"
+      },
+      {
+        "paramName": "-b",
+        "description": "Generate output for typesetting with bold characters"
+      },
+      {
+        "paramName": "-c",
+        "description": "Suppress all output except error messages"
+      },
+      {
+        "paramName": "-C",
+        "description": "Enable compatibility mode"
+      },
+      {
+        "paramName": "-E",
+        "description": "Enable extended character set support"
+      },
+      {
+        "paramName": "-i",
+        "description": "Read standard input after processing files"
+      },
+      {
+        "paramName": "-R",
+        "description": "Generate output for typesetting with reverse video"
+      },
+      {
+        "paramName": "-U",
+        "description": "Disable unsafe macros"
+      },
+      {
+        "paramName": "-z",
+        "description": "Suppress formatted output"
+      },
+      {
+        "paramName": "-d ct",
+        "description": "Define string ct"
+      },
+      {
+        "paramName": "-d string=text",
+        "description": "Set string to text"
+      },
+      {
+        "paramName": "-f font-family",
+        "description": "Set default font family"
+      },
+      {
+        "paramName": "-F font-directory",
+        "description": "Set font directory"
+      },
+      {
+        "paramName": "-I inclusion-directory",
+        "description": "Add directory to inclusion search path"
+      },
+      {
+        "paramName": "-m macro-package",
+        "description": "Load specified macro package"
+      },
+      {
+        "paramName": "-M macro-directory",
+        "description": "Set macro directory"
+      },
+      {
+        "paramName": "-n page-number",
+        "description": "Set starting page number"
+      },
+      {
+        "paramName": "-o page-list",
+        "description": "Output only specified pages"
+      },
+      {
+        "paramName": "-r cnumeric-expression",
+        "description": "Set register c to numeric-expression"
+      },
+      {
+        "paramName": "-r register=numeric-expression",
+        "description": "Set register to numeric-expression"
+      },
+      {
+        "paramName": "-T output-device",
+        "description": "Set output device type"
+      },
+      {
+        "paramName": "-w warning-category",
+        "description": "Suppress warnings of specified category"
+      },
+      {
+        "paramName": "-W warning-category",
+        "description": "Enable warnings of specified category"
+      },
+      {
+        "paramName": "-v",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "--version",
+        "description": "Display version information"
+      },
+      {
+        "paramName": "-h",
+        "description": "Display help information"
+      },
+      {
+        "paramName": "--help",
+        "description": "Display help information"
+      }
+    ],
+    "examples": [
+      "troff -ms document.ms",
+      "troff -Tpdf -mman manual.1",
+      "troff -v",
+      "troff -h"
+    ],
+    "showDetails": false
+  }
+]
