@@ -59,7 +59,7 @@ struct Index {
       const error = err as BusinessError;
       console.error(`get Preferences failed, err code is ${error?.code}, message is ${error?.message}`);
     }
-    if (this.showDialog === true) {
+    if (this.showDialog) {
       this.tipsController.open();
     }
   }
