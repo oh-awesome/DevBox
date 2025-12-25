@@ -89,6 +89,14 @@
       "value": "应用使用提示"
     },
     {
+      "name": "usertisp_title",
+      "value": "使用须知"
+    },
+    {
+      "name": "usertisp_nolonger",
+      "value": "不再提示"
+    },
+    {
       "name": "restart_notice",
       "value": "安装完成后，请重启终端应用，以激活工具包的全部命令功能。"
     },
