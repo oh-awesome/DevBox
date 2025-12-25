@@ -175,6 +175,10 @@
       {
         "package": "hnpcli.hnp",
         "type": "public"
+      },
+      {
+        "package": "bash.hnp",
+        "type": "public"
       }
     ]
   }
