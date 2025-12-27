@@ -165,6 +165,14 @@
         "type": "public"
       },
       {
+        "package": "cflow.hnp",
+        "type": "public"
+      },
+      {
+        "package": "bison.hnp",
+        "type": "public"
+      },
+      {
         "package": "hdc.hnp",
         "type": "public"
       },

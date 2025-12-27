@@ -33,7 +33,9 @@
       "unknown_manual.json",
       "hnpcli_manual.json",
       "tree_manual.json",
-      "hdc_manual.json"
+      "hdc_manual.json",
+      "cflow_manual.json",
+      "bison_manual.json"
     ]
   }
 ]

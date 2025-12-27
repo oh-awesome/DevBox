@@ -377,5 +377,19 @@
     "source": "https://gitcode.com/gh_mirrors/ba/bash",
     "licenseFile": "about_bash_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "cflow",
+    "license": "GPL-3.0-or-later",
+    "source": "https://ftp.gnu.org/gnu/cflow/",
+    "licenseFile": "about_cflow_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "bison",
+    "license": "GPL-3.0-or-later",
+    "source": "https://ftp.gnu.org/gnu/bison/",
+    "licenseFile": "about_bison_opensource.html",
+    "showLicense": false
   }
 ]

@@ -1,0 +1,159 @@
+[
+  {
+    "name": "cflow",
+    "description": "创建程序内的控制流图",
+    "syntax": "./cflow [OPTIONS] [FILE]...",
+    "options": [
+      {
+        "paramName": "-d, --depth=NUMBER",
+        "description": "set the depth at which the flowgraph is cut off"
+      },
+      {
+        "paramName": "-f, --format=NAME",
+        "description": "use given output format NAME; valid names are\n`gnu' (default), `posix', and `dot'"
+      },
+      {
+        "paramName": "-i, --include=CLASSES",
+        "description": "include specified classes of symbols (see below);\nprepend CLASSES with ^ or - to exclude them from\nthe output\n\n_      symbols whose names begin with an\n       underscore\ns      static symbols\nt      typedefs (for cross-references only)\nx      all data symbols, both external and static"
+      },
+      {
+        "paramName": "-o, --output=FILE",
+        "description": "set output file name (default -, meaning stdout)"
+      },
+      {
+        "paramName": "-r, --[no-]reverse",
+        "description": "print reverse call tree"
+      },
+      {
+        "paramName": "-x, --xref",
+        "description": "produce cross-reference listing only"
+      },
+      {
+        "paramName": "-P, --prepend-path=DIR",
+        "description": "prepend DIR to the profile search path"
+      },
+      {
+        "paramName": "--profile=FILE",
+        "description": "read options from FILE"
+      },
+      {
+        "paramName": "-q",
+        "description": "don't load default profile"
+      },
+      {
+        "paramName": "-D, --define=NAME[=DEFN]",
+        "description": "predefine NAME as a macro"
+      },
+      {
+        "paramName": "-I, --include-dir=DIR",
+        "description": "add the directory DIR to the list of directories\nto be searched for header files"
+      },
+      {
+        "paramName": "-S, --[no-]use-indentation",
+        "description": "rely on indentation"
+      },
+      {
+        "paramName": "-U, --undefine=NAME",
+        "description": "cancel any previous definition of NAME"
+      },
+      {
+        "paramName": "-a, --[no-]ansi",
+        "description": "accept only sources in ANSI C"
+      },
+      {
+        "paramName": "--cpp, --preprocess=[COMMAND]",
+        "description": "run the specified preprocessor command"
+      },
+      {
+        "paramName": "--no-cpp, --no-preprocess",
+        "description": "disable preprocessor"
+      },
+      {
+        "paramName": "-p, --pushdown=NUMBER",
+        "description": "set initial token stack size to NUMBER"
+      },
+      {
+        "paramName": "-s, --symbol=SYMBOL:[=]TYPE",
+        "description": "register SYMBOL with given TYPE, or define an\nalias (if := is used); valid types are: keyword\n(or kw), modifier, qualifier, identifier, type,\nwrapper, or any unambiguous abbreviation thereof"
+      },
+      {
+        "paramName": "-A, --all",
+        "description": "show all functions, not only those reachable from\nmain"
+      },
+      {
+        "paramName": "-T, --[no-]tree",
+        "description": "draw ASCII art tree"
+      },
+      {
+        "paramName": "-b, --[no-]brief",
+        "description": "brief output"
+      },
+      {
+        "paramName": "--[no-]emacs",
+        "description": "additionally format output for use with GNU Emacs"
+      },
+      {
+        "paramName": "-l, --[no-]print-level",
+        "description": ""
+      },
+      {
+        "paramName": "--level-indent=ELEMENT",
+        "description": "control graph appearance; see [1] for details"
+      },
+      {
+        "paramName": "-m, --main, --start=NAME",
+        "description": "start graph at this function; multiple options\nare allowed"
+      },
+      {
+        "paramName": "-n, --[no-]number",
+        "description": "print line numbers"
+      },
+      {
+        "paramName": "--no-main",
+        "description": "there's no main function; print graphs for all\nfunctions in the program"
+      },
+      {
+        "paramName": "--[no-]omit-arguments",
+        "description": "don't print argument lists in function\ndeclarations"
+      },
+      {
+        "paramName": "--[no-]omit-symbol-names",
+        "description": "don't print symbol names in declaration strings"
+      },
+      {
+        "paramName": "--target=NAME",
+        "description": "show only graphs leading from start symbols to\nthis function; multiple options are allowed"
+      },
+      {
+        "paramName": "--debug=[NUMBER]",
+        "description": "set debugging level"
+      },
+      {
+        "paramName": "-v, --[no-]verbose",
+        "description": "verbose error diagnostics"
+      },
+      {
+        "paramName": "-?, --help",
+        "description": "produce this help text"
+      },
+      {
+        "paramName": "--usage",
+        "description": "give a short usage message"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "print program version"
+      }
+    ],
+    "examples": [
+      "./cflow foo.c",
+      "./cflow -T --brief program.c",
+      "./cflow --format=dot -o callgraph.dot main.c utils.c",
+      "./cflow --include=s,x --depth=3 app.c",
+      "./cflow --start=main --start=init server.c",
+      "./cflow --profile=my.cflowrc source.c",
+      "./cflow --no-main lib.c"
+    ],
+    "showDetails": false
+  }
+]
