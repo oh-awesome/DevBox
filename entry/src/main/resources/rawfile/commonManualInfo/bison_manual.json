@@ -1,0 +1,139 @@
+[
+  {
+    "name": "bison",
+    "description": "生成一个确定性的 LR 或广义 LR (GLR) 解析器，使用 LALR(1)、IELR(1) 或规范 LR(1) 解析表。",
+    "syntax": "./bison [OPTION]... FILE",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "display this help and exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "output version information and exit"
+      },
+      {
+        "paramName": "--print-localedir",
+        "description": "output directory containing locale-dependent data\n                             and exit"
+      },
+      {
+        "paramName": "--print-datadir",
+        "description": "output directory containing skeletons and XSLT\n                             and exit"
+      },
+      {
+        "paramName": "-u, --update",
+        "description": "apply fixes to the source grammar file and exit"
+      },
+      {
+        "paramName": "-f, --feature[=FEATURES]",
+        "description": "activate miscellaneous features\n\nFEATURES is a list of comma separated words that can include:\n  caret, diagnostics-show-caret\n                    show errors with carets\n  fixit, diagnostics-parseable-fixits\n                    show machine-readable fixes\n  syntax-only       do not generate any file\n  all               all of the above\n  none              disable all of the above"
+      },
+      {
+        "paramName": "-W, --warnings[=CATEGORY]",
+        "description": "report the warnings falling in CATEGORY\n\nWarning categories include:\n  conflicts-sr      S/R conflicts (enabled by default)\n  conflicts-rr      R/R conflicts (enabled by default)\n  counterexamples, cex\n                    generate conflict counterexamples\n  dangling-alias    string aliases not attached to a symbol\n  deprecated        obsolete constructs\n  empty-rule        empty rules without %empty\n  midrule-values    unset or unused midrule values\n  precedence        useless precedence and associativity\n  yacc              incompatibilities with POSIX Yacc\n  other             all other warnings (enabled by default)\n  all               all the warnings except 'counterexamples', 'dangling-alias' and 'yacc'\n  no-CATEGORY       turn off warnings in CATEGORY\n  none              turn off all the warnings\n  error[=CATEGORY]  treat warnings as errors"
+      },
+      {
+        "paramName": "--color[=WHEN]",
+        "description": "whether to colorize the diagnostics\n\nWHEN can be one of the following:\n  always, yes  colorize the output\n  never, no    don't colorize the output\n  auto, tty    colorize if the output device is a tty"
+      },
+      {
+        "paramName": "--style=FILE",
+        "description": "specify the CSS FILE for colorizer diagnostics"
+      },
+      {
+        "paramName": "-L, --language=LANGUAGE",
+        "description": "specify the output programming language"
+      },
+      {
+        "paramName": "-S, --skeleton=FILE",
+        "description": "specify the skeleton to use"
+      },
+      {
+        "paramName": "-t, --debug",
+        "description": "instrument the parser for tracing\n   same as '-Dparse.trace'"
+      },
+      {
+        "paramName": "--locations",
+        "description": "enable location support"
+      },
+      {
+        "paramName": "-D, --define=NAME[=VALUE]",
+        "description": "similar to '%define NAME VALUE'"
+      },
+      {
+        "paramName": "-F, --force-define=NAME[=VALUE]",
+        "description": "override '%define NAME VALUE'"
+      },
+      {
+        "paramName": "-p, --name-prefix=PREFIX",
+        "description": "prepend PREFIX to the external symbols\n   deprecated by '-Dapi.prefix={PREFIX}'"
+      },
+      {
+        "paramName": "-l, --no-lines",
+        "description": "don't generate '#line' directives"
+      },
+      {
+        "paramName": "-k, --token-table",
+        "description": "include a table of token names"
+      },
+      {
+        "paramName": "-y, --yacc",
+        "description": "emulate POSIX Yacc"
+      },
+      {
+        "paramName": "-H, --header=[FILE]",
+        "description": "also produce a header file"
+      },
+      {
+        "paramName": "-d",
+        "description": "likewise but cannot specify FILE (for POSIX Yacc)"
+      },
+      {
+        "paramName": "-r, --report=THINGS",
+        "description": "also produce details on the automaton\n\nTHINGS is a list of comma separated words that can include:\n  states            describe the states\n  itemsets          complete the core item sets with their closure\n  lookaheads        explicitly associate lookahead tokens to items\n  solved            describe shift/reduce conflicts solving\n  counterexamples, cex\n                    generate conflict counterexamples\n  all               include all the above information\n  none              disable the report"
+      },
+      {
+        "paramName": "--report-file=FILE",
+        "description": "write report to FILE"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "same as '--report=state'"
+      },
+      {
+        "paramName": "-b, --file-prefix=PREFIX",
+        "description": "specify a PREFIX for output files"
+      },
+      {
+        "paramName": "-o, --output=FILE",
+        "description": "leave output to FILE"
+      },
+      {
+        "paramName": "-g, --graph[=FILE]",
+        "description": "also output a graph of the automaton"
+      },
+      {
+        "paramName": "--html[=FILE]",
+        "description": "also output an HTML report of the automaton"
+      },
+      {
+        "paramName": "-x, --xml[=FILE]",
+        "description": "also output an XML report of the automaton"
+      },
+      {
+        "paramName": "-M, --file-prefix-map=OLD=NEW",
+        "description": "replace prefix OLD with NEW when writing file paths\nin output files"
+      }
+    ],
+    "examples": [
+      "./bison parser.y",
+      "./bison -o parser.c parser.y",
+      "./bison --report=all --report-file=parser.report parser.y",
+      "./bison -Wconflicts-sr -Werror parser.y",
+      "./bison --feature=syntax-only --color=auto grammar.y",
+      "./bison -H parser.h -d parser.y",
+      "./bison --graph=parser.dot parser.y"
+    ],
+    "showDetails": false
+  }
+]

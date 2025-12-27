@@ -370,5 +370,19 @@
     "source": "https://gitcode.com/openharmony/third_party_bounds_checking_function",
     "licenseFile": "about_bounds_checking_function_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "cflow",
+    "license": "GPL-3.0-or-later",
+    "source": "https://ftp.gnu.org/gnu/cflow/",
+    "licenseFile": "about_cflow_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "bison",
+    "license": "GPL-3.0-or-later",
+    "source": "https://ftp.gnu.org/gnu/bison/",
+    "licenseFile": "about_bison_opensource.html",
+    "showLicense": false
   }
 ]

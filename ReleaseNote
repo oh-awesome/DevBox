@@ -1,7 +1,7 @@
 
 变更历史 1.0.2
 1、新增命令：
-    tree    hnpcli
+    tree    hnpcli    cflow    bison
 2、更新命令
     hdc 升级5.1.0版本，修复无线连接依赖usb的不合理依赖
 3、更新图标
