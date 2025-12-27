@@ -89,8 +89,16 @@
       "value": "Application Usage Tip"
     },
     {
+      "name": "usertisp_title",
+      "value": "Usage Instructions"
+    },
+    {
       "name": "restart_notice",
       "value": "After installation is complete, please restart your terminal application to activate all command functions of the toolkit."
+    },
+    {
+      "name": "usertisp_nolonger",
+      "value": "Do not show again"
     },
     {
       "name": "confirm_button",
