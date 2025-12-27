@@ -370,5 +370,12 @@
     "source": "https://gitcode.com/openharmony/third_party_bounds_checking_function",
     "licenseFile": "about_bounds_checking_function_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "bash",
+    "license": "LGPL-2.1",
+    "source": "https://gitcode.com/gh_mirrors/ba/bash",
+    "licenseFile": "about_bash_opensource.html",
+    "showLicense": false
   }
 ]
