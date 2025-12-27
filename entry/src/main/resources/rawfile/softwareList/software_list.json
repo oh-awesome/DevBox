@@ -373,7 +373,7 @@
   },
   {
     "name": "bash",
-    "license": "GPL-3.0-or-later",
+    "license": "LGPL-2.1",
     "source": "https://gitcode.com/gh_mirrors/ba/bash",
     "licenseFile": "about_bash_opensource.html",
     "showLicense": false
