@@ -35,7 +35,8 @@
       "tree_manual.json",
       "hdc_manual.json",
       "cflow_manual.json",
-      "bison_manual.json"
+      "bison_manual.json",
+      "xz_manual.json"
     ]
   }
 ]
