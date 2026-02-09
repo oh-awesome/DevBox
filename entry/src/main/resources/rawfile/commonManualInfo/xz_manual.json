@@ -1,0 +1,77 @@
+[
+  {
+    "name": "xz",
+    "description": "压缩或解压 .xz 格式的文件。",
+    "syntax": "./xz [OPTION]... [FILE]...",
+    "options": [
+      {
+        "paramName": "-z, --compress",
+        "description": "force compression"
+      },
+      {
+        "paramName": "-d, --decompress",
+        "description": "force decompression"
+      },
+      {
+        "paramName": "-t, --test",
+        "description": "test compressed file integrity"
+      },
+      {
+        "paramName": "-l, --list",
+        "description": "list information about .xz files"
+      },
+      {
+        "paramName": "-k, --keep",
+        "description": "keep (don't delete) input files"
+      },
+      {
+        "paramName": "-f, --force",
+        "description": "force overwrite of output file and (de)compress links"
+      },
+      {
+        "paramName": "-c, --stdout",
+        "description": "write to standard output and don't delete input files"
+      },
+      {
+        "paramName": "-0 ... -9",
+        "description": "compression preset; default is 6; take compressor *and* decompressor memory usage into account before using 7-9!"
+      },
+      {
+        "paramName": "-e, --extreme",
+        "description": "try to improve compression ratio by using more CPU time; does not affect decompressor memory requirements"
+      },
+      {
+        "paramName": "-T, --threads=NUM",
+        "description": "use at most NUM threads; the default is 0 which uses as many threads as there are processor cores"
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "suppress warnings; specify twice to suppress errors too"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "be verbose; specify twice for even more verbose"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "display this short help and exit"
+      },
+      {
+        "paramName": "-H, --long-help",
+        "description": "display the long help (lists also the advanced options)"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "display the version number and exit"
+      }
+    ],
+    "examples": [
+      "xz --help",
+      "xz -h",
+      "xz -z file.txt",
+      "xz -d file.xz",
+      "xz -T 4 -9 archive.tar"
+    ],
+    "showDetails": false
+  }
+]

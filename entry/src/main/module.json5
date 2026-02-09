@@ -187,6 +187,10 @@
       {
         "package": "bash.hnp",
         "type": "public"
+      },
+      {
+        "package": "xz.hnp",
+        "type": "public"
       }
     ]
   }
