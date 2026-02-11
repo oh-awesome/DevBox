@@ -36,7 +36,10 @@
       "hdc_manual.json",
       "cflow_manual.json",
       "bison_manual.json",
-      "xz_manual.json"
+      "xz_manual.json",
+      "6tunnel_manual.json",
+      "libidn2_manual.json",
+      "nettle_manual.json"
     ]
   }
 ]

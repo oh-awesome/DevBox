@@ -1,4 +1,16 @@
+2026-2-11
+变更历史 1.0.3
+1、新增命令：
+    idn2        lzgrep      nettle-hash   unxz        xzless
+    6tunnel     lzma        sexp-conv     unlzma      xzmore
+    lzcat       lzmadec     xz            xzcmp       xzfgrep
+    lzcmp       lzmainfo    xzcat         xzdiff
+    lzdiff      lze*        xzdec         xzegrep
+2、更新命令
+    修复groff不可用问题
+    修复bzip2的不合理依赖
 
+2025-12-27
 变更历史 1.0.2
 1、新增命令：
     tree    hnpcli    cflow    bison
