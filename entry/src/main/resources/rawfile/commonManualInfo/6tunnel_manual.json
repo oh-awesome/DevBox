@@ -1,0 +1,79 @@
+[
+  {
+    "name": "6tunnel",
+    "description": "IPv4/IPv6 双协议栈隧道代理工具",
+    "syntax": "./6tunnel [-146dvh] [-s sourcehost] [-l localhost] [-i pass] [-I pass] [-L limit] [-A filename] [-p pidfile] [-m mapfile] localport remotehost [remoteport]",
+    "options": [
+      {
+        "paramName": "-1",
+        "description": "allow only single connection and quit"
+      },
+      {
+        "paramName": "-4",
+        "description": "connect to IPv4 endpoints (default: connect to IPv6)"
+      },
+      {
+        "paramName": "-6",
+        "description": "bind to IPv6 address (default: bind to IPv4)"
+      },
+      {
+        "paramName": "-d",
+        "description": "don't detach"
+      },
+      {
+        "paramName": "-f",
+        "description": "force tunneling (even if remotehost isn't resolvable)"
+      },
+      {
+        "paramName": "-h",
+        "description": "print hex dump of packets"
+      },
+      {
+        "paramName": "-u",
+        "description": "change UID and GID after bind()"
+      },
+      {
+        "paramName": "-i",
+        "description": "act like irc proxy and ask for password"
+      },
+      {
+        "paramName": "-I",
+        "description": "send specified password to the irc server"
+      },
+      {
+        "paramName": "-l",
+        "description": "bind to specified address"
+      },
+      {
+        "paramName": "-L",
+        "description": "limit simultaneous connections"
+      },
+      {
+        "paramName": "-p",
+        "description": "write down pid to specified file"
+      },
+      {
+        "paramName": "-s",
+        "description": "connect using specified address"
+      },
+      {
+        "paramName": "-m",
+        "description": "read specified IPv4-to-IPv6 map file"
+      },
+      {
+        "paramName": "-v",
+        "description": "be verbose"
+      },
+      {
+        "paramName": "-V",
+        "description": "print version"
+      }
+    ],
+    "examples": [
+      "./6tunnel -h",
+      "./6tunnel -V",
+      "./6tunnel 8080 ::1 80"
+    ],
+    "showDetails": false
+  }
+]

@@ -130,8 +130,7 @@
     "license": "GPL-3.0-or-later",
     "source": "https://ftp.gnu.org/gnu/groff/",
     "licenseFile": "about_groff_opensource.html",
-    "showLicense": false,
-    "isNeedHide": true
+    "showLicense": false
   },
   {
     "name": "gzip",
@@ -390,6 +389,27 @@
     "license": "GPL-3.0-or-later",
     "source": "https://ftp.gnu.org/gnu/bison/",
     "licenseFile": "about_bison_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "6tunnel",
+    "license": "GPL-2.0-or-later",
+    "source": "https://github.com/wojtekka/6tunnel",
+    "licenseFile": "about_6tunnel_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "libidn2",
+    "license": "GPL-3.0-or-later",
+    "source": "https://www.gnu.org/software/libidn/#libidn2",
+    "licenseFile": "about_libidn2_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "nettle",
+    "license": "GPL-3.0-or-later",
+    "source": "https://ftp.gnu.org/gnu/nettle",
+    "licenseFile": "about_nettle_opensource.html",
     "showLicense": false
   }
 ]

@@ -1,0 +1,78 @@
+[
+  {
+    "name": "nettle-hash",
+    "description": "使用指定的算法对数据进行哈希处理。",
+    "syntax": "nettle-hash -a ALGORITHM [OPTIONS] [FILE ...]",
+    "options": [
+      {
+        "paramName": "--help",
+        "description": "Show this help."
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "Show version information."
+      },
+      {
+        "paramName": "--list",
+        "description": "List supported hash algorithms."
+      },
+      {
+        "paramName": "-a, --algorithm=ALG",
+        "description": "Hash algorithm to use."
+      },
+      {
+        "paramName": "-l, --length=LENGTH",
+        "description": "Desired digest length (octets)"
+      },
+      {
+        "paramName": "--raw",
+        "description": "Raw binary output."
+      }
+    ],
+    "examples": [
+      "nettle-hash --help",
+      "nettle-hash -V",
+      "nettle-hash --list",
+      "nettle-hash -a sha256 file.txt"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "sexp-conv",
+    "description": "从标准输入读取 s 表达式，并将相同的 s 表达式输出到标准输出，可能使用不同的语法。",
+    "syntax": "sexp-conv [OPTION...]",
+    "options": [
+      {
+        "paramName": "--hash[=ALGORITHM]",
+        "description": "Outputs only the hash of the expression. Available hash algorithms: md5, sha1, sha256 (default is sha1)."
+      },
+      {
+        "paramName": "-s, --syntax=SYNTAX",
+        "description": "The syntax used for the output. Available variants: advanced, hex, transport, canonical"
+      },
+      {
+        "paramName": "--once",
+        "description": "Process only the first s-expression."
+      },
+      {
+        "paramName": "-w, --width=WIDTH",
+        "description": "Linewidth for base64 encoded data. Zero means no limit."
+      },
+      {
+        "paramName": "--lock",
+        "description": "Lock output file."
+      },
+      {
+        "paramName": "--raw-hash",
+        "description": "Alias for --hash, for compatibility with lsh-1.x."
+      }
+    ],
+    "examples": [
+      "sexp-conv --help",
+      "echo \"(example (data))\" | sexp-conv",
+      "echo \"(secret)\" | sexp-conv --hash",
+      "echo \"(data)\" | sexp-conv --hash=sha256"
+    ],
+    "showDetails": false
+  }
+]
