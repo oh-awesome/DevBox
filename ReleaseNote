@@ -4,7 +4,7 @@
     idn2        lzma           sexp-conv    xz
     6tunnel     lzmadec        unxz         xzcat
     lzcat       nettle-hash    unlzma       xzdec
-
+    lzmainfo
 2、更新命令
     修复groff不可用问题
 
