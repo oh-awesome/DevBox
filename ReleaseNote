@@ -1,11 +1,10 @@
 2026-2-11
 变更历史 1.0.3
 1、新增命令：
-    idn2        lzgrep      nettle-hash   unxz        xzless
-    6tunnel     lzma        sexp-conv     unlzma      xzmore
-    lzcat       lzmadec     xz            xzcmp       xzfgrep
-    lzcmp       lzmainfo    xzcat         xzdiff
-    lzdiff      lze*        xzdec         xzegrep
+    idn2        lzma           sexp-conv    xz
+    6tunnel     lzmadec        unxz         xzcat
+    lzcat       nettle-hash    unlzma       xzdec
+
 2、更新命令
     修复groff不可用问题
     修复bzip2的不合理依赖
