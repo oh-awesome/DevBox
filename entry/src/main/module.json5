@@ -137,11 +137,7 @@
         "type": "public"
       },
       {
-        "package": "llvm.hnp",
-        "type": "public"
-      },
-      {
-        "package": "sign-tool.hnp",
+        "package": "ohos-sdk.hnp",
         "type": "public"
       },
       {
