@@ -324,8 +324,7 @@
       "groff -v",
       "groff --help"
     ],
-    "showDetails": false,
-    "isNeedHide": true
+    "showDetails": false
   },
   {
     "name": "grolbp",

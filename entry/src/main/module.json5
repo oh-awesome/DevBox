@@ -191,6 +191,18 @@
       {
         "package": "xz.hnp",
         "type": "public"
+      },
+      {
+        "package": "6tunnel.hnp",
+        "type": "public"
+      },
+      {
+        "package": "libidn2.hnp",
+        "type": "public"
+      },
+      {
+        "package": "nettle.hnp",
+        "type": "public"
       }
     ]
   }

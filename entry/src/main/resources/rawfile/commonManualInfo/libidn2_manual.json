@@ -1,0 +1,65 @@
+[
+  {
+    "name": "idn2",
+    "description": "国际化域名（IDNA2008）转换字符串，或标准输入。",
+    "syntax": "./idn2 [OPTION]... [STRINGS]...",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Print help and exit"
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "Print version and exit"
+      },
+      {
+        "paramName": "-d, --decode",
+        "description": "Decode (punycode) domain name"
+      },
+      {
+        "paramName": "-l, --lookup",
+        "description": "Lookup domain name (default)"
+      },
+      {
+        "paramName": "-r, --register",
+        "description": "Register label"
+      },
+      {
+        "paramName": "-T, --tr46t",
+        "description": "Enable TR46 transitional processing"
+      },
+      {
+        "paramName": "-N, --tr46nt",
+        "description": "Enable TR46 non-transitional processing"
+      },
+      {
+        "paramName": "--no-tr46",
+        "description": "Disable TR46 processing"
+      },
+      {
+        "paramName": "--usestd3asciirules",
+        "description": "Enable STD3 ASCII rules"
+      },
+      {
+        "paramName": "--no-alabelroundtrip",
+        "description": "Disable A-label roundtrip for lookups"
+      },
+      {
+        "paramName": "--debug",
+        "description": "Print debugging information"
+      },
+      {
+        "paramName": "--quiet",
+        "description": "Silent operation"
+      }
+    ],
+    "examples": [
+      "idn2 --help",
+      "idn2 -h",
+      "idn2 example.com",
+      "idn2 -d xn--bcher-kva.ch",
+      "idn2 --tr46t --lookup café.fr"
+    ],
+    "showDetails": false
+  }
+]
