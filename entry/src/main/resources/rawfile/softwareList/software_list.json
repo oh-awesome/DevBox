@@ -392,6 +392,13 @@
     "showLicense": false
   },
   {
+    "name": "magic-cli",
+    "license": "MIT",
+    "source": "https://gitcode.com/Cangjie-TPC/CangjieMagic",
+    "licenseFile": "about_cangjiemagic_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "6tunnel",
     "license": "GPL-2.0-or-later",
     "source": "https://github.com/wojtekka/6tunnel",
