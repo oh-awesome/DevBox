@@ -204,6 +204,7 @@ export struct CommandManual {
                       .borderRadius(2)
                       .width('100%')
                       .backgroundColor($r('app.color.manual_code_bg_color'))
+                      .copyOption(CopyOptions.InApp)
 
                     Text("选项")
                       .fontSize(18)
