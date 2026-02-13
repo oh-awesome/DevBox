@@ -2,7 +2,7 @@
   {
     "name": "magic-cli",
     "description": "基于 Cangjie Agent DSL 和 Cangjie Magic 构建的 AI 命令行助手，支持智能对话、代码生成、文档检索等功能。",
-    "syntax": "cli [--auto] [--language <lang>] [--model <model>] [--fast-model <model>] [--fallback-models <models>] [--collect-data] [--sandbox] [--temperature <value>] [--prompt <prompt>] [--prompt-file <file>] [--output-format <format>] [--log-level <level>] [--subagent-dir <dir>] [--command-dir <dir>] [--default-model-input-limit <limit>] [--default-model-output-limit <limit>] [--disable-model-tool-call] [--enable-lsp-tool] [--version] [--help]",
+    "syntax": "使用说明：\n1、执行命令前，请先设置环境变量： \n\texport LD_LIBRARY_PATH=/data/service/hnp/magic-cli.org/magic-cli_1.0.0/lib:$LD_LIBRARY_PATH\n2、在当前运行目录下创建 .env 文件，并填入您的 API 密钥，例如：\n\tZHIPU_API_KEY=xxxxxxxxxx \n\n cli [--auto] [--language <lang>] [--model <model>] [--fast-model <model>] [--fallback-models <models>] [--collect-data] [--sandbox] [--temperature <value>] [--prompt <prompt>] [--prompt-file <file>] [--output-format <format>] [--log-level <level>] [--subagent-dir <dir>] [--command-dir <dir>] [--default-model-input-limit <limit>] [--default-model-output-limit <limit>] [--disable-model-tool-call] [--enable-lsp-tool] [--version] [--help]",
     "options": [
       {
         "paramName": "--auto",

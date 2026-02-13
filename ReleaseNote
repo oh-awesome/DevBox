@@ -7,7 +7,9 @@
     lzmainfo
 2、更新命令
     修复groff不可用问题
+    修复bzip2的不合理依赖
 3、更新sdk
+4、新增 cli 命令：推出基于 Cangjie Agent DSL 与 Cangjie Magic 构建的 AI 命令行助手，支持智能对话、代码生成、文档检索等核心功能，全面提升开发效率与交互体验。
 
 2025-12-27
 变更历史 1.0.2
