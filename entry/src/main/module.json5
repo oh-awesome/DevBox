@@ -189,6 +189,10 @@
         "type": "public"
       },
       {
+        "package": "magic-cli.hnp",
+        "type": "public"
+      },
+      {
         "package": "6tunnel.hnp",
         "type": "public"
       },
