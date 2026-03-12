@@ -6,7 +6,7 @@
 	|msgfilter|msggrep|msgmerge|msguniq|printf_gettext|recode-sr-latin|
 	|envsubst|gettext.sh|msgattrib|msgcmp|msgconv|msgexec|
 	|msgfmt|msgcomm|msgen|msginit|msgunfmt|ngettext|
-	|printf_ngettext|xgettext|
+	|printf_ngettext|xgettext|gawk|awk|gawkbug|crew-mvdir|unrar
 
 
 ## version 1.0.3(2026-2-11)

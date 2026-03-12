@@ -1,0 +1,20 @@
+{
+  "name": "crew-mvdir",
+  "description": "移动目录工具。",
+  "syntax": "crew-mvdir [-c] [-n] [-v] [src] [dst]",
+  "options": [
+    { "paramName": "-c", "description": "-c" },
+    { "paramName": "-n", "description": "-n" },
+    { "paramName": "-v", "description": "-v" },
+    { "paramName": "[src]", "description": "[src]" },
+    { "paramName": "[dst]", "description": "[dst]" }
+  ],
+  "examples": [
+    "crew-mvdir src dst",
+    "crew-mvdir -c src dst",
+    "crew-mvdir -n src dst",
+    "crew-mvdir -v src dst",
+    "crew-mvdir -c -n -v src dst"
+  ],
+  "showDetails": false
+}

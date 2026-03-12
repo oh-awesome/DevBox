@@ -203,6 +203,38 @@
       {
         "package": "nettle.hnp",
         "type": "public"
+      },
+      {
+        "package": "gettext.hnp",
+        "type": "public"
+      },
+      {
+        "package": "glib.hnp",
+        "type": "public"
+      },
+      {
+        "package": "libffi.hnp",
+        "type": "public"
+      },
+      {
+        "package": "patchelf.hnp",
+        "type": "public"
+      },
+      {
+        "package": "pkg-config.hnp",
+        "type": "public"
+      },
+      {
+        "package": "unrar.hnp",
+        "type": "public"
+      },
+      {
+        "package": "crew-mvdir.hnp",
+        "type": "public"
+      },
+      {
+        "package": "gawk.hnp",
+        "type": "public"
       }
     ]
   }

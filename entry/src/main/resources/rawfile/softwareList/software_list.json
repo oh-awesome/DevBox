@@ -418,5 +418,26 @@
     "source": "https://ftp.gnu.org/gnu/nettle",
     "licenseFile": "about_nettle_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "unrar",
+    "license": "UnRAR License",
+    "source": "https://github.com/pmachapman/unrar",
+    "licenseFile": "about_unrar_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "crew-mvdir",
+    "license": "GPL-3.0-or-later",
+    "source": "https://github.com/chromebrew/crew-mvdir",
+    "licenseFile": "about_crew-mvdir_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "gawk",
+    "license": "GPL-3.0-or-later",
+    "source": "https://www.gnu.org/software/gawk/",
+    "licenseFile": "about_gawk_opensource.html",
+    "showLicense": false
   }
 ]

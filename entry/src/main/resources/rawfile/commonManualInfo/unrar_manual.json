@@ -1,0 +1,230 @@
+[
+  {
+    "name": "unrar",
+    "description": "用于解压 RAR 压缩文件的工具，支持提取、列表查看、测试等操作。",
+    "syntax": "unrar <command> -<switch 1> -<switch N> <archive> <files...> <@listfiles...> <path_to_extract/>",
+    "options": [
+      {
+        "paramName": "e",
+        "description": "Extract files without archived paths"
+      },
+      {
+        "paramName": "l[t[a],b]",
+        "description": "List archive contents [technical[all], bare]"
+      },
+      {
+        "paramName": "p",
+        "description": "Print file to stdout"
+      },
+      {
+        "paramName": "t",
+        "description": "Test archive files"
+      },
+      {
+        "paramName": "v[t[a],b]",
+        "description": "Verboselyly list archive contents [technical[all],bare]"
+      },
+      {
+        "paramName": "x",
+        "description": "Extract files with full path"
+      },
+      {
+        "paramName": "-",
+        "description": "Stop switches scanning"
+      },
+      {
+        "paramName": "@[+]",
+        "description": "Disable [enable] file lists"
+      },
+      {
+        "paramName": "ad[1,2]",
+        "description": "Alternate destination path"
+      },
+      {
+        "paramName": "ag[format]",
+        "description": "Generate archive name using the current date"
+      },
+      {
+        "paramName": "ai",
+        "description": "Ignore file attributes"
+      },
+      {
+        "paramName": "ap<path>",
+        "description": "Set path inside archive"
+      },
+      {
+        "paramName": "c-",
+        "description": "Disable comments show"
+      },
+      {
+        "paramName": "cfg-",
+        "description": "Disable read configuration"
+      },
+      {
+        "paramName": "cl",
+        "description": "Convert names to lower case"
+      },
+      {
+        "paramName": "cu",
+        "description": "Convert names to upper case"
+      },
+      {
+        "paramName": "dh",
+        "description": "Open shared files"
+      },
+      {
+        "paramName": "ep",
+        "description": "Exclude paths from names"
+      },
+      {
+        "paramName": "ep3",
+        "description": "Expand paths to full including the drive letter"
+      },
+      {
+        "paramName": "ep4<path>",
+        "description": "Exclude the path prefix from names"
+      },
+      {
+        "paramName": "f",
+        "description": "Freshen files"
+      },
+      {
+        "paramName": "id[c,d,n,p,q]",
+        "description": "Display or disable messages"
+      },
+      {
+        "paramName": "ierr",
+        "description": "Send all messages to stderr"
+      },
+      {
+        "paramName": "inul",
+        "description": "Disable all messages"
+      },
+      {
+        "paramName": "kb",
+        "description": "Keep broken extracted files"
+      },
+      {
+        "paramName": "me[par]",
+        "description": "Set encryption parameters"
+      },
+      {
+        "paramName": "n<file>",
+        "description": "Additionally filter included files"
+      },
+      {
+        "paramName": "n@",
+        "description": "Read additional filter masks from stdin"
+      },
+      {
+        "paramName": "n@<list>",
+        "description": "Read additional filter masks from list file"
+      },
+      {
+        "paramName": "o[+|-]",
+        "description": "Set the overwrite mode"
+      },
+      {
+        "paramName": "ol[a,-]",
+        "description": "Process symbolic links as the link [absolute paths, skip]"
+      },
+      {
+        "paramName": "om[-|1][=lst]",
+        "description": "Propagate Mark of the Web"
+      },
+      {
+        "paramName": "op<path>",
+        "description": "Set the output path for extracted files"
+      },
+      {
+        "paramName": "or",
+        "description": "Rename files automatically"
+      },
+      {
+        "paramName": "ow",
+        "description": "Save or restore file owner and group"
+      },
+      {
+        "paramName": "p[password]",
+        "description": "Set password"
+      },
+      {
+        "paramName": "r",
+        "description": "Recurse subdirectories"
+      },
+      {
+        "paramName": "sc<chr>[obj]",
+        "description": "Specify the character set"
+      },
+      {
+        "paramName": "si[name]",
+        "description": "Read data from standard input (stdin)"
+      },
+      {
+        "paramName": "sl<size>[u]",
+        "description": "Process files with size less than specified"
+      },
+      {
+        "paramName": "ta[mcao]<d>",
+        "description": "Process files modified after <d> YYYYMMDDHHMMSS date"
+      },
+      {
+        "paramName": "tb[mcao]<d>",
+        "description": "Process files modified before <d> YYYYMMDDHHMMSS date"
+      },
+      {
+        "paramName": "tn[mcao]<t>",
+        "description": "Process files newer than <t> time"
+      },
+      {
+        "paramName": "to[mcao]<t>",
+        "description": "Process files older than <t> time"
+      },
+      {
+        "paramName": "ts[m,c,a,p]",
+        "description": "Save or restore time (modification, creation, access, preserve)"
+      },
+      {
+        "paramName": "u",
+        "description": "Update files"
+      },
+      {
+        "paramName": "v",
+        "description": "List all volumes"
+      },
+      {
+        "paramName": "ver[n]",
+        "description": "File version control"
+      },
+      {
+        "paramName": "vp",
+        "description": "Pause before each volume"
+      },
+      {
+        "paramName": "x<file>",
+        "description": "Exclude specified file"
+      },
+      {
+        "paramName": "x@",
+        "description": "Read file names to exclude from stdin"
+      },
+      {
+        "paramName": "x@<list>",
+        "description": "Exclude files listed in specified list file"
+      },
+      {
+        "paramName": "y",
+        "description": "Assume Yes on all queries"
+      }
+    ],
+    "examples": [
+      "unrar x archive.rar",
+      "unrar e archive.rar /output/path",
+      "unrar l archive.rar",
+      "unrar x -p password archive.rar",
+      "unrar x -o+ archive.rar",
+      "unrar t archive.rar"
+    ],
+    "showDetails": false
+  }
+]
