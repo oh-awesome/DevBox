@@ -436,7 +436,7 @@
   {
     "name": "gawk",
     "license": "GPL-3.0-or-later",
-    "source": "https://github.com/dotuskan/gawk/",
+    "source": "https://www.gnu.org/software/gawk/",
     "licenseFile": "about_gawk_opensource.html",
     "showLicense": false
   }
