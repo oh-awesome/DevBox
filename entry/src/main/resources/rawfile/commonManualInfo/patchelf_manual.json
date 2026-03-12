@@ -1,0 +1,107 @@
+[
+  {
+    "name": "patchelf",
+    "description": "用于修改ELF二进制文件的工具，可调整解释器、SONAME、RPATH等属性，无需重新编译链接。",
+    "syntax": "patchelf [--set-interpreter FILENAME] [--page-size SIZE] [--print-interpreter] [--print-soname] [--set-soname SONAME] [--set-rpath RPATH] [--add-rpath RPATH] [--remove-rpath] [--shrink-rpath] [--allowed-rpath-prefixes PREFIXES] [--print-rpath] [--force-rpath] [--add-needed LIBRARY] [--remove-needed LIBRARY] [--replace-needed LIBRARY NEW_LIBRARY] [--print-needed] [--no-default-lib] [--no-sort] [--clear-symbol-version SYMBOL] [--add-debug-tag] [--output FILE] [--debug] [--version] FILENAME...",
+    "options": [
+      {
+        "paramName": "--set-interpreter FILENAME",
+        "description": "Set the interpreter of the ELF file to FILENAME"
+      },
+      {
+        "paramName": "--page-size SIZE",
+        "description": "Set the page size to SIZE"
+      },
+      {
+        "paramName": "--print-interpreter",
+        "description": "Print the interpreter of the ELF file"
+      },
+      {
+        "paramName": "--print-soname",
+        "description": "Prints 'DT_SONAME' entry of .dynamic section. Raises an error if DT_SONAME doesn't exist"
+      },
+      {
+        "paramName": "--set-soname SONAME",
+        "description": "Sets 'DT_SONAME' entry to SONAME."
+      },
+      {
+        "paramName": "--set-rpath RPATH",
+        "description": "Set the RPATH of the ELF file to RPATH"
+      },
+      {
+        "paramName": "--add-rpath RPATH",
+        "description": "Add RPATH to the ELF file's existing RPATH"
+      },
+      {
+        "paramName": "--remove-rpath",
+        "description": "Remove the RPATH from the ELF file"
+      },
+      {
+        "paramName": "--shrink-rpath",
+        "description": "Shrink the RPATH of the ELF file"
+      },
+      {
+        "paramName": "--allowed-rpath-prefixes PREFIXES",
+        "description": "With '--shrink-rpath', reject rpath entries not starting with the allowed prefix"
+      },
+      {
+        "paramName": "--print-rpath",
+        "description": "Print the RPATH of the ELF file"
+      },
+      {
+        "paramName": "--force-rpath",
+        "description": "Force the use of RPATH instead of RUNPATH"
+      },
+      {
+        "paramName": "--add-needed LIBRARY",
+        "description": "Add a dependency on LIBRARY to the ELF file"
+      },
+      {
+        "paramName": "--remove-needed LIBRARY",
+        "description": "Remove the dependency on LIBRARY from the ELF file"
+      },
+      {
+        "paramName": "--replace-needed LIBRARY NEW_LIBRARY",
+        "description": "Replace dependency on LIBRARY with NEW_LIBRARY in the ELF file"
+      },
+      {
+        "paramName": "--print-needed",
+        "description": "Print the libraries that the ELF file depends on"
+      },
+      {
+        "paramName": "--no-default-lib",
+        "description": "Do not use the default library search path"
+      },
+      {
+        "paramName": "--no-sort",
+        "description": "Do not sort program+section headers; useful for debugging patchelf."
+      },
+      {
+        "paramName": "--clear-symbol-version SYMBOL",
+        "description": "Clear the version information for SYMBOL"
+      },
+      {
+        "paramName": "--add-debug-tag",
+        "description": "Add a debug tag to the ELF file"
+      },
+      {
+        "paramName": "--output FILE",
+        "description": "Write the modified ELF file to FILE instead of overwriting the original"
+      },
+      {
+        "paramName": "--debug",
+        "description": "Enable debug output"
+      },
+      {
+        "paramName": "--version",
+        "description": "Print the version of patchelf"
+      }
+    ],
+    "examples": [
+      "patchelf --help",
+      "patchelf --version",
+      "patchelf --print-interpreter /bin/ls"
+    ],
+    "showDetails": false
+  }
+]
