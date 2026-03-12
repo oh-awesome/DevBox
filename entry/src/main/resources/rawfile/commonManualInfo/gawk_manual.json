@@ -1,0 +1,106 @@
+[
+  {
+    "name": "gawk",
+    "description": "模式扫描和处理语言，用于文本处理和数据提取。",
+    "syntax": "gawk [POSIX or GNU style options] -f progfile [--] file ...",
+    "options": [
+      { "paramName": "-f progfile", "description": "--file=progfile" },
+      { "paramName": "-F fs", "description": "--field-separator=fs" },
+      { "paramName": "-v var=val", "description": "--assign=var=val" },
+      { "paramName": "-b", "description": "--characters-as-bytes" },
+      { "paramName": "-c", "description": "--traditional" },
+      { "paramName": "-C", "description": "--copyright" },
+      { "paramName": "-d[file]", "description": "--dump-variables[=file]" },
+      { "paramName": "-D[file]", "description": "--debug[=file]" },
+      { "paramName": "-e 'program-text'", "description": "--source='program-text'" },
+      { "paramName": "-E file", "description": "--exec=file" },
+      { "paramName": "-g", "description": "--gen-pot" },
+      { "paramName": "-h", "description": "--help" },
+      { "paramName": "-i includefile", "description": "--include=includefile" },
+      { "paramName": "-I", "description": "--trace" },
+      { "paramName": "-k", "description": "--csv" },
+      { "paramName": "-l library", "description": "--load=library" },
+      { "paramName": "-L[fatal|invalid|no-ext]", "description": "--lint[=fatal|invalid|no-ext]" },
+      { "paramName": "-M", "description": "--bignum" },
+      { "paramName": "-N", "description": "--use-lc-numeric" },
+      { "paramName": "-n", "description": "--non-decimal-data" },
+      { "paramName": "-o[file]", "description": "--pretty-print[=file]" },
+      { "paramName": "-O", "description": "--optimize" },
+      { "paramName": "-p[file]", "description": "--profile[=file]" },
+      { "paramName": "-P", "description": "--posix" },
+      { "paramName": "-r", "description": "--re-interval" },
+      { "paramName": "-s", "description": "--no-optimize" },
+      { "paramName": "-S", "description": "--sandbox" },
+      { "paramName": "-t", "description": "--lint-old" },
+      { "paramName": "-V", "description": "--version" }
+    ],
+    "examples": [
+      "gawk '{ sum += $1 }; END { print sum }' file",
+      "gawk -F: '{ print $1 }' /etc/passwd",
+      "gawk -f script.awk input.txt",
+      "gawk -v var=value '{ print var, $0 }' file",
+      "gawk '/pattern/ { print }' file"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "awk",
+    "description": "模式扫描和处理语言，用于文本处理和数据提取。",
+    "syntax": "awk [POSIX or GNU style options] -f progfile [--] file ...",
+    "options": [
+      { "paramName": "-f progfile", "description": "--file=progfile" },
+      { "paramName": "-F fs", "description": "--field-separator=fs" },
+      { "paramName": "-v var=val", "description": "--assign=var=val" },
+      { "paramName": "-b", "description": "--characters-as-bytes" },
+      { "paramName": "-c", "description": "--traditional" },
+      { "paramName": "-C", "description": "--copyright" },
+      { "paramName": "-d[file]", "description": "--dump-variables[=file]" },
+      { "paramName": "-D[file]", "description": "--debug[=file]" },
+      { "paramName": "-e 'program-text'", "description": "--source='program-text'" },
+      { "paramName": "-E file", "description": "--exec=file" },
+      { "paramName": "-g", "description": "--gen-pot" },
+      { "paramName": "-h", "description": "--help" },
+      { "paramName": "-i includefile", "description": "--include=includefile" },
+      { "paramName": "-I", "description": "--trace" },
+      { "paramName": "-k", "description": "--csv" },
+      { "paramName": "-l library", "description": "--load=library" },
+      { "paramName": "-L[fatal|invalid|no-ext]", "description": "--lint[=fatal|invalid|no-ext]" },
+      { "paramName": "-M", "description": "--bignum" },
+      { "paramName": "-N", "description": "--use-lc-numeric" },
+      { "paramName": "-n", "description": "--non-decimal-data" },
+      { "paramName": "-o[file]", "description": "--pretty-print[=file]" },
+      { "paramName": "-O", "description": "--optimize" },
+      { "paramName": "-p[file]", "description": "--profile[=file]" },
+      { "paramName": "-P", "description": "--posix" },
+      { "paramName": "-r", "description": "--re-interval" },
+      { "paramName": "-s", "description": "--no-optimize" },
+      { "paramName": "-S", "description": "--sandbox" },
+      { "paramName": "-t", "description": "--lint-old" },
+      { "paramName": "-V", "description": "--version" }
+    ],
+    "examples": [
+      "awk '{ sum += $1 }; END { print sum }' file",
+      "awk -F: '{ print $1 }' /etc/passwd",
+      "awk -f script.awk input.txt",
+      "awk -v var=value '{ print var, $0 }' file",
+      "awk '/pattern/ { print }' file"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "gawkbug",
+    "description": "用于向 Gawk 维护者发送邮件报告 bug 的工具。",
+    "syntax": "gawkbug [--help] [--version] [bug-report-email-address]",
+    "options": [
+      { "paramName": "--help", "description": "显示帮助信息" },
+      { "paramName": "--version", "description": "显示版本信息" }
+    ],
+    "examples": [
+      "gawkbug",
+      "gawkbug --help",
+      "gawkbug --version",
+      "gawkbug custom@email.com"
+    ],
+    "showDetails": false
+  }
+]
