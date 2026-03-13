@@ -43,35 +43,6 @@
     "showDetails": false
 },
 {
-    "name": "autopoint",
-    "description": "将标准的gettext基础设施文件复制到源代码包中，用于搭建gettext相关的项目环境。",
-    "syntax": "autopoint [OPTION]...",
-    "options": [
-        {
-            "paramName": "--help",
-            "description": "print this help and exit"
-        },
-        {
-            "paramName": "--version",
-            "description": "print version information and exit"
-        },
-        {
-            "paramName": "-f, --force",
-            "description": "force overwriting of files that already exist"
-        },
-        {
-            "paramName": "-n, --dry-run",
-            "description": "print modifications but don't perform them"
-        }
-    ],
-    "examples": [
-        "autopoint",
-        "autopoint --force",
-        "autopoint -n"
-    ],
-    "showDetails": false
-},
-{
     "name": "envsubst",
     "description": "替换环境变量的值，默认将标准输入中的$VARIABLE或${VARIABLE}形式的环境变量引用替换为对应值，也可指定仅替换SHELL-FORMAT中引用的变量，支持单独输出引用的变量列表。",
     "syntax": "envsubst [OPTION] [SHELL-FORMAT]",
@@ -92,47 +63,6 @@
     "examples": [
         "envsubst -h",
         "envsubst '$HOME $PATH'"
-    ],
-    "showDetails": false
-},
-{
-    "name": "gettextize",
-    "description": "为源代码包配置gettext使用环境，完成gettext相关的初始化配置工作。",
-    "syntax": "gettextize [OPTION]... [package-dir]",
-    "options": [
-        {
-            "paramName": "--help",
-            "description": "print this help and exit"
-        },
-        {
-            "paramName": "--version",
-            "description": "print version information and exit"
-        },
-        {
-            "paramName": "-f, --force",
-            "description": "force writing of new files even if old exist"
-        },
-        {
-            "paramName": "--po-dir=DIR",
-            "description": "specify directory with PO files"
-        },
-        {
-            "paramName": "--no-changelog",
-            "description": "don't update or create ChangeLog files"
-        },
-        {
-            "paramName": "--symlink",
-            "description": "make symbolic links instead of copying files"
-        },
-        {
-            "paramName": "-n, --dry-run",
-            "description": "print modifications but don't perform them"
-        }
-    ],
-    "examples": [
-        "gettextize",
-        "gettextize --force ./my-package",
-        "gettextize --po-dir=./po --dry-run"
     ],
     "showDetails": false
 },
@@ -1335,78 +1265,6 @@
         "msggrep -T -F -f keywords.txt -i --invert-match app.po -o filtered.po",
         "msggrep -W fuzzy -o fuzzy_entries.po app_fr.po",
         "msggrep --properties-input --properties-output -X 'TODO' app.properties -o todo_strings.properties"
-    ],
-    "showDetails": false
-},{
-    "name": "msginit",
-    "description": "创建新的PO翻译文件，并从用户环境变量中读取值来初始化文件的元信息，支持基于POT模板文件生成，可定制目标语言、输出格式等参数。",
-    "syntax": "msginit [OPTION]",
-    "options": [
-        {
-            "paramName": "-i, --input=INPUTFILE",
-            "description": "input POT file, search current directory if not given, read standard input if it is -"
-        },
-        {
-            "paramName": "-o, --output-file=FILE",
-            "description": "write output to specified PO file, depends on --locale or user's locale if not given, write to standard output if it is -"
-        },
-        {
-            "paramName": "-P, --properties-input",
-            "description": "input file is in Java .properties syntax"
-        },
-        {
-            "paramName": "--stringtable-input",
-            "description": "input file is in NeXTstep/GNUstep .strings syntax"
-        },
-        {
-            "paramName": "-l, --locale=LL_CC[.ENCODING]",
-            "description": "set target locale"
-        },
-        {
-            "paramName": "--no-translator",
-            "description": "assume the PO file is automatically generated"
-        },
-        {
-            "paramName": "--color",
-            "description": "use colors and other text attributes always"
-        },
-        {
-            "paramName": "--color=WHEN",
-            "description": "use colors and other text attributes if WHEN. WHEN may be 'always', 'never', 'auto', or 'html'."
-        },
-        {
-            "paramName": "--style=STYLEFILE",
-            "description": "specify CSS style rule file for --color"
-        },
-        {
-            "paramName": "-p, --properties-output",
-            "description": "write out a Java .properties file"
-        },
-        {
-            "paramName": "--stringtable-output",
-            "description": "write out a NeXTstep/GNUstep .strings file"
-        },
-        {
-            "paramName": "-w, --width=NUMBER",
-            "description": "set output page width"
-        },
-        {
-            "paramName": "--no-wrap",
-            "description": "do not break long message lines, longer than the output page width, into several lines"
-        },
-        {
-            "paramName": "-h, --help",
-            "description": "display this help and exit"
-        },
-        {
-            "paramName": "-V, --version",
-            "description": "output version information and exit"
-        }
-    ],
-    "examples": [
-        "msginit -i app.pot -l fr_FR -o fr.po",
-        "msginit --locale=de_DE.UTF-8 --no-translator -o de.po",
-        "msginit -i app.properties -P --properties-output -l ja_JP -o app_ja.properties"
     ],
     "showDetails": false
 },
