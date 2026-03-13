@@ -43,8 +43,7 @@
       "magic-cli_manual.json",
       "6tunnel_manual.json",
       "libidn2_manual.json",
-      "nettle_manual.json",
-      "gettext_manual.json"
+      "nettle_manual.json"
     ]
   }
 ]
