@@ -45,7 +45,8 @@
       "libidn2_manual.json",
       "nettle_manual.json",
       "patchelf_manual.json",
-      "pkg-config_manual.json"
+      "pkg-config_manual.json",
+      "gettext_manual.json"
     ]
   }
 ]
