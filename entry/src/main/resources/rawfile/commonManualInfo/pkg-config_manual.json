@@ -1,0 +1,291 @@
+[
+  {
+    "name": "aarch64-unknown-linux-ohos-pkg-config",
+    "description": "针对OpenHarmony系统的aarch64架构pkg-config工具，用于检索已安装库的编译和链接信息。",
+    "syntax": "aarch64-unknown-linux-ohos-pkg-config [OPTION...]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Show help options"
+      },
+      {
+        "paramName": "--version",
+        "description": "output version of pkg-config"
+      },
+      {
+        "paramName": "--modversion",
+        "description": "output version for package"
+      },
+      {
+        "paramName": "--atleast-pkgconfig-version=VERSION",
+        "description": "require given version of pkg-config"
+      },
+      {
+        "paramName": "--libs",
+        "description": "output all linker flags"
+      },
+      {
+        "paramName": "--static",
+        "description": "output linker flags for static linking"
+      },
+      {
+        "paramName": "--short-errors",
+        "description": "print short errors"
+      },
+      {
+        "paramName": "--libs-only-l",
+        "description": "output -l flags"
+      },
+      {
+        "paramName": "--libs-only-other",
+        "description": "output other libs (e.g. -pthread)"
+      },
+      {
+        "paramName": "--libs-only-L",
+        "description": "output -L flags"
+      },
+      {
+        "paramName": "--cflags",
+        "description": "output all pre-processor and compiler flags"
+      },
+      {
+        "paramName": "--cflags-only-I",
+        "description": "output -I flags"
+      },
+      {
+        "paramName": "--cflags-only-other",
+        "description": "output cflags not covered by the cflags-only-I option"
+      },
+      {
+        "paramName": "--variable=NAME",
+        "description": "get the value of variable named NAME"
+      },
+      {
+        "paramName": "--define-variable=NAME=VALUE",
+        "description": "set variable NAME to VALUE"
+      },
+      {
+        "paramName": "--exists",
+        "description": "return 0 if the module(s) exist"
+      },
+      {
+        "paramName": "--print-variables",
+        "description": "output list of variables defined by the module"
+      },
+      {
+        "paramName": "--uninstalled",
+        "description": "return 0 if the uninstalled version of one or more module(s) or their dependencies will be used"
+      },
+      {
+        "paramName": "--atleast-version=VERSION",
+        "description": "return 0 if the module is at least version VERSION"
+      },
+      {
+        "paramName": "--exact-version=VERSION",
+        "description": "return 0 if the module is at exactly version VERSION"
+      },
+      {
+        "paramName": "--max-version=VERSION",
+        "description": "return 0 if the module is at no newer than version VERSION"
+      },
+      {
+        "paramName": "--list-all",
+        "description": "list all known packages"
+      },
+      {
+        "paramName": "--debug",
+        "description": "show verbose debug information"
+      },
+      {
+        "paramName": "--print-errors",
+        "description": "show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)"
+      },
+      {
+        "paramName": "--silence-errors",
+        "description": "be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)"
+      },
+      {
+        "paramName": "--errors-to-stdout",
+        "description": "print errors from --print-errors to stdout not stderr"
+      },
+      {
+        "paramName": "--print-provides",
+        "description": "print which packages the package provides"
+      },
+      {
+        "paramName": "--print-requires",
+        "description": "print which packages the package requires"
+      },
+      {
+        "paramName": "--print-requires-private",
+        "description": "print which packages the package requires for static linking"
+      },
+      {
+        "paramName": "--validate",
+        "description": "validate a package's .pc file"
+      },
+      {
+        "paramName": "--define-prefix",
+        "description": "try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file"
+      },
+      {
+        "paramName": "--dont-define-prefix",
+        "description": "don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file"
+      },
+      {
+        "paramName": "--prefix-variable=PREFIX",
+        "description": "set the name of the variable that pkg-config automatically sets"
+      }
+    ],
+    "examples": [
+      "aarch64-unknown-linux-ohos-pkg-config --version",
+      "aarch64-unknown-linux-ohos-pkg-config --help"
+    ],
+    "showDetails": false
+  },{
+    "name": "pkg-config",
+    "description": "用于检索已安装库的编译和链接信息的工具，简化编译时库依赖的配置过程。",
+    "syntax": "pkg-config [OPTION...]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "Show help options"
+      },
+      {
+        "paramName": "--version",
+        "description": "output version of pkg-config"
+      },
+      {
+        "paramName": "--modversion",
+        "description": "output version for package"
+      },
+      {
+        "paramName": "--atleast-pkgconfig-version=VERSION",
+        "description": "require given version of pkg-config"
+      },
+      {
+        "paramName": "--libs",
+        "description": "output all linker flags"
+      },
+      {
+        "paramName": "--static",
+        "description": "output linker flags for static linking"
+      },
+      {
+        "paramName": "--short-errors",
+        "description": "print short errors"
+      },
+      {
+        "paramName": "--libs-only-l",
+        "description": "output -l flags"
+      },
+      {
+        "paramName": "--libs-only-other",
+        "description": "output other libs (e.g. -pthread)"
+      },
+      {
+        "paramName": "--libs-only-L",
+        "description": "output -L flags"
+      },
+      {
+        "paramName": "--cflags",
+        "description": "output all pre-processor and compiler flags"
+      },
+      {
+        "paramName": "--cflags-only-I",
+        "description": "output -I flags"
+      },
+      {
+        "paramName": "--cflags-only-other",
+        "description": "output cflags not covered by the cflags-only-I option"
+      },
+      {
+        "paramName": "--variable=NAME",
+        "description": "get the value of variable named NAME"
+      },
+      {
+        "paramName": "--define-variable=NAME=VALUE",
+        "description": "set variable NAME to VALUE"
+      },
+      {
+        "paramName": "--exists",
+        "description": "return 0 if the module(s) exist"
+      },
+      {
+        "paramName": "--print-variables",
+        "description": "output list of variables defined by the module"
+      },
+      {
+        "paramName": "--uninstalled",
+        "description": "return 0 if the uninstalled version of one or more module(s) or their dependencies will be used"
+      },
+      {
+        "paramName": "--atleast-version=VERSION",
+        "description": "return 0 if the module is at least version VERSION"
+      },
+      {
+        "paramName": "--exact-version=VERSION",
+        "description": "return 0 if the module is at exactly version VERSION"
+      },
+      {
+        "paramName": "--max-version=VERSION",
+        "description": "return 0 if the module is at no newer than version VERSION"
+      },
+      {
+        "paramName": "--list-all",
+        "description": "list all known packages"
+      },
+      {
+        "paramName": "--debug",
+        "description": "show verbose debug information"
+      },
+      {
+        "paramName": "--print-errors",
+        "description": "show verbose information about missing or conflicting packages (default unless --exists or --atleast/exact/max-version given on the command line)"
+      },
+      {
+        "paramName": "--silence-errors",
+        "description": "be silent about errors (default when --exists or --atleast/exact/max-version given on the command line)"
+      },
+      {
+        "paramName": "--errors-to-stdout",
+        "description": "print errors from --print-errors to stdout not stderr"
+      },
+      {
+        "paramName": "--print-provides",
+        "description": "print which packages the package provides"
+      },
+      {
+        "paramName": "--print-requires",
+        "description": "print which packages the package requires"
+      },
+      {
+        "paramName": "--print-requires-private",
+        "description": "print which packages the package requires for static linking"
+      },
+      {
+        "paramName": "--validate",
+        "description": "validate a package's .pc file"
+      },
+      {
+        "paramName": "--define-prefix",
+        "description": "try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file"
+      },
+      {
+        "paramName": "--dont-define-prefix",
+        "description": "don't try to override the value of prefix for each .pc file found with a guesstimated value based on the location of the .pc file"
+      },
+      {
+        "paramName": "--prefix-variable=PREFIX",
+        "description": "set the name of the variable that pkg-config automatically sets"
+      }
+    ],
+    "examples": [
+      "pkg-config --version",
+      "pkg-config --help",
+      "pkg-config --list-all",
+      "pkg-config --cflags pkg-config"
+    ],
+    "showDetails": false
+  }
+]
