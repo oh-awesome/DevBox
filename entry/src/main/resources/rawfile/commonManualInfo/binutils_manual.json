@@ -520,7 +520,6 @@
       { "paramName": "--srec-forceS3", "description": "Restrict type of generated Srecords to S3" },
       { "paramName": "--strip-symbols <file>", "description": "-N for all symbols listed in <file>" },
       { "paramName": "--strip-unneeded-symbols <file>", "description": "--strip-unneeded-symbol for all symbols listed in <file>" },
-      { "paramName": "--keep-symbols <file>", "description": "-K for all symbols listed in <file>"" },
       { "paramName": "--localize-symbols <file>", "description": "-L for all symbols listed in <file>" },
       { "paramName": "--globalize-symbols <file>", "description": "--globalize-symbol for all symbols listed in <file>" },
       { "paramName": "--keep-global-symbols <file>", "description": "-G for all symbols listed in <file>" },
@@ -678,7 +677,7 @@
       { "paramName": "--visualize-jumps=off", "description": "Disable jump visualization" },
       { "paramName": "--disassembler-color=off", "description": "Disable disassembler color output" },
       { "paramName": "--disassembler-color=terminal", "description": "Enable disassembler color output if displaying on a terminal" },
-      { { "paramName": "--disassembler-color=on", "description": "Enable disassembler color output" },
+      { "paramName": "--disassembler-color=on", "description": "Enable disassembler color output" },
       { "paramName": "--disassembler-color=extended", "description": "Use 8-bit colors in disassembler output" }
     ],
     "examples": [
@@ -786,7 +785,6 @@
       { "paramName": "--debug-dump=links", "description": "Display contents of sections that link to separate debuginfo files" },
       { "paramName": "-P", "description": "--process-links" },
       { "paramName": "--process-links", "description": "Display contents of non-debug sections in separate debuginfo files" },
-      { "paramName": wK", "description": "--debug-dump=follow-links" },
       { "paramName": "--debug-dump=follow-links", "description": "Follow links to separate debug info files" },
       { "paramName": "-wN", "description": "--debug-dump=no-follow-links" },
       { "paramName": "--debug-dump=no-follow-links", "description": "Do not follow links to separate debug info files" },
@@ -860,7 +858,7 @@
       { "paramName": "--data", "description": "Only scan data sections in file" },
       { "paramName": "-f", "description": "--print-file-name" },
       { "paramName": "--print-file-name", "description": "Print name of file before each string" },
-      { "param { "paramName": "-n <number>", "description": "Locate & print any sequence of at least <number>" },
+      { "paramName": "-n <number>", "description": "Locate & print any sequence of at least <number>" },
       { "paramName": "--bytes=<number>", "description": "Locate & print any sequence of at least <number> displayable characters" },
       { "paramName": "-t", "description": "--radix={o,d,x}" },
       { "paramName": "--radix={o,d,x}", "description": "Print location of string in base 8, 10 or 16" },
