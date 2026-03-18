@@ -204,7 +204,7 @@ export struct CommandManual {
                       .borderRadius(2)
                       .width('100%')
                       .backgroundColor($r('app.color.manual_code_bg_color'))
-                      .copyOption(CopyOptions.InApp)
+                      .copyOption(CopyOptions.LocalDevice)
 
                     Text("选项")
                       .fontSize(18)
@@ -226,7 +226,7 @@ export struct CommandManual {
                                 .backgroundColor($r('app.color.manual_code_bg_color'))
                                 .borderRadius(6)
                                 .textAlign(TextAlign.Start)
-                                .copyOption(CopyOptions.InApp)
+                                .copyOption(CopyOptions.LocalDevice)
                             }
                             .constraintSize({ minWidth: TITLE_WIDTH })
                             .padding(8)
@@ -242,7 +242,7 @@ export struct CommandManual {
                                 .fontColor(Color.Black)
                                 .padding(8)
                                 .width('calc(100% - 230vp)')
-                                .copyOption(CopyOptions.InApp)
+                                .copyOption(CopyOptions.LocalDevice)
                                 .visibility(!this.needChangeLine(option.paramName) ? Visibility.Visible :
                                   Visibility.None)
                             }
@@ -261,7 +261,7 @@ export struct CommandManual {
                               .fontColor(Color.Black)
                               .padding(8)
                               .width('calc(100% - 230vp)')
-                              .copyOption(CopyOptions.InApp)
+                              .copyOption(CopyOptions.LocalDevice)
                           }
                           .width('100%')
                           .visibility(this.needChangeLine(option.paramName) ? Visibility.Visible : Visibility.None)
@@ -284,7 +284,7 @@ export struct CommandManual {
                         .fontColor(Color.Black)
                         .padding(8)
                         .borderRadius(2)
-                        .copyOption(CopyOptions.InApp)
+                        .copyOption(CopyOptions.LocalDevice)
                         .width('100%')
                         .backgroundColor($r('app.color.manual_code_bg_color'))
                     })
