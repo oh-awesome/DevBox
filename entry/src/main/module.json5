@@ -235,6 +235,10 @@
       {
         "package": "gawk.hnp",
         "type": "public"
+      },
+      {
+        "package": "binutils.hnp",
+        "type": "public"
       }
     ]
   }
