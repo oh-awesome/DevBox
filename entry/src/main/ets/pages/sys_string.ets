@@ -463,6 +463,7 @@ export struct SysString {
                 .fontSize(14)
                 .textAlign(TextAlign.Center)
                 .copyOption(CopyOptions.LocalDevice)
+                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                 .fontColor(Color.Black)
             }
             .padding(10)

@@ -1030,6 +1030,7 @@ export struct SysColor {
                 .maxFontSize(24)  // 最大字号范围
                 .textAlign(TextAlign.Center)
                 .copyOption(CopyOptions.LocalDevice)
+                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                 .fontColor(Color.Black)
             }
             .padding(10)

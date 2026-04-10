@@ -28,6 +28,7 @@ struct infoBuilder {
         .fontSize(16)
         .fontColor($r('app.color.common_text'))
         .copyOption(CopyOptions.LocalDevice)
+        .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
     }
     .backgroundColor($r('app.color.timestamp_info'))
     .alignItems(VerticalAlign.Center)
@@ -329,6 +330,7 @@ export struct TimeConverterPage {
                 .fontSize(16)
                 .fontColor($r('app.color.timestamp_title_text'))
                 .copyOption(CopyOptions.LocalDevice)
+                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
             }
             .backgroundColor($r('app.color.timestamp_title'))
             .alignItems(VerticalAlign.Center)
@@ -439,6 +441,7 @@ export struct TimeConverterPage {
                 .fontSize(16)
                 .fontColor($r('app.color.timestamp_title_text'))
                 .copyOption(CopyOptions.LocalDevice)
+                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
             }
             .backgroundColor($r('app.color.timestamp_title'))
             .alignItems(VerticalAlign.Center)

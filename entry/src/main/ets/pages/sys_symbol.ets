@@ -3390,6 +3390,7 @@ export struct SysSymbol {
               Text(item)
                 .textAlign(TextAlign.Center)
                 .copyOption(CopyOptions.LocalDevice)
+                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                 .maxLines(1)  // 优先限制行数
                 .minFontSize(8)  // 最小字号阈值
                 .maxFontSize(24) // 最大字号范围
