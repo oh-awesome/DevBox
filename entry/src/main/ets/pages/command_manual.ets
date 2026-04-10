@@ -205,6 +205,7 @@ export struct CommandManual {
                       .width('100%')
                       .backgroundColor($r('app.color.manual_code_bg_color'))
                       .copyOption(CopyOptions.LocalDevice)
+                      .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
 
                     Text("选项")
                       .fontSize(18)
@@ -227,6 +228,7 @@ export struct CommandManual {
                                 .borderRadius(6)
                                 .textAlign(TextAlign.Start)
                                 .copyOption(CopyOptions.LocalDevice)
+                                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                             }
                             .constraintSize({ minWidth: TITLE_WIDTH })
                             .padding(8)
@@ -243,6 +245,7 @@ export struct CommandManual {
                                 .padding(8)
                                 .width('calc(100% - 230vp)')
                                 .copyOption(CopyOptions.LocalDevice)
+                                .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                                 .visibility(!this.needChangeLine(option.paramName) ? Visibility.Visible :
                                   Visibility.None)
                             }
@@ -262,6 +265,7 @@ export struct CommandManual {
                               .padding(8)
                               .width('calc(100% - 230vp)')
                               .copyOption(CopyOptions.LocalDevice)
+                              .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                           }
                           .width('100%')
                           .visibility(this.needChangeLine(option.paramName) ? Visibility.Visible : Visibility.None)
@@ -285,6 +289,7 @@ export struct CommandManual {
                         .padding(8)
                         .borderRadius(2)
                         .copyOption(CopyOptions.LocalDevice)
+                        .textSelectable(TextSelectableMode.SELECTABLE_FOCUSABLE)
                         .width('100%')
                         .backgroundColor($r('app.color.manual_code_bg_color'))
                     })

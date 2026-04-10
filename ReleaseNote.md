@@ -1,13 +1,17 @@
-## version 1.0.4
+## version 1.0.4(2026-4-10)
 - 新增命令：
+ 
 	|  |  |  |  |  |  |
 	|--|--|--|--|--|--|
-	|patchelf|pkg-config|autopoint|gettext|gettextize|msgcat|
-	|msgfilter|msggrep|msgmerge|msguniq|printf_gettext|recode-sr-latin|
+	|patchelf|pkg-config|strip|gettext|strings|msgcat|
+	|msgfilter|msggrep|size|msguniq|printf_gettext|recode-sr-latin|
 	|envsubst|gettext.sh|msgattrib|msgcmp|msgconv|msgexec|
-	|msgfmt|msgcomm|msgen|msginit|msgunfmt|ngettext|
-	|printf_ngettext|xgettext|gawk|awk|gawkbug|crew-mvdir|unrar
-
+	|msgfmt|msgcomm|msgen|readelf|msgunfmt|ngettext|
+	|printf_ngettext|xgettext|gawk|awk|gawkbug|crew-mvdir|
+  	|addr2line|as|ar|c++filt|elfedit|ld|
+	|nm|objcopy|objdump|ranlib|unrar|
+- 修复文本内容复制到应用外失败的问题
+- 更新sdk
 
 ## version 1.0.3(2026-2-11)
 - 新增命令：
