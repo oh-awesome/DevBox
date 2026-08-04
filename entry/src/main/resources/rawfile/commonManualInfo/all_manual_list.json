@@ -1,6 +1,7 @@
 [
   {
     "filename": [
+      "julia_manual.json",
       "autoconf_manual.json",
       "cmake_manual.json",
       "find_manual.json",
