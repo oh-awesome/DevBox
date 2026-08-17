@@ -239,6 +239,10 @@
       {
         "package": "binutils.hnp",
         "type": "public"
+      },
+      {
+        "package": "tokei.hnp",
+        "type": "public"
       }
     ]
   }

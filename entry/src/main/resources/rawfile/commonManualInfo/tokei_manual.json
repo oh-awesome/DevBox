@@ -1,0 +1,98 @@
+[
+  {
+    "name": "tokei",
+    "description": "快速统计代码行数的命令行工具，支持多种编程语言，可统计代码行、注释行和空白行。",
+    "syntax": "tokei [FLAGS] [OPTIONS] [--] [PATH]...",
+    "options": [
+      {
+        "paramName": "-c, --compact",
+        "description": "Print output in a compact format."
+      },
+      {
+        "paramName": "-f, --files",
+        "description": "Will print out statistics on individual files."
+      },
+      {
+        "paramName": "--hidden",
+        "description": "Count hidden files and directories."
+      },
+      {
+        "paramName": "-l, --languages",
+        "description": "Prints out supported languages and their associated extensions."
+      },
+      {
+        "paramName": "--no-autodetect",
+        "description": "Disables automatic language detection for all files."
+      },
+      {
+        "paramName": "--no-ignore",
+        "description": "Don't respect ignore files (.gitignore, .ignore, etc.)."
+      },
+      {
+        "paramName": "--no-ignore-dot",
+        "description": "Don't respect .ignore files."
+      },
+      {
+        "paramName": "--no-ignore-parent",
+        "description": "Don't respect ignore files in parent directories."
+      },
+      {
+        "paramName": "--no-ignore-vcs",
+        "description": "Don't respect VCS ignore files (.gitignore, .hgignore, etc.)."
+      },
+      {
+        "paramName": "--no-unicode",
+        "description": "If specified, tokei won't print unicode characters."
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "Print out more information."
+      },
+      {
+        "paramName": "-V, --version",
+        "description": "Prints version information."
+      },
+      {
+        "paramName": "-e, --exclude <EXCLUDE>",
+        "description": "Ignore files or directories matching EXCLUDE."
+      },
+      {
+        "paramName": "-i, --input <INPUT>",
+        "description": "Gives the ability to read from a file, or stdin."
+      },
+      {
+        "paramName": "--num-format <FORMAT>",
+        "description": "Format of the printed number. Possible values: plain, commas. [default: plain]"
+      },
+      {
+        "paramName": "-o, --output <OUTPUT>",
+        "description": "Output file path. The output format is determined by the file extension (e.g. .json)."
+      },
+      {
+        "paramName": "-s, --sort <SORT>",
+        "description": "Sort languages based on column. Possible values: files, lines, code, comments, blanks."
+      },
+      {
+        "paramName": "-t, --type <TYPE>",
+        "description": "Filters output based on language type."
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Print help information."
+      }
+    ],
+    "examples": [
+      "tokei",
+      "tokei .",
+      "tokei src tests",
+      "tokei -c",
+      "tokei -t Rust",
+      "tokei -e node_modules",
+      "tokei -s code",
+      "tokei --hidden --no-ignore",
+      "tokei -o output.json",
+      "tokei --help"
+    ],
+    "showDetails": false
+  }
+]
