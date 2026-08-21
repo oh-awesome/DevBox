@@ -1,0 +1,207 @@
+[
+  {
+    "name": "mitmproxy",
+    "description": "mitmproxy 是一个支持 HTTP/1、HTTP/2、WebSocket、TCP 和 TLS 的交互式中间人代理工具，可用于查看、拦截、修改、保存与重放网络流量。以下选项按 mitmproxy 12.2.3 校验；请仅分析你拥有或已获授权测试的流量。",
+    "syntax": "mitmproxy [options]",
+    "options": [
+      {
+        "paramName": "-h, --help",
+        "description": "显示命令帮助并退出。"
+      },
+      {
+        "paramName": "--version",
+        "description": "显示 mitmproxy、Python、OpenSSL 和运行平台的版本信息。"
+      },
+      {
+        "paramName": "--options",
+        "description": "列出所有配置选项及其当前默认值。"
+      },
+      {
+        "paramName": "--commands",
+        "description": "列出控制台中可调用的命令及其参数签名。"
+      },
+      {
+        "paramName": "--set option[=value]",
+        "description": "设置任意 mitmproxy 配置项；布尔值可使用 true、false 或 toggle，同一序列选项可重复设置。"
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "静默运行，减少日志输出。"
+      },
+      {
+        "paramName": "-v, --verbose",
+        "description": "增加日志详细程度。"
+      },
+      {
+        "paramName": "-m, --mode MODE",
+        "description": "选择代理模式，可重复指定。常用值包括 regular、local、transparent、socks5、reverse:SPEC、upstream:SPEC 和 wireguard[:PATH]。"
+      },
+      {
+        "paramName": "--anticache, --no-anticache",
+        "description": "启用或禁用反缓存处理；启用后会移除可能使服务器返回 304 的请求头。"
+      },
+      {
+        "paramName": "--showhost, --no-showhost",
+        "description": "启用或禁用使用 Host 请求头构造界面中显示的 URL。"
+      },
+      {
+        "paramName": "--show-ignored-hosts, --no-show-ignored-hosts",
+        "description": "控制是否在界面中记录未执行 TLS 拦截的忽略流量；启用可能明显增加内存占用。"
+      },
+      {
+        "paramName": "-r, --rfile PATH",
+        "description": "从文件读取已保存的流量。"
+      },
+      {
+        "paramName": "-s, --scripts SCRIPT",
+        "description": "加载并执行 Python 插件脚本，可重复指定。"
+      },
+      {
+        "paramName": "--stickycookie FILTER",
+        "description": "为匹配过滤表达式的请求启用粘性 Cookie。"
+      },
+      {
+        "paramName": "--stickyauth FILTER",
+        "description": "为匹配过滤表达式的请求启用粘性认证。"
+      },
+      {
+        "paramName": "-w, --save-stream-file PATH",
+        "description": "将流量到达时持续写入文件；路径以 + 开头表示追加，并支持 Python strftime 时间格式。"
+      },
+      {
+        "paramName": "--anticomp, --no-anticomp",
+        "description": "启用或禁用反压缩处理；启用后尝试让服务器返回未压缩内容。"
+      },
+      {
+        "paramName": "--console-layout {horizontal,single,vertical}",
+        "description": "设置终端交互界面的布局。"
+      },
+      {
+        "paramName": "--console-layout-headers, --no-console-layout-headers",
+        "description": "显示或隐藏终端布局各区域的标题。"
+      },
+      {
+        "paramName": "--listen-host HOST",
+        "description": "设置代理服务器绑定的地址；也可在单个 --mode 参数中覆盖。"
+      },
+      {
+        "paramName": "-p, --listen-port PORT",
+        "description": "设置代理服务器监听端口；regular 模式默认监听 8080。"
+      },
+      {
+        "paramName": "--server, -n, --no-server",
+        "description": "启动或禁用代理服务器；默认启动，-n 等同于 --no-server。"
+      },
+      {
+        "paramName": "--ignore-hosts HOST",
+        "description": "按正则表达式忽略目标主机并直接转发其流量，不进行处理；可重复指定。"
+      },
+      {
+        "paramName": "--allow-hosts HOST",
+        "description": "仅处理匹配正则表达式的目标主机，是 --ignore-hosts 的反向筛选；可重复指定。"
+      },
+      {
+        "paramName": "--tcp-hosts HOST",
+        "description": "对匹配正则表达式的主机启用通用 TCP over TLS 拦截；可重复指定。"
+      },
+      {
+        "paramName": "--upstream-auth USER:PASS",
+        "description": "为上游代理或反向代理请求添加 HTTP Basic 认证。"
+      },
+      {
+        "paramName": "--proxyauth SPEC",
+        "description": "要求客户端进行代理认证；支持 username:password、any、@htpasswd文件 或 LDAP 规格。"
+      },
+      {
+        "paramName": "--store-streamed-bodies, --no-store-streamed-bodies",
+        "description": "控制是否保存流式传输的请求体和响应体；启用后可检查正文，但会增加内存占用。"
+      },
+      {
+        "paramName": "--rawtcp, --no-rawtcp",
+        "description": "启用或禁用原始 TCP 连接处理，默认启用。"
+      },
+      {
+        "paramName": "--http2, --no-http2",
+        "description": "启用或禁用 HTTP/2 支持，默认启用。"
+      },
+      {
+        "paramName": "--certs SPEC",
+        "description": "指定用于 TLS 拦截的 PEM 证书，格式为 [domain=]path；域名可包含通配符，可重复指定。"
+      },
+      {
+        "paramName": "--cert-passphrase PASS",
+        "description": "设置 --certs 私钥的解密口令。为避免口令出现在进程列表中，建议在 config.yaml 中配置。"
+      },
+      {
+        "paramName": "-k, --ssl-insecure, --no-ssl-insecure",
+        "description": "控制是否跳过上游服务器 TLS 证书验证；启用 -k 会降低安全性，仅适合受控测试环境。"
+      },
+      {
+        "paramName": "-C, --client-replay PATH",
+        "description": "从已保存的流量文件重放客户端请求，可重复指定。"
+      },
+      {
+        "paramName": "-S, --server-replay PATH",
+        "description": "使用已保存的流量文件重放服务器响应，可重复指定。"
+      },
+      {
+        "paramName": "--server-replay-extra {forward,kill,204,400,404,500}",
+        "description": "设置服务器重放时对未找到匹配响应的额外请求如何处理。"
+      },
+      {
+        "paramName": "--server-replay-reuse, --no-server-replay-reuse",
+        "description": "控制服务器重放响应能否重复使用。"
+      },
+      {
+        "paramName": "--server-replay-refresh, --no-server-replay-refresh",
+        "description": "控制是否更新重放响应中的 Date、Expires、Last-Modified 和 Cookie 过期时间。"
+      },
+      {
+        "paramName": "-M, --map-remote PATTERN",
+        "description": "将匹配的远程资源映射到另一远程 URL，格式为 [/flow-filter]/url-regex/replacement，可重复指定。"
+      },
+      {
+        "paramName": "--map-local PATTERN",
+        "description": "将匹配的远程资源映射到本地文件或目录，格式为 [/flow-filter]/url-regex/file-or-directory-path，可重复指定。"
+      },
+      {
+        "paramName": "-B, --modify-body PATTERN",
+        "description": "按过滤器和正则表达式替换请求体或响应体，格式为 [/flow-filter]/regex/[@]replacement，可重复指定。"
+      },
+      {
+        "paramName": "-H, --modify-headers PATTERN",
+        "description": "按过滤器添加、替换或删除请求头/响应头，格式为 [/flow-filter]/header-name/[@]header-value，可重复指定。"
+      },
+      {
+        "paramName": "--intercept FILTER",
+        "description": "拦截匹配流过滤表达式的流量，等待用户在界面中继续或修改。"
+      },
+      {
+        "paramName": "--view-filter FILTER",
+        "description": "仅在交互界面中显示匹配流过滤表达式的流量。"
+      }
+    ],
+    "examples": [
+      "mitmproxy",
+      "mitmproxy -p 8888",
+      "mitmproxy --listen-host 0.0.0.0 -p 8080",
+      "mitmproxy --mode socks5",
+      "mitmproxy --mode upstream:http://127.0.0.1:8081",
+      "mitmproxy --mode reverse:https://example.com",
+      "mitmproxy -s addon.py",
+      "mitmproxy -w flows.mitm",
+      "mitmproxy -r flows.mitm",
+      "mitmproxy -C flows.mitm",
+      "mitmproxy -S flows.mitm",
+      "mitmproxy --ignore-hosts 'example.com'",
+      "mitmproxy --view-filter '~m GET & ~d example.com'",
+      "mitmproxy --intercept '~q & ~d example.com'",
+      "mitmproxy --map-local '|~u https://example.com/app.js|./app.js'",
+      "mitmproxy -M '|~u https://old.example/|https://new.example/'",
+      "mitmproxy -H '|~q|X-Debug|true'",
+      "mitmproxy -B '|~s|secret|***'",
+      "mitmproxy --set block_global=false"
+    ],
+    "showDetails": false
+  }
+]

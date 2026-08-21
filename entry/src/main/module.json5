@@ -113,6 +113,10 @@
         "type": "public"
       },
       {
+        "package": "mitmproxy.hnp",
+        "type": "public"
+      },
+      {
         "package": "whereis.hnp",
         "type": "public"
       },
