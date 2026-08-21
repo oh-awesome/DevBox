@@ -467,5 +467,12 @@
     "source": "https://github.com/ruby-gnome/pkg-config",
     "licenseFile": "about_pkg-config_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "mitmproxy",
+    "license": "MIT",
+    "source": "https://github.com/mitmproxy/mitmproxy",
+    "licenseFile": "about_mitmproxy_opensource.html",
+    "showLicense": false
   }
 ]
