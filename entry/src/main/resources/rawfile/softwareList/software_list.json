@@ -1,5 +1,12 @@
 [
   {
+    "name": "julia",
+    "license": "MIT",
+    "source": "https://github.com/JuliaLang/julia",
+    "licenseFile": "about_julia_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "autoconf",
     "license": "GPL-3.0-or-later",
     "source": "https://savannah.gnu.org/projects/autoconf",

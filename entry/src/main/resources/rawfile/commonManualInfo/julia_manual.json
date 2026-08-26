@@ -1,0 +1,26 @@
+{
+  "name": "julia",
+  "description": "Julia 是一种高性能、动态的编程语言，适用于科学计算和数值分析。该命令启动 Julia 交互式环境（REPL）或执行 Julia 脚本。",
+  "syntax": "julia [options] [program.jl] [arguments...]",
+  "options": [
+    { "paramName": "-e, --eval <expr>", "description": "执行给定的表达式" },
+    { "paramName": "-E, --print <expr>", "description": "执行表达式并打印结果" },
+    { "paramName": "-f, --file <file>", "description": "加载并执行指定的 Julia 文件" },
+    { "paramName": "-i, --interactive", "description": "以交互式模式运行，即使标准输入不是终端" },
+    { "paramName": "-p, --procs <n>", "description": "启动 n 个额外的并行工作进程" },
+    { "paramName": "-t, --threads <n>", "description": "设置启动时使用的线程数（例如 `-t auto` 自动检测）" },
+    { "paramName": "--project[=<dir>]", "description": "设置项目环境目录。若无参数则使用当前目录" },
+    { "paramName": "--sysimage <file>", "description": "使用指定的系统镜像文件启动" },
+    { "paramName": "-v, --version", "description": "显示 Julia 版本信息" },
+    { "paramName": "-h, --help", "description": "显示帮助信息" }
+  ],
+  "examples": [
+    "julia",
+    "julia script.jl arg1 arg2",
+    "julia -e 'println(\"Hello, World!\")'",
+    "julia -t 4 project.jl",
+    "julia --project=/path/to/project",
+    "julia -v"
+  ],
+  "showDetails": false
+}

@@ -41,6 +41,10 @@
     ],
     "hnpPackages": [
       {
+        "package": "julia.hnp",
+        "type": "public"
+      },
+      {
         "package": "bind.hnp",
         "type": "public"
       },
