@@ -308,6 +308,13 @@
     "showLicense": false
   },
   {
+    "name": "tokei",
+    "license": "Apache-2.0",
+    "source": "https://gitcode.com/OpenHarmonyPCDeveloper/TokeiNext",
+    "licenseFile": "about_tokei_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "ruby",
     "license": "BSD-2-Clause",
     "source": "https://github.com/ruby/ruby",

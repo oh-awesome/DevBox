@@ -48,7 +48,8 @@
       "patchelf_manual.json",
       "pkg-config_manual.json",
       "gettext_manual.json",
-      "binutils_manual.json"
+      "binutils_manual.json",
+      "tokei_manual.json"
     ]
   }
 ]
