@@ -1,0 +1,47 @@
+[
+  {
+    "name": "doxygen",
+    "description": "从带注释的源代码生成文档。",
+    "syntax": "doxygen [Doxyfile]",
+    "options": [
+      {
+        "paramName": "-g [<file>]",
+        "description": "生成模板配置文件。"
+      },
+      {
+        "paramName": "-u [<file>]",
+        "description": "升级旧版本的配置文件。"
+      },
+      {
+        "paramName": "-w <format> <header> <footer> <stylesheet>",
+        "description": "生成指定格式的模板文件。"
+      },
+      {
+        "paramName": "-d <flag>",
+        "description": "启用指定的调试标志。"
+      },
+      {
+        "paramName": "-x",
+        "description": "使用 XML 格式读取和写入配置文件。"
+      },
+      {
+        "paramName": "-q",
+        "description": "静默模式，不输出状态信息。"
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "显示版本信息。"
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "显示帮助信息。"
+      }
+    ],
+    "examples": [
+      "doxygen --version",
+      "doxygen -g Doxyfile",
+      "doxygen Doxyfile"
+    ],
+    "showDetails": false
+  }
+]

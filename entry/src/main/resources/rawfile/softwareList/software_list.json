@@ -474,5 +474,19 @@
     "source": "https://github.com/mitmproxy/mitmproxy",
     "licenseFile": "about_mitmproxy_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "pandoc",
+    "license": "GPL-2.0-or-later",
+    "source": "https://gitcode.com/OpenHarmonyPCDeveloper/ohos_pandoc",
+    "licenseFile": "about_pandoc_opensource.html",
+    "showLicense": false
+  },
+  {
+    "name": "doxygen",
+    "license": "GPL-2.0-or-later",
+    "source": "https://gitcode.com/OpenHarmonyPCDeveloper/ohos_doxygen",
+    "licenseFile": "about_doxygen_opensource.html",
+    "showLicense": false
   }
 ]
