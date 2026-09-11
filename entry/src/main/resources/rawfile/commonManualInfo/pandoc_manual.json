@@ -1,0 +1,130 @@
+[
+  {
+    "name": "pandoc",
+    "description": "通用的文档格式转换工具，支持 Markdown、HTML、LaTeX、DOCX、PDF、EPUB 等数十种格式互转。",
+    "syntax": "pandoc [OPTIONS] [FILE]...",
+    "options": [
+      {
+        "paramName": "-f, --from FORMAT",
+        "description": "Specify input format (e.g. markdown, html, latex, docx)."
+      },
+      {
+        "paramName": "-t, --to FORMAT",
+        "description": "Specify output format (e.g. html, docx, pdf, epub)."
+      },
+      {
+        "paramName": "-o, --output FILE",
+        "description": "Write output to FILE instead of stdout."
+      },
+      {
+        "paramName": "-s, --standalone",
+        "description": "Produce output with an appropriate header and footer (e.g. a standalone HTML page)."
+      },
+      {
+        "paramName": "--list-input-formats",
+        "description": "List supported input formats and exit."
+      },
+      {
+        "paramName": "--list-output-formats",
+        "description": "List supported output formats and exit."
+      },
+      {
+        "paramName": "--toc, --table-of-contents",
+        "description": "Include an automatically generated table of contents in the output document."
+      },
+      {
+        "paramName": "-N, --number-sections",
+        "description": "Number section headings in LaTeX, ConTeXt, HTML, or EPUB output."
+      },
+      {
+        "paramName": "--template FILE",
+        "description": "Use FILE as a custom template for the generated document."
+      },
+      {
+        "paramName": "-V, --variable KEY[=VAL]",
+        "description": "Set the template variable KEY to the value VAL."
+      },
+      {
+        "paramName": "-M, --metadata KEY[=VAL]",
+        "description": "Set the metadata field KEY to the value VAL."
+      },
+      {
+        "paramName": "-c, --css URL",
+        "description": "Link to a CSS style sheet. Repeated to include multiple files."
+      },
+      {
+        "paramName": "--highlight-style STYLE",
+        "description": "Specifies the coloring style to be used in highlighted source code."
+      },
+      {
+        "paramName": "-H, --include-in-header FILE",
+        "description": "Include contents of FILE (verbatim) at the end of the header."
+      },
+      {
+        "paramName": "-B, --include-before-body FILE",
+        "description": "Include contents of FILE at the beginning of the document body."
+      },
+      {
+        "paramName": "-A, --include-after-body FILE",
+        "description": "Include contents of FILE at the end of the document body."
+      },
+      {
+        "paramName": "-L, --lua-filter SCRIPT",
+        "description": "Process the document through the Lua filter SCRIPT."
+      },
+      {
+        "paramName": "--filter EXECUTABLE",
+        "description": "Specify an executable to be used as a filter transforming the document."
+      },
+      {
+        "paramName": "--wrap MODE",
+        "description": "Determine how text is wrapped. Possible values: auto, none, preserve. [default: auto]"
+      },
+      {
+        "paramName": "--columns NUM",
+        "description": "Specify length of lines in characters. [default: 72]"
+      },
+      {
+        "paramName": "-p, --preserve-tabs",
+        "description": "Preserve tabs instead of converting them to spaces."
+      },
+      {
+        "paramName": "--tab-stop NUM",
+        "description": "Specify number of spaces per tab. [default: 4]"
+      },
+      {
+        "paramName": "--pdf-engine ENGINE",
+        "description": "Use ENGINE to produce PDF output. Possible values: pdflatex, lualatex, xelatex, etc."
+      },
+      {
+        "paramName": "--data-dir DIR",
+        "description": "Specify the user data directory to search for pandoc data files."
+      },
+      {
+        "paramName": "-q, --quiet",
+        "description": "Suppress warning messages."
+      },
+      {
+        "paramName": "-v, --version",
+        "description": "Print version and exit."
+      },
+      {
+        "paramName": "-h, --help",
+        "description": "Show usage message and exit."
+      }
+    ],
+    "examples": [
+      "pandoc input.md -o output.html",
+      "pandoc input.md -o output.docx",
+      "pandoc input.md -o output.pdf --pdf-engine=xelatex",
+      "pandoc -f markdown -t rst input.md",
+      "pandoc input.md -s --toc -o output.html",
+      "pandoc --list-input-formats",
+      "pandoc --list-output-formats",
+      "pandoc -t markdown -o README.md about_pandoc_opensource.html",
+      "pandoc input.md --highlight-style=tango -o output.html",
+      "pandoc --help"
+    ],
+    "showDetails": false
+  }
+]

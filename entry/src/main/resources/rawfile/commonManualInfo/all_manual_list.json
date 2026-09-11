@@ -49,7 +49,9 @@
       "pkg-config_manual.json",
       "gettext_manual.json",
       "binutils_manual.json",
-      "tokei_manual.json"
+      "tokei_manual.json",
+      "pandoc_manual.json",
+      "doxygen_manual.json"
     ]
   }
 ]

@@ -251,6 +251,14 @@
       {
         "package": "tokei.hnp",
         "type": "public"
+      },
+      {
+        "package": "pandoc.hnp",
+        "type": "public"
+      },
+      {
+        "package": "doxygen.hnp",
+        "type": "public"
       }
     ]
   }
