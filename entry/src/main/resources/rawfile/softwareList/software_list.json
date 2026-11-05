@@ -495,5 +495,12 @@
     "source": "https://gitcode.com/OpenHarmonyPCDeveloper/ohos_doxygen",
     "licenseFile": "about_doxygen_opensource.html",
     "showLicense": false
+  },
+  {
+    "name": "svn",
+    "license": "Apache-2.0",
+    "source": "https://subversion.apache.org",
+    "licenseFile": "about_svn_opensource.html",
+    "showLicense": false
   }
 ]

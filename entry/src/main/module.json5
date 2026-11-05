@@ -263,6 +263,10 @@
       {
         "package": "doxygen.hnp",
         "type": "public"
+      },
+      {
+        "package": "svn.hnp",
+        "type": "public"
       }
     ]
   }

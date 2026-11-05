@@ -1,0 +1,154 @@
+[
+  {
+    "name": "svn",
+    "description": "Subversion (SVN) 客户端，用于对版本库进行检出、提交、更新等版本控制操作。",
+    "syntax": "svn <subcommand> [options] [args]",
+    "options": [
+      {
+        "paramName": "checkout (co)",
+        "description": "从版本库检出一个工作副本。"
+      },
+      {
+        "paramName": "update (up)",
+        "description": "把工作副本更新到最新（或指定）版本。"
+      },
+      {
+        "paramName": "commit (ci)",
+        "description": "把工作副本的修改提交到版本库。"
+      },
+      {
+        "paramName": "add",
+        "description": "把文件或目录纳入版本控制，随下次提交生效。"
+      },
+      {
+        "paramName": "delete (del, remove, rm)",
+        "description": "删除文件或目录，并调度随下次提交生效。"
+      },
+      {
+        "paramName": "status (st)",
+        "description": "显示工作副本中文件与目录的状态。"
+      },
+      {
+        "paramName": "log",
+        "description": "显示提交日志信息。"
+      },
+      {
+        "paramName": "diff (di)",
+        "description": "显示两份内容之间的差异。"
+      },
+      {
+        "paramName": "revert",
+        "description": "撤销本地未提交的修改，恢复原始内容。"
+      },
+      {
+        "paramName": "info",
+        "description": "显示文件、目录或 URL 的详细信息。"
+      },
+      {
+        "paramName": "list (ls)",
+        "description": "列出版本库目录中的条目。"
+      },
+      {
+        "paramName": "copy (cp)",
+        "description": "复制文件或目录（可用于分支/标记）。"
+      },
+      {
+        "paramName": "move (mv, rename, ren)",
+        "description": "移动或重命名工作副本或版本库中的条目。"
+      },
+      {
+        "paramName": "mkdir",
+        "description": "创建版本控制下的目录。"
+      },
+      {
+        "paramName": "merge",
+        "description": "把两个来源的差异应用到工作副本。"
+      },
+      {
+        "paramName": "switch (sw)",
+        "description": "把工作副本切换到别的分支或标记。"
+      },
+      {
+        "paramName": "cleanup",
+        "description": "递归清理工作副本，解除锁定并重做未完成操作。"
+      },
+      {
+        "paramName": "export",
+        "description": "导出一份不含版本控制信息的干净目录树。"
+      },
+      {
+        "paramName": "import",
+        "description": "把未版本控制的路径递归提交到版本库。"
+      },
+      {
+        "paramName": "propget (pg), propset (ps), proplist (pl)",
+        "description": "获取、设置、列出文件或目录的属性。"
+      },
+      {
+        "paramName": "-m [--message] ARG",
+        "description": "用 ARG 作为提交日志信息。"
+      },
+      {
+        "paramName": "-r [--revision] ARG",
+        "description": "指定目标修订版本 ARG（也可用 RANGE:RANGE2 区间）。"
+      },
+      {
+        "paramName": "-N [--non-recursive]",
+        "description": "已废弃，等同于 --depth=empty，只操作单层。"
+      },
+      {
+        "paramName": "--depth ARG",
+        "description": "限制操作深度：empty, files, immediates, infinity。"
+      },
+      {
+        "paramName": "-q [--quiet]",
+        "description": "尽量少输出信息。"
+      },
+      {
+        "paramName": "-v [--verbose]",
+        "description": "输出更多信息。"
+      },
+      {
+        "paramName": "--username ARG",
+        "description": "指定认证用户名。"
+      },
+      {
+        "paramName": "--password ARG",
+        "description": "指定认证密码。"
+      },
+      {
+        "paramName": "--non-interactive",
+        "description": "不进行交互式提示。"
+      },
+      {
+        "paramName": "--force",
+        "description": "强制操作执行（如导入、检出覆盖）。"
+      },
+      {
+        "paramName": "--ignore-externals",
+        "description": "忽略外部定义（externals）。"
+      },
+      {
+        "paramName": "-h [--help]",
+        "description": "显示指定子命令的帮助信息。"
+      },
+      {
+        "paramName": "--version",
+        "description": "显示客户端程序版本信息。"
+      }
+    ],
+    "examples": [
+      "svn --version",
+      "svn checkout URL /path/to/wc",
+      "svn update -r HEAD",
+      "svn status",
+      "svn add file.txt && svn commit -m \"add file.txt\"",
+      "svn log -l 5 -v",
+      "svn diff -r 100:101 file.txt",
+      "svn cleanup",
+      "svn export URL /path/to/dir",
+      "svn help"
+    ],
+    "showDetails": false
+  }
+]

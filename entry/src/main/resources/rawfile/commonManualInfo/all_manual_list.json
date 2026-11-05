@@ -52,7 +52,8 @@
       "binutils_manual.json",
       "tokei_manual.json",
       "pandoc_manual.json",
-      "doxygen_manual.json"
+      "doxygen_manual.json",
+      "svn_manual.json"
     ]
   }
 ]
