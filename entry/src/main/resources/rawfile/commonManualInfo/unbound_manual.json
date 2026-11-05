@@ -1,0 +1,283 @@
+[
+  {
+    "name": "unbound",
+    "description": "验证、递归、缓存型 DNS 解析器，可作为本地 DNS 服务运行，支持 DNSSEC 验证、转发、缓存以及 DoT/DoH/DoQ 加密传输。",
+    "syntax": "unbound [-dhpvV] [-c cfgfile]",
+    "options": [
+      {
+        "paramName": "-h",
+        "description": "Show this help."
+      },
+      {
+        "paramName": "-c file",
+        "description": "Config file to read instead of the default one; the file format is described in unbound.conf(5)."
+      },
+      {
+        "paramName": "-d",
+        "description": "Do not fork into the background."
+      },
+      {
+        "paramName": "-p",
+        "description": "Do not create a pidfile."
+      },
+      {
+        "paramName": "-v",
+        "description": "Verbose; repeat to increase verbosity."
+      },
+      {
+        "paramName": "-V",
+        "description": "Show version number and build options."
+      }
+    ],
+    "examples": [
+      "unbound -V",
+      "unbound -c ~/my.conf -v",
+      "unbound -c ~/my.conf -d -v -v"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unbound-checkconf",
+    "description": "检查 unbound 配置文件的语法与取值是否正确，也可用于读取某个配置项的生效值。",
+    "syntax": "unbound-checkconf [-hqf] [-o option] [file]",
+    "options": [
+      {
+        "paramName": "file",
+        "description": "Config file to check; if omitted the default config file is used."
+      },
+      {
+        "paramName": "-o option",
+        "description": "Print the value of the given option to stdout."
+      },
+      {
+        "paramName": "-f",
+        "description": "Output full pathname with chroot applied, e.g. with -o pidfile."
+      },
+      {
+        "paramName": "-q",
+        "description": "Quiet; suppress output on success."
+      },
+      {
+        "paramName": "-h",
+        "description": "Show this usage help."
+      }
+    ],
+    "examples": [
+      "unbound-checkconf ~/my.conf",
+      "unbound-checkconf -o port ~/my.conf",
+      "unbound-checkconf -q ~/my.conf"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unbound-host",
+    "description": "DNS 查询工具，可查询主机名对应的 IPv4/IPv6 地址与邮件记录，支持 DNSSEC 验证并显示安全状态。",
+    "syntax": "unbound-host [-C configfile] [-vdhr46] [-c class] [-t type] [-y key] [-f keyfile] [-F namedkeyfile] hostname",
+    "options": [
+      {
+        "paramName": "-t type",
+        "description": "What resource record type to look for, e.g. A, AAAA, MX, TXT, NS."
+      },
+      {
+        "paramName": "-c class",
+        "description": "What class to look for, if not class IN."
+      },
+      {
+        "paramName": "-y 'keystring'",
+        "description": "Specify a trust anchor, DS or DNSKEY, e.g. -y 'example.com DS 31560 5 1 1CFED8478...'."
+      },
+      {
+        "paramName": "-D",
+        "description": "Enable DNSSEC using the default root anchor."
+      },
+      {
+        "paramName": "-f keyfile",
+        "description": "Read trust anchors from file, with lines in the same format as -y."
+      },
+      {
+        "paramName": "-F keyfile",
+        "description": "Read named.conf-style trust anchors from file."
+      },
+      {
+        "paramName": "-C config",
+        "description": "Use the specified unbound.conf (none is read by default)."
+      },
+      {
+        "paramName": "-r",
+        "description": "Read forwarder information from /etc/resolv.conf; breaks validation if the forwarder does not do DNSSEC."
+      },
+      {
+        "paramName": "-v",
+        "description": "Be more verbose, shows nodata and security status."
+      },
+      {
+        "paramName": "-d",
+        "description": "Debug, traces the action; -d -d shows more."
+      },
+      {
+        "paramName": "-4",
+        "description": "Use the IPv4 network, avoid IPv6."
+      },
+      {
+        "paramName": "-6",
+        "description": "Use the IPv6 network, avoid IPv4."
+      },
+      {
+        "paramName": "-h",
+        "description": "Show this usage help."
+      }
+    ],
+    "examples": [
+      "unbound-host www.example.com",
+      "unbound-host -C ~/my.conf -v www.example.com",
+      "unbound-host -t MX example.com"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unbound-control",
+    "description": "unbound 服务的远程控制工具，可查看运行状态与统计、重载配置、增删本地数据、清理缓存等。",
+    "syntax": "unbound-control [-hq] [-c cfgfile] [-s ip[@port]] command",
+    "options": [
+      {
+        "paramName": "-c file",
+        "description": "Config file to read; the default config file is used if omitted."
+      },
+      {
+        "paramName": "-s ip[@port]",
+        "description": "Server address to connect to; if omitted the config file is used."
+      },
+      {
+        "paramName": "-q",
+        "description": "Quiet; do not print anything if it works ok."
+      },
+      {
+        "paramName": "-h",
+        "description": "Show this usage help."
+      },
+      {
+        "paramName": "status",
+        "description": "Display status of the server."
+      },
+      {
+        "paramName": "stats",
+        "description": "Print statistics and reset the counters."
+      },
+      {
+        "paramName": "stats_noreset",
+        "description": "Peek at statistics without resetting the counters."
+      },
+      {
+        "paramName": "stop",
+        "description": "Stop the server."
+      },
+      {
+        "paramName": "reload",
+        "description": "Reload the server; this flushes data, stats and the request list."
+      },
+      {
+        "paramName": "reload_keep_cache",
+        "description": "Reload the server but try to keep the RRset and message cache."
+      },
+      {
+        "paramName": "fast_reload [+dpv]",
+        "description": "Reload with only a brief stop of server processing, keeping the cache."
+      },
+      {
+        "paramName": "verbosity <number>",
+        "description": "Change the logging detail level at run time."
+      },
+      {
+        "paramName": "local_zone <name> <type>",
+        "description": "Add a new local zone."
+      },
+      {
+        "paramName": "local_data <RR data...>",
+        "description": "Add local data, e.g. local_data www.example.com A 192.0.2.1."
+      },
+      {
+        "paramName": "flush <name>",
+        "description": "Flush common record types for the name from the cache."
+      },
+      {
+        "paramName": "flush_zone <name>",
+        "description": "Flush everything at or under the name from the caches."
+      },
+      {
+        "paramName": "dump_cache",
+        "description": "Print the cache to stdout."
+      },
+      {
+        "paramName": "lookup <name>",
+        "description": "Print the nameservers that would be used for the name."
+      }
+    ],
+    "examples": [
+      "unbound-control -c ~/my.conf status",
+      "unbound-control -c ~/my.conf stats_noreset",
+      "unbound-control -c ~/my.conf flush www.example.com"
+    ],
+    "showDetails": false
+  },
+  {
+    "name": "unbound-anchor",
+    "description": "DNSSEC 根信任锚的初始化与更新工具，在启动验证解析前运行，用于准备 root.key 文件。",
+    "syntax": "unbound-anchor [-46lSv] [-a file] [-c file] [-u name] [-f resolv.conf] [-r root.hints] [-P port]",
+    "options": [
+      {
+        "paramName": "-a file",
+        "description": "Root key file; it is both input and output for this tool."
+      },
+      {
+        "paramName": "-c file",
+        "description": "Certificate file used to verify the downloaded trust anchor."
+      },
+      {
+        "paramName": "-l",
+        "description": "List the builtin key and cert on stdout."
+      },
+      {
+        "paramName": "-u name",
+        "description": "Server name in the https url used to fetch the anchor."
+      },
+      {
+        "paramName": "-S",
+        "description": "Do not use SNI for the https connection."
+      },
+      {
+        "paramName": "-b address",
+        "description": "Source address to bind to."
+      },
+      {
+        "paramName": "-4",
+        "description": "Work using IPv4 only."
+      },
+      {
+        "paramName": "-6",
+        "description": "Work using IPv6 only."
+      },
+      {
+        "paramName": "-f resolv.conf",
+        "description": "Use the given resolv.conf to look up the anchor."
+      },
+      {
+        "paramName": "-r root.hints",
+        "description": "Use the given root.hints file."
+      },
+      {
+        "paramName": "-v",
+        "description": "Be more verbose."
+      },
+      {
+        "paramName": "-P port",
+        "description": "Use this port for the https connection, default 443."
+      }
+    ],
+    "examples": [
+      "unbound-anchor -l",
+      "unbound-anchor -a ~/root.key",
+      "unbound-anchor -a ~/root.key -v"
+    ],
+    "showDetails": false
+  }
+]

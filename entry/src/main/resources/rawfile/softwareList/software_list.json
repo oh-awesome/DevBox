@@ -1,5 +1,12 @@
 [
   {
+    "name": "unbound",
+    "license": "BSD-3-Clause",
+    "source": "https://github.com/NLnetLabs/unbound",
+    "licenseFile": "about_unbound_opensource.html",
+    "showLicense": false
+  },
+  {
     "name": "julia",
     "license": "MIT",
     "source": "https://github.com/JuliaLang/julia",
