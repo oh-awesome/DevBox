@@ -10,3 +10,38 @@
 /.bitfun
 /build-profile.json5
 /.idea
+
+# CI 敏感文件
+ci/dispatcher/config.env
+ci/agent/config.env
+*.env
+!*.env.example
+
+# 本地工作区大文件与敏感内容（不提交）
+/staging/
+/node_modules/
+/.gitcode_token
+/ohpcd/
+/tmp_*
+.tmp-shots/
+
+# 测试过程产物（真机截图/dump/流式日志——可再生）
+/test/ui_automation/.shots/
+*.log
+
+# CI 基础设施（不进开源仓——私有环境管理，见 2026-11-12 决策）
+/ci/
+
+# 测试运行产物（报告为过程输出，不入库）
+/test/reports/
+/test/ui_automation/reports/
+
+# Python 编译产物（测试框架）
+__pycache__/
+*.pyc
+
+# 测试 workdir 过程产物（截图/dump——reports 与 shots 之外的散落件）
+/test/ui_automation/*.jpeg
+/test/ui_automation/*.png
+/test/ui_automation/*.json
+cleanup-decision.md

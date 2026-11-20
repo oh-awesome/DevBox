@@ -13,324 +13,752 @@
       "value": "DevBox"
     },
     {
-      "name": "app_describe",
-      "value": "Welcome to DevBox! A productivity toolkit designed for developers, offering essential commands and utilities to streamline your workflow."
+      "name": "permission_custom_sandbox_reason",
+      "value": "开发环境管理需要在用户目录维护工具链的相对符号链接（current）与 bin 链接，以自定义沙箱获得稳定的文件操作能力，保证多版本运行时切换与终端开箱即用"
     },
     {
-      "name": "key_feature",
-      "value": "Key Features"
+      "name": "permission_file_access_persist_reason",
+      "value": "持久化用户授权的文件访问，避免每次管理工具链时重复弹窗，保证环境自愈链无人值守运行"
     },
     {
-      "name": "key_feature_cmd",
-      "value": "Command Tools"
+      "name": "permission_read_pasteboard_reason",
+      "value": "环境变量编辑时支持一键粘贴剪贴板中的配置片段/路径为变量值（多行自动拆分），免去手动中转；仅读取、不监听剪贴板"
     },
     {
-      "name": "key_feature_cmds",
-      "value": "File/directory operations, network debugging, build management, and more."
+      "name": "perm_internet_reason",
+      "value": "联网下载开发工具制品与包目录（发现服务、制品仓、pip/npm/brew/conan 源）以及提交用户反馈，均为应用核心功能所必需的网络访问"
     },
     {
-      "name": "key_feature_handy_utility",
-      "value": "Handy Utilities"
+      "name": "perm_keep_bg_reason",
+      "value": "申请长时任务（数据传输）保证窗口关闭后后台下载与 MCP 本机服务连续运行：大件工具链安装中断会留下半制品，AI 应用的环境操作依赖服务常在"
     },
     {
-      "name": "key_feature_handy_utilities",
-      "value": "Command Manual, Unicode conversion, mini notepad, QR code generator, timestamp converter."
+      "name": "perm_rw_user_file_reason",
+      "value": "读写用户主目录 ~/usr/local 下的工具链安装目录与 ~/.zshrc 等环境配置文件——多版本运行时的安装、切换、卸载与环境变量编辑均依赖此访问，无替代路径"
     },
     {
-      "name": "key_feature_system_resource",
-      "value": "System Resources"
+      "name": "perm_external_native_reason",
+      "value": "加载应用自带的原生模块（命令执行与解压引擎），安装语言运行时必须执行其自带二进制并解压 tar 制品，属开发者环境管理的核心通道"
     },
     {
-      "name": "key_feature_system_resources",
-      "value": "Quick access to system Media, Symbol, Color, and String resources."
+      "name": "perm_load_lib_reason",
+      "value": "允许 Python/Java/Node.js 等解释器与运行时按需加载动态库（dlopen），语言运行时离开此能力无法启动"
     },
     {
-      "name": "key_feature_number_other",
-      "value": "Others"
+      "name": "perm_writable_mem_reason",
+      "value": "JIT 型运行时（Node.js V8、BiShengJDK）运行中需要写入并执行代码内存页，此为各类语言运行时的固有工作方式，不可禁用"
     },
     {
-      "name": "key_feature_number_others",
-      "value": "Hexadecimal Conversion"
+      "name": "brewcomponents_1",
+      "value": "终端命令"
     },
     {
-      "name": "usage_tips_title",
-      "value": "Usage Tips"
+      "name": "brewcomponents_2",
+      "value": "复制"
     },
     {
-      "name": "usage_tips_content",
-      "value": "Execute commands via the default inal tool \"HiShell\", click the image below for usage examples, and refer to the manual for command details."
+      "name": "brewcomponents_3",
+      "value": "已弃用"
     },
     {
-      "name": "usage_help",
-      "value": "For full documentation, visit our Community Homepage."
+      "name": "brewcomponents_4",
+      "value": "可升级"
     },
     {
-      "name": "privacy_tips_title",
-      "value": "Privacy Commitment"
+      "name": "brewcomponents_5",
+      "value": "已装"
     },
     {
-      "name": "privacy_tips_content",
-      "value": "We take your privacy seriously. Learn more in DevBox Privacy Policy about how we collect, use, and protect your data."
+      "name": "component_1",
+      "value": "已复制"
     },
     {
-      "name": "privacy_link",
-      "value": "DevBox Privacy Policy"
+      "name": "component_2",
+      "value": "运行中"
     },
     {
-      "name": "ohpcd_name",
-      "value": "OpenHarmony PC Developer Community"
+      "name": "component_3",
+      "value": "清空"
     },
     {
-      "name": "ohpcd_introduction",
-      "value": "Creating High-Efficiency Development Toolchains to Empower the Global Developer Ecosystem"
+      "name": "component_4",
+      "value": "反馈"
     },
     {
-      "name": "tips_dialog",
-      "value": "Application Usage Tip"
+      "name": "component_5",
+      "value": "开始前请确认"
     },
     {
-      "name": "usertisp_title",
-      "value": "Usage Instructions"
+      "name": "component_6",
+      "value": "1. 设备已开启开发者模式"
     },
     {
-      "name": "restart_notice",
-      "value": "After installation is complete, please restart your terminal application to activate all command functions of the toolkit."
+      "name": "component_7",
+      "value": "2. 已允许\"运行来自非应用市场的扩展程序\""
     },
     {
-      "name": "usertisp_nolonger",
-      "value": "Do not show again"
+      "name": "component_8",
+      "value": "3. 安装工具后，已打开的终端需执行 source ~/.zshrc 或重新打开窗口，环境变量才生效"
     },
     {
-      "name": "confirm_button",
-      "value": "OK"
+      "name": "component_9",
+      "value": "详细开启步骤见「关于」页 · 环境准备指南"
     },
     {
-      "name": "tab_about",
-      "value": "About"
+      "name": "component_10",
+      "value": "不再提示"
     },
     {
-      "name": "tab_unicode",
-      "value": "Unicode Conversion"
+      "name": "component_11",
+      "value": "类型"
     },
     {
-      "name": "tab_minitxt",
-      "value": "Mini Txt Editor"
+      "name": "component_12",
+      "value": "提交时将自动附加 DevBox 版本、系统信息和已安装组件"
     },
     {
-      "name": "tab_qr",
-      "value": "QR Code Generator"
+      "name": "component_13",
+      "value": "反馈将发布到社区公开 Issue（GitCode），所有人均可见。请勿包含个人敏感信息（姓名、账号、联系方式等）。"
     },
     {
-      "name": "tab_timestamp",
-      "value": "Timestamp Conversion"
+      "name": "component_14",
+      "value": "已创建 Issue："
     },
     {
-      "name": "tab_radomstrting",
-      "value": "Random String Generator"
+      "name": "component_15",
+      "value": "链接已复制"
     },
     {
-      "name": "tab_hex",
-      "value": "Hexadecimal Conversion"
+      "name": "component_16",
+      "value": "请输入标题"
     },
     {
-      "name": "tab_media",
-      "value": "System Media Resource"
+      "name": "component_17",
+      "value": "请描述您的问题"
     },
     {
-      "name": "tab_symbol",
-      "value": "System Symbol Resource"
+      "name": "component_18",
+      "value": "旧版本"
     },
     {
-      "name": "tab_color",
-      "value": "System Color Resource"
+      "name": "component_19",
+      "value": "未找到该版本的制品信息"
     },
     {
-      "name": "tab_string",
-      "value": "System String Resource"
+      "name": "component_20",
+      "value": "已从队列移除"
     },
     {
-      "name": "tab_cmd_manual",
-      "value": "Command manual"
+      "name": "component_21",
+      "value": "正在取消…（已下载部分保留断点，重新安装可续传）"
     },
     {
-      "name": "reset",
-      "value": "Reset"
+      "name": "component_22",
+      "value": "功能接入中 · 界面预览"
     },
     {
-      "name": "notepad_file",
-      "value": "File"
+      "name": "component_23",
+      "value": "安装源"
     },
     {
-      "name": "notepad_file_open",
-      "value": "Open"
+      "name": "component_24",
+      "value": "该语言制品暂未收录，安装功能待上游接入"
     },
     {
-      "name": "notepad_file_save",
-      "value": "Save"
+      "name": "component_25",
+      "value": "尚未安装任何版本"
     },
     {
-      "name": "notepad_edit",
-      "value": "Edit"
+      "name": "component_26",
+      "value": "正在从制品仓获取版本列表…"
     },
     {
-      "name": "notepad_edit_undo",
-      "value": "Undo"
+      "name": "component_27",
+      "value": "所有已收录版本均已安装"
     },
     {
-      "name": "notepad_edit_redo",
-      "value": "Redo"
+      "name": "component_28",
+      "value": "MCP 配置"
     },
     {
-      "name": "notepad_edit_copy",
-      "value": "Copy"
+      "name": "component_29",
+      "value": "MCP 服务器"
     },
     {
-      "name": "notepad_edit_paste",
-      "value": "Paste"
+      "name": "component_30",
+      "value": "敏感操作将通过通知请求设备确认"
     },
     {
-      "name": "builder_qrcode",
-      "value": "Generate QR code"
+      "name": "component_31",
+      "value": "横幅通知未开启：确认通知将不弹横幅（可在此面板开启）"
     },
     {
-      "name": "save_qrcode",
-      "value": "Save QR code"
+      "name": "component_32",
+      "value": "打开通知设置失败"
     },
     {
-      "name": "ecard_qr",
-      "value": "Digital card"
+      "name": "component_33",
+      "value": "在 IDE / Agent 应用中添加 DevBox MCP"
     },
     {
-      "name": "phone_qr",
-      "value": "Number"
+      "name": "component_34",
+      "value": "支持自定义 MCP 服务且支持 HTTP / 流式 HTTP 的 IDE 或 Agent，均可接入 DevBox 本地 MCP"
     },
     {
-      "name": "vx_account_qr",
-      "value": "Official Account"
+      "name": "component_35",
+      "value": "请在 DevBox 客户端中启用本地 MCP 服务"
     },
     {
-      "name": "email_qr",
-      "value": "Email"
+      "name": "component_36",
+      "value": "在应用的 MCP 配置文件中添加以下内容并保存"
     },
     {
-      "name": "wifi_qr",
-      "value": "WIFI"
+      "name": "Index_1",
+      "value": "感谢反馈，提交成功"
     },
     {
-      "name": "copy",
-      "value": "Copy"
+      "name": "Index_2",
+      "value": "任务队列"
     },
     {
-      "name": "copy_success",
-      "value": "Copied to clipboard"
+      "name": "Index_3",
+      "value": "组内串行（运行时 / pip / npm 各一条队列），组间并行"
     },
     {
-      "name": "select_datetime",
-      "value": "Select date"
+      "name": "Index_4",
+      "value": "进行中"
     },
     {
-      "name": "convert_date_to_timestamp",
-      "value": "Convert to timestamp"
+      "name": "Index_5",
+      "value": "正在刷新数据…"
     },
     {
-      "name": "convert_timestamp_to_date",
-      "value": "Convert to date"
+      "name": "about_1",
+      "value": "隐私声明"
     },
     {
-      "name": "time_pause",
-      "value": "Pause"
+      "name": "about_2",
+      "value": "查看"
     },
     {
-      "name": "time_start",
-      "value": "Start"
+      "name": "about_3",
+      "value": "开源声明"
     },
     {
-      "name": "convert_to_unicode",
-      "value": "Unicode"
+      "name": "about_4",
+      "value": "版本 "
     },
     {
-      "name": "convert_to_native",
-      "value": "Native"
+      "name": "about_5",
+      "value": "构建版本 20261116"
     },
     {
-      "name": "convert_clean",
-      "value": "Clean"
+      "name": "about_6",
+      "value": "应用介绍"
     },
     {
-      "name": "convert_Dec2Bin",
-      "value": "Dec to Bin"
+      "name": "about_7",
+      "value": "DevBox 为鸿蒙 PC 开发者提供开发环境管理工具，支持多语言运行时安装、版本切换、包管理和环境变量配置。"
     },
     {
-      "name": "convert_Bin2Dec",
-      "value": "Bin to Dec"
+      "name": "about_8",
+      "value": "支持 Python、Java、Rust、Node.js、Lua、Perl、PHP、Go 等语言运行时，自动配置 PATH 环境变量，内置 pip / npm 镜像源管理。"
     },
     {
-      "name": "convert_Dec2Oct",
-      "value": "Dec to Oct"
+      "name": "about_9",
+      "value": "开启开发者模式"
     },
     {
-      "name": "convert_Oct2Dec",
-      "value": "Oct to Dec"
+      "name": "about_10",
+      "value": "1. 打开\"设置\"，进入\"关于本机\"页面"
     },
     {
-      "name": "convert_Dec2Hex",
-      "value": "Dec to Hex"
+      "name": "about_11",
+      "value": "2. 连续点击\"版本号\" 7 次"
     },
     {
-      "name": "convert_Hex2Dec",
-      "value": "Hex to Dec"
+      "name": "about_12",
+      "value": "3. 弹出\"开启开发者模式\"确认框，点击\"确认开启\"（如已设置锁屏密码需输入）"
     },
     {
-      "name": "need_enter_timestamp",
-      "value": "Please enter a timestamp"
+      "name": "about_13",
+      "value": "4. 设备自动重启，重启后开发者选项可用"
     },
     {
-      "name": "need_enter_valid_timestamp",
-      "value": "Please enter a valid timestamp"
+      "name": "about_14",
+      "value": "提示：开发者模式是安装和运行调试工具的前提，DevBox 安装的语言运行时和命令行工具均依赖此模式。"
     },
     {
-      "name": "timestamp_now",
-      "value": "  Current Unix timestamp:"
+      "name": "about_15",
+      "value": "开启\"运行来自非应用市场的扩展程序\""
     },
     {
-      "name": "need_enter_valid_date",
-      "value": "Please enter a valid date and time"
+      "name": "about_16",
+      "value": "1. 打开\"设置\"，进入\"隐私和安全\"页面"
     },
     {
-      "name": "need_enter_date",
-      "value": "Enter a date and time"
+      "name": "about_17",
+      "value": "2. 点击\"高级\"进入高级设置"
     },
     {
-      "name": "unix_timestamp",
-      "value": "Unix timestamp: "
+      "name": "about_18",
+      "value": "3. 找到\"运行来自非应用市场的扩展程序\"选项"
     },
     {
-      "name": "get_user_permission",
-      "value": "Click the appropriate button to grant directory permissions"
+      "name": "about_19",
+      "value": "4. 选择\"允许\"，完成开启"
     },
     {
-      "name": "get_user_permission_download",
-      "value": "Download"
+      "name": "about_20",
+      "value": "风险提示：允许运行非应用市场扩展程序后，设备可能安装未经过应用市场安全检测的程序。请仅安装可信来源的开发工具，不用时建议关闭此选项。"
     },
     {
-      "name": "get_user_permission_document",
-      "value": "Documents"
+      "name": "about_21",
+      "value": "让环境变量在终端生效"
     },
     {
-      "name": "get_user_permission_desktop",
-      "value": "Desktop"
+      "name": "about_22",
+      "value": "安装运行时或工具后，新打开的终端窗口自动生效（PATH 已在 ~/.zshrc 配置）。"
     },
     {
-      "name": "get_user_permission_home",
-      "value": "Home"
+      "name": "about_23",
+      "value": "已打开的终端窗口不会自动加载新配置，两种方式任选："
     },
     {
-      "name": "command_user_guide",
-      "value": "DevBox is the OpenHarmony PC development tool, providing a suite of command-line tools to assist developers in project building, debugging, and deployment."
+      "name": "about_24",
+      "value": "  · 重新打开终端窗口（推荐）"
     },
     {
-      "name": "command_list",
-      "value": "Command list"
+      "name": "about_25",
+      "value": "  · 在已打开的终端执行 source ~/.zshrc 重新加载"
+    },
+    {
+      "name": "about_26",
+      "value": "开发者信息"
+    },
+    {
+      "name": "about_27",
+      "value": "开源软件声明"
+    },
+    {
+      "name": "about_28",
+      "value": "版权声明"
+    },
+    {
+      "name": "about_29",
+      "value": "本软件（DevBox）依据木兰宽松许可证第 2 版（Mulan PSL-2.0）授权。"
+    },
+    {
+      "name": "about_30",
+      "value": "协议全文：http://license.coscl.org.cn/MulanPSL2"
+    },
+    {
+      "name": "about_31",
+      "value": "使用的开源组件"
+    },
+    {
+      "name": "about_32",
+      "value": "修改说明"
+    },
+    {
+      "name": "about_33",
+      "value": "liblzma (xz) 采用上游解码子集（仅保留解压所需源文件），未修改任何源文件内容。许可证要求保留的原版权声明均完整保留于源代码目录 entry/src/main/cpp/third_party/xz/。"
+    },
+    {
+      "name": "about_34",
+      "value": "通过 DevBox 安装的外部工具"
+    },
+    {
+      "name": "about_35",
+      "value": "DevBox 安装的开发工具（Python、Git、CMake 等）在安装时各自分发并遵循其独立开源协议，不属于本应用内置组件。各工具的许可证信息可在其官方网站获取。"
+    },
+    {
+      "name": "about_36",
+      "value": "免责声明"
+    },
+    {
+      "name": "about_37",
+      "value": "本软件“按原样”提供，不附带任何明示或暗示的担保，包括但不限于适销性、特定用途适用性及不侵权的保证。在任何情况下，作者或版权持有人均不对因使用本软件而产生的任何索赔、损害或其他责任负责。"
+    },
+    {
+      "name": "about_38",
+      "value": "协议原文（点击展开）"
+    },
+    {
+      "name": "common_tools_1",
+      "value": "版本数据同步中，请稍候"
+    },
+    {
+      "name": "common_tools_2",
+      "value": "正在取消…（断点保留）"
+    },
+    {
+      "name": "common_tools_3",
+      "value": "版本目录同步中…"
+    },
+    {
+      "name": "common_tools_4",
+      "value": "正在获取工具目录…"
+    },
+    {
+      "name": "common_tools_5",
+      "value": "准备中…"
+    },
+    {
+      "name": "env_manager_1",
+      "value": "路径不在主目录下，仅从列表移除"
+    },
+    {
+      "name": "env_manager_2",
+      "value": "已还原到文件当前内容"
+    },
+    {
+      "name": "env_manager_3",
+      "value": "已取消保存"
+    },
+    {
+      "name": "env_manager_4",
+      "value": "加载中…"
+    },
+    {
+      "name": "env_manager_5",
+      "value": "已失效"
+    },
+    {
+      "name": "env_manager_6",
+      "value": "变量"
+    },
+    {
+      "name": "env_manager_7",
+      "value": "值"
+    },
+    {
+      "name": "env_manager_8",
+      "value": "请先选择一行变量"
+    },
+    {
+      "name": "env_manager_9",
+      "value": "剪贴板为空"
+    },
+    {
+      "name": "env_manager_10",
+      "value": "剪贴板无可用文本"
+    },
+    {
+      "name": "env_manager_11",
+      "value": "读取剪贴板失败"
+    },
+    {
+      "name": "env_manager_12",
+      "value": "+ 添加值"
+    },
+    {
+      "name": "env_manager_13",
+      "value": "📋 从剪贴板粘贴"
+    },
+    {
+      "name": "env_manager_14",
+      "value": "源文件"
+    },
+    {
+      "name": "env_manager_15",
+      "value": "目标文件"
+    },
+    {
+      "name": "env_manager_16",
+      "value": "源与目标相同，请选择不同的配置文件"
+    },
+    {
+      "name": "env_manager_17",
+      "value": "同名变量保留目标文件中的值，仅追加新增变量"
+    },
+    {
+      "name": "env_manager_18",
+      "value": "文件选择器不可用"
+    },
+    {
+      "name": "env_manager_19",
+      "value": "文件创建器不可用"
+    },
+    {
+      "name": "env_manager_20",
+      "value": "显示名称"
+    },
+    {
+      "name": "env_manager_21",
+      "value": "文件：未选择"
+    },
+    {
+      "name": "env_manager_22",
+      "value": "点文件（如 .profile）也可见可选；文件不存在时用「新建」，系统选择器中选位置、命名后自动创建"
+    },
+    {
+      "name": "go_manager_1",
+      "value": "等价命令：go env -w GOPROXY=<url>"
+    },
+    {
+      "name": "harmonybrew_1",
+      "value": "HarmonyBrew 安装完成"
+    },
+    {
+      "name": "harmonybrew_2",
+      "value": "安装失败（详见安装日志）"
+    },
+    {
+      "name": "harmonybrew_3",
+      "value": "已卸载"
+    },
+    {
+      "name": "harmonybrew_4",
+      "value": "请先安装 HarmonyBrew"
+    },
+    {
+      "name": "harmonybrew_5",
+      "value": "定位"
+    },
+    {
+      "name": "harmonybrew_6",
+      "value": "HarmonyBrew 未安装"
+    },
+    {
+      "name": "harmonybrew_7",
+      "value": "鸿蒙版 Homebrew，安装后可管理软件包"
+    },
+    {
+      "name": "harmonybrew_8",
+      "value": "安装完成"
+    },
+    {
+      "name": "harmonybrew_9",
+      "value": "安装后可管理软件包"
+    },
+    {
+      "name": "harmonybrew_10",
+      "value": "PATH 优先"
+    },
+    {
+      "name": "harmonybrew_11",
+      "value": "brew 命令优先于其他环境"
+    },
+    {
+      "name": "harmonybrew_12",
+      "value": "DevBox 内已自动信任社区源。终端侧的 brew 独立存储信任记录——在终端安装社区源软件包前，需执行一次以下命令："
+    },
+    {
+      "name": "harmonybrew_13",
+      "value": "正在获取官方源目录（首次约 12MB）…"
+    },
+    {
+      "name": "harmonybrew_14",
+      "value": "正在获取社区源目录…"
+    },
+    {
+      "name": "harmonybrew_15",
+      "value": "在左侧选择一个软件包"
+    },
+    {
+      "name": "harmonybrew_16",
+      "value": "暂未安装任何软件包"
+    },
+    {
+      "name": "harmonybrew_17",
+      "value": "使用上方软件仓库搜索并安装"
+    },
+    {
+      "name": "harmonybrew_18",
+      "value": "正在检查可升级软件包…"
+    },
+    {
+      "name": "harmonybrew_19",
+      "value": "一切都已是最新"
+    },
+    {
+      "name": "harmonybrew_20",
+      "value": "没有需要升级的软件包"
+    },
+    {
+      "name": "mcp_confirm_page_1",
+      "value": "敏感操作确认"
+    },
+    {
+      "name": "mcp_confirm_page_2",
+      "value": "请确认是否执行；未处理的请求将在 30 分钟后自动失效。"
+    },
+    {
+      "name": "node_manager_1",
+      "value": "写入 ~/.npmrc（npm config set registry）"
+    },
+    {
+      "name": "node_manager_2",
+      "value": "请先安装 Node.js 运行时"
+    },
+    {
+      "name": "node_manager_3",
+      "value": "正在读取全局包…"
+    },
+    {
+      "name": "node_manager_4",
+      "value": "未安装 Node.js 运行时"
+    },
+    {
+      "name": "node_manager_5",
+      "value": "在「运行时」页安装后即可管理全局包"
+    },
+    {
+      "name": "node_manager_6",
+      "value": "暂无全局包"
+    },
+    {
+      "name": "node_manager_7",
+      "value": "当前没有安装任务"
+    },
+    {
+      "name": "node_manager_8",
+      "value": "在适配包或兼容包中点击安装"
+    },
+    {
+      "name": "overview_1",
+      "value": "本应用管理的开发工具需要在开发者模式下使用，且需要开启\"运行来自非应用市场的扩展程序\""
+    },
+    {
+      "name": "overview_2",
+      "value": "工具安装后，已打开的终端需 source ~/.zshrc 或重开窗口生效"
+    },
+    {
+      "name": "overview_3",
+      "value": "鸿蒙 PC 开发环境管理。"
+    },
+    {
+      "name": "overview_4",
+      "value": "安装并管理 Python、Java、Rust、Node.js 等语言运行时与常用工具，自动配置 PATH 与镜像源，终端开箱即用。"
+    },
+    {
+      "name": "overview_5",
+      "value": "正在探测本地环境…"
+    },
+    {
+      "name": "pkg_manager_1",
+      "value": "有安装任务正在执行"
+    },
+    {
+      "name": "pkg_manager_2",
+      "value": "有下载任务正在执行"
+    },
+    {
+      "name": "pkg_manager_3",
+      "value": "环境变量已存在，无需重复添加"
+    },
+    {
+      "name": "pkg_manager_4",
+      "value": "已添加基础环境变量到 ~/.zshrc"
+    },
+    {
+      "name": "pkg_manager_5",
+      "value": "需要升级:"
+    },
+    {
+      "name": "pkg_manager_6",
+      "value": "已满足:"
+    },
+    {
+      "name": "pkg_manager_7",
+      "value": "⚠ 冲突:"
+    },
+    {
+      "name": "pkg_manager_8",
+      "value": "操作中…"
+    },
+    {
+      "name": "pkg_manager_9",
+      "value": "Conan 安装完成"
+    },
+    {
+      "name": "pkg_manager_10",
+      "value": "Conan 安装失败"
+    },
+    {
+      "name": "pkg_manager_11",
+      "value": "Conan 已卸载"
+    },
+    {
+      "name": "pkg_manager_12",
+      "value": "Conan 卸载失败"
+    },
+    {
+      "name": "pkg_manager_13",
+      "value": "已安装的包需要添加到 PATH 才能在终端中使用"
+    },
+    {
+      "name": "pkg_manager_14",
+      "value": "无匹配组件"
+    },
+    {
+      "name": "pkg_manager_15",
+      "value": "正在获取详情（conan show + 二进制矩阵）…"
+    },
+    {
+      "name": "pkg_manager_16",
+      "value": "可选版本"
+    },
+    {
+      "name": "pkg_manager_17",
+      "value": "详情拉取失败（配方不在远端或 conan 通道未就绪）"
+    },
+    {
+      "name": "pkg_manager_18",
+      "value": "正在从制品仓获取组件列表..."
+    },
+    {
+      "name": "python_manager_1",
+      "value": "名称"
+    },
+    {
+      "name": "python_manager_2",
+      "value": "地址"
+    },
+    {
+      "name": "python_manager_3",
+      "value": "trusted-host（可选）"
+    },
+    {
+      "name": "python_manager_4",
+      "value": "正在获取版本清单…"
+    },
+    {
+      "name": "python_manager_5",
+      "value": "pip 源配置写入失败"
+    },
+    {
+      "name": "python_manager_6",
+      "value": "已清空"
+    },
+    {
+      "name": "python_manager_7",
+      "value": "已添加"
+    },
+    {
+      "name": "python_manager_8",
+      "value": "未配置"
+    },
+    {
+      "name": "python_manager_9",
+      "value": "全部已启用"
+    },
+    {
+      "name": "python_manager_10",
+      "value": "请先安装 Python 运行时"
+    },
+    {
+      "name": "python_manager_11",
+      "value": "该包只有一个版本"
+    },
+    {
+      "name": "python_manager_12",
+      "value": "正在读取已安装包…"
+    },
+    {
+      "name": "python_manager_13",
+      "value": "暂无"
     }
   ]
 }

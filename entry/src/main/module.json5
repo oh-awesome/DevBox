@@ -20,8 +20,9 @@
         "startWindowIcon": "$media:layered_image",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
+        "launchType": "singleton",
         "minWindowHeight": 600,
-        "minWindowWidth": 800,
+        "minWindowWidth": 1200,
         "skills": [
           {
             "entities": [
@@ -31,243 +32,127 @@
               "action.system.home"
             ]
           }
-        ],
+        ]
+      },
+      {
+        "name": "ConfirmAbility",
+        "srcEntry": "./ets/confirmability/ConfirmAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": false,
+        "launchType": "singleton",
+        "minWindowWidth": 480,
+        "maxWindowWidth": 480,
+        "minWindowHeight": 200,
+        "maxWindowHeight": 200
+      },
+      {
+        "name": "TrayAbility",
+        "srcEntry": "./ets/backgroundability/TrayAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": false,
+        "launchType": "singleton",
+        "backgroundModes": ["dataTransfer"]
       }
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.INTERNET"
-      }
-    ],
-    "hnpPackages": [
-      {
-        "package": "unbound.hnp",
-        "type": "public"
+        "name": "ohos.permission.INTERNET",
+        "reason": "$string:perm_internet_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "julia.hnp",
-        "type": "public"
+        "name": "ohos.permission.KEEP_BACKGROUND_RUNNING",
+        "reason": "$string:perm_keep_bg_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "bind.hnp",
-        "type": "public"
+        "name": "ohos.permission.READ_WRITE_USER_FILE",
+        "reason": "$string:perm_rw_user_file_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "busybox.hnp",
-        "type": "public"
+        "name": "ohos.permission.ALLOW_EXTERNAL_NATIVE_CODE",
+        "reason": "$string:perm_external_native_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "bzip2.hnp",
-        "type": "public"
+        "name": "ohos.permission.kernel.LOAD_INDEPENDENT_LIBRARY",
+        "reason": "$string:perm_load_lib_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "colrm.hnp",
-        "type": "public"
+        "name": "ohos.permission.kernel.ALLOW_WRITABLE_CODE_MEMORY",
+        "reason": "$string:perm_writable_mem_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
+      },
+            {
+        "name": "ohos.permission.CUSTOM_SANDBOX",
+        "reason": "$string:permission_custom_sandbox_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "column.hnp",
-        "type": "public"
+        "name": "ohos.permission.FILE_ACCESS_PERSIST",
+        "reason": "$string:permission_file_access_persist_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
       {
-        "package": "diff.hnp",
-        "type": "public"
+        "name": "ohos.permission.READ_PASTEBOARD",
+        "reason": "$string:permission_read_pasteboard_reason",
+        "usedScene": {
+          "abilities": [
+            "EntryAbility"
+          ],
+          "when": "always"
+        }
       },
-      {
-        "package": "find.hnp",
-        "type": "public"
-      },
-      {
-        "package": "flex.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gperf.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gprof.hnp",
-        "type": "public"
-      },
-      {
-        "package": "groff.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gzip.hnp",
-        "type": "public"
-      },
-      {
-        "package": "less.hnp",
-        "type": "public"
-      },
-      {
-        "package": "libxml2.hnp",
-        "type": "public"
-      },
-      {
-        "package": "libxslt.hnp",
-        "type": "public"
-      },
-      {
-        "package": "m4.hnp",
-        "type": "public"
-      },
-      {
-        "package": "make.hnp",
-        "type": "public"
-      },
-      {
-        "package": "mitmproxy.hnp",
-        "type": "public"
-      },
-      {
-        "package": "whereis.hnp",
-        "type": "public"
-      },
-	  {
-        "package": "expat.hnp",
-        "type": "public"
-      },
-      {
-        "package": "cmake.hnp",
-        "type": "public"
-      },
-      {
-        "package": "autoconf.hnp",
-        "type": "public"
-      },
-      {
-        "package": "grep.hnp",
-        "type": "public"
-      },
-      {
-        "package": "neovim.hnp",
-        "type": "public"
-      },
-      {
-        "package": "ninja.hnp",
-        "type": "public"
-      },
-      {
-        "package": "ohos-sdk.hnp",
-        "type": "public"
-      },
-      {
-        "package": "perl.hnp",
-        "type": "public"
-      },
-      {
-        "package": "ruby.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gdb.hnp",
-        "type": "public"
-      },
-      {
-        "package": "lz4.hnp",
-        "type": "public"
-      },
-      {
-        "package": "pcre2.hnp",
-        "type": "public"
-      },
-      {
-        "package": "cflow.hnp",
-        "type": "public"
-      },
-      {
-        "package": "bison.hnp",
-        "type": "public"
-      },
-      {
-        "package": "hdc.hnp",
-        "type": "public"
-      },
-      {
-        "package": "tree.hnp",
-        "type": "public"
-      },
-      {
-        "package": "hnpcli.hnp",
-        "type": "public"
-      },
-      {
-        "package": "bash.hnp",
-        "type": "public"
-      },
-      {
-        "package": "xz.hnp",
-        "type": "public"
-      },
-      {
-        "package": "magic-cli.hnp",
-        "type": "public"
-      },
-      {
-        "package": "6tunnel.hnp",
-        "type": "public"
-      },
-      {
-        "package": "libidn2.hnp",
-        "type": "public"
-      },
-      {
-        "package": "nettle.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gettext.hnp",
-        "type": "public"
-      },
-      {
-        "package": "glib.hnp",
-        "type": "public"
-      },
-      {
-        "package": "libffi.hnp",
-        "type": "public"
-      },
-      {
-        "package": "patchelf.hnp",
-        "type": "public"
-      },
-      {
-        "package": "pkg-config.hnp",
-        "type": "public"
-      },
-      {
-        "package": "unrar.hnp",
-        "type": "public"
-      },
-      {
-        "package": "crew-mvdir.hnp",
-        "type": "public"
-      },
-      {
-        "package": "gawk.hnp",
-        "type": "public"
-      },
-      {
-        "package": "binutils.hnp",
-        "type": "public"
-      },
-      {
-        "package": "tokei.hnp",
-        "type": "public"
-      },
-      {
-        "package": "pandoc.hnp",
-        "type": "public"
-      },
-      {
-        "package": "doxygen.hnp",
-        "type": "public"
-      },
-      {
-        "package": "svn.hnp",
-        "type": "public"
-      }
-    ]
-  }
+          ]
+}
 }
